@@ -3,7 +3,7 @@
 // Generated from the design file ConsultLanding.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
 import { sx, hole } from "./sx";
-import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState } from "./wire";
+import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class ConsultLandingPage extends React.Component {
   renderVals() { return {}; }

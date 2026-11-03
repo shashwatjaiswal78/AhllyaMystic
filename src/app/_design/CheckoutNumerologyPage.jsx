@@ -3,7 +3,7 @@
 // Generated from the design file NumCheckout.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
 import { sx, hole } from "./sx";
-import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState } from "./wire";
+import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class CheckoutNumerologyPage extends React.Component {
   constructor(props) {
@@ -251,7 +251,7 @@ CheckoutNumerologyPage.prototype.render = function render() {
                       <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
                         <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                           {"Date of birth"}
-                          <input type={"text"} placeholder={"DD / MM / YYYY"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                          <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                         </label>
                         <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                           {"Place of birth"}
@@ -367,11 +367,11 @@ CheckoutNumerologyPage.prototype.render = function render() {
                       <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
                         <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                           {"Child’s date of birth"}
-                          <input type={"text"} placeholder={"DD / MM / YYYY"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                          <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                         </label>
                         <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                           {"Time of birth (optional)"}
-                          <input type={"text"} placeholder={"HH : MM, 24-hour"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                          <input type={"text"} placeholder={"HH : MM, 24-hour"} inputMode={"numeric"} autoComplete={"off"} onInput={maskTimeHM} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                         </label>
                       </div>
                       <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
@@ -519,7 +519,7 @@ CheckoutNumerologyPage.prototype.render = function render() {
                             </label>
                             <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                               {"Date the business started"}
-                              <input type={"text"} placeholder={"DD / MM / YYYY"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                              <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                             </label>
                           </div>
                         </>
@@ -549,7 +549,7 @@ CheckoutNumerologyPage.prototype.render = function render() {
                         </label>
                         <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                           {"Owner’s date of birth"}
-                          <input type={"text"} placeholder={"DD / MM / YYYY"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                          <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                         </label>
                       </div>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
@@ -576,7 +576,7 @@ CheckoutNumerologyPage.prototype.render = function render() {
                         </label>
                         <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                           {"Date of birth"}
-                          <input type={"text"} placeholder={"DD / MM / YYYY"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                          <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                         </label>
                       </div>
                       <div style={{display: "grid", gap: "8px"}}>

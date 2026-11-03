@@ -3,7 +3,7 @@
 // Generated from the design file Masterclass.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
 import { sx, hole } from "./sx";
-import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState } from "./wire";
+import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class MasterclassPage extends React.Component {
   constructor(props) { super(props); this.state = Object.assign({ menuOpen: false }, props && props.initialState); }
@@ -26,7 +26,7 @@ MasterclassPage.prototype.render = function render() {
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
             <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "15px", fontWeight: "500"}}>
-              <a href={"/consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
+              <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
               <a href={"/kundli"} style={{color: "#FFFFFF", textDecoration: "none"}}>
@@ -90,7 +90,7 @@ MasterclassPage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -577,7 +577,7 @@ MasterclassPage.prototype.render = function render() {
                 <p style={{margin: "0 0 4px", fontWeight: "700", color: "#FFFFFF"}}>
                   {"Explore"}
                 </p>
-                <a href={"/consult"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                <a href={"/#consult"} style={{color: "#EADFF2", textDecoration: "none"}}>
                   {"Consultations"}
                 </a>
                 <a href={"/#reports"} style={{color: "#EADFF2", textDecoration: "none"}}>

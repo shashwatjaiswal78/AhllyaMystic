@@ -3,7 +3,7 @@
 // Generated from the design file Main.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
 import { sx, hole } from "./sx";
-import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState } from "./wire";
+import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -92,9 +92,9 @@ class HomePage extends React.Component {
     var isMan = this.state.expert !== 'san';
     var CP = isMan ? ['₹2,301', '₹4,101', '₹5,001', '₹7,201', '₹3,101'] : ['₹4,001', '₹6,301', '₹7,601', '₹11,111', '₹5,100'];
     var plans = [
-      { name: 'One area', blurb: 'A focused session on the area that matters most right now.', price: CP[0], mins: '20 min', i1: 'Pick any one: career, love, money, health, education or child', i2: 'Your chart studied before the call', i3: 'Simple, practical remedies', cta: 'Book one area' },
-      { name: 'Two areas', blurb: 'For two questions that sit side by side, like career and money.', price: CP[1], mins: '30 min', i1: 'Pick any two areas of your life', i2: 'How the two connect in your chart', i3: 'Remedies for both areas', cta: 'Book two areas' },
-      { name: 'Three areas', blurb: 'A broader reading that connects the different parts of your life.', price: CP[2], mins: '45 min', i1: 'Pick any three areas of your life', i2: 'Timing guidance from your dasha periods', i3: 'Personalised remedies for each area', cta: 'Book three areas' }
+      { name: 'One area', blurb: 'A focused session on the area that matters most right now.', price: CP[0], mins: '20 min', i1: 'Pick any one: career, love, money, health, education or child', i2: 'Your chart studied before the call', i3: 'Simple, practical remedies', cta: 'Book one area', href: '/consult?expert=' + (isMan ? 'man' : 'san') + '&sess=one' },
+      { name: 'Two areas', blurb: 'For two questions that sit side by side, like career and money.', price: CP[1], mins: '30 min', i1: 'Pick any two areas of your life', i2: 'How the two connect in your chart', i3: 'Remedies for both areas', cta: 'Book two areas', href: '/consult?expert=' + (isMan ? 'man' : 'san') + '&sess=two' },
+      { name: 'Three areas', blurb: 'A broader reading that connects the different parts of your life.', price: CP[2], mins: '45 min', i1: 'Pick any three areas of your life', i2: 'Timing guidance from your dasha periods', i3: 'Personalised remedies for each area', cta: 'Book three areas', href: '/consult?expert=' + (isMan ? 'man' : 'san') + '&sess=three' }
     ];
     var menuOpen = !!this.state.menuOpen;
     var tool = this.state.tool || 'kundli';
@@ -131,7 +131,7 @@ class HomePage extends React.Component {
       closeMenu: () => this.setState({ menuOpen: false }),
       pickMan: () => this.setState({ expert: 'man' }),
       pickSan: () => this.setState({ expert: 'san' }),
-      isMan: isMan, isSan: !isMan,
+      isMan: isMan, isSan: !isMan, completeHref: '/consult?expert=' + (isMan ? 'man' : 'san') + '&sess=all',
       plans: plans, fullPrice: CP[3], diwaliPrice: CP[4],
       rashis: rashis,
       cur: cur,
@@ -156,7 +156,7 @@ HomePage.prototype.render = function render() {
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
             <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "15px", fontWeight: "500"}}>
-              <a href={"/consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
+              <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
               <a href={"/kundli"} style={{color: "#FFFFFF", textDecoration: "none"}}>
@@ -220,7 +220,7 @@ HomePage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -584,7 +584,7 @@ HomePage.prototype.render = function render() {
                         {hole(pl?.i3)}
                       </li>
                     </ul>
-                    <a href={"/consult"} style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "52px", borderRadius: "999px", background: "#FFFFFF", border: "2px solid #FCCE07", color: "#921A11", fontWeight: "700", textDecoration: "none"}}>
+                    <a href={pl?.href} style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "52px", borderRadius: "999px", background: "#FFFFFF", border: "2px solid #FCCE07", color: "#921A11", fontWeight: "700", textDecoration: "none"}}>
                       {hole(pl?.cta)}
                     </a>
                   </div>
@@ -631,7 +631,7 @@ HomePage.prototype.render = function render() {
                     {"Personalised remedies for every area"}
                   </li>
                 </ul>
-                <a href={"/consult"} style={{position: "relative", marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "52px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", textDecoration: "none"}}>
+                <a href={v.completeHref} style={{position: "relative", marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "52px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", textDecoration: "none"}}>
                   {"Book complete call"}
                 </a>
               </div>
@@ -765,11 +765,11 @@ HomePage.prototype.render = function render() {
                       </label>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                         {"Actual date of birth"}
-                        <input type={"text"} placeholder={"DD / MM / YYYY"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
+                        <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
                       </label>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                         {"Time of birth"}
-                        <input type={"text"} placeholder={"HH : MM : SS"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
+                        <input type={"text"} placeholder={"HH : MM : SS"} inputMode={"numeric"} autoComplete={"off"} onInput={maskTime} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
                       </label>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                         {"Place of birth"}
@@ -823,11 +823,11 @@ HomePage.prototype.render = function render() {
                       </label>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                         {"Actual date of birth"}
-                        <input type={"text"} placeholder={"DD / MM / YYYY"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
+                        <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
                       </label>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                         {"Exact time of birth"}
-                        <input type={"text"} placeholder={"HH : MM : SS"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
+                        <input type={"text"} placeholder={"HH : MM : SS"} inputMode={"numeric"} autoComplete={"off"} onInput={maskTime} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
                       </label>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                         {"Place of birth"}
@@ -884,7 +884,7 @@ HomePage.prototype.render = function render() {
                       </p>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                         {"Actual date of birth"}
-                        <input type={"text"} placeholder={"DD / MM / YYYY"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
+                        <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
                       </label>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                         <span>
@@ -938,7 +938,7 @@ HomePage.prototype.render = function render() {
                       </label>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                         {"Actual date of birth"}
-                        <input type={"text"} placeholder={"DD / MM / YYYY"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
+                        <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
                       </label>
                       <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                         <span>
@@ -1417,11 +1417,11 @@ HomePage.prototype.render = function render() {
                 <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(160px, 100%), 1fr))", gap: "12px", alignItems: "end"}}>
                   <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                     {"Actual date of birth"}
-                    <input type={"text"} placeholder={"DD / MM / YYYY"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
+                    <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
                   </label>
                   <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                     {"Time of birth"}
-                    <input type={"text"} placeholder={"HH : MM : SS"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
+                    <input type={"text"} placeholder={"HH : MM : SS"} inputMode={"numeric"} autoComplete={"off"} onInput={maskTime} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
                   </label>
                   <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                     {"Place of birth"}
@@ -2141,7 +2141,7 @@ HomePage.prototype.render = function render() {
                 <p style={{margin: "0 0 4px", fontWeight: "700", color: "#FFFFFF"}}>
                   {"Explore"}
                 </p>
-                <a href={"/consult"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                <a href={"/#consult"} style={{color: "#EADFF2", textDecoration: "none"}}>
                   {"Consultations"}
                 </a>
                 <a href={"/#reports"} style={{color: "#EADFF2", textDecoration: "none"}}>

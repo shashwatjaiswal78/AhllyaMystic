@@ -177,3 +177,66 @@ export function FormButton({ as = "button", endpoint, extra, done = "Thank you. 
     </>
   );
 }
+
+// Typing masks for birth date and time fields: "03042001" shows as "03/04/2001", "1430" as "14:30".
+function makeMask(groups, sep) {
+  const max = groups.reduce((a, b) => a + b, 0);
+  return (e) => {
+    const el = e.currentTarget;
+    const kind = e.nativeEvent?.inputType || "";
+    const data = e.nativeEvent?.data || "";
+    const caret = el.selectionStart ?? el.value.length;
+    const atEnd = caret === el.value.length;
+    let before = el.value.slice(0, caret).replace(/\D/g, "").length;
+    let digits = el.value.replace(/\D/g, "");
+    // Backspace over a separator removes the digit in front of it.
+    if (kind === "deleteContentBackward" && digits === (el.dataset.prev || "").replace(/\D/g, "") && before > 0) {
+      digits = digits.slice(0, before - 1) + digits.slice(before);
+      before -= 1;
+    }
+    // Typing a separator after one digit pads it: "3/" becomes "03/".
+    if (kind.startsWith("insert") && atEnd && data && /\D/.test(data)) {
+      let start = 0;
+      for (let g = 0; g < groups.length - 1; g++) {
+        if (digits.length === start + 1) { digits = digits.slice(0, start) + "0" + digits.slice(start); break; }
+        start += groups[g];
+      }
+    }
+    digits = digits.slice(0, max);
+    let out = "", i = 0;
+    for (let g = 0; g < groups.length && i < digits.length; g++) {
+      out += (g ? sep : "") + digits.slice(i, i + groups[g]);
+      i += groups[g];
+    }
+    // While typing at the end, add the next separator as soon as a group is full.
+    if (kind.startsWith("insert") && atEnd) {
+      let total = 0;
+      for (let g = 0; g < groups.length - 1; g++) {
+        total += groups[g];
+        if (digits.length === total) { out += sep; break; }
+      }
+    }
+    el.value = out;
+    el.dataset.prev = out;
+    if (!atEnd) {
+      let pos = 0, seen = 0;
+      while (pos < out.length && seen < before) { if (/\d/.test(out[pos])) seen++; pos++; }
+      el.setSelectionRange(pos, pos);
+    }
+  };
+}
+
+export const maskDate = makeMask([2, 2, 4], "/");
+export const maskTime = makeMask([2, 2, 2], ":");
+export const maskTimeHM = makeMask([2, 2], ":");
+
+// Separate HH / MM / SS boxes: digits only, and jump to the next box after two digits.
+export function maskPart(e) {
+  const el = e.currentTarget;
+  el.value = el.value.replace(/\D/g, "").slice(0, 2);
+  if (el.value.length === 2 && (e.nativeEvent?.inputType || "").startsWith("insert")) {
+    const boxes = Array.from(el.parentElement?.querySelectorAll("input") || []);
+    const next = boxes[boxes.indexOf(el) + 1];
+    if (next) next.focus();
+  }
+}

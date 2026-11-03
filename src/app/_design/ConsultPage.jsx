@@ -3,7 +3,7 @@
 // Generated from the design file Consult.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
 import { sx, hole } from "./sx";
-import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState } from "./wire";
+import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class ConsultPage extends React.Component {
   constructor(props) {
@@ -363,22 +363,22 @@ ConsultPage.prototype.render = function render() {
                   <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
                     <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                       {"Date of birth"}
-                      <input type={"text"} placeholder={"DD / MM / YYYY"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                      <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
                     <div style={{display: "grid", gap: "6px"}}>
                       <span style={{fontSize: "14px", fontWeight: "600"}}>
                         {"Time of birth"}
                       </span>
                       <div style={{display: "flex", alignItems: "center", gap: "6px"}}>
-                        <input type={"text"} aria-label={"Hours"} placeholder={"HH"} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                        <input type={"text"} aria-label={"Hours"} placeholder={"HH"} inputMode={"numeric"} maxLength={2} onInput={maskPart} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                         <span style={{color: "#5C5470"}}>
                           {":"}
                         </span>
-                        <input type={"text"} aria-label={"Minutes"} placeholder={"MM"} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                        <input type={"text"} aria-label={"Minutes"} placeholder={"MM"} inputMode={"numeric"} maxLength={2} onInput={maskPart} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                         <span style={{color: "#5C5470"}}>
                           {":"}
                         </span>
-                        <input type={"text"} aria-label={"Seconds"} placeholder={"SS"} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                        <input type={"text"} aria-label={"Seconds"} placeholder={"SS"} inputMode={"numeric"} maxLength={2} onInput={maskPart} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </div>
                     </div>
                   </div>
@@ -457,22 +457,22 @@ ConsultPage.prototype.render = function render() {
                             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
                               <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
                                 {"Date of birth"}
-                                <input type={"text"} placeholder={"DD / MM / YYYY"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                                <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                               </label>
                               <div style={{display: "grid", gap: "6px"}}>
                                 <span style={{fontSize: "14px", fontWeight: "600"}}>
                                   {"Time of birth"}
                                 </span>
                                 <div style={{display: "flex", alignItems: "center", gap: "6px"}}>
-                                  <input type={"text"} aria-label={"Hours"} placeholder={"HH"} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                                  <input type={"text"} aria-label={"Hours"} placeholder={"HH"} inputMode={"numeric"} maxLength={2} onInput={maskPart} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                                   <span style={{color: "#5C5470"}}>
                                     {":"}
                                   </span>
-                                  <input type={"text"} aria-label={"Minutes"} placeholder={"MM"} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                                  <input type={"text"} aria-label={"Minutes"} placeholder={"MM"} inputMode={"numeric"} maxLength={2} onInput={maskPart} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                                   <span style={{color: "#5C5470"}}>
                                     {":"}
                                   </span>
-                                  <input type={"text"} aria-label={"Seconds"} placeholder={"SS"} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
+                                  <input type={"text"} aria-label={"Seconds"} placeholder={"SS"} inputMode={"numeric"} maxLength={2} onInput={maskPart} style={{width: "64px", textAlign: "center", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                                 </div>
                               </div>
                             </div>
@@ -778,7 +778,12 @@ ConsultPage.prototype.render = function render() {
 };
 
 ConsultPage.prototype.componentDidMount = function componentDidMount() {
-  this.setState({ __now: Date.now() });
+  // Plan cards on the home page link here with ?expert=man|san&sess=one|two|three|all.
+  var q = readUrlState(['expert', 'sess']);
+  var pick = { __now: Date.now() };
+  if (q.expert === 'man' || q.expert === 'san') pick.expert = q.expert;
+  if (['one', 'two', 'three', 'all'].indexOf(q.sess) >= 0) pick.sess = q.sess;
+  this.setState(pick);
 };
 
 export default ConsultPage;
