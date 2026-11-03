@@ -34,9 +34,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${marcellus.variable} ${manrope.variable} ${tiroDevanagari.variable} h-full antialiased`}
+      className={`${marcellus.variable} ${manrope.variable} ${tiroDevanagari.variable}`}
     >
-      <body className="min-h-full flex flex-col bg-am-cream">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
