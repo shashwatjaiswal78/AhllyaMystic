@@ -114,7 +114,7 @@ OUTPUT_PATCHES = [
 
 # Page -> componentDidMount body.
 MOUNT = {
-    "Main": "this.setState({ __now: Date.now() });",
+    "Main": "var q = readUrlState(['tool']); var next = { __now: Date.now() }; if (['kundli', 'kp', 'name', 'mobile'].indexOf(q.tool) >= 0) next.tool = q.tool; this.setState(next);",
     "Consult": "this.setState({ __now: Date.now() });",
     "NumCheckout": "var q = readUrlState(['kind', 'pkg']); if (q.kind || q.pkg) this.setState(q);",
     "MilanCheckout": "var q = readUrlState(['pkg']); if (q.pkg === 'call' || q.pkg === 'report') this.setState(q);",

@@ -1,8 +1,11 @@
 "use client";
 /* eslint-disable */
-// Generated from the design file Kundli.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
+// Generated from the design file Kundli.dc.html by scripts/design/dc2jsx.py, then wired to the Kundli engine by hand:
+// the result blocks below read the chart returned by /api/kundli (see componentDidMount and render). Re-apply if regenerated.
 import React from "react";
 import { sx, hole } from "./sx";
+import NorthChart from "./KundliChart";
+import { KUNDLI_KEY } from "./KundliForm";
 import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class KundliPage extends React.Component {
@@ -36,8 +39,28 @@ class KundliPage extends React.Component {
   }
 }
 
+KundliPage.prototype.componentDidMount = function componentDidMount() {
+  // The home page form stores the chart it got from /api/kundli. Without one there is nothing to show, so go back to the form.
+  let data = null;
+  try { data = JSON.parse(sessionStorage.getItem(KUNDLI_KEY) || "null"); } catch (e) { data = null; }
+  if (!data || data.v !== 1 || !Array.isArray(data.dasha) || !data.dasha.length) { window.location.replace("/#free"); return; }
+  // The page grows once the chart is in, which can leave the visitor part-way down (the site scrolls smoothly).
+  // Show the top, with the name and headline first, as soon as the result is drawn.
+  const top = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  top();
+  this.setState({ data: data }, () => { top(); requestAnimationFrame(top); });
+};
+
 KundliPage.prototype.render = function render() {
   const v = this.renderVals() || {};
+  const R = this.state.data || null;
+  // Running mahadasha and antardasha as of today (clamped to the dasha span for charts cast for a future date).
+  let curM = null, curA = null;
+  if (R) {
+    const t = Math.min(Math.max(Date.now(), R.dasha[0].start), R.dasha[R.dasha.length - 1].end - 1);
+    curM = R.dasha.find((m) => t >= m.start && t < m.end) || R.dasha[0];
+    curA = curM.antar.find((a) => t >= a.start && t < a.end) || curM.antar[0];
+  }
   return (
     <div data-design-page="Kundli" style={{ display: "contents" }}>
       <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "16px", lineHeight: "1.6"}}>
@@ -204,64 +227,35 @@ KundliPage.prototype.render = function render() {
                 {"Your free Kundli"}
               </p>
               <h1 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(34px, 4.4vw, 56px)", lineHeight: "1.1"}}>
-                {"Riya, here is your Kundli."}
+                {R ? R.firstName + ", here is your Kundli." : "Preparing your Kundli…"}
               </h1>
               <p style={{margin: "0 0 32px", fontSize: "17px", color: "#EADFF2"}}>
-                {"Wednesday, 14 February 1996 · 9:30 am · Lucknow, Uttar Pradesh "}
+                {R ? R.headline + " " : ""}
                 <a href={"/#free"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
                   {"Edit details"}
                 </a>
               </p>
             </div>
+            {R ? (<>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))", gap: "16px", marginBottom: "28px"}}>
-              <div style={{background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: "18px", padding: "18px 20px"}}>
-                <p style={{margin: "0", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#EADFF2", fontWeight: "700"}}>
-                  {"Lagna (ascendant)"}
-                </p>
-                <p style={{margin: "6px 0 0", display: "flex", alignItems: "baseline", gap: "10px", flexWrap: "wrap"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "30px", lineHeight: "1.1"}}>
-                    {"Pisces"}
-                  </span>
-                  <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "20px", color: "#FCCE07"}}>
-                    {"मीन"}
-                  </span>
-                </p>
-                <p style={{margin: "6px 0 0", fontSize: "14px", color: "#EADFF2"}}>
-                  {"Meena lagna, ruled by Jupiter"}
-                </p>
-              </div>
-              <div style={{background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: "18px", padding: "18px 20px"}}>
-                <p style={{margin: "0", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#EADFF2", fontWeight: "700"}}>
-                  {"Moon sign (rashi)"}
-                </p>
-                <p style={{margin: "6px 0 0", display: "flex", alignItems: "baseline", gap: "10px", flexWrap: "wrap"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "30px", lineHeight: "1.1"}}>
-                    {"Scorpio"}
-                  </span>
-                  <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "20px", color: "#FCCE07"}}>
-                    {"वृश्चिक"}
-                  </span>
-                </p>
-                <p style={{margin: "6px 0 0", fontSize: "14px", color: "#EADFF2"}}>
-                  {"Vrischika rashi, ruled by Mars"}
-                </p>
-              </div>
-              <div style={{background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: "18px", padding: "18px 20px"}}>
-                <p style={{margin: "0", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#EADFF2", fontWeight: "700"}}>
-                  {"Nakshatra"}
-                </p>
-                <p style={{margin: "6px 0 0", display: "flex", alignItems: "baseline", gap: "10px", flexWrap: "wrap"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "30px", lineHeight: "1.1"}}>
-                    {"Jyeshtha"}
-                  </span>
-                  <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "20px", color: "#FCCE07"}}>
-                    {"ज्येष्ठा"}
-                  </span>
-                </p>
-                <p style={{margin: "6px 0 0", fontSize: "14px", color: "#EADFF2"}}>
-                  {"Pada 3, ruled by Mercury"}
-                </p>
-              </div>
+              {(R ? R.tiles : []).map((t) => (
+                <div key={t.key} style={{background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: "18px", padding: "18px 20px"}}>
+                  <p style={{margin: "0", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#EADFF2", fontWeight: "700"}}>
+                    {t.label}
+                  </p>
+                  <p style={{margin: "6px 0 0", display: "flex", alignItems: "baseline", gap: "10px", flexWrap: "wrap"}}>
+                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "30px", lineHeight: "1.1"}}>
+                      {t.en}
+                    </span>
+                    <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "20px", color: "#FCCE07"}}>
+                      {t.hi}
+                    </span>
+                  </p>
+                  <p style={{margin: "6px 0 0", fontSize: "14px", color: "#EADFF2"}}>
+                    {t.sub}
+                  </p>
+                </div>
+              ))}
             </div>
             <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "18px 28px", background: "#FFFFFF", color: "#1E1830", borderRadius: "20px", padding: "20px 24px"}}>
               <div style={{display: "flex", alignItems: "center", gap: "16px", flex: "1 1 380px", minWidth: "0"}}>
@@ -292,8 +286,10 @@ KundliPage.prototype.render = function render() {
                 </a>
               </div>
             </div>
+            </>) : null}
           </div>
         </div>
+        {R ? (
         <div className={"am-subnav"} style={{position: "sticky", top: "72px", zIndex: "40", background: "rgba(251,247,240,0.96)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", borderBottom: "1px solid #E8DFD0"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "0 24px", display: "flex", gap: "28px", overflowX: "auto", whiteSpace: "nowrap"}}>
             <a href={"#profile"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "15px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
@@ -319,7 +315,9 @@ KundliPage.prototype.render = function render() {
             </a>
           </div>
         </div>
+        ) : null}
         <div>
+          {R ? (<>
           <div id={"profile"} style={{maxWidth: "1200px", margin: "0 auto", padding: "72px 24px 24px"}}>
             <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
               <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
@@ -337,86 +335,16 @@ KundliPage.prototype.render = function render() {
                 <p style={{margin: "0 0 8px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#921A11"}}>
                   {"जन्म विवरण"}
                 </p>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Name"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Riya Sharma"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Gender"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Female"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Date of birth"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"14 February 1996"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Day"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Wednesday"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Time of birth"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"9:30:00 am"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Place"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Lucknow, Uttar Pradesh"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Latitude, longitude"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"26°51′ N, 80°57′ E"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Time zone"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"IST, UTC+05:30"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Ayanamsa"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Lahiri 23°48′18″"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Sunrise and sunset"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"06:44 and 17:57"}
-                  </span>
-                </div>
+                {(R ? R.details : []).map(([k, val], i) => (
+                  <div key={i} style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
+                    <span style={{color: "#5C5470"}}>
+                      {k}
+                    </span>
+                    <span style={{fontWeight: "700", textAlign: "right"}}>
+                      {val}
+                    </span>
+                  </div>
+                ))}
               </div>
               <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "24px 26px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
                 <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
@@ -425,86 +353,16 @@ KundliPage.prototype.render = function render() {
                 <p style={{margin: "0 0 8px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#921A11"}}>
                   {"पंचांग और अवकहड़ा चक्र"}
                 </p>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Tithi"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Krishna Dashami"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Vara"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Budhavara"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Nakshatra"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Jyeshtha, pada 3"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Yoga"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Harshana"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Karana"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Vanija"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Varna"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Brahmin"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Vashya"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Keeta"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Yoni"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Mriga (deer)"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Gana"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Rakshasa"}
-                  </span>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
-                  <span style={{color: "#5C5470"}}>
-                    {"Nadi"}
-                  </span>
-                  <span style={{fontWeight: "700", textAlign: "right"}}>
-                    {"Adi"}
-                  </span>
-                </div>
+                {(R ? R.panchang : []).map(([k, val], i) => (
+                  <div key={i} style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
+                    <span style={{color: "#5C5470"}}>
+                      {k}
+                    </span>
+                    <span style={{fontWeight: "700", textAlign: "right"}}>
+                      {val}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -530,107 +388,7 @@ KundliPage.prototype.render = function render() {
                     {"लग्न कुंडली"}
                   </span>
                 </p>
-                <svg viewBox={"0 0 360 360"} role={"img"} aria-label={"Lagna chart"} style={{display: "block", width: "100%", height: "auto", background: "#FFFFFF", borderRadius: "12px"}}>
-                  <rect x={"1"} y={"1"} width={"358"} height={"358"} rx={"10"} fill={"#FFFFFF"} stroke={"#6C1594"} strokeWidth={"2"} />
-                  <path d={"M4 4L356 356M356 4L4 356"} stroke={"#D6C3E2"} strokeWidth={"1.2"} />
-                  <path d={"M180.0 3L357 180.0L180.0 357L3 180.0Z"} fill={"none"} stroke={"#D6C3E2"} strokeWidth={"1.2"} />
-                  <text x={"180.0"} y={"52.6"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"12"}
-                  </text>
-                  <text x={"180.0"} y={"96.0"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#921A11"}>
-                    {"Asc"}
-                    <tspan fontSize={"9"} fill={"#8A7F98"} dy={"-5"}>
-                      {"26°"}
-                    </tspan>
-                  </text>
-                  <text x={"180.0"} y={"113.0"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Ve"}
-                    <tspan fontSize={"9"} fill={"#8A7F98"} dy={"-5"}>
-                      {"12°"}
-                    </tspan>
-                  </text>
-                  <text x={"180.0"} y={"130.0"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Ke"}
-                    <tspan fontSize={"9"} fill={"#8A7F98"} dy={"-5"}>
-                      {"26°"}
-                    </tspan>
-                  </text>
-                  <text x={"55.8"} y={"27.4"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"1"}
-                  </text>
-                  <text x={"23.4"} y={"59.8"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"2"}
-                  </text>
-                  <text x={"48.6"} y={"184.0"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"3"}
-                  </text>
-                  <text x={"23.4"} y={"308.2"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"4"}
-                  </text>
-                  <text x={"55.8"} y={"340.6"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"5"}
-                  </text>
-                  <text x={"180.0"} y={"315.4"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"6"}
-                  </text>
-                  <text x={"180.0"} y={"257.0"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Ra"}
-                    <tspan fontSize={"9"} fill={"#8A7F98"} dy={"-5"}>
-                      {"26°"}
-                    </tspan>
-                  </text>
-                  <text x={"304.2"} y={"340.6"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"7"}
-                  </text>
-                  <text x={"336.6"} y={"308.2"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"8"}
-                  </text>
-                  <text x={"313.2"} y={"267.8"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Mo"}
-                    <tspan fontSize={"9"} fill={"#8A7F98"} dy={"-5"}>
-                      {"24°"}
-                    </tspan>
-                  </text>
-                  <text x={"311.4"} y={"184.0"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"9"}
-                  </text>
-                  <text x={"252.0"} y={"185.0"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Ju"}
-                    <tspan fontSize={"9"} fill={"#8A7F98"} dy={"-5"}>
-                      {"15°"}
-                    </tspan>
-                  </text>
-                  <text x={"336.6"} y={"59.8"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"10"}
-                  </text>
-                  <text x={"313.2"} y={"102.2"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Me"}
-                    <tspan fontSize={"9"} fill={"#8A7F98"} dy={"-5"}>
-                      {"5°"}
-                    </tspan>
-                  </text>
-                  <text x={"304.2"} y={"27.4"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"11"}
-                  </text>
-                  <text x={"262.8"} y={"34.8"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Su"}
-                    <tspan fontSize={"9"} fill={"#8A7F98"} dy={"-5"}>
-                      {"0°"}
-                    </tspan>
-                  </text>
-                  <text x={"262.8"} y={"51.8"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Ma"}
-                    <tspan fontSize={"9"} fill={"#8A7F98"} dy={"-5"}>
-                      {"5°"}
-                    </tspan>
-                  </text>
-                  <text x={"262.8"} y={"68.8"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Sa"}
-                    <tspan fontSize={"9"} fill={"#8A7F98"} dy={"-5"}>
-                      {"29°"}
-                    </tspan>
-                  </text>
-                </svg>
+                <NorthChart label={"Lagna chart"} houses={R ? R.d1 : []} />
               </div>
               <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "22px"}}>
                 <p style={{margin: "0 0 14px", display: "flex", justifyContent: "space-between", alignItems: "baseline"}}>
@@ -641,77 +399,7 @@ KundliPage.prototype.render = function render() {
                     {"नवांश कुंडली"}
                   </span>
                 </p>
-                <svg viewBox={"0 0 360 360"} role={"img"} aria-label={"Navamsa chart"} style={{display: "block", width: "100%", height: "auto", background: "#FFFFFF", borderRadius: "12px"}}>
-                  <rect x={"1"} y={"1"} width={"358"} height={"358"} rx={"10"} fill={"#FFFFFF"} stroke={"#6C1594"} strokeWidth={"2"} />
-                  <path d={"M4 4L356 356M356 4L4 356"} stroke={"#D6C3E2"} strokeWidth={"1.2"} />
-                  <path d={"M180.0 3L357 180.0L180.0 357L3 180.0Z"} fill={"none"} stroke={"#D6C3E2"} strokeWidth={"1.2"} />
-                  <text x={"180.0"} y={"52.6"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"11"}
-                  </text>
-                  <text x={"180.0"} y={"87.5"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#921A11"}>
-                    {"Asc"}
-                  </text>
-                  <text x={"180.0"} y={"104.5"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Mo"}
-                  </text>
-                  <text x={"180.0"} y={"121.5"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Me"}
-                  </text>
-                  <text x={"180.0"} y={"138.5"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Ke"}
-                  </text>
-                  <text x={"55.8"} y={"27.4"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"12"}
-                  </text>
-                  <text x={"23.4"} y={"59.8"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"1"}
-                  </text>
-                  <text x={"48.6"} y={"184.0"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"2"}
-                  </text>
-                  <text x={"23.4"} y={"308.2"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"3"}
-                  </text>
-                  <text x={"46.8"} y={"267.8"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Sa"}
-                  </text>
-                  <text x={"55.8"} y={"340.6"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"4"}
-                  </text>
-                  <text x={"180.0"} y={"315.4"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"5"}
-                  </text>
-                  <text x={"180.0"} y={"248.5"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Ju"}
-                  </text>
-                  <text x={"180.0"} y={"265.5"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Ra"}
-                  </text>
-                  <text x={"304.2"} y={"340.6"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"6"}
-                  </text>
-                  <text x={"336.6"} y={"308.2"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"7"}
-                  </text>
-                  <text x={"313.2"} y={"259.3"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Su"}
-                  </text>
-                  <text x={"313.2"} y={"276.3"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Ve"}
-                  </text>
-                  <text x={"311.4"} y={"184.0"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"8"}
-                  </text>
-                  <text x={"252.0"} y={"185.0"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"14"} fontWeight={"700"} fill={"#1E1830"}>
-                    {"Ma"}
-                  </text>
-                  <text x={"336.6"} y={"59.8"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"9"}
-                  </text>
-                  <text x={"304.2"} y={"27.4"} textAnchor={"middle"} fontFamily={"Manrope, sans-serif"} fontSize={"12"} fill={"#921A11"}>
-                    {"10"}
-                  </text>
-                </svg>
+                <NorthChart label={"Navamsa chart"} houses={R ? R.d9 : []} />
               </div>
             </div>
             <div style={{marginTop: "20px", background: "#F3E8F7", borderRadius: "18px", padding: "20px 24px"}}>
@@ -719,15 +407,11 @@ KundliPage.prototype.render = function render() {
                 {"Placements that stand out"}
               </p>
               <ul style={{margin: "0", paddingLeft: "20px", color: "#3D0752", fontSize: "15px"}}>
-                <li style={{marginBottom: "8px"}}>
-                  {"Venus is exalted in your lagna (Pisces)."}
-                </li>
-                <li style={{marginBottom: "8px"}}>
-                  {"The Moon is debilitated in Scorpio, in the 9th house."}
-                </li>
-                <li style={{marginBottom: "8px"}}>
-                  {"Three planets sit in the 12th house: the Sun, Mars and Saturn. Mars is combust."}
-                </li>
+                {(R ? R.stand : []).map((t, i) => (
+                  <li key={i} style={{marginBottom: "8px"}}>
+                    {t}
+                  </li>
+                ))}
               </ul>
               <p style={{margin: "8px 0 0", fontSize: "14px", color: "#5C5470"}}>
                 {"What these mean for your life is explained in the Personalised Kundli Report."}
@@ -771,220 +455,31 @@ KundliPage.prototype.render = function render() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "700"}}>
-                      {"Lagna"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Pisces"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"26°06'35\""}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Revati 3"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}} />
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"1"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}} />
-                  </tr>
-                  <tr>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "700"}}>
-                      {"Sun"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Aquarius"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"0°56'02\""}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Dhanishta 3"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Mars"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"12"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}} />
-                  </tr>
-                  <tr>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "700"}}>
-                      {"Moon"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Scorpio"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"24°26'16\""}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Jyeshtha 3"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Mercury"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"9"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Debilitated"}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "700"}}>
-                      {"Mars"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Aquarius"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"5°08'46\""}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Dhanishta 4"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Mars"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"12"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Combust"}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "700"}}>
-                      {"Mercury"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Capricorn"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"5°07'59\""}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Uttara Ashadha 3"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Sun"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"11"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}} />
-                  </tr>
-                  <tr>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "700"}}>
-                      {"Jupiter"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Sagittarius"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"15°05'13\""}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Purva Ashadha 1"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Venus"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"10"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}} />
-                  </tr>
-                  <tr>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "700"}}>
-                      {"Venus"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Pisces"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"12°10'03\""}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Uttara Bhadrapada 3"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Saturn"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"1"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Exalted"}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "700"}}>
-                      {"Saturn"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Aquarius"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"29°43'41\""}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Purva Bhadrapada 3"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Jupiter"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"12"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}} />
-                  </tr>
-                  <tr>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "700"}}>
-                      {"Rahu"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Virgo"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"26°17'41\""}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Chitra 1"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Mars"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"7"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}} />
-                  </tr>
-                  <tr>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "700"}}>
-                      {"Ketu"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Pisces"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"26°17'41\""}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Revati 3"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"Mercury"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}}>
-                      {"1"}
-                    </td>
-                    <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: "#FBF7F0", whiteSpace: "nowrap", fontWeight: "400"}} />
-                  </tr>
+                  {(R ? R.planets : []).map((p, i) => (
+                    <tr key={p.name}>
+                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "700"}}>
+                        {p.name}
+                      </td>
+                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                        {p.sign}
+                      </td>
+                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                        {p.deg}
+                      </td>
+                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                        {p.nak}
+                      </td>
+                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                        {p.nakLord}
+                      </td>
+                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                        {String(p.house)}
+                      </td>
+                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                        {p.strength}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -1002,78 +497,35 @@ KundliPage.prototype.render = function render() {
               </h2>
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "20px"}}>
-              <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderTop: "4px solid #921A11", borderRadius: "18px", padding: "22px"}}>
-                <p style={{margin: "0", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Manglik dosha"}
-                  </span>
-                  <span style={{fontSize: "13px", fontWeight: "700", color: "#921A11", background: "#F8E8E6", padding: "4px 12px", borderRadius: "999px"}}>
-                    {"Present"}
-                  </span>
-                </p>
-                <p style={{margin: "2px 0 12px", fontFamily: "'Tiro Devanagari Hindi', serif", color: "#921A11"}}>
-                  {"मांगलिक दोष"}
-                </p>
-                <p style={{margin: "0 0 8px", fontSize: "15px"}}>
-                  <b>
-                    {"In your chart:"}
-                  </b>
-                  {" Mars is in the 12th house from your lagna and the 4th from your Moon."}
-                </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
-                  {"Manglik dosha is common and is often reduced or cancelled by other placements. Our experts check this before suggesting any remedy."}
-                </p>
+              {(R ? R.doshas : []).map((dz) => (
+                              <div key={dz.key} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderTop: "4px solid " + (dz.present ? "#921A11" : "#1F7A4C"), borderRadius: "18px", padding: "22px"}}>
+                                <p style={{margin: "0", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px"}}>
+                                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                                    {dz.title}
+                                  </span>
+                                  <span style={{fontSize: "13px", fontWeight: "700", color: dz.present ? "#921A11" : "#1F7A4C", background: dz.present ? "#F8E8E6" : "#EAF5EE", padding: "4px 12px", borderRadius: "999px"}}>
+                                    {dz.label}
+                                  </span>
+                                </p>
+                                <p style={{margin: "2px 0 12px", fontFamily: "'Tiro Devanagari Hindi', serif", color: "#921A11"}}>
+                                  {dz.hi}
+                                </p>
+                                <p style={{margin: "0 0 8px", fontSize: "15px"}}>
+                                  <b>
+                                    {"In your chart:"}
+                                  </b>
+                                  {" " + dz.chart}
+                                </p>
+                                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                                  {dz.note}
+                                </p>
+                                {dz.remedy ? (
                 <a href={"#ask"} style={{display: "inline-flex", marginTop: "14px", fontWeight: "700"}}>
-                  {"Get remedies in your report →"}
-                </a>
-              </div>
-              <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderTop: "4px solid #921A11", borderRadius: "18px", padding: "22px"}}>
-                <p style={{margin: "0", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Kaal Sarp dosha"}
-                  </span>
-                  <span style={{fontSize: "13px", fontWeight: "700", color: "#921A11", background: "#F8E8E6", padding: "4px 12px", borderRadius: "999px"}}>
-                    {"Present"}
-                  </span>
-                </p>
-                <p style={{margin: "2px 0 12px", fontFamily: "'Tiro Devanagari Hindi', serif", color: "#921A11"}}>
-                  {"काल सर्प दोष"}
-                </p>
-                <p style={{margin: "0 0 8px", fontSize: "15px"}}>
-                  <b>
-                    {"In your chart:"}
-                  </b>
-                  {" All seven planets sit on one side of the Rahu and Ketu axis."}
-                </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
-                  {"Its effect depends on the houses involved and on the strength of your other planets, so it needs a proper reading."}
-                </p>
-                <a href={"#ask"} style={{display: "inline-flex", marginTop: "14px", fontWeight: "700"}}>
-                  {"Get remedies in your report →"}
-                </a>
-              </div>
-              <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderTop: "4px solid #1F7A4C", borderRadius: "18px", padding: "22px"}}>
-                <p style={{margin: "0", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Sade Sati"}
-                  </span>
-                  <span style={{fontSize: "13px", fontWeight: "700", color: "#1F7A4C", background: "#EAF5EE", padding: "4px 12px", borderRadius: "999px"}}>
-                    {"Not running"}
-                  </span>
-                </p>
-                <p style={{margin: "2px 0 12px", fontFamily: "'Tiro Devanagari Hindi', serif", color: "#921A11"}}>
-                  {"साढ़े साती"}
-                </p>
-                <p style={{margin: "0 0 8px", fontSize: "15px"}}>
-                  <b>
-                    {"In your chart:"}
-                  </b>
-                  {" Saturn is transiting the 5th house from your Moon as of today."}
-                </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
-                  {"Sade Sati runs while Saturn passes the 12th, 1st and 2nd houses from your Moon. It is not affecting you now."}
-                </p>
-              </div>
+                                  {"Get remedies in your report →"}
+                                </a>
+                ) : null}
+                              </div>
+              ))}
             </div>
           </div>
           <div id={"dasha"} style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 24px"}}>
@@ -1089,177 +541,58 @@ KundliPage.prototype.render = function render() {
               <span style={{fontSize: "15px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "999px", padding: "8px 16px"}}>
                 {"Mahadasha: "}
                 <b>
-                  {"Venus"}
+                  {curM ? curM.lord : ""}
                 </b>
-                {" · Mar 2010 to Mar 2030"}
+                {curM ? " · " + curM.range : ""}
               </span>
               <span style={{fontSize: "15px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "999px", padding: "8px 16px"}}>
                 {"Antardasha: "}
                 <b>
-                  {"Mercury"}
+                  {curA ? curA.lord : ""}
                 </b>
-                {" · Mar 2026 to Jan 2029"}
+                {curA ? " · " + curA.short : ""}
               </span>
             </div>
             <div style={{display: "flex", border: "1px solid #E8DFD0", borderRadius: "14px", overflow: "hidden", marginBottom: "24px", overflowX: "auto"}}>
-              <div style={{flex: "7 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: "#FFFFFF", color: "#1E1830", borderRight: "1px solid #E8DFD0"}}>
-                <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
-                  {"Mercury"}
-                </p>
-                <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
-                  {"1996"}
-                </p>
-              </div>
-              <div style={{flex: "7 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: "#FFFFFF", color: "#1E1830", borderRight: "1px solid #E8DFD0"}}>
-                <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
-                  {"Ketu"}
-                </p>
-                <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
-                  {"2003"}
-                </p>
-              </div>
-              <div style={{flex: "20 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: "#6C1594", color: "#FFFFFF", borderRight: "1px solid #E8DFD0"}}>
-                <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
-                  {"Venus"}
-                </p>
-                <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
-                  {"2010"}
-                </p>
-              </div>
-              <div style={{flex: "6 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: "#FFFFFF", color: "#1E1830", borderRight: "1px solid #E8DFD0"}}>
-                <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
-                  {"Sun"}
-                </p>
-                <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
-                  {"2030"}
-                </p>
-              </div>
-              <div style={{flex: "10 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: "#FFFFFF", color: "#1E1830", borderRight: "1px solid #E8DFD0"}}>
-                <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
-                  {"Moon"}
-                </p>
-                <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
-                  {"2036"}
-                </p>
-              </div>
-              <div style={{flex: "7 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: "#FFFFFF", color: "#1E1830", borderRight: "1px solid #E8DFD0"}}>
-                <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
-                  {"Mars"}
-                </p>
-                <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
-                  {"2046"}
-                </p>
-              </div>
-              <div style={{flex: "18 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: "#FFFFFF", color: "#1E1830", borderRight: "1px solid #E8DFD0"}}>
-                <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
-                  {"Rahu"}
-                </p>
-                <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
-                  {"2053"}
-                </p>
-              </div>
-              <div style={{flex: "16 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: "#FFFFFF", color: "#1E1830", borderRight: "1px solid #E8DFD0"}}>
-                <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
-                  {"Jupiter"}
-                </p>
-                <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
-                  {"2071"}
-                </p>
-              </div>
-              <div style={{flex: "19 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: "#FFFFFF", color: "#1E1830", borderRight: "1px solid #E8DFD0"}}>
-                <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
-                  {"Saturn"}
-                </p>
-                <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
-                  {"2087"}
-                </p>
-              </div>
+              {(R ? R.dasha : []).map((m) => (
+                <div key={m.lord} style={{flex: m.years + " 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: m === curM ? "#6C1594" : "#FFFFFF", color: m === curM ? "#FFFFFF" : "#1E1830", borderRight: "1px solid #E8DFD0"}}>
+                  <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
+                    {m.lord}
+                  </p>
+                  <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
+                    {String(m.startYear)}
+                  </p>
+                </div>
+              ))}
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(340px, 100%), 1fr))", gap: "20px", alignItems: "start"}}>
               <div style={{border: "1px solid #E8DFD0", borderRadius: "16px", overflow: "hidden"}}>
                 <p style={{margin: "0", padding: "14px 16px", background: "#4A0A66", color: "#FFFFFF", fontWeight: "700"}}>
-                  {"Antardashas within Venus"}
+                  {"Antardashas within " + (curM ? curM.lord : "")}
                 </p>
-                <div style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", fontSize: "15px"}}>
-                  <span style={{fontWeight: "500"}}>
-                    {"Venus – Venus"}
-                  </span>
-                  <span style={{color: "#5C5470"}}>
-                    {"19 Mar 2010 to 18 Jul 2013"}
-                  </span>
-                </div>
-                <div style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", fontSize: "15px"}}>
-                  <span style={{fontWeight: "500"}}>
-                    {"Venus – Sun"}
-                  </span>
-                  <span style={{color: "#5C5470"}}>
-                    {"18 Jul 2013 to 18 Jul 2014"}
-                  </span>
-                </div>
-                <div style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", fontSize: "15px"}}>
-                  <span style={{fontWeight: "500"}}>
-                    {"Venus – Moon"}
-                  </span>
-                  <span style={{color: "#5C5470"}}>
-                    {"18 Jul 2014 to 18 Mar 2016"}
-                  </span>
-                </div>
-                <div style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", fontSize: "15px"}}>
-                  <span style={{fontWeight: "500"}}>
-                    {"Venus – Mars"}
-                  </span>
-                  <span style={{color: "#5C5470"}}>
-                    {"18 Mar 2016 to 18 May 2017"}
-                  </span>
-                </div>
-                <div style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", fontSize: "15px"}}>
-                  <span style={{fontWeight: "500"}}>
-                    {"Venus – Rahu"}
-                  </span>
-                  <span style={{color: "#5C5470"}}>
-                    {"18 May 2017 to 18 May 2020"}
-                  </span>
-                </div>
-                <div style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", fontSize: "15px"}}>
-                  <span style={{fontWeight: "500"}}>
-                    {"Venus – Jupiter"}
-                  </span>
-                  <span style={{color: "#5C5470"}}>
-                    {"18 May 2020 to 17 Jan 2023"}
-                  </span>
-                </div>
-                <div style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", fontSize: "15px"}}>
-                  <span style={{fontWeight: "500"}}>
-                    {"Venus – Saturn"}
-                  </span>
-                  <span style={{color: "#5C5470"}}>
-                    {"17 Jan 2023 to 19 Mar 2026"}
-                  </span>
-                </div>
-                <div style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: "#F3E8F7", fontSize: "15px"}}>
-                  <span style={{fontWeight: "700"}}>
-                    {"Venus – Mercury "}
+                {(curM ? curM.antar : []).map((a) => {
+                  const isNow = a === curA;
+                  return (
+                                    <div key={a.name} style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: isNow ? "#F3E8F7" : "#FFFFFF", fontSize: "15px"}}>
+                                      <span style={{fontWeight: isNow ? "700" : "500"}}>
+                                        {a.name + " "}
+                                        {isNow ? (
                     <span style={{marginLeft: "8px", fontSize: "12px", fontWeight: "700", color: "#FFFFFF", background: "#921A11", padding: "2px 8px", borderRadius: "999px"}}>
-                      {"Now"}
-                    </span>
-                  </span>
-                  <span style={{color: "#5C5470"}}>
-                    {"19 Mar 2026 to 17 Jan 2029"}
-                  </span>
-                </div>
-                <div style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: "#FFFFFF", fontSize: "15px"}}>
-                  <span style={{fontWeight: "500"}}>
-                    {"Venus – Ketu"}
-                  </span>
-                  <span style={{color: "#5C5470"}}>
-                    {"17 Jan 2029 to 19 Mar 2030"}
-                  </span>
-                </div>
+                                          {"Now"}
+                                        </span>
+                    ) : null}
+                                      </span>
+                                      <span style={{color: "#5C5470"}}>
+                                        {a.range}
+                                      </span>
+                                    </div>
+                  );
+                })}
               </div>
               <div style={{background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", borderRadius: "20px", padding: "26px", position: "relative", overflow: "hidden"}}>
                 <div className={"am-stars"} aria-hidden={"true"} />
                 <p style={{position: "relative", margin: "0 0 8px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
-                  {"What does Venus–Mercury mean for you?"}
+                  {"What does " + (curM && curA ? curM.lord + "–" + curA.lord : "this period") + " mean for you?"}
                 </p>
                 <p style={{position: "relative", margin: "0 0 18px", fontFamily: "'Marcellus', serif", fontSize: "24px", lineHeight: "1.3"}}>
                   {"Your report reads your next three years period by period, with dates and what to do in each."}
@@ -1284,64 +617,23 @@ KundliPage.prototype.render = function render() {
                 </p>
               </div>
               <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: "18px"}}>
-                <div style={{background: "#FBF7F0", border: "1px solid #EFE6D8", borderRadius: "18px", padding: "22px 24px"}}>
-                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Your basic nature"}
-                  </p>
-                  <p style={{margin: "0 0 12px", paddingLeft: "12px", borderLeft: "3px solid #921A11", fontSize: "14px", fontWeight: "700", color: "#921A11"}}>
-                    {"Based on your weekday (Wednesday)"}
-                  </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#3B3350"}}>
-                    {"Born on a Wednesday, the day of Mercury, you tend to be quick-witted, curious and good with words. You learn fast and enjoy conversation, ideas and anything that keeps your mind busy."}
-                  </p>
-                </div>
-                <div style={{background: "#FBF7F0", border: "1px solid #EFE6D8", borderRadius: "18px", padding: "22px 24px"}}>
-                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Your character"}
-                  </p>
-                  <p style={{margin: "0 0 12px", paddingLeft: "12px", borderLeft: "3px solid #921A11", fontSize: "14px", fontWeight: "700", color: "#921A11"}}>
-                    {"Based on your nakshatra (Jyeshtha)"}
-                  </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#3B3350"}}>
-                    {"Jyeshtha, the eldest star, gives a protective and responsible nature. You often take charge in difficult moments and people rely on you, though you may keep your own worries to yourself."}
-                  </p>
-                </div>
-                <div style={{background: "#FBF7F0", border: "1px solid #EFE6D8", borderRadius: "18px", padding: "22px 24px"}}>
-                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Your values"}
-                  </p>
-                  <p style={{margin: "0 0 12px", paddingLeft: "12px", borderLeft: "3px solid #921A11", fontSize: "14px", fontWeight: "700", color: "#921A11"}}>
-                    {"Based on your tithi (Krishna Dashami)"}
-                  </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#3B3350"}}>
-                    {"Dashami is a tithi of steady effort and duty. You like to finish what you begin, and you respect people who keep their word."}
-                  </p>
-                </div>
-                <div style={{background: "#FBF7F0", border: "1px solid #EFE6D8", borderRadius: "18px", padding: "22px 24px"}}>
-                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Your habits"}
-                  </p>
-                  <p style={{margin: "0 0 12px", paddingLeft: "12px", borderLeft: "3px solid #921A11", fontSize: "14px", fontWeight: "700", color: "#921A11"}}>
-                    {"Based on your karana (Vanija)"}
-                  </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#3B3350"}}>
-                    {"Vanija is the karana of trade. It brings a practical, business-minded streak and a habit of weighing the value of things before you commit."}
-                  </p>
-                </div>
-                <div style={{background: "#FBF7F0", border: "1px solid #EFE6D8", borderRadius: "18px", padding: "22px 24px"}}>
-                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Your interests"}
-                  </p>
-                  <p style={{margin: "0 0 12px", paddingLeft: "12px", borderLeft: "3px solid #921A11", fontSize: "14px", fontWeight: "700", color: "#921A11"}}>
-                    {"Based on your yoga (Harshana)"}
-                  </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#3B3350"}}>
-                    {"Harshana means joy. It points to a cheerful, optimistic temperament and a knack for lifting the mood of the people around you."}
-                  </p>
-                </div>
+                {(R ? R.nature : []).map((nt) => (
+                  <div key={nt.title} style={{background: "#FBF7F0", border: "1px solid #EFE6D8", borderRadius: "18px", padding: "22px 24px"}}>
+                    <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                      {nt.title}
+                    </p>
+                    <p style={{margin: "0 0 12px", paddingLeft: "12px", borderLeft: "3px solid #921A11", fontSize: "14px", fontWeight: "700", color: "#921A11"}}>
+                      {nt.basis}
+                    </p>
+                    <p style={{margin: "0", fontSize: "15px", color: "#3B3350"}}>
+                      {nt.text}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
+          </>) : null}
           <div id={"ask"} style={{position: "relative", overflow: "hidden", background: "radial-gradient(ellipse at 100% 0%, rgba(108,21,148,0.08), rgba(108,21,148,0) 55%), #F4EDE1"}}>
             <div style={{maxWidth: "1200px", margin: "0 auto", padding: "80px 24px 88px"}}>
               <div className={"am-center-mobile"} style={{marginBottom: "36px"}}>

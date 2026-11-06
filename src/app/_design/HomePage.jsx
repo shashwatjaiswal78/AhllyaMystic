@@ -3,6 +3,7 @@
 // Generated from the design file Main.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
 import { sx, hole } from "./sx";
+import KundliForm from "./KundliForm";
 import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class HomePage extends React.Component {
@@ -741,118 +742,12 @@ HomePage.prototype.render = function render() {
                 </div>
                 {v.isKundli ? (
                   <>
-                    <form style={{display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "14px"}}>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Full name"}
-                        <input type={"text"} placeholder={"First and last name"} autoComplete={"name"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Gender"}
-                        <select style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 40px 0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0 url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236C1594' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\") no-repeat right 14px center", WebkitAppearance: "none", appearance: "none", color: "#1E1830", minWidth: "0", cursor: "pointer"}} defaultValue="Select">
-                          <option value={""} disabled>
-                            {"Select"}
-                          </option>
-                          <option>
-                            {"Female"}
-                          </option>
-                          <option>
-                            {"Male"}
-                          </option>
-                          <option>
-                            {"Other"}
-                          </option>
-                        </select>
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Actual date of birth"}
-                        <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Time of birth"}
-                        <input type={"text"} placeholder={"HH : MM : SS"} inputMode={"numeric"} autoComplete={"off"} onInput={maskTime} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Place of birth"}
-                        <input type={"text"} placeholder={"City, State"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        <span>
-                          {"WhatsApp number "}
-                          <span style={{fontWeight: "400", color: "#736B8A"}}>
-                            {"(optional)"}
-                          </span>
-                        </span>
-                        <input type={"tel"} placeholder={"To get your Kundli there"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                      </label>
-                      <button type={"button"} style={{gridColumn: "1 / -1", font: "inherit", fontWeight: "700", minHeight: "52px", border: "0", borderRadius: "999px", background: "#FCCE07", color: "#921A11", cursor: "pointer"}}>
-                        {"Generate my free Kundli"}
-                      </button>
-                      <p style={{gridColumn: "1 / -1", margin: "0", fontSize: "13px", color: "#5C5470", textAlign: "center"}}>
-                        {"Want the full picture? See the "}
-                        <a href={"/report/kundli"}>
-                          {"Personalised Kundli Report"}
-                        </a>
-                        {"."}
-                      </p>
-                    </form>
+                    <KundliForm />
                   </>
                 ) : null}
                 {v.isKp ? (
                   <>
-                    <form style={{display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "14px"}}>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Full name"}
-                        <input type={"text"} placeholder={"First and last name"} autoComplete={"name"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Gender"}
-                        <select style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 40px 0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0 url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236C1594' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\") no-repeat right 14px center", WebkitAppearance: "none", appearance: "none", color: "#1E1830", minWidth: "0", cursor: "pointer"}} defaultValue="Select">
-                          <option value={""} disabled>
-                            {"Select"}
-                          </option>
-                          <option>
-                            {"Female"}
-                          </option>
-                          <option>
-                            {"Male"}
-                          </option>
-                          <option>
-                            {"Other"}
-                          </option>
-                        </select>
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Actual date of birth"}
-                        <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Exact time of birth"}
-                        <input type={"text"} placeholder={"HH : MM : SS"} inputMode={"numeric"} autoComplete={"off"} onInput={maskTime} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Place of birth"}
-                        <input type={"text"} placeholder={"City, State"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        <span>
-                          {"WhatsApp number "}
-                          <span style={{fontWeight: "400", color: "#736B8A"}}>
-                            {"(optional)"}
-                          </span>
-                        </span>
-                        <input type={"tel"} placeholder={"To get your KP Kundli there"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                      </label>
-                      <button type={"button"} style={{gridColumn: "1 / -1", font: "inherit", fontWeight: "700", minHeight: "52px", border: "0", borderRadius: "999px", background: "#FCCE07", color: "#921A11", cursor: "pointer"}}>
-                        {"Generate my free KP Kundli"}
-                      </button>
-                      <p style={{gridColumn: "1 / -1", margin: "0", fontSize: "13px", color: "#5C5470", textAlign: "center"}}>
-                        {"Want precise timing for a decision? "}
-                        <a href={"/consult"}>
-                          {"Book a consultation"}
-                        </a>
-                        {"."}
-                      </p>
-                    </form>
+                    <KundliForm kind="kp" />
                   </>
                 ) : null}
                 {v.isName ? (
@@ -2210,7 +2105,11 @@ HomePage.prototype.render = function render() {
 };
 
 HomePage.prototype.componentDidMount = function componentDidMount() {
-  this.setState({ __now: Date.now() });
+  // "/?tool=kp#free" (the Edit details link on the result pages) opens the matching tab of the free tools.
+  var q = readUrlState(['tool']);
+  var next = { __now: Date.now() };
+  if (['kundli', 'kp', 'name', 'mobile'].indexOf(q.tool) >= 0) next.tool = q.tool;
+  this.setState(next);
 };
 
 export default HomePage;
