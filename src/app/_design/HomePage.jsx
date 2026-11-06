@@ -4,6 +4,8 @@
 import React from "react";
 import { sx, hole } from "./sx";
 import KundliForm from "./KundliForm";
+import MobileForm from "./MobileForm";
+import NameForm from "./NameForm";
 import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class HomePage extends React.Component {
@@ -752,109 +754,12 @@ HomePage.prototype.render = function render() {
                 ) : null}
                 {v.isName ? (
                   <>
-                    <form style={{display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "14px"}}>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Full name"}
-                        <input type={"text"} placeholder={"First and last name"} autoComplete={"name"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Gender"}
-                        <select style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 40px 0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0 url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236C1594' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\") no-repeat right 14px center", WebkitAppearance: "none", appearance: "none", color: "#1E1830", minWidth: "0", cursor: "pointer"}} defaultValue="Select">
-                          <option value={""} disabled>
-                            {"Select"}
-                          </option>
-                          <option>
-                            {"Female"}
-                          </option>
-                          <option>
-                            {"Male"}
-                          </option>
-                          <option>
-                            {"Other"}
-                          </option>
-                        </select>
-                      </label>
-                      <p style={{gridColumn: "1 / -1", margin: "-6px 0 0", fontSize: "12px", color: "#736B8A"}}>
-                        {"Enter the spelling exactly as written in your official documents, such as your Aadhaar or passport."}
-                      </p>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Actual date of birth"}
-                        <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        <span>
-                          {"WhatsApp number "}
-                          <span style={{fontWeight: "400", color: "#736B8A"}}>
-                            {"(optional)"}
-                          </span>
-                        </span>
-                        <input type={"tel"} placeholder={"To get your result there"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
-                      </label>
-                      <button type={"button"} style={{gridColumn: "1 / -1", font: "inherit", fontWeight: "700", minHeight: "52px", border: "0", borderRadius: "999px", background: "#FCCE07", color: "#921A11", cursor: "pointer"}}>
-                        {"Check my name number"}
-                      </button>
-                      <p style={{gridColumn: "1 / -1", margin: "0", fontSize: "13px", color: "#5C5470", textAlign: "center"}}>
-                        {"Want a name that truly supports you? See the "}
-                        <a href={"/report/name-numerology"}>
-                          {"Name Numerology Report"}
-                        </a>
-                        {"."}
-                      </p>
-                    </form>
+                    <NameForm />
                   </>
                 ) : null}
                 {v.isMobile ? (
                   <>
-                    <form style={{display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "14px"}}>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Full name"}
-                        <input type={"text"} placeholder={"First and last name"} autoComplete={"name"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Gender"}
-                        <select style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 40px 0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0 url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236C1594' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\") no-repeat right 14px center", WebkitAppearance: "none", appearance: "none", color: "#1E1830", minWidth: "0", cursor: "pointer"}} defaultValue="Select">
-                          <option value={""} disabled>
-                            {"Select"}
-                          </option>
-                          <option>
-                            {"Female"}
-                          </option>
-                          <option>
-                            {"Male"}
-                          </option>
-                          <option>
-                            {"Other"}
-                          </option>
-                        </select>
-                      </label>
-                      <label style={{gridColumn: "1 / -1", display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Mobile number to check"}
-                        <input type={"tel"} placeholder={"10-digit mobile number"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        {"Actual date of birth"}
-                        <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
-                      </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                        <span>
-                          {"WhatsApp number "}
-                          <span style={{fontWeight: "400", color: "#736B8A"}}>
-                            {"(optional)"}
-                          </span>
-                        </span>
-                        <input type={"tel"} placeholder={"To get your result there"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830"}} />
-                      </label>
-                      <button type={"button"} style={{gridColumn: "1 / -1", font: "inherit", fontWeight: "700", minHeight: "52px", border: "0", borderRadius: "999px", background: "#FCCE07", color: "#921A11", cursor: "pointer"}}>
-                        {"Check my mobile number"}
-                      </button>
-                      <p style={{gridColumn: "1 / -1", margin: "0", fontSize: "13px", color: "#5C5470", textAlign: "center"}}>
-                        {"Want lucky number combinations for you? See the "}
-                        <a href={"/report/mobile-number"}>
-                          {"Mobile Number Report"}
-                        </a>
-                        {"."}
-                      </p>
-                    </form>
+                    <MobileForm />
                   </>
                 ) : null}
                 <p style={{margin: "16px 0 0", padding: "10px 14px", borderRadius: "12px", background: "#F3E8F7", fontSize: "13px", lineHeight: "1.5", color: "#2E003E", textAlign: "center"}}>
