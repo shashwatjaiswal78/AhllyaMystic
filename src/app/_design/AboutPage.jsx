@@ -709,6 +709,58 @@ AboutPage.prototype.render = function render() {
               </div>
               <div style={{display: "grid", gap: "10px", alignContent: "start"}}>
                 <p style={{margin: "0 0 4px", fontWeight: "700", color: "#FFFFFF"}}>
+                  {"Reports"}
+                </p>
+                <a href={"/report/kundli"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Kundli report"}
+                </a>
+                <a href={"/report/varshphal"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Varshphal 2027 report"}
+                </a>
+                <a href={"/report/milan"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Kundli Milan report"}
+                </a>
+                <a href={"/report/lal-kitab"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Lal Kitab report"}
+                </a>
+                <a href={"/report/name-numerology"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Name numerology report"}
+                </a>
+                <a href={"/report/mobile-number"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Mobile number report"}
+                </a>
+              </div>
+              <div style={{display: "grid", gap: "10px", alignContent: "start"}}>
+                <p style={{margin: "0 0 4px", fontWeight: "700", color: "#FFFFFF"}}>
+                  {"Guides"}
+                </p>
+                <a href={"/blog/sade-sati-what-it-really-means"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"What Sade Sati really means"}
+                </a>
+                <a href={"/blog/how-to-read-your-kundli-basics"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"How to read your Kundli"}
+                </a>
+                <a href={"/blog/kp-astrology-vs-vedic-astrology"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"KP vs Vedic astrology"}
+                </a>
+                <a href={"/blog/should-you-change-your-name-spelling"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Should you change your name spelling?"}
+                </a>
+                <a href={"/blog/mobile-number-numerology-how-to-choose"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Choosing a mobile number"}
+                </a>
+                <a href={"/blog/what-is-panchang-five-limbs"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"The five limbs of Panchang"}
+                </a>
+                <a href={"/blog/how-to-use-choghadiya-daily"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Using Choghadiya daily"}
+                </a>
+                <a href={"/blog/simple-vastu-fixes-for-your-home"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Simple Vastu fixes"}
+                </a>
+              </div>
+              <div style={{display: "grid", gap: "10px", alignContent: "start"}}>
+                <p style={{margin: "0 0 4px", fontWeight: "700", color: "#FFFFFF"}}>
                   {"Contact"}
                 </p>
                 <a href={"https://wa.me/919129237566"} style={{color: "#EADFF2", textDecoration: "none"}}>
