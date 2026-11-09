@@ -81,14 +81,17 @@ class HoroscopePage extends React.Component {
     var rashis = this.props.data.signs.map((s, i) => ({ en: s.en, hi: s.hi, img: s.img, sel: i === si, notSel: i !== si, pick: () => this.selectSign(i) }));
     var tab = (key, opts) => opts.map((o) => ({ label: o[1], sel: this.state[key] === o[0], notSel: this.state[key] !== o[0], pick: () => { var x = {}; x[key] = o[0]; this.setState(x); } }));
     var C = 2 * Math.PI * 52;
+    var pageTitle = !daily ? (hi ? sg.hi + ' राशिफल ' + VIEW_LABEL[this.state.day][0] : sg.en + ' ' + (this.state.day === 'yearly' ? 'Yearly Horoscope' : /^\d+$/.test(this.state.day) ? 'Horoscope ' + this.state.day : VIEW_LABEL[this.state.day][1] + ' Horoscope')) : hi ? sg.hi + ' राशिफल ' + (this.state.day === 'today' ? 'आज' : 'कल') : sg.en + ' Horoscope ' + (this.state.day === 'today' ? 'Today' : 'Tomorrow');
     return {
       menuOpen: !!this.state.menuOpen, menuExpanded: this.state.menuOpen ? 'true' : 'false', openMenu: () => this.setState({ menuOpen: true }), closeMenu: () => this.setState({ menuOpen: false }),
+      heroTitle: this.state.picked ? pageTitle : 'Vedic Horoscope: Daily Rashifal Insights',
       eyebrow: daily ? L.eyebrow : (hi ? 'राशिफल' : 'Horoscope'),
       signSlug: this.state.picked ? sg.en.toLowerCase() : undefined,
       L: L, langCode: this.state.lang, rashis: rashis, cur: sg,
       dayTabs: [['today', L.today], ['tomorrow', L.tomorrow], ['weekly', L.weekly], ['monthly', L.monthly], ['yearly', L.yearly], ['2027', '2027']].map((o) => ({ label: o[1], sel: this.state.day === o[0], notSel: this.state.day !== o[0], pick: () => this.selectView(o[0]) })),
       isDaily: daily, periodData: pdata, periodLoading: !daily && this.state.loadingKey === pkey, periodFailed: !daily && this.state.failedKey === pkey, curSign: { en: sg.en, hi: sg.hi, img: sg.img }, langTabs: tab('lang', [['en', 'English'], ['hi', 'हिंदी']]),
-      title: !daily ? (hi ? sg.hi + ' राशिफल ' + VIEW_LABEL[this.state.day][0] : sg.en + ' ' + (this.state.day === 'yearly' ? 'Yearly Horoscope' : /^\d+$/.test(this.state.day) ? 'Horoscope ' + this.state.day : VIEW_LABEL[this.state.day][1] + ' Horoscope')) : hi ? sg.hi + ' राशिफल ' + (this.state.day === 'today' ? 'आज' : 'कल') : sg.en + ' Horoscope ' + (this.state.day === 'today' ? 'Today' : 'Tomorrow'),
+      title: pageTitle,
+      sectionTitle: sg.en === undefined ? '' : (hi ? sg.hi : sg.en) + ' · ' + (daily ? (this.state.day === 'today' ? L.today : L.tomorrow) : VIEW_LABEL[this.state.day][0]),
       titleShort: hi ? sg.hi : sg.en,
       dateLine: !daily ? (pdata ? pdata.range : '') : hi ? dd.dateHi : dd.dateEn,
       signName: hi ? sg.hi : sg.en, signSub: hi ? 'स्वामी ' + sg.lordHi + ' · ' + sg.elHi + ' तत्व' : sg.hi + ' · Ruled by ' + sg.lord,
@@ -258,81 +261,56 @@ HoroscopePage.prototype.render = function render() {
             </div>
           </>
         ) : null}
-        <div lang={v.langCode} style={{position: "relative", overflow: "hidden", background: "radial-gradient(ellipse at 100% 0%, rgba(108,21,148,0.10), rgba(108,21,148,0) 50%), radial-gradient(ellipse at 0% 100%, rgba(146,26,17,0.05), rgba(146,26,17,0) 45%), #FBF7F0"}}>
-          <div style={{maxWidth: "1200px", margin: "0 auto", padding: "22px 24px 40px", position: "relative"}}>
-            <nav aria-label={"Breadcrumb"} style={{fontSize: "14px", color: "#5C5470", marginBottom: "28px"}}>
-              <a href={"/"} style={{color: "#5C5470", textDecoration: "none"}}>
+        <section aria-label={"Horoscope"} style={{position: "relative", overflow: "hidden", color: "#FFFFFF", background: "linear-gradient(180deg, #1B0026 0%, #2E003E 40%, #5A0F7C 100%)"}}>
+          <div className={"am-stars"} aria-hidden={"true"} />
+          <div className={"am-stars2"} aria-hidden={"true"} style={{opacity: "0.6"}} />
+          <img className={"am-spin-zodiac"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "50%", top: "50%", width: "760px", height: "760px", marginLeft: "-380px", marginTop: "-300px", opacity: "0.22", pointerEvents: "none"}} />
+          <span className={"am-shoot"} aria-hidden={"true"} style={{top: "20%", left: "62%", animationDelay: "2s"}} />
+          <span className={"am-shoot"} aria-hidden={"true"} style={{top: "8%", left: "30%", animationDelay: "7s"}} />
+          <div style={{position: "relative", maxWidth: "1200px", margin: "0 auto", padding: "22px 24px 72px"}}>
+            <nav aria-label={"Breadcrumb"} style={{fontSize: "14px", color: "#CDB8DA", marginBottom: "0"}}>
+              <a href={"/"} style={{color: "#CDB8DA", textDecoration: "none"}}>
                 {hole(v.L?.home)}
               </a>
               <span aria-hidden={"true"} style={{margin: "0 8px"}}>
                 {"/"}
               </span>
-              <a href={"/horoscope"} style={{color: "#5C5470", textDecoration: "none"}}>
+              <a href={"/horoscope"} style={{color: "#CDB8DA", textDecoration: "none"}}>
                 {hole(v.L?.horoscope)}
               </a>
+              {v.signSlug ? (
+              <>
               <span aria-hidden={"true"} style={{margin: "0 8px"}}>
                 {"/"}
               </span>
-              <span style={{color: "#1E1830", fontWeight: "600"}}>
+              <span style={{color: "#FFFFFF", fontWeight: "600"}}>
                 {hole(v.titleShort)}
               </span>
+              </>
+              ) : null}
             </nav>
-            <div style={{display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: "18px", marginBottom: "26px"}}>
-              <div style={{minWidth: "0"}}>
-                <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
-                  {hole(v.eyebrow)}
-                </p>
-                <h1 style={{margin: "0 0 8px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(34px, 4.2vw, 52px)", lineHeight: "1.1"}}>
-                  {hole(v.title)}
-                </h1>
-                <p style={{margin: "0", fontSize: "16px", color: "#5C5470"}}>
-                  {hole(v.dateLine)}
-                </p>
-              </div>
-              <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}}>
-                <div role={"tablist"} aria-label={"Day"} style={{display: "inline-flex", flexWrap: "wrap", gap: "4px", background: "#F3EDE3", padding: "4px", borderRadius: "24px"}}>
-                  {(v.dayTabs || []).map((t, $index) => (
-                    <React.Fragment key={$index}>
-                      {t?.sel ? (
-                        <>
-                          <button type={"button"} role={"tab"} aria-selected={"true"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "#FFFFFF", color: "#2E003E", font: "inherit", fontSize: "14px", fontWeight: "700", boxShadow: "0 6px 14px -10px rgba(46,0,62,.55)", cursor: "pointer"}}>
-                            {hole(t?.label)}
-                          </button>
-                        </>
-                      ) : null}
-                      {t?.notSel ? (
-                        <>
-                          <button type={"button"} role={"tab"} aria-selected={"false"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "transparent", color: "#5C5470", font: "inherit", fontSize: "14px", fontWeight: "600", cursor: "pointer"}}>
-                            {hole(t?.label)}
-                          </button>
-                        </>
-                      ) : null}
-                    </React.Fragment>
-                  ))}
-                </div>
-                <div role={"tablist"} aria-label={"Language"} style={{display: "inline-flex", gap: "4px", background: "#F3EDE3", padding: "4px", borderRadius: "999px"}}>
-                  {(v.langTabs || []).map((t, $index) => (
-                    <React.Fragment key={$index}>
-                      {t?.sel ? (
-                        <>
-                          <button type={"button"} role={"tab"} aria-selected={"true"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "#FFFFFF", color: "#2E003E", font: "inherit", fontSize: "14px", fontWeight: "700", boxShadow: "0 6px 14px -10px rgba(46,0,62,.55)", cursor: "pointer"}}>
-                            {hole(t?.label)}
-                          </button>
-                        </>
-                      ) : null}
-                      {t?.notSel ? (
-                        <>
-                          <button type={"button"} role={"tab"} aria-selected={"false"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "transparent", color: "#5C5470", font: "inherit", fontSize: "14px", fontWeight: "600", cursor: "pointer"}}>
-                            {hole(t?.label)}
-                          </button>
-                        </>
-                      ) : null}
-                    </React.Fragment>
-                  ))}
-                </div>
+            <div style={{textAlign: "center", maxWidth: "780px", margin: "36px auto 0"}}>
+              <h1 style={{margin: "0 0 14px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(34px, 5vw, 58px)", lineHeight: "1.1", color: "#FFFFFF"}}>
+                {hole(v.heroTitle)}
+              </h1>
+              <p style={{margin: "0 auto 28px", maxWidth: "640px", fontSize: "17px", color: "#EADFF2"}}>
+                {"Start your day with authentic Vedic astrology: daily predictions, lucky numbers, auspicious timings and spiritual guidance."}
+              </p>
+              <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px"}}>
+                <a href={"#rashi"} style={{display: "inline-flex", alignItems: "center", minHeight: "52px", padding: "0 26px", borderRadius: "999px", background: "#FCCE07", color: "#2E003E", fontWeight: "700", textDecoration: "none"}}>
+                  {"Explore Rashifal →"}
+                </a>
+                <a href={"https://wa.me/919129237566?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20my%20horoscope."} style={{display: "inline-flex", alignItems: "center", minHeight: "52px", padding: "0 26px", borderRadius: "999px", border: "1.5px solid rgba(255,255,255,0.7)", color: "#FFFFFF", fontWeight: "700", textDecoration: "none"}}>
+                  {"Get on WhatsApp"}
+                </a>
               </div>
             </div>
+          </div>
+        </section>
+        <div lang={v.langCode} style={{background: "radial-gradient(ellipse at 100% 0%, rgba(108,21,148,0.10), rgba(108,21,148,0) 50%), radial-gradient(ellipse at 0% 100%, rgba(146,26,17,0.05), rgba(146,26,17,0) 45%), #FBF7F0"}}>
+          <div style={{maxWidth: "1200px", margin: "0 auto", padding: "36px 24px 8px", position: "relative"}}>
             <MoonForm onFound={this.selectSign} margin={"0 auto 28px"} />
+            <div id={"rashi"} style={{scrollMarginTop: "90px"}}>
             <div className={"am-signs"} role={"tablist"} aria-label={"Choose your rashi"} style={{display: "flex", gap: "6px", overflowX: "auto", padding: "4px 2px 16px", margin: "0 auto", scrollSnapType: "x mandatory"}}>
               {(v.rashis || []).map((r, $index) => (
                 <React.Fragment key={$index}>
@@ -380,6 +358,63 @@ HoroscopePage.prototype.render = function render() {
                   ) : null}
                 </React.Fragment>
               ))}
+            </div>
+            </div>
+            <div style={{display: "flex", justifyContent: "center", margin: "4px 0 0"}}>
+                <div role={"tablist"} aria-label={"Day"} style={{display: "inline-flex", flexWrap: "wrap", gap: "4px", background: "#F3EDE3", padding: "4px", borderRadius: "24px"}}>
+                  {(v.dayTabs || []).map((t, $index) => (
+                    <React.Fragment key={$index}>
+                      {t?.sel ? (
+                        <>
+                          <button type={"button"} role={"tab"} aria-selected={"true"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "#FFFFFF", color: "#2E003E", font: "inherit", fontSize: "14px", fontWeight: "700", boxShadow: "0 6px 14px -10px rgba(46,0,62,.55)", cursor: "pointer"}}>
+                            {hole(t?.label)}
+                          </button>
+                        </>
+                      ) : null}
+                      {t?.notSel ? (
+                        <>
+                          <button type={"button"} role={"tab"} aria-selected={"false"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "transparent", color: "#5C5470", font: "inherit", fontSize: "14px", fontWeight: "600", cursor: "pointer"}}>
+                            {hole(t?.label)}
+                          </button>
+                        </>
+                      ) : null}
+                    </React.Fragment>
+                  ))}
+                </div>
+            </div>
+          </div>
+        </div>
+        <div lang={v.langCode} style={{maxWidth: "1200px", margin: "0 auto", padding: "28px 24px 0"}}>
+          <div style={{display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: "14px 18px", marginBottom: "18px"}}>
+            <div style={{minWidth: "0"}}>
+              <h2 style={{margin: "0 0 4px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(26px, 3vw, 36px)", lineHeight: "1.15"}}>
+                {hole(v.sectionTitle)}
+              </h2>
+              <p style={{margin: "0", fontSize: "16px", color: "#5C5470"}}>
+                {hole(v.dateLine)}
+              </p>
+            </div>
+            <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}}>
+                <div role={"tablist"} aria-label={"Language"} style={{display: "inline-flex", gap: "4px", background: "#F3EDE3", padding: "4px", borderRadius: "999px"}}>
+                  {(v.langTabs || []).map((t, $index) => (
+                    <React.Fragment key={$index}>
+                      {t?.sel ? (
+                        <>
+                          <button type={"button"} role={"tab"} aria-selected={"true"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "#FFFFFF", color: "#2E003E", font: "inherit", fontSize: "14px", fontWeight: "700", boxShadow: "0 6px 14px -10px rgba(46,0,62,.55)", cursor: "pointer"}}>
+                            {hole(t?.label)}
+                          </button>
+                        </>
+                      ) : null}
+                      {t?.notSel ? (
+                        <>
+                          <button type={"button"} role={"tab"} aria-selected={"false"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "transparent", color: "#5C5470", font: "inherit", fontSize: "14px", fontWeight: "600", cursor: "pointer"}}>
+                            {hole(t?.label)}
+                          </button>
+                        </>
+                      ) : null}
+                    </React.Fragment>
+                  ))}
+                </div>
             </div>
           </div>
         </div>
