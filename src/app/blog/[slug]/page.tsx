@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import BlogPage from "@/app/_design/BlogPage";
-import { BlogArticle } from "@/app/_design/BlogContent";
+import BlogArticleView from "@/app/_design/BlogArticleView";
+import { ARTICLES_HI } from "@/lib/blog-hi";
 import { ARTICLES, bySlug } from "@/lib/blog";
 import { SITE_URL } from "@/lib/site";
 
@@ -43,7 +44,7 @@ async function Article({ params }: { params: Promise<{ slug: string }> }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <BlogPage><BlogArticle article={a} /></BlogPage>
+      <BlogPage><BlogArticleView article={a} hi={ARTICLES_HI[a.slug]} more={ARTICLES.filter((x) => x.slug !== a.slug).map((x) => ({ slug: x.slug, title: x.title, titleHi: ARTICLES_HI[x.slug].title }))} /></BlogPage>
     </>
   );
 }

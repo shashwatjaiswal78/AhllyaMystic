@@ -72,9 +72,17 @@ export const ArticleBanner = ({ slug }) => {
 const box = { margin: "30px 0", padding: "22px 20px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px" };
 const cap = { margin: "14px 0 0", fontSize: "13px", color: "#736B8A", textAlign: "center", lineHeight: 1.5 };
 
-export function Figure({ kind }) {
+const FIG_HI = {
+  phases: { items: [["पहला चरण", "शनि आपकी चंद्र राशि से पहले वाली राशि में", "दबाव बढ़ता है"], ["दूसरा चरण", "शनि आपकी चंद्र राशि पर", "सबसे व्यक्तिगत दौर"], ["तीसरा चरण", "शनि आपकी चंद्र राशि के बाद वाली राशि में", "नतीजे स्थिर होते हैं"]], dur: "लगभग 2½ साल", cap: "साढ़े साती: तीन राशियाँ, कुल मिलाकर लगभग साढ़े सात साल।" },
+  loshu: { cap: "लो शू ग्रिड। आपकी जन्म तिथि कुछ खाने भरती है; जो अंक गायब है, उसे नाम पूरा करने में मदद कर सकता है।" },
+  directions: { labels: ["वायु", "जल", "स्पष्टता", "आकाश", "केंद्र", "प्रकाश", "स्थिरता", "विश्राम", "अग्नि"], cap: "घर की वास्तु ग्रिड। उत्तर-पूर्व (पीला) को हल्का और खुला रखें।" },
+};
+
+export function Figure({ kind, lang = "en" }) {
+  const hi = lang === "hi";
   if (kind === "phases") {
-    const ph = [["1", "Saturn in the sign before your Moon sign", "Pressure builds"], ["2", "Saturn over your Moon sign", "The personal core"], ["3", "Saturn in the sign after your Moon sign", "Results settle"]];
+    const ph0 = [["1", "Saturn in the sign before your Moon sign", "Pressure builds"], ["2", "Saturn over your Moon sign", "The personal core"], ["3", "Saturn in the sign after your Moon sign", "Results settle"]];
+    const ph = hi ? FIG_HI.phases.items.map(([x, a, b], i) => [String(i + 1), a, b]) : ph0;
     return (
       <figure style={{ ...box, marginInline: 0 }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "12px" }}>
@@ -83,11 +91,11 @@ export function Figure({ kind }) {
               <div style={{ fontFamily: serif, fontSize: "30px", color: i === 1 ? GOLD : "#921A11" }}>{n}</div>
               <div style={{ fontSize: "13.5px", fontWeight: 700, margin: "4px 0" }}>{b}</div>
               <div style={{ fontSize: "12.5px", opacity: 0.85, lineHeight: 1.45 }}>{a}</div>
-              <div style={{ fontSize: "12px", marginTop: "8px", opacity: 0.7 }}>about 2½ years</div>
+              <div style={{ fontSize: "12px", marginTop: "8px", opacity: 0.7 }}>{hi ? FIG_HI.phases.dur : "about 2½ years"}</div>
             </div>
           ))}
         </div>
-        <figcaption style={cap}>Sade Sati: three signs, about seven and a half years in total.</figcaption>
+        <figcaption style={cap}>{hi ? FIG_HI.phases.cap : "Sade Sati: three signs, about seven and a half years in total."}</figcaption>
       </figure>
     );
   }
@@ -100,7 +108,7 @@ export function Figure({ kind }) {
             <div key={n} style={{ height: "72px", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: serif, fontSize: "28px", borderRadius: "12px", background: n === 5 ? "#2E003E" : "#F6EEF9", color: n === 5 ? GOLD : "#2E003E" }}>{n}</div>
           ))}
         </div>
-        <figcaption style={cap}>The Lo Shu grid. Your birth date fills some squares; a missing number is what a name can help supply.</figcaption>
+        <figcaption style={cap}>{hi ? FIG_HI.loshu.cap : "The Lo Shu grid. Your birth date fills some squares; a missing number is what a name can help supply."}</figcaption>
       </figure>
     );
   }
@@ -112,11 +120,11 @@ export function Figure({ kind }) {
           {d.map(([a, b], i) => (
             <div key={i} style={{ height: "74px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", borderRadius: "12px", background: a === "NE" ? GOLD : "#F6EEF9", color: "#2E003E" }}>
               <span style={{ fontFamily: serif, fontSize: "20px" }}>{a || "·"}</span>
-              <span style={{ fontSize: "11.5px", opacity: 0.8 }}>{b}</span>
+              <span style={{ fontSize: "11.5px", opacity: 0.8 }}>{hi ? FIG_HI.directions.labels[i] : b}</span>
             </div>
           ))}
         </div>
-        <figcaption style={cap}>The Vastu grid of a home, with the north-east (highlighted) kept light and open.</figcaption>
+        <figcaption style={cap}>{hi ? FIG_HI.directions.cap : "The Vastu grid of a home, with the north-east (highlighted) kept light and open."}</figcaption>
       </figure>
     );
   }
