@@ -807,6 +807,9 @@ HoroscopePage.prototype.render = function render() {
                 <a href={"/panchang"} style={{color: "#EADFF2", textDecoration: "none"}}>
                   {"Panchang"}
                 </a>
+                <a href={"/panchang"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Daily Choghadiya"}
+                </a>
                 <a href={"/kp-kundli"} style={{color: "#EADFF2", textDecoration: "none"}}>
                   {"Free KP Kundli"}
                 </a>
