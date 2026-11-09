@@ -4,6 +4,7 @@
 import React from "react";
 import { sx, hole } from "./sx";
 import PeriodPanel from "./PeriodPanel";
+import MoonForm from "./MoonForm";
 import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 // DATA is computed fresh each day by src/lib/horoscope/engine.ts and passed in as the `data` prop.
@@ -76,7 +77,7 @@ class HoroscopePage extends React.Component {
     var daily = this.isDaily(this.state.day);
     var dd = this.props.data.days[daily ? this.state.day : 'today'], d = dd.signs[si], sg = this.props.data.signs[si];
     var pkey = this.state.day + '|' + sg.en.toLowerCase(), pdata = daily ? null : (this.state.periods[pkey] || null);
-    var VIEW_LABEL = { weekly: [L.weekly, 'Weekly'], monthly: [L.monthly, 'Monthly'], yearly: [L.yearly, 'Yearly'], '2027': ['2027', '2027'], '2028': ['2028', '2028'] };
+    var VIEW_LABEL = { weekly: [L.weekly, 'Weekly'], monthly: [L.monthly, 'Monthly'], yearly: [L.yearly, 'Yearly'], '2027': ['2027', '2027'] };
     var rashis = this.props.data.signs.map((s, i) => ({ en: s.en, hi: s.hi, img: s.img, sel: i === si, notSel: i !== si, pick: () => this.selectSign(i) }));
     var tab = (key, opts) => opts.map((o) => ({ label: o[1], sel: this.state[key] === o[0], notSel: this.state[key] !== o[0], pick: () => { var x = {}; x[key] = o[0]; this.setState(x); } }));
     var C = 2 * Math.PI * 52;
@@ -85,7 +86,7 @@ class HoroscopePage extends React.Component {
       eyebrow: daily ? L.eyebrow : (hi ? 'राशिफल' : 'Horoscope'),
       signSlug: this.state.picked ? sg.en.toLowerCase() : undefined,
       L: L, langCode: this.state.lang, rashis: rashis, cur: sg,
-      dayTabs: [['today', L.today], ['tomorrow', L.tomorrow], ['weekly', L.weekly], ['monthly', L.monthly], ['yearly', L.yearly], ['2027', '2027'], ['2028', '2028']].map((o) => ({ label: o[1], sel: this.state.day === o[0], notSel: this.state.day !== o[0], pick: () => this.selectView(o[0]) })),
+      dayTabs: [['today', L.today], ['tomorrow', L.tomorrow], ['weekly', L.weekly], ['monthly', L.monthly], ['yearly', L.yearly], ['2027', '2027']].map((o) => ({ label: o[1], sel: this.state.day === o[0], notSel: this.state.day !== o[0], pick: () => this.selectView(o[0]) })),
       isDaily: daily, periodData: pdata, periodLoading: !daily && this.state.loadingKey === pkey, periodFailed: !daily && this.state.failedKey === pkey, curSign: { en: sg.en, hi: sg.hi, img: sg.img }, langTabs: tab('lang', [['en', 'English'], ['hi', 'हिंदी']]),
       title: !daily ? (hi ? sg.hi + ' राशिफल ' + VIEW_LABEL[this.state.day][0] : sg.en + ' ' + (this.state.day === 'yearly' ? 'Yearly Horoscope' : /^\d+$/.test(this.state.day) ? 'Horoscope ' + this.state.day : VIEW_LABEL[this.state.day][1] + ' Horoscope')) : hi ? sg.hi + ' राशिफल ' + (this.state.day === 'today' ? 'आज' : 'कल') : sg.en + ' Horoscope ' + (this.state.day === 'today' ? 'Today' : 'Tomorrow'),
       titleShort: hi ? sg.hi : sg.en,
@@ -331,6 +332,7 @@ HoroscopePage.prototype.render = function render() {
                 </div>
               </div>
             </div>
+            <MoonForm onFound={this.selectSign} margin={"0 auto 28px"} />
             <div className={"am-signs"} role={"tablist"} aria-label={"Choose your rashi"} style={{display: "flex", gap: "6px", overflowX: "auto", padding: "4px 2px 16px", margin: "0 auto", scrollSnapType: "x mandatory"}}>
               {(v.rashis || []).map((r, $index) => (
                 <React.Fragment key={$index}>

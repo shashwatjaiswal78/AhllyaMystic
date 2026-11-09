@@ -1455,7 +1455,6 @@ HomePage.prototype.render = function render() {
                         <a href={"/horoscope/" + v.cur?.slug + "/weekly"}>{"Weekly"}</a>
                         <a href={"/horoscope/" + v.cur?.slug + "/monthly"}>{"Monthly"}</a>
                         <a href={"/horoscope/" + v.cur?.slug + "/2027"}>{"2027"}</a>
-                        <a href={"/horoscope/" + v.cur?.slug + "/2028"}>{"2028"}</a>
                       </span>
                     </div>
                     <a href={"/consult"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>

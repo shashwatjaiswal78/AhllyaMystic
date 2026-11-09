@@ -23,7 +23,7 @@ function isoDate(text) {
   return t.getUTCFullYear() === y && t.getUTCMonth() === mo - 1 && t.getUTCDate() === d ? `${m[3]}-${m[2]}-${m[1]}` : "";
 }
 
-export default function MoonForm({ onFound }) {
+export default function MoonForm({ onFound, margin = "-12px auto 48px" }) {
   const dobRef = useRef(null), tobRef = useRef(null), placeRef = useRef(null);
   const timer = useRef(null), seq = useRef(0), box = useRef(null);
   const chosen = useRef(null);
@@ -114,7 +114,7 @@ export default function MoonForm({ onFound }) {
   };
 
   return (
-    <form onSubmit={submit} noValidate style={{ maxWidth: "980px", margin: "-12px auto 48px", color: "#1E1830", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "22px 24px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", textAlign: "left", boxShadow: "0 30px 60px -30px rgba(0,0,0,0.6)" }}>
+    <form onSubmit={submit} noValidate style={{ maxWidth: "980px", margin: margin, color: "#1E1830", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "22px 24px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", textAlign: "left", boxShadow: "0 30px 60px -30px rgba(0,0,0,0.6)" }}>
       <p style={{ margin: "0 0 14px", fontSize: "15px", color: "#5C5470", textAlign: "center" }}>
         <strong style={{ color: "#1E1830" }}>{"Don’t know your moon sign?"}</strong>
         {" Find it free in a few seconds, then pick your rashi below."}

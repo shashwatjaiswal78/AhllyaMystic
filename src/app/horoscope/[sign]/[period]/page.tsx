@@ -27,10 +27,6 @@ const TITLE: Record<ViewKey, (en: string, hi: string) => { title: string; descri
     title: `${en} Horoscope 2027 (${hi} Rashifal 2027): Yearly Prediction`,
     description: `${en} (${hi}) horoscope for 2027: where Jupiter, Saturn and Rahu stand for your Moon sign, the exact dates they change house, and your Sade Sati and dhaiya status.`,
   }),
-  "2028": (en, hi) => ({
-    title: `${en} Horoscope 2028 (${hi} Rashifal 2028): Yearly Prediction`,
-    description: `${en} (${hi}) horoscope for 2028: where Jupiter, Saturn and Rahu stand for your Moon sign, the exact dates they change house, and your Sade Sati and dhaiya status.`,
-  }),
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ sign: string; period: string }> }): Promise<Metadata> {

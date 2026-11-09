@@ -3,7 +3,7 @@ import { getMonthly, getNext12, getWeekly, getYearly } from "./data";
 import type { SignPeriod, SignYear } from "./periods";
 import { SIGN_SLUGS } from "./seo";
 
-export const VIEWS = ["weekly", "monthly", "yearly", "2027", "2028"] as const;
+export const VIEWS = ["weekly", "monthly", "yearly", "2027"] as const;
 export type ViewKey = (typeof VIEWS)[number];
 
 export interface PeriodView {
