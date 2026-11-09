@@ -7,7 +7,7 @@ import { ayanamsa, tzOffset, zonedToUtc } from "@/lib/kundli/engine";
 const DAYMS = 864e5;
 
 export interface PanchangPlace { n: string; la: number; lo: number; tz: string }
-export interface Slot { name: string; start: number; end: number; rahu?: boolean }
+export interface Slot { name: string; start: number; end: number; rahu?: boolean; vaar?: boolean; kaal?: boolean; ratri?: boolean }
 export interface Seg { s: number; a: number; b: number; name: string; last?: boolean }
 export interface TithiNow { ph: number; name: string; paksha: "Shukla" | "Krishna"; end: number | null; next: string; num: number }
 
@@ -25,6 +25,9 @@ const NIGHT_CYCLE = ["Shubh", "Amrit", "Char", "Rog", "Kaal", "Labh", "Udveg"];
 const DAY_START = ["Udveg", "Amrit", "Rog", "Labh", "Shubh", "Char", "Kaal"]; // Sun..Sat, first slot after sunrise
 const NIGHT_START = ["Shubh", "Char", "Kaal", "Udveg", "Amrit", "Rog", "Labh"]; // Sun..Sat, first slot after sunset
 const RAHU_SLOT = [7, 1, 6, 4, 5, 3, 2]; // Sun..Sat: day slot (0 based) that is Rahu Kaal
+// Vaar Vela: the one day slot (0 based) each weekday that is held unsuitable for auspicious work. Kaal Vela is every day slot
+// that is Kaal, and Kaal Ratri is every night slot that is Labh. Checked against a printed panchang for all seven weekdays.
+const VAAR_VELA_SLOT = [3, 6, 1, 4, 7, 2, 5]; // Sun..Sat
 
 /* ---------------------------------------------------------------- date helpers */
 export const parseYMD = (s: string) => { const v = s.split("-"); return { y: +v[0], m: +v[1], d: +v[2] }; };
@@ -133,8 +136,10 @@ export function periodsFor(dateStr: string, p: PanchangPlace) {
   const dstart = DAY_CYCLE.indexOf(DAY_START[dow]), nstart = NIGHT_CYCLE.indexOf(NIGHT_START[dow]);
   const day: Slot[] = [], night: Slot[] = [];
   for (let i = 0; i < 8; i++) {
-    day.push({ name: DAY_CYCLE[(dstart + i) % 7], start: s.rise + i * dl, end: s.rise + (i + 1) * dl, rahu: RAHU_SLOT[dow] === i });
-    night.push({ name: NIGHT_CYCLE[(nstart + i) % 7], start: s.set + i * nl, end: s.set + (i + 1) * nl });
+    const dn = DAY_CYCLE[(dstart + i) % 7];
+    day.push({ name: dn, start: s.rise + i * dl, end: s.rise + (i + 1) * dl, rahu: RAHU_SLOT[dow] === i, vaar: VAAR_VELA_SLOT[dow] === i, kaal: dn === "Kaal" });
+    const nn = NIGHT_CYCLE[(nstart + i) % 7];
+    night.push({ name: nn, start: s.set + i * nl, end: s.set + (i + 1) * nl, ratri: nn === "Labh" });
   }
   return { sun: s, day, night, dow };
 }

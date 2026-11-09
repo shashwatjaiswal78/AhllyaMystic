@@ -155,3 +155,6 @@
   .pt-r > .pt-k:nth-child(n+3), .pt-r > .pt-v:nth-child(n+3){border-top:1px solid var(--line)}
   .pt-k:empty, .pt-k:empty + .pt-v:empty{display:none}
 }
+
+.pn-vela{display:block;font-style:normal;font-weight:700;font-size:12.5px;color:#B3261E;margin-top:2px}
+.pn-legend .pn-vela{display:inline;margin:0}

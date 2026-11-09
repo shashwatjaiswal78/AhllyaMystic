@@ -162,7 +162,7 @@ function Col({ list, title, time, tz, date, fmt, hi }) {
         return (
           <div className="pn-row" key={i}>
             <div className={"pn-cell " + n.k}><span className="pn-dia" aria-hidden="true" />{hi ? hiName(x.name) : x.name} <i>{hi ? hiName(n.t) : n.t}</i></div>
-            <div className="pn-time"><span>{fmtT(x.start, tz, date, fmt)} <i>{tt("to", hi)}</i> {fmtT(x.end, tz, date, fmt)}</span>{x.rahu ? <em className="pn-rahu">{tt("rahu", hi)}</em> : null}</div>
+            <div className="pn-time"><span>{fmtT(x.start, tz, date, fmt)} <i>{tt("to", hi)}</i> {fmtT(x.end, tz, date, fmt)}</span>{x.rahu ? <em className="pn-rahu">{tt("rahu", hi)}</em> : null}{x.kaal ? <em className="pn-vela">{hi ? "काल वेला" : "Kaal Vela"}</em> : null}{x.vaar ? <em className="pn-vela">{hi ? "वार वेला" : "Vaar Vela"}</em> : null}{x.ratri ? <em className="pn-vela">{hi ? "काल रात्रि" : "Kaal Ratri"}</em> : null}</div>
           </div>
         );
       })}
@@ -183,6 +183,9 @@ function EduHi() {
         <p>हर दिन का पहला चौघड़िया उस वार के स्वामी ग्रह का होता है। रविवार को वह सूर्य है, फिर शुक्र, बुध, चंद्र, शनि, गुरु और मंगल का क्रम चलता है। हर चौघड़िया अपने स्वामी ग्रह के स्वभाव के अनुसार फल देता है: शुक्र, बुध, चंद्र और गुरु शुभ चौघड़िया देते हैं, जबकि सूर्य, मंगल और शनि अशुभ।</p></section>
       <section><h2>अगर शुभ चौघड़िया राहु काल में पड़ जाए तो?</h2>
         <p>कभी-कभी कोई शुभ चौघड़िया राहु काल के भीतर पड़ जाता है, जिसे अशुभ माना जाता है। दक्षिण भारत में मुहूर्त चुनते समय राहु काल को बहुत महत्व दिया जाता है। इसलिए ऐसे समय में नया शुभ कार्य टालना ही उचित है।</p></section>
+      <section><h2>वार वेला, काल वेला और काल रात्रि</h2>
+        <p><b>वार वेला</b> और <b>काल वेला</b> दिन के चौघड़िया के दो भाग हैं जिन्हें शुभ कार्य के लिए उपयुक्त नहीं माना जाता, और <b>काल रात्रि</b> रात के लिए यही है। वार वेला दिन का एक विशेष भाग है जो वार के अनुसार बदलता है। काल वेला दिन का वह भाग है जो काल चौघड़िया हो, और काल रात्रि रात का वह भाग है जो लाभ चौघड़िया हो। ऊपर की तालिकाओं में इन्हें लाल रंग में चिह्नित किया गया है।</p>
+        <p>अगर कोई शुभ चौघड़िया वार वेला, काल वेला या काल रात्रि में पड़े, तो राहु काल की तरह उसे छोड़कर कोई दूसरा समय चुनना अच्छा है।</p></section>
       <h2 className="pn-art-h">सात चौघड़िया</h2>
       {[["शुभ", "good", ["Amrit", "Shubh", "Labh"]], ["सामान्य", "mid", ["Char"]], ["अशुभ", "bad", ["Udveg", "Kaal", "Rog"]]].map((g) => (
         <div className={"pn-g " + g[1]} key={g[0]}>
@@ -246,6 +249,9 @@ function Edu() {
         <p>Each slot takes its nature from its ruling planet. Venus, Mercury, the Moon and Jupiter give favourable slots, while the Sun, Mars and Saturn give unfavourable ones. Even an unfavourable slot can suit certain work, as the notes below show.</p></section>
       <section><h2>What if a good slot overlaps Rahu Kaal?</h2>
         <p>It can happen that an auspicious Choghadiya falls inside Rahu Kaal, which is considered strongly malefic. In South India Rahu Kaal is given great weight when choosing a muhurat. Many classical texts do not mention it for Choghadiya, but it is generally wiser to skip an auspicious slot that overlaps Rahu Kaal. That is why Rahu Kaal is marked in the tables above.</p></section>
+      <section><h2>Vaar Vela, Kaal Vela and Kaal Ratri</h2>
+        <p><b>Vaar Vela</b> and <b>Kaal Vela</b> are two slots of the day Choghadiya that are held unsuitable for auspicious work, and <b>Kaal Ratri</b> is the same for the night. Vaar Vela is one particular slot of the day, and it moves with the weekday. Kaal Vela is the day slot that is Kaal, and Kaal Ratri is the night slot that is Labh. They are marked in red in the tables above.</p>
+        <p>If a favourable Choghadiya falls on Vaar Vela, Kaal Vela or Kaal Ratri, it is better to reject it and choose another slot, in the same way as with Rahu Kaal.</p></section>
       <h2 className="pn-art-h">The seven Choghadiya</h2>
       {[["Good", "good", ["Amrit", "Shubh", "Labh"]], ["Neutral", "mid", ["Char"]], ["Bad", "bad", ["Udveg", "Kaal", "Rog"]]].map((g) => (
         <div className={"pn-g " + g[1]} key={g[0]}>
@@ -592,6 +598,7 @@ export default function PanchangTool({ initial, city, mode = "panchang" }) {
               <span><i className="bad" /><i className="evil" /><i className="loss" /> {tt("inauspicious", hi)}</span>
               <span><i className="mid" /> {tt("neutral", hi)}</span>
               <span><em className="pn-rahu">{tt("rahu", hi)}</em> {tt("avoidRahu", hi)}</span>
+              <span><em className="pn-vela">{hi ? "वार वेला · काल वेला · काल रात्रि" : "Vaar Vela · Kaal Vela · Kaal Ratri"}</em> {hi ? "शुभ कार्य के लिए त्यागें" : "also avoided for auspicious work"}</span>
             </div>
               </>
             )}
