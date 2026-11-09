@@ -6,6 +6,7 @@ import { sx, hole } from "./sx";
 import KundliForm from "./KundliForm";
 import MobileForm from "./MobileForm";
 import NameForm from "./NameForm";
+import MoonForm from "./MoonForm";
 import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class HomePage extends React.Component {
@@ -139,6 +140,7 @@ class HomePage extends React.Component {
       isMan: isMan, isSan: !isMan, completeHref: '/consult?expert=' + (isMan ? 'man' : 'san') + '&sess=all',
       plans: plans, fullPrice: CP[3], diwaliPrice: CP[4],
       rashis: rashis,
+      onMoon: (i) => this.setState({ sign: i }),
       cur: cur,
       todayDate: todayDate
     };
@@ -1209,43 +1211,7 @@ HomePage.prototype.render = function render() {
               <p style={{margin: "0 0 36px", fontSize: "15px", color: "#EADFF2"}}>
                 {hole(v.todayDate)}
               </p>
-              <form style={{maxWidth: "980px", margin: "-12px auto 48px", color: "#1E1830", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "22px 24px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", textAlign: "left", boxShadow: "0 30px 60px -30px rgba(0,0,0,0.6)"}}>
-                <p style={{margin: "0 0 14px", fontSize: "15px", color: "#5C5470", textAlign: "center"}}>
-                  <strong style={{color: "#1E1830"}}>
-                    {"Don’t know your moon sign?"}
-                  </strong>
-                  {" Find it free in a few seconds, then pick your rashi below."}
-                </p>
-                <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(160px, 100%), 1fr))", gap: "12px", alignItems: "end"}}>
-                  <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                    {"Actual date of birth"}
-                    <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                  </label>
-                  <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                    {"Time of birth"}
-                    <input type={"text"} placeholder={"HH : MM : SS"} inputMode={"numeric"} autoComplete={"off"} onInput={maskTime} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                  </label>
-                  <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                    {"Place of birth"}
-                    <input type={"text"} placeholder={"City, State"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                  </label>
-                  <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
-                    <span>
-                      {"WhatsApp "}
-                      <span style={{fontWeight: "400", color: "#736B8A"}}>
-                        {"(optional)"}
-                      </span>
-                    </span>
-                    <input type={"tel"} placeholder={"To get your result"} style={{font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0"}} />
-                  </label>
-                  <button type={"button"} style={{font: "inherit", fontWeight: "700", minHeight: "48px", padding: "0 18px", border: "0", borderRadius: "999px", background: "#FCCE07", color: "#921A11", cursor: "pointer"}}>
-                    {"Find my moon sign"}
-                  </button>
-                </div>
-                <p style={{margin: "12px 0 0", fontSize: "12px", color: "#736B8A", textAlign: "center"}}>
-                  {"Please use your actual date of birth, even if your documents show a different one."}
-                </p>
-              </form>
+              <MoonForm onFound={v.onMoon} />
               <div className={"am-signs"} role={"tablist"} aria-label={"Choose your rashi"} style={{display: "flex", gap: "6px", overflowX: "auto", padding: "4px 2px 16px", margin: "0 auto 24px", scrollSnapType: "x mandatory"}}>
                 {(v.rashis || []).map((r, $index) => (
                   <React.Fragment key={$index}>
