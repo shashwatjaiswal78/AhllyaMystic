@@ -237,9 +237,7 @@ AboutPage.prototype.render = function render() {
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(340px, 100%), 1fr))", gap: "20px"}}>
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", padding: "28px"}}>
                 <div style={{display: "flex", alignItems: "center", gap: "16px", marginBottom: "18px"}}>
-                  <span aria-hidden={"true"} style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "72px", height: "72px", borderRadius: "999px", background: "linear-gradient(150deg, #2E003E, #6C1594)", color: "#FCCE07", fontFamily: "'Marcellus', serif", fontSize: "22.5px", boxShadow: "0 0 0 4px #FFFFFF, 0 0 0 5px #E8DFD0"}}>
-                    {"AS"}
-                  </span>
+                  <img src={"/images/4799fee4da0ba25da44abe8ca0aebfec.jpg"} alt={"Ahalya Sangeeta, founder of Ahllya Mystic"} loading={"lazy"} decoding={"async"} width={"84"} height={"84"} style={{flex: "none", width: "84px", height: "84px", borderRadius: "999px", objectFit: "cover", objectPosition: "center 25%", boxShadow: "0 0 0 3px #FCCE07"}} />
                   <div>
                     <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "24px", lineHeight: "1.15"}}>
                       {"Ahalya Sangeeta"}
@@ -267,14 +265,12 @@ AboutPage.prototype.render = function render() {
                   {"Ahalya Sangeeta reads Kundlis, names, numbers and homes, across Vedic and KP astrology, numerology and Vastu. She has six years of practice, and prepares every report and consultation herself or together with Maneswita."}
                 </p>
                 <p style={{margin: "14px 0 0", padding: "10px 12px", border: "1.5px dashed #C9B3D6", borderRadius: "12px", fontSize: "12px", color: "#6C1594"}}>
-                  {"To add: training, teachers or certifications, and a personal photo."}
+                  {"To add: training, teachers or certifications."}
                 </p>
               </div>
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", padding: "28px"}}>
                 <div style={{display: "flex", alignItems: "center", gap: "16px", marginBottom: "18px"}}>
-                  <span aria-hidden={"true"} style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "72px", height: "72px", borderRadius: "999px", background: "linear-gradient(150deg, #2E003E, #6C1594)", color: "#FCCE07", fontFamily: "'Marcellus', serif", fontSize: "22.5px", boxShadow: "0 0 0 4px #FFFFFF, 0 0 0 5px #E8DFD0"}}>
-                    {"M"}
-                  </span>
+                  <img src={"/images/cd60cc55788c423c9c66a30e5201d374.jpg"} alt={"Maneswita, co-founder of Ahllya Mystic"} loading={"lazy"} decoding={"async"} width={"84"} height={"84"} style={{flex: "none", width: "84px", height: "84px", borderRadius: "999px", objectFit: "cover", objectPosition: "center 25%", boxShadow: "0 0 0 3px #FCCE07"}} />
                   <div>
                     <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "24px", lineHeight: "1.15"}}>
                       {"Maneswita"}
@@ -299,7 +295,7 @@ AboutPage.prototype.render = function render() {
                   {"Maneswita works alongside her mother across Vedic and KP astrology and numerology, with five years of practice. Many readings are prepared by the two of them together."}
                 </p>
                 <p style={{margin: "14px 0 0", padding: "10px 12px", border: "1.5px dashed #C9B3D6", borderRadius: "12px", fontSize: "12px", color: "#6C1594"}}>
-                  {"To add: training or certifications, what she specialises in, and a personal photo."}
+                  {"To add: training or certifications, and what she specialises in."}
                 </p>
               </div>
             </div>
