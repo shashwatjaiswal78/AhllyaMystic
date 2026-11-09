@@ -73,6 +73,7 @@ CheckoutKundliPage.prototype.render = function render() {
             </span>
           </div>
         </header>
+        <main id={"main"} style={{display: "contents"}}>
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "28px 24px 28px"}}>
           <a href={"/report/kundli"} style={{display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "13.5px", fontWeight: "600", textDecoration: "none", marginBottom: "22px"}}>
             <svg aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
@@ -530,6 +531,7 @@ CheckoutKundliPage.prototype.render = function render() {
             </aside>
           </div>
         </div>
+        </main>
         <footer style={{borderTop: "1px solid #E8DFD0", background: "#FFFFFF"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "12px", fontSize: "13px", color: "#5C5470"}}>
             <span>

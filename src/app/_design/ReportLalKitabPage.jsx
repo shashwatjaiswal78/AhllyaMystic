@@ -166,6 +166,7 @@ ReportLalKitabPage.prototype.render = function render() {
             </div>
           </nav>
         </header>
+        <main id={"main"} style={{display: "contents"}}>
         {v.menuOpen ? (
           <>
             <div style={{position: "fixed", inset: "0", zIndex: "100"}}>
@@ -715,6 +716,7 @@ ReportLalKitabPage.prototype.render = function render() {
             </div>
           </div>
         </div>
+        </main>
         <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "13.5px"}}>
           <div className={"am-stars2"} aria-hidden={"true"} style={{opacity: "0.6"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 32px", position: "relative"}}>

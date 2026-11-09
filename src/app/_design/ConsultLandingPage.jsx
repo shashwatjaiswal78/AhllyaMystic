@@ -28,6 +28,7 @@ ConsultLandingPage.prototype.render = function render() {
             </a>
           </div>
         </header>
+        <main id={"main"} style={{display: "contents"}}>
         <div style={{position: "sticky", top: "0", zIndex: "30", background: "#921A11", color: "#FFFFFF", boxShadow: "0 8px 20px -12px rgba(0,0,0,0.55)"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "10px 24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "10px 20px", textAlign: "center"}}>
             <span style={{fontWeight: "700"}}>
@@ -934,6 +935,7 @@ ConsultLandingPage.prototype.render = function render() {
             {"Abhi book karein"}
           </a>
         </div>
+        </main>
         <footer style={{borderTop: "1px solid #E8DFD0", background: "#FFFFFF"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "12px", fontSize: "13px", color: "#5C5470"}}>
             <span>
