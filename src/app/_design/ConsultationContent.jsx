@@ -32,7 +32,7 @@ const BENEFITS = [
   { t: "Timing you can use", d: "With three areas or the complete call, we use your dasha periods to point to the phases ahead for you.", i: "M12 7v5l3 2M12 3a9 9 0 100 18 9 9 0 000-18z" },
   { t: "Remedies you can follow", d: "Simple, practical remedies for your chart. If one is hard to follow, we suggest an alternative that still suits you.", i: "M12 4v2M12 18v2M4 12H2M22 12h-2M6.3 6.3L4.9 4.9M19.1 19.1l-1.4-1.4M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4M12 8a4 4 0 100 8 4 4 0 000-8z" },
   { t: "In your language, your way", d: "Audio or video, in Hindi or English. You pick a time that suits you, and the price is the same either way.", i: "M8 2h8a1 1 0 011 1v18a1 1 0 01-1 1H8a1 1 0 01-1-1V3a1 1 0 011-1zM11 18h2" },
-  { t: "Personal and private", d: "Every consultation is by us personally, never by software. Your birth details are used only for your reading and are never shared.", i: "M8 11V8a4 4 0 018 0v3M6 11h12v9H6z" },
+  { t: "Personal and private", d: "Every consultation is by us personally. Your birth details are used only for your reading and are never shared.", i: "M8 11V8a4 4 0 018 0v3M6 11h12v9H6z" },
 ];
 
 const AREAS = [

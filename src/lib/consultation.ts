@@ -2,7 +2,7 @@ import { PRODUCTS } from "@/lib/products";
 
 /** FAQ shown on the consultation page, and in its structured data. */
 export const FAQS: [string, string][] = [
-  ["Who will I speak with?", "With Ahalya Sangeeta (Senior Expert) or Maneswita (Expert), whichever you choose when you book. Every consultation is by us personally, never by software."],
+  ["Who will I speak with?", "With Ahalya Sangeeta (Senior Expert) or Maneswita (Expert), whichever you choose when you book. Every consultation is by us personally."],
   ["How soon will my consultation happen?", "We call you within 24 hours to confirm your birth details and booking, and schedule the call within 7 to 10 days, at a time that suits you."],
   ["Can I ask about more than one topic?", "Yes. One area covers one topic, two areas cover two, three areas cover three, and the Complete call covers every area of your life and any number of questions."],
   ["Audio or video, and in which language?", "Your choice. Audio and video calls cost the same, and you can have the call in Hindi or English."],
