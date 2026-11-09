@@ -139,3 +139,19 @@
 .pn-t .bad td:nth-child(2){color:var(--r1)}.pn-t .evil td:nth-child(2){color:var(--r2)}.pn-t .loss td:nth-child(2){color:var(--r3)}.pn-t .mid td:nth-child(2){color:var(--s1)}
 
 .pn-sh{font-family:'Marcellus',serif;font-weight:400;color:var(--plum);font-size:22px;margin:26px 0 10px}
+
+/* Panchang tables: a title bar, then rows of two label and value pairs. */
+.pt-box{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0 0 18px}
+.pt-h{margin:0;padding:12px 16px;text-align:center;font-family:'Marcellus','Tiro Devanagari Hindi',serif;font-weight:400;font-size:18px;color:#fff;background:linear-gradient(90deg,#3A0852,#5A1380)}
+.pt-r{display:grid;grid-template-columns:minmax(110px,17%) minmax(0,1fr) minmax(110px,17%) minmax(0,1fr);border-top:1px solid var(--line)}
+.pt-h + .pt-r{border-top:0}
+.pt-k{padding:12px 14px;text-align:right;font-weight:700;font-size:14px;color:var(--verm);background:#FBF7F0}
+.pt-v{padding:12px 14px;font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.5}
+.pt-v span{font-weight:500;font-size:13px;color:var(--muted)}
+.pt-v div + div{margin-top:4px}
+@media(max-width:760px){
+  .pt-r{grid-template-columns:minmax(96px,38%) minmax(0,1fr)}
+  .pt-k{text-align:left;padding:10px 12px}.pt-v{padding:10px 12px}
+  .pt-r > .pt-k:nth-child(n+3), .pt-r > .pt-v:nth-child(n+3){border-top:1px solid var(--line)}
+  .pt-k:empty, .pt-k:empty + .pt-v:empty{display:none}
+}

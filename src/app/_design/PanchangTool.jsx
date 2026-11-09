@@ -518,76 +518,64 @@ export default function PanchangTool({ initial, city, mode = "panchang" }) {
             {!isCh ? (
               <>
             {(() => {
-              const e = d.extra, T = (ms) => fmtT(ms, tz, d.date, fmt), L = (en, h) => (hi ? h : en);
+              const e = d.extra, T = (ms) => fmtT(ms, tz, d.date, fmt), Lx = (en, h) => (hi ? h : en);
               const span = (a) => `${T(a[0])} ${tt("to", hi)} ${T(a[1])}`;
-              const nk0 = d.timeline.Nakshatra[0].name;
-              const Cards = ({ items }) => (
-                <div className="pn-det">
-                  {items.map((c) => (
-                    <div className="pn-dc" key={c[0]}><h3>{c[0]}</h3><ul>{c[1].map((r) => <li key={r[0]}><b>{r[0]}</b>{r[1] ? <span>{r[1]}</span> : null}</li>)}</ul></div>
-                  ))}
-                </div>
-              );
+              const nm = (x) => (hi ? hiName(x) : x);
+              const till = (ms) => (hi ? `${T(ms)} ${tt("till", true)}` : `till ${T(ms)}`);
+              // One value cell: each line is [text, small grey note]. A segment of the day reads "Amavasya till 12:31 PM".
+              const seg = (row) => d.timeline[row].map((sg) => [nm(sg.name), sg.last ? "" : till(sg.b)]);
+              const place = hi && city && d.place.n === city.name ? city.hi : d.place.n;
+              const one = (t, note) => [[t, note || ""]];
+              // Each section is a title bar and rows of two label and value pairs, like a printed panchang.
+              const sections = [
+                [Lx("Sunrise and Moonrise", "सूर्योदय और चंद्रोदय"), [
+                  [Lx("Sunrise", "सूर्योदय"), one(T(d.sun.rise)), Lx("Sunset", "सूर्यास्त"), one(T(d.sun.set))],
+                  ...(e ? [[Lx("Moonrise", "चंद्रोदय"), one(e.moon.rise ? T(e.moon.rise) : Lx("No moonrise", "चंद्रोदय नहीं")), Lx("Moonset", "चंद्रास्त"), one(e.moon.set ? T(e.moon.set) : Lx("No moonset", "चंद्रास्त नहीं"))]] : []),
+                ]],
+                [Lx("Panchang", "पंचांग"), [
+                  [tt("Tithi", hi), seg("Tithi"), tt("Nakshatra", hi), seg("Nakshatra")],
+                  [tt("Yoga", hi), seg("Yoga"), tt("Karana", hi), seg("Karana")],
+                  [Lx("Weekday", "वार"), one(hi ? hiName(WEEKDAYS[d.dow]) : `${WEEKDAYS[d.dow]}, ${VAARA[d.dow]}`), Lx("Paksha", "पक्ष"), one(hi ? `${hiName(ti.paksha)} ${tt("paksha", true)}` : `${ti.paksha} Paksha`)],
+                ]],
+                ...(e ? [
+                  [Lx("Moon sign, Sun sign and Nakshatra pada", "चंद्र राशि, सूर्य राशि और नक्षत्र चरण"), [
+                    [Lx("Moon sign", "चंद्र राशि"), one(nm(RASHI[e.rashi.moon]), e.rashi.moonChange ? `${till(e.rashi.moonChange)}, ${Lx("then", "फिर")} ${nm(RASHI[e.rashi.moonNext])}` : Lx("all day", "पूरे दिन")), Lx("Sun sign", "सूर्य राशि"), one(nm(RASHI[e.rashi.sun]))],
+                    [Lx("Nakshatra pada", "नक्षत्र चरण"), one(`${nm(d.timeline.Nakshatra[0].name)}, ${Lx("pada", "चरण")} ${e.rashi.pada}`, Lx("at sunrise", "सूर्योदय पर")), "", []],
+                  ]],
+                  [Lx("Lunar Month and Samvat", "चंद्र मास और संवत"), [
+                    [Lx("Vikram Samvat", "विक्रम संवत"), one(String(li.vy)), Lx("Samvatsara", "संवत्सर"), one(hi ? "—" : li.sam)],
+                    [Lx("Chandramasa (Purnimanta)", "चंद्र मास (पूर्णिमांत)"), one(hi ? hiLunarMonth(li.purni) : li.purni), Lx("Chandramasa (Amanta)", "चंद्र मास (अमांत)"), one(hi ? hiLunarMonth(li.amanta) : li.amanta)],
+                    [Lx("Tithi number", "तिथि संख्या"), one(`${am ? li.dAm : li.dPu} / 30`, am ? "Amanta" : "Purnimanta"), Lx("Ritu and Ayana", "ऋतु और अयन"), one(`${nm(e.ritu)}, ${nm(e.ayana)}`)],
+                  ]],
+                  [Lx("Day and Night", "दिन और रात"), [
+                    [Lx("Day length", "दिनमान"), one(dur(e.durations.day, hi)), Lx("Night length", "रात्रिमान"), one(dur(e.durations.night, hi))],
+                    [Lx("Midday (Madhyahna)", "मध्याह्न"), one(T(e.durations.midday)), "", []],
+                  ]],
+                  [Lx("Auspicious Timings", "शुभ समय"), [
+                    [Lx("Brahma Muhurta", "ब्रह्म मुहूर्त"), one(span(e.auspicious.brahma), Lx("prayer, meditation, study", "पूजा, ध्यान, पढ़ाई")), Lx("Abhijit Muhurat", "अभिजित मुहूर्त"), e.auspicious.abhijit ? one(span(e.auspicious.abhijit), Lx("good for most auspicious work", "अधिकांश शुभ कार्यों के लिए अच्छा")) : one(Lx("Not counted today", "आज नहीं गिना जाता"), Lx("by tradition, none on a Wednesday", "परंपरा से बुधवार को नहीं"))],
+                  ]],
+                  [Lx("Inauspicious Timings", "अशुभ समय"), [
+                    [Lx("Rahu Kalam", "राहु काल"), one(span(e.inauspicious.rahu), Lx("avoid starting new work", "नया काम शुरू न करें")), Lx("Yamaganda", "यमगंड"), one(span(e.inauspicious.yamaganda))],
+                    [Lx("Gulika Kalam", "गुलिक काल"), one(span(e.inauspicious.gulika)), Lx("Disha Shool", "दिशाशूल"), one(nm(e.disha), Lx("avoid starting a journey this way", "इस दिशा में यात्रा आरंभ न करें"))],
+                  ]],
+                ] : []),
+              ];
               return (
                 <>
-                  {e ? (
-                    <>
-                      <h2 className="pn-sh">{L("Sun and Moon", "सूर्य और चंद्र")}</h2>
-                      <Cards items={[
-                        [L("Sunrise", "सूर्योदय"), [[T(d.sun.rise), ""]]],
-                        [L("Sunset", "सूर्यास्त"), [[T(d.sun.set), ""]]],
-                        [L("Moonrise", "चंद्रोदय"), [[e.moon.rise ? T(e.moon.rise) : "—", e.moon.rise ? "" : L("no moonrise on this date", "इस तारीख़ को चंद्रोदय नहीं")]]],
-                        [L("Moonset", "चंद्रास्त"), [[e.moon.set ? T(e.moon.set) : "—", e.moon.set ? "" : L("no moonset on this date", "इस तारीख़ को चंद्रास्त नहीं")]]],
-                      ]} />
-                    </>
-                  ) : null}
-                  <h2 className="pn-sh">{L("The five limbs of the Panchang", "पंचांग के पाँच अंग")}</h2>
-            <div className="pn-det">
-              {ROWS.map((row) => (
-                <div className="pn-dc" key={row}>
-                  <h3>{tt(row, hi)}</h3>
-                  <ul>
-                    {d.timeline[row].map((sg, i) => (
-                      <li key={i}><b>{hi ? hiName(sg.name) : sg.name}</b><span>{sg.last ? tt("untilSunrise", hi) : tt("till", hi) === "till" ? "till " + fmtT(sg.b, tz, d.date, fmt) : fmtT(sg.b, tz, d.date, fmt) + " " + tt("till", hi)}</span></li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-                  {e ? (
-                    <>
-                      <h2 className="pn-sh">{L("Moon sign and nakshatra", "चंद्र राशि और नक्षत्र")}</h2>
-                      <Cards items={[
-                        [L("Moon sign (Chandra Rashi)", "चंद्र राशि"), [[hi ? hiName(RASHI[e.rashi.moon]) : RASHI[e.rashi.moon], e.rashi.moonChange ? `${tt("till", hi) === "till" ? "till " + T(e.rashi.moonChange) : T(e.rashi.moonChange) + " " + tt("till", hi)}, ${L("then", "फिर")} ${hi ? hiName(RASHI[e.rashi.moonNext]) : RASHI[e.rashi.moonNext]}` : L("all day", "पूरे दिन")]]],
-                        [L("Nakshatra pada", "नक्षत्र चरण"), [[`${hi ? hiName(nk0) : nk0}, ${L("pada", "चरण")} ${e.rashi.pada}`, L("at sunrise", "सूर्योदय पर")]]],
-                        [L("Sun sign (Surya Rashi)", "सूर्य राशि"), [[hi ? hiName(RASHI[e.rashi.sun]) : RASHI[e.rashi.sun], ""]]],
-                      ]} />
-                      <h2 className="pn-sh">{L("The day at a glance", "एक नज़र में दिन")}</h2>
-                      <Cards items={[
-                        [L("Vaara (weekday)", "वार"), [[hi ? hiName(WEEKDAYS[d.dow]) : `${WEEKDAYS[d.dow]}, ${VAARA[d.dow]}`, ""]]],
-                        [L("Day length", "दिनमान"), [[dur(e.durations.day, hi), ""]]],
-                        [L("Night length", "रात्रिमान"), [[dur(e.durations.night, hi), ""]]],
-                        [L("Midday (Madhyahna)", "मध्याह्न"), [[T(e.durations.midday), ""]]],
-                        [L("Ritu (season)", "ऋतु"), [[hi ? hiName(e.ritu) : e.ritu, ""]]],
-                        [L("Ayana", "अयन"), [[hi ? hiName(e.ayana) : e.ayana, ""]]],
-                        [L("Lunar month", "चंद्र मास"), [[hi ? hiLunarMonth(mon) : mon, `${hi ? hiName(ti.paksha) + " " + tt("paksha", true) : ti.paksha + " Paksha"}`]]],
-                        [L("Samvat", "संवत"), [[hi ? `${tt("samvat", true)} ${li.vy}` : `${li.vy} ${li.sam}`, L("Vikrama Samvata", "")]]],
-                      ]} />
-                      <h2 className="pn-sh">{L("Auspicious timings", "शुभ समय")}</h2>
-                      <Cards items={[
-                        [L("Brahma Muhurta", "ब्रह्म मुहूर्त"), [[span(e.auspicious.brahma), L("prayer, meditation, study", "पूजा, ध्यान, पढ़ाई")]]],
-                        [L("Abhijit Muhurat", "अभिजित मुहूर्त"), [e.auspicious.abhijit ? [span(e.auspicious.abhijit), L("good for most auspicious work", "अधिकांश शुभ कार्यों के लिए अच्छा")] : [L("Not counted today", "आज नहीं गिना जाता"), L("by tradition, none on a Wednesday", "परंपरा से बुधवार को नहीं")]]],
-                      ]} />
-                      <h2 className="pn-sh">{L("Inauspicious timings", "अशुभ समय")}</h2>
-                      <Cards items={[
-                        [L("Rahu Kalam", "राहु काल"), [[span(e.inauspicious.rahu), L("avoid starting new work", "नया काम शुरू न करें")]]],
-                        [L("Yamaganda", "यमगंड"), [[span(e.inauspicious.yamaganda), ""]]],
-                        [L("Gulika Kalam", "गुलिक काल"), [[span(e.inauspicious.gulika), ""]]],
-                        [L("Disha Shool", "दिशाशूल"), [[hi ? hiName(e.disha) : e.disha, L("avoid starting a journey this way", "इस दिशा में यात्रा आरंभ न करें")]]],
-                      ]} />
-                    </>
-                  ) : null}
-                  <p className="pn-notes"><b>{L("Notes:", "ध्यान दें:")}</b> {L("All timings are in the local time of", "सभी समय स्थानीय समय में हैं:")} {hi && city && d.place.n === city.name ? city.hi : d.place.n}. {L("Times after midnight are shown with the next date.", "मध्यरात्रि के बाद के समय अगली तारीख़ के साथ दिखाए गए हैं।")}</p>
+                  {sections.map(([title, rows]) => (
+                    <div className="pt-box" key={title}>
+                      <h2 className="pt-h">{title}</h2>
+                      {rows.map((r, i) => (
+                        <div className="pt-r" key={i}>
+                          <div className="pt-k">{r[0]}</div>
+                          <div className="pt-v">{r[1].map((ln, j) => <div key={j}>{ln[0]}{ln[1] ? <span> {ln[1]}</span> : null}</div>)}</div>
+                          <div className="pt-k">{r[2]}</div>
+                          <div className="pt-v">{r[3].map((ln, j) => <div key={j}>{ln[0]}{ln[1] ? <span> {ln[1]}</span> : null}</div>)}</div>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                  <p className="pn-notes"><b>{Lx("Notes:", "ध्यान दें:")}</b> {Lx("All timings are in the local time of", "सभी समय स्थानीय समय में हैं:")} {place}. {Lx("Times after midnight are shown with the next date.", "मध्यरात्रि के बाद के समय अगली तारीख़ के साथ दिखाए गए हैं।")}</p>
                 </>
               );
             })()}
