@@ -122,11 +122,6 @@ ReportMilanPage.prototype.render = function render() {
   return (
     <div data-design-page="Milan" style={{ display: "contents" }}>
       <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "14.5px", lineHeight: "1.6"}}>
-        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "13px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
-          <a href={"/masterclass"} style={{color: "#921A11", textDecoration: "none"}}>
-            {"Live 2-day Manifestation Masterclass. Dates announced soon. Register for ₹99 →"}
-          </a>
-        </div>
         <header style={{position: "sticky", top: "0", zIndex: "50", background: "rgba(46,0,62,0.94)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", borderBottom: "1px solid rgba(255,255,255,0.08)"}}>
           <nav aria-label={"Main"} style={{maxWidth: "1200px", margin: "0 auto", padding: "12px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px"}}>
             <a href={"/"} aria-label={"Ahllya Mystic home"} style={{display: "block", flex: "none"}}>
