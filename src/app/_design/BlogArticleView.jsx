@@ -44,6 +44,17 @@ export default function BlogArticleView({ article: a, hi: h, more }) {
         {body.map((b, i) => {
           if (b.t === "h2") return <h2 key={i} style={{ margin: "38px 0 12px", fontFamily: serif, fontWeight: 400, fontSize: "clamp(22px, 2.5vw, 28px)", lineHeight: 1.25, color: "#1E1830" }}>{b.text}</h2>;
           if (b.t === "fig") return <Figure key={i} kind={b.kind} lang={lang} />;
+          if (b.t === "table") return (
+            <figure key={i} style={{ margin: "26px 0", padding: 0 }}>
+              <div style={{ overflowX: "auto", border: "1px solid #E8DFD0", borderRadius: "16px", background: "#FFFFFF" }}>
+                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "15px", lineHeight: 1.55 }}>
+                  <thead><tr>{b.head.map((h, k) => <th key={k} style={{ textAlign: "left", padding: "12px 16px", background: "#F6EEF9", color: "#2E003E", fontWeight: 700, borderBottom: "1px solid #E8DFD0", whiteSpace: "nowrap" }}>{h}</th>)}</tr></thead>
+                  <tbody>{b.rows.map((r, ri) => <tr key={ri}>{r.map((c, ci) => <td key={ci} style={{ padding: "11px 16px", borderTop: ri ? "1px solid #F0E8DA" : 0, fontWeight: ci === 0 ? 700 : 400, color: ci === 0 ? "#921A11" : "#2A2340", verticalAlign: "top" }}>{c}</td>)}</tr>)}</tbody>
+                </table>
+              </div>
+              {b.caption ? <figcaption style={{ margin: "10px 0 0", fontSize: "13px", color: "#736B8A", textAlign: "center" }}>{b.caption}</figcaption> : null}
+            </figure>
+          );
           if (b.t === "ul") return <ul key={i} style={{ margin: "0 0 18px", paddingLeft: "22px", display: "grid", gap: "8px" }}>{b.items.map((it) => <li key={it}>{it}</li>)}</ul>;
           if (b.t === "cta") return (
             <div key={i} style={{ margin: "40px 0 0", padding: "26px 28px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px" }}>

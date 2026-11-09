@@ -6,7 +6,9 @@ export type ArticleHi = { title: string; excerpt: string; related: string[]; bod
 export const HI_NOTE = "यह लेख वैदिक परंपरा पर आधारित सामान्य जानकारी है और किसी योग्य विशेषज्ञ की व्यक्तिगत सलाह का विकल्प नहीं है।";
 export const HI_LABELS = { related: "संबंधित", more: "जर्नल से और", by: "लेखक", minRead: "मिनट में पढ़ें", language: "भाषा" };
 
-export const ARTICLES_HI: Record<string, ArticleHi> = {
+import { MORE_ARTICLES_HI } from "./blog-more-hi";
+
+const BASE_HI: Record<string, ArticleHi> = {
   "sade-sati-what-it-really-means": {
     title: "साढ़े साती: असल में इसका क्या मतलब है, और इससे डरना क्यों नहीं चाहिए",
     excerpt: "शनि के साढ़े सात साल की छवि डरावनी है। जानिए असल में क्या बदलता है और इस दौर का सही उपयोग कैसे करें।",
@@ -107,3 +109,7 @@ export const ARTICLES_HI: Record<string, ArticleHi> = {
     ],
   },
 };
+
+export const ARTICLES_HI: Record<string, ArticleHi> = { ...BASE_HI, ...MORE_ARTICLES_HI };
+
+export const CATEGORY_HI: Record<string, string> = { Astrology: "ज्योतिष", Numerology: "अंक ज्योतिष", Vastu: "वास्तु", Panchang: "पंचांग" };

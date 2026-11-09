@@ -5,13 +5,14 @@ export type Block =
   | { t: "p"; text: string }
   | { t: "ul"; items: string[] }
   | { t: "fig"; kind: "phases" | "loshu" | "directions" }
+  | { t: "table"; head: string[]; rows: string[][]; caption?: string }
   | { t: "cta"; text: string; label: string; href: string };
 
 export type Article = {
   slug: string;
   title: string;
   description: string;
-  category: "Astrology" | "Numerology" | "Vastu";
+  category: "Astrology" | "Numerology" | "Vastu" | "Panchang";
   minutes: number;
   published: string; // ISO date
   author: string;
@@ -22,7 +23,9 @@ export type Article = {
 
 export const AUTHOR = "Ahllya Mystic";
 
-export const ARTICLES: Article[] = [
+import { MORE_ARTICLES } from "./blog-more";
+
+const BASE_ARTICLES: Article[] = [
   {
     slug: "sade-sati-what-it-really-means",
     title: "Sade Sati: what it really means, and why it is not something to fear",
@@ -156,5 +159,7 @@ export const ARTICLES: Article[] = [
     ],
   },
 ];
+
+export const ARTICLES: Article[] = [...BASE_ARTICLES, ...MORE_ARTICLES];
 
 export const bySlug = (slug: string) => ARTICLES.find((a) => a.slug === slug);

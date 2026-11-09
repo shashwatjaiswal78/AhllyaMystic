@@ -143,8 +143,8 @@
   .am-navlinks>*,.am-navcta{white-space:nowrap}
   @media (max-width:1500px){.am-navlinks{gap:20px !important}}
   @media (max-width:1240px){.am-navlinks{gap:16px !important;font-size:13px !important}}
-  @media (max-width:1270px){.am-navlinks{display:none}}
-  @media (max-width:1270px){.am-burger{display:flex}}
+  @media (max-width:1200px){.am-navlinks{display:none}}
+  @media (max-width:1200px){.am-burger{display:flex}}
   @media (max-width:600px){.am-navcta{padding:0 14px !important;min-height:40px !important;font-size:12px !important;white-space:nowrap}}
   @media (max-width:600px){.am-navwa{display:none !important}}
   @media (max-width:600px){.am-navlogo{height:40px !important}}

@@ -3,7 +3,7 @@
 // and Karana out. The calculation runs on the server (/api/panchang); this file draws it and handles the controls.
 import React, { useEffect, useRef, useState } from "react";
 import "./panchang.css";
-import { hiName, hiLunarMonth, hiMonthLong, UI } from "@/lib/panchang/hi";
+import { hiName, hiLunarMonth, hiMonthLong, hiSamvatsara, UI } from "@/lib/panchang/hi";
 
 const LANG_KEY = "ahllya:bloglang";
 const tt = (k, hi) => (UI[k] ? (hi ? UI[k].hi : UI[k].en) : k);
@@ -36,6 +36,7 @@ const EDU = [
   ["Rog", "Mars", "Evil", "Mars is a malefic. Auspicious work is avoided in Rog, though it is used for conflict and for defeating an opponent."],
 ];
 const PLACE_KEY = "ahllya:place";
+const NAK_EN = ["Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra", "Punarvasu", "Pushya", "Ashlesha", "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha", "Anuradha", "Jyeshtha", "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana", "Dhanishta", "Shatabhisha", "Purva Bhadrapada", "Uttara Bhadrapada", "Revati"];
 const RASHI = ["Mesha", "Vrishabha", "Mithuna", "Karka", "Simha", "Kanya", "Tula", "Vrishchika", "Dhanu", "Makara", "Kumbha", "Meena"];
 const dur = (ms, hi) => { const m = Math.round(ms / 60000); return hi ? `${Math.floor(m / 60)} घंटे ${m % 60} मिनट` : `${Math.floor(m / 60)} h ${m % 60} min`; };
 
@@ -549,9 +550,9 @@ export default function PanchangTool({ initial, city, mode = "panchang" }) {
                     [Lx("Nakshatra pada", "नक्षत्र चरण"), one(`${nm(d.timeline.Nakshatra[0].name)}, ${Lx("pada", "चरण")} ${e.rashi.pada}`, Lx("at sunrise", "सूर्योदय पर")), "", []],
                   ]],
                   [Lx("Lunar Month and Samvat", "चंद्र मास और संवत"), [
-                    [Lx("Vikram Samvat", "विक्रम संवत"), one(String(li.vy)), Lx("Samvatsara", "संवत्सर"), one(hi ? "—" : li.sam)],
+                    [Lx("Vikram Samvat", "विक्रम संवत"), one(String(li.vy)), Lx("Samvatsara", "संवत्सर"), one(hi ? hiSamvatsara(li.sam) : li.sam)],
                     [Lx("Chandramasa (Purnimanta)", "चंद्र मास (पूर्णिमांत)"), one(hi ? hiLunarMonth(li.purni) : li.purni), Lx("Chandramasa (Amanta)", "चंद्र मास (अमांत)"), one(hi ? hiLunarMonth(li.amanta) : li.amanta)],
-                    [Lx("Tithi number", "तिथि संख्या"), one(`${am ? li.dAm : li.dPu} / 30`, am ? "Amanta" : "Purnimanta"), Lx("Ritu and Ayana", "ऋतु और अयन"), one(`${nm(e.ritu)}, ${nm(e.ayana)}`)],
+                    [Lx("Tithi number", "तिथि संख्या"), one(`${am ? li.dAm : li.dPu} / 30`, am ? Lx("Amanta", "अमांत") : Lx("Purnimanta", "पूर्णिमांत")), Lx("Ritu and Ayana", "ऋतु और अयन"), one(`${nm(e.ritu)}, ${nm(e.ayana)}`)],
                   ]],
                   [Lx("Day and Night", "दिन और रात"), [
                     [Lx("Day length", "दिनमान"), one(dur(e.durations.day, hi)), Lx("Night length", "रात्रिमान"), one(dur(e.durations.night, hi))],
@@ -559,10 +560,19 @@ export default function PanchangTool({ initial, city, mode = "panchang" }) {
                   ]],
                   [Lx("Auspicious Timings", "शुभ समय"), [
                     [Lx("Brahma Muhurta", "ब्रह्म मुहूर्त"), one(span(e.auspicious.brahma), Lx("prayer, meditation, study", "पूजा, ध्यान, पढ़ाई")), Lx("Abhijit Muhurat", "अभिजित मुहूर्त"), e.auspicious.abhijit ? one(span(e.auspicious.abhijit), Lx("good for most auspicious work", "अधिकांश शुभ कार्यों के लिए अच्छा")) : one(Lx("Not counted today", "आज नहीं गिना जाता"), Lx("by tradition, none on a Wednesday", "परंपरा से बुधवार को नहीं"))],
+                    [Lx("Amrit Kalam", "अमृत काल"), e.amrit.length ? e.amrit.map((w) => [span(w), ""]) : one(Lx("None in this day", "इस दिन नहीं")), "", []],
                   ]],
                   [Lx("Inauspicious Timings", "अशुभ समय"), [
                     [Lx("Rahu Kalam", "राहु काल"), one(span(e.inauspicious.rahu), Lx("avoid starting new work", "नया काम शुरू न करें")), Lx("Yamaganda", "यमगंड"), one(span(e.inauspicious.yamaganda))],
                     [Lx("Gulika Kalam", "गुलिक काल"), one(span(e.inauspicious.gulika)), Lx("Disha Shool", "दिशाशूल"), one(nm(e.disha), Lx("avoid starting a journey this way", "इस दिशा में यात्रा आरंभ न करें"))],
+                    [Lx("Varjyam", "वर्ज्यम्"), e.varjyam.length ? e.varjyam.map((w) => [span(w), ""]) : one(Lx("None in this day", "इस दिन नहीं")), "", []],
+                  ]],
+                  [Lx("Anandadi Yoga", "आनंदादि योग"), [
+                    [Lx("Anandadi Yoga", "आनंदादि योग"), e.anandadi.map((y) => [nm(y.name), `${y.good ? Lx("auspicious", "शुभ") : Lx("inauspicious", "अशुभ")}${y.until ? ", " + till(y.until) : ""}`])],
+                  ]],
+                  [Lx("Chandrabalam and Tarabalam", "चंद्रबल और ताराबल"), [
+                    [Lx("Chandrabalam", "चंद्रबल"), e.chandra.map((c) => [c.signs.map((x) => nm(RASHI[x])).join(", "), c.until ? till(c.until) : Lx("until the next sunrise", "अगले सूर्योदय तक")])],
+                    [Lx("Tarabalam", "ताराबल"), e.tara.map((c) => [c.naks.map((x) => nm(NAK_EN[x])).join(", "), c.until ? till(c.until) : Lx("until the next sunrise", "अगले सूर्योदय तक")])],
                   ]],
                 ] : []),
               ];
@@ -571,7 +581,12 @@ export default function PanchangTool({ initial, city, mode = "panchang" }) {
                   {sections.map(([title, rows]) => (
                     <div className="pt-box" key={title}>
                       <h2 className="pt-h">{title}</h2>
-                      {rows.map((r, i) => (
+                      {rows.map((r, i) => r.length === 2 ? (
+                        <div className="pt-r pt-wide" key={i}>
+                          <div className="pt-k">{r[0]}</div>
+                          <div className="pt-v">{r[1].map((ln, j) => <div key={j}>{ln[0]}{ln[1] ? <span> {ln[1]}</span> : null}</div>)}</div>
+                        </div>
+                      ) : (
                         <div className="pt-r" key={i}>
                           <div className="pt-k">{r[0]}</div>
                           <div className="pt-v">{r[1].map((ln, j) => <div key={j}>{ln[0]}{ln[1] ? <span> {ln[1]}</span> : null}</div>)}</div>
@@ -581,7 +596,7 @@ export default function PanchangTool({ initial, city, mode = "panchang" }) {
                       ))}
                     </div>
                   ))}
-                  <p className="pn-notes"><b>{Lx("Notes:", "ध्यान दें:")}</b> {Lx("All timings are in the local time of", "सभी समय स्थानीय समय में हैं:")} {place}. {Lx("Times after midnight are shown with the next date.", "मध्यरात्रि के बाद के समय अगली तारीख़ के साथ दिखाए गए हैं।")}</p>
+                  <p className="pn-notes"><b>{Lx("Notes:", "ध्यान दें:")}</b> {Lx("All timings are in the local time of", "सभी समय स्थानीय समय में हैं:")} {place}. {Lx("Chandrabalam lists the birth Moon signs, and Tarabalam the birth nakshatras, for which today’s Moon is favourable. ", "चंद्रबल उन जन्म राशियों को और ताराबल उन जन्म नक्षत्रों को बताता है जिनके लिए आज का चंद्रमा अनुकूल है। ")}{Lx("Times after midnight are shown with the next date.", "मध्यरात्रि के बाद के समय अगली तारीख़ के साथ दिखाए गए हैं।")}</p>
                 </>
               );
             })()}

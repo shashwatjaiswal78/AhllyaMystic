@@ -59,6 +59,60 @@ function Banner({ kind, label }) {
           </g>
         </g>
       )}
+      {kind === "kundli" && (
+        <g>
+          <rect x="95" y="25" width="130" height="130" fill="#FFFFFF" fillOpacity="0.08" stroke="#FFFFFF" strokeWidth="2" />
+          <path d="M95 25 L225 155 M225 25 L95 155" stroke="#FFFFFF" strokeOpacity="0.6" strokeWidth="1.4" />
+          <path d="M160 25 L225 90 L160 155 L95 90 Z" fill="none" stroke="#FFFFFF" strokeWidth="1.6" />
+          <path d="M160 25 L225 90 L160 90 Z" fill={GOLD} fillOpacity="0.85" />
+          <g fontFamily={serif} fontSize="13" fill="#FFFFFF" textAnchor="middle" opacity="0.9">
+            <text x="160" y="62" fill="#2E003E" opacity="1">1</text><text x="125" y="48">2</text><text x="108" y="70">3</text><text x="136" y="92">4</text>
+            <text x="108" y="115">5</text><text x="125" y="140">6</text><text x="160" y="125">7</text><text x="195" y="140">8</text>
+            <text x="212" y="115">9</text><text x="184" y="92">10</text><text x="212" y="70">11</text><text x="195" y="48">12</text>
+          </g>
+        </g>
+      )}
+      {kind === "phone" && (
+        <g>
+          <rect x="112" y="14" width="96" height="152" rx="16" fill="#FFFFFF" fillOpacity="0.1" stroke="#FFFFFF" strokeWidth="2" />
+          <rect x="124" y="32" width="72" height="30" rx="6" fill="#FFFFFF" fillOpacity="0.14" />
+          <text x="160" y="53" textAnchor="middle" fontFamily={serif} fontSize="20" fill={GOLD}>9 8 1 2 3</text>
+          <g fontFamily={serif} fontSize="16" fill="#FFFFFF" textAnchor="middle">
+            {[["1", 138, 90], ["2", 160, 90], ["3", 182, 90], ["4", 138, 114], ["5", 160, 114], ["6", 182, 114], ["7", 138, 138], ["8", 160, 138], ["9", 182, 138]].map(([t, x, y]) => <text key={t} x={x} y={y} opacity={t === "7" ? 1 : 0.65} fill={t === "7" ? GOLD : "#FFFFFF"}>{t}</text>)}
+          </g>
+          <circle cx="160" cy="134" r="14" fill="none" stroke={GOLD} strokeDasharray="3 4" opacity="0" />
+        </g>
+      )}
+      {kind === "panchang" && (
+        <g>
+          <circle cx="160" cy="90" r="64" fill="none" stroke="#FFFFFF" strokeOpacity="0.35" strokeDasharray="3 6" />
+          {[0, 1, 2, 3, 4].map((i) => {
+            const a = (-90 + i * 72) * Math.PI / 180, x = 160 + 64 * Math.cos(a), y = 90 + 64 * Math.sin(a);
+            return <g key={i}><circle cx={x} cy={y} r="14" fill="#F5F1E6" /><circle cx={x + (i - 2) * 4} cy={y} r="14" fill="#3A0852" opacity={i === 2 ? 0 : 0.8} /></g>;
+          })}
+          <circle cx="160" cy="90" r="20" fill={GOLD} />
+          <text x="160" y="96" textAnchor="middle" fontFamily={serif} fontSize="16" fill="#2E003E">5</text>
+        </g>
+      )}
+      {kind === "clock" && (
+        <g>
+          {Array.from({ length: 8 }, (_, i) => {
+            const a0 = (-90 + i * 45) * Math.PI / 180, a1 = (-90 + (i + 1) * 45) * Math.PI / 180, r = 62, cx = 160, cy = 90;
+            const good = [0, 1, 3, 5, 6].includes(i);
+            return <path key={i} d={`M${cx} ${cy} L${cx + r * Math.cos(a0)} ${cy + r * Math.sin(a0)} A${r} ${r} 0 0 1 ${cx + r * Math.cos(a1)} ${cy + r * Math.sin(a1)} Z`} fill={good ? GOLD : "#FFFFFF"} fillOpacity={good ? 0.85 : 0.18} stroke="#2E003E" strokeWidth="1.5" />;
+          })}
+          <circle cx="160" cy="90" r="9" fill="#2E003E" />
+        </g>
+      )}
+      {kind === "compare" && (
+        <g fontFamily={serif} textAnchor="middle">
+          <circle cx="132" cy="90" r="52" fill="#FFFFFF" fillOpacity="0.16" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle cx="188" cy="90" r="52" fill={GOLD} fillOpacity="0.26" stroke={GOLD} strokeWidth="1.5" />
+          <text x="110" y="95" fontSize="15" fill="#FFFFFF">Vedic</text>
+          <text x="212" y="95" fontSize="15" fill={GOLD}>KP</text>
+          <text x="160" y="95" fontSize="11" fill="#FFFFFF" opacity="0.9">shared</text>
+        </g>
+      )}
     </svg>
   );
 }
@@ -66,6 +120,11 @@ function Banner({ kind, label }) {
 export const ArticleBanner = ({ slug }) => {
   if (slug.startsWith("sade-sati")) return <Banner kind="saturn" label="Saturn with its rings" />;
   if (slug.startsWith("should-you")) return <Banner kind="numbers" label="Numerology numbers" />;
+  if (slug.startsWith("how-to-read")) return <Banner kind="kundli" label="A North Indian style birth chart with twelve houses" />;
+  if (slug.startsWith("mobile-number")) return <Banner kind="phone" label="A mobile phone with digits" />;
+  if (slug.startsWith("what-is-panchang")) return <Banner kind="panchang" label="Five moons for the five limbs of the Panchang" />;
+  if (slug.startsWith("how-to-use-choghadiya")) return <Banner kind="clock" label="A day divided into eight Choghadiya slots" />;
+  if (slug.startsWith("kp-astrology")) return <Banner kind="compare" label="Vedic and KP astrology overlapping" />;
   return <Banner kind="vastu" label="Home floor plan on a Vastu grid" />;
 };
 

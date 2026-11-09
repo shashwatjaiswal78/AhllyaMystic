@@ -190,7 +190,41 @@ export interface Extra {
   ritu: string;
   ayana: string;
   disha: string;
+  varjyam: Span[];
+  amrit: Span[];
+  anandadi: { name: string; good: boolean; until: number | null }[];
+  chandra: { until: number | null; signs: number[] }[];
+  tara: { until: number | null; naks: number[] }[];
 }
+
+/* Varjyam and Amrit Kalam: each nakshatra has a stretch of four ghatis (one fifteenth of the nakshatra) that starts at a fixed
+   ghati of the nakshatra. The ghati counts are the traditional tables; a ghati here is one sixtieth of that nakshatra's own length. */
+const VARJYAM_GHATI: number[][] = [[50], [24], [30], [40], [14], [21], [30], [20], [32], [30], [20], [18], [21], [20], [14], [14], [10], [14], [20, 56], [24], [20], [10], [10], [18], [16], [24], [30]]; // Mula has two
+const AMRIT_GHATI = [42, 48, 54, 52, 38, 35, 54, 44, 56, 54, 44, 42, 45, 44, 38, 38, 34, 38, 44, 48, 44, 34, 34, 42, 40, 48, 54];
+const NAK_W = 360 / 27;
+const nakIdx = (ms: number) => Math.floor(moonSid(ms) / NAK_W) % 27;
+/** The start and end of the nakshatra that is running at `ms`, found to the second. */
+function nakSpan(ms: number) {
+  const i = nakIdx(ms), step = 20 * 60000;
+  let a = ms; while (nakIdx(a - step) === i) a -= step;
+  let lo = a - step, hi = a; while (hi - lo > 1000) { const m = (lo + hi) / 2; if (nakIdx(m) === i) hi = m; else lo = m; }
+  const start = hi;
+  let b = ms; while (nakIdx(b + step) === i) b += step;
+  lo = b; hi = b + step; while (hi - lo > 1000) { const m = (lo + hi) / 2; if (nakIdx(m) === i) lo = m; else hi = m; }
+  return { i, start, end: lo };
+}
+
+/* Anandadi yoga: 28 yogas run through the 28 nakshatras (Abhijit counted as the 28th), starting from a nakshatra that depends on the weekday. */
+export const ANANDADI = ["Ananda", "Kaaladanda", "Dhumra", "Prajapati", "Soumya", "Dhwanksha", "Dhwaja", "Srivatsa", "Vajra", "Mudgara", "Chatra", "Mitra", "Manas", "Padma", "Lumbaka", "Utpata", "Mrityu", "Kana", "Siddhi", "Shubha", "Amrita", "Musala", "Gada", "Matanga", "Rakshasa", "Chara", "Sthira", "Vardhamana"];
+const ANANDADI_GOOD = [1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1];
+const ANANDADI_START = [0, 4, 8, 12, 16, 20, 24]; // Sun..Sat in the 28 nakshatra count: Ashwini, Mrigashira, Ashlesha, Hasta, Anuradha, Uttara Ashadha, Shatabhisha
+const ABH_A = 276 + 40 / 60, ABH_B = 280 + 53.3333 / 60;
+const nak28 = (ms: number) => { const l = moonSid(ms), i = Math.floor(l / NAK_W); return l >= ABH_B ? i + 1 : l >= ABH_A ? 21 : i; };
+
+/** Moon signs for which today's Moon is favourable (Chandrabalam): the 1st, 3rd, 6th, 7th, 10th and 11th from the birth sign. */
+const chandraSigns = (moon: number) => Array.from({ length: 12 }, (_, r) => r).filter((r) => [0, 2, 5, 6, 9, 10].includes(((moon - r) % 12 + 12) % 12));
+/** Birth nakshatras for which today's nakshatra is favourable (Tarabalam): taras 2, 4, 6, 8 and 9. */
+const taraNaks = (cur: number) => Array.from({ length: 27 }, (_, b) => b).filter((b) => [1, 3, 5, 7, 8].includes((((cur - b) % 27 + 27) % 27) % 9));
 const YAMA_SLOT = [4, 3, 2, 1, 0, 6, 5]; // Sun..Sat: day eighth that is Yamaganda
 const GULIKA_SLOT = [6, 5, 4, 3, 2, 1, 0]; // Sun..Sat: day eighth that is Gulika
 const DISHA = ["West", "East", "North", "North", "South", "West", "East"]; // Sun..Sat: direction to avoid for travel
@@ -212,8 +246,31 @@ function extraFor(dateStr: string, p: PanchangPlace, sun: { rise: number; set: n
   const dayMs = sun.set - sun.rise, dl = dayMs / 8, mu = dayMs / 15;
   const slot = (i: number): Span => [sun.rise + i * dl, sun.rise + (i + 1) * dl];
   const tropical = Astronomy.SunPosition(new Date(sun.rise)).elon;
+  // Varjyam and Amrit Kalam inside this Panchang day (a nakshatra can start the day before).
+  const varjyam: Span[] = [], amrit: Span[] = [];
+  for (let t = sun.rise - 28 * 3600000; t < sun.next; ) {
+    const sp = nakSpan(t), D = sp.end - sp.start;
+    // A window is listed on the Panchang day it lies wholly inside, as printed panchangs do.
+    for (const g of VARJYAM_GHATI[sp.i]) { const v0 = sp.start + (g / 60) * D; if (v0 >= sun.rise && v0 + D / 15 <= sun.next) varjyam.push([v0, v0 + D / 15]); }
+    const a0 = sp.start + (AMRIT_GHATI[sp.i] / 60) * D;
+    if (a0 >= sun.rise && a0 + D / 15 <= sun.next) amrit.push([a0, a0 + D / 15]);
+    t = sp.end + 60000;
+  }
+  // Anandadi yoga, Tarabalam and Chandrabalam follow the nakshatra (and the Moon sign) through the day.
+  const segs = segmentsOf("Nakshatra", sun.rise, sun.next);
+  const anandadi: Extra["anandadi"] = [];
+  {
+    let prev = -1, step = 15 * 60000;
+    for (let t = sun.rise; t < sun.next; t += step) {
+      const y = ((nak28(t) - ANANDADI_START[dow]) % 28 + 28) % 28;
+      if (y !== prev) { if (anandadi.length) { let a = t - step, b = t; while (b - a > 1000) { const m = (a + b) / 2; if (((nak28(m) - ANANDADI_START[dow]) % 28 + 28) % 28 === prev) a = m; else b = m; } anandadi[anandadi.length - 1].until = b; } anandadi.push({ name: ANANDADI[y], good: !!ANANDADI_GOOD[y], until: null }); prev = y; }
+    }
+  }
+  const chandra = moonChange ? [{ until: moonChange, signs: chandraSigns(m0) }, { until: null, signs: chandraSigns((m0 + 1) % 12) }] : [{ until: null, signs: chandraSigns(m0) }];
+  const tara = segs.map((sg) => ({ until: sg.last ? null : sg.b, naks: taraNaks(sg.s) }));
   return {
     moon,
+    varjyam, amrit, anandadi, chandra, tara,
     rashi: { moon: m0, moonChange, moonNext: (m0 + 1) % 12, sun: sunSign(sun.rise), pada },
     durations: { day: dayMs, night: sun.next - sun.set, midday: sun.rise + dayMs / 2 },
     auspicious: { brahma: [sun.rise - 96 * 60000, sun.rise - 48 * 60000], abhijit: dow === 3 ? null : [sun.rise + 7 * mu, sun.rise + 8 * mu] },

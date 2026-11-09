@@ -9,6 +9,7 @@ export const SOCIAL = [
 ];
 
 import { CITY_SLUGS } from "./panchang/cities";
+import { ARTICLES } from "./blog";
 
 /** Indexable routes. Checkout pages are intentionally left out. */
 export const ROUTES: { path: string; priority: number; changeFrequency: "daily" | "weekly" | "monthly" | "yearly" }[] = [
@@ -31,9 +32,7 @@ export const ROUTES: { path: string; priority: number; changeFrequency: "daily" 
   { path: "/courses", priority: 0.6, changeFrequency: "monthly" },
   { path: "/masterclass", priority: 0.6, changeFrequency: "monthly" },
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
-  { path: "/blog/sade-sati-what-it-really-means", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/blog/should-you-change-your-name-spelling", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/blog/simple-vastu-fixes-for-your-home", priority: 0.6, changeFrequency: "monthly" },
+  ...ARTICLES.map((a) => ({ path: `/blog/${a.slug}`, priority: 0.6, changeFrequency: "monthly" as const })),
   ...CITY_SLUGS.map((slug) => ({ path: `/panchang/${slug}`, priority: 0.6, changeFrequency: "daily" as const })),
   ...CITY_SLUGS.map((slug) => ({ path: `/choghadiya/${slug}`, priority: 0.6, changeFrequency: "daily" as const })),
   { path: "/about", priority: 0.6, changeFrequency: "yearly" },

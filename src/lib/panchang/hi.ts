@@ -33,6 +33,10 @@ const MAP: Record<string, string> = {
   Vasanta: "वसंत", Grishma: "ग्रीष्म", Varsha: "वर्षा", Sharad: "शरद", Hemanta: "हेमंत", Shishira: "शिशिर", Uttarayana: "उत्तरायण", Dakshinayana: "दक्षिणायन",
   // directions
   East: "पूर्व", West: "पश्चिम", North: "उत्तर", South: "दक्षिण",
+  // anandadi yoga
+  Ananda: "आनंद", Kaaladanda: "कालदंड", Dhumra: "धूम्र", Prajapati: "प्रजापति", Soumya: "सौम्य", Dhwanksha: "ध्वांक्ष", Dhwaja: "ध्वज", Srivatsa: "श्रीवत्स",
+  Mudgara: "मुद्गर", Chatra: "छत्र", Mitra: "मित्र", Manas: "मानस", Padma: "पद्म", Lumbaka: "लुंबक", Utpata: "उत्पात", Mrityu: "मृत्यु", Kana: "काण",
+  Amrita: "अमृत", Musala: "मुसल", Gada: "गदा", Matanga: "मातंग", Rakshasa: "राक्षस", Chara: "चर", Sthira: "स्थिर", Vardhamana: "वर्धमान",
   // planets
   Sun: "सूर्य", Moon: "चंद्र", Mars: "मंगल", Mercury: "बुध", Jupiter: "गुरु", Venus: "शुक्र", Saturn: "शनि",
 };
@@ -82,3 +86,16 @@ export const UI: Record<string, { en: string; hi: string }> = {
   avoidRahu: { en: "Avoid for auspicious work", hi: "शुभ कार्य के लिए त्यागें" },
   samvat: { en: "Vikrama Samvata", hi: "विक्रम संवत" },
 };
+
+/** The 60 Samvatsara (Brihaspati year) names in Hindi, in the same order as the engine's list. */
+const SAMV_HI: Record<string, string> = {
+  Prabhava: "प्रभव", Vibhava: "विभव", Shukla: "शुक्ल", Pramoda: "प्रमोद", Prajapati: "प्रजापति", Angira: "अंगिरा", Shrimukha: "श्रीमुख", Bhava: "भाव", Yuva: "युवा",
+  Dhatri: "धाता", Ishvara: "ईश्वर", Bahudhanya: "बहुधान्य", Pramathi: "प्रमाथी", Vikrama: "विक्रम", Vrisha: "वृष", Chitrabhanu: "चित्रभानु", Subhanu: "सुभानु",
+  Tarana: "तारण", Parthiva: "पार्थिव", Vyaya: "व्यय", Sarvajit: "सर्वजित्", Sarvadhari: "सर्वधारी", Virodhi: "विरोधी", Vikriti: "विकृति", Khara: "खर",
+  Nandana: "नंदन", Vijaya: "विजय", Jaya: "जय", Manmatha: "मन्मथ", Durmukhi: "दुर्मुख", Hemalambi: "हेमलंबी", Vilambi: "विलंबी", Vikari: "विकारी",
+  Sharvari: "शार्वरी", Plava: "प्लव", Shubhakrit: "शुभकृत्", Shobhakrit: "शोभकृत्", Krodhi: "क्रोधी", Vishvavasu: "विश्वावसु", Parabhava: "पराभव",
+  Plavanga: "प्लवंग", Kilaka: "कीलक", Saumya: "सौम्य", Sadharana: "साधारण", Virodhakrit: "विरोधकृत्", Paridhavi: "परिधावी", Pramadicha: "प्रमादी",
+  Ananda: "आनंद", Rakshasa: "राक्षस", Nala: "नल", Pingala: "पिंगल", Kalayukti: "कालयुक्त", Siddharthi: "सिद्धार्थी", Raudra: "रौद्र", Durmati: "दुर्मति",
+  Dundubhi: "दुंदुभि", Rudhirodgari: "रुधिरोद्गारी", Raktakshi: "रक्ताक्षी", Krodhana: "क्रोधन", Akshaya: "अक्षय",
+};
+export const hiSamvatsara = (s: string) => SAMV_HI[s] ?? s;
