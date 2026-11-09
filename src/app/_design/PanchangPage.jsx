@@ -2,7 +2,7 @@
 /* eslint-disable */
 // The Panchang page: the same site header and footer as the other pages around the Panchang tool.
 import React from "react";
-import { HoroscopeMenu, HoroscopeMobileMenu, CalculatorsMenu, CalculatorsMobileMenu } from "./HoroscopeMenu";
+import { HoroscopeMenu, HoroscopeMobileMenu, CalculatorsMenu, CalculatorsMobileMenu, ReportsMenu, ReportsMobileMenu } from "./HoroscopeMenu";
 import PanchangTool from "./PanchangTool";
 
 class PanchangPage extends React.Component {
@@ -41,9 +41,7 @@ PanchangPage.prototype.render = function render() {
                 {"Free Kundli"}
               </a>
               <CalculatorsMenu />
-              <a href={"/#reports"} style={{color: "#FFFFFF", textDecoration: "none"}}>
-                {"Reports"}
-              </a>
+              <ReportsMenu />
               <a href={"/courses"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Courses"}
               </a>
@@ -107,12 +105,7 @@ PanchangPage.prototype.render = function render() {
                     </svg>
                   </a>
                   <CalculatorsMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
-                    {"Reports"}
-                    <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-                      <path d={"M9 6l6 6-6 6"} />
-                    </svg>
-                  </a>
+                  <ReportsMobileMenu onNavigate={v.closeMenu} />
                   <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Courses"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>

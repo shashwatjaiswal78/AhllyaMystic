@@ -3,6 +3,7 @@
 //  - Horoscope: Daily, Weekly, Monthly, Yearly, Rashifal 2027 and Panchang. The horoscope items open that view for the
 //    sign the visitor last chose (Aries until they choose one).
 //  - Free Calculators: Free Kundli, KP Kundli, Name Number and Mobile Number, each opening its own calculator.
+//  - Reports: each report opens its own page.
 import React, { useEffect, useRef, useState } from "react";
 
 export const SIGN_KEY = "ahllya:sign";
@@ -22,6 +23,16 @@ const CALC_ITEMS = [
   { key: "kp", label: "KP Kundli", href: "/?tool=kp#free", icon: "M4 4h16v16H4zM4 12h16M12 4v16" },
   { key: "name", label: "Name Number", href: "/?tool=name#free", icon: "M9 4L7 20M17 4l-2 16M4 9h17M3 15h17" },
   { key: "mobile", label: "Mobile Number", href: "/?tool=mobile#free", icon: "M8 2h8a1 1 0 011 1v18a1 1 0 01-1 1H8a1 1 0 01-1-1V3a1 1 0 011-1zM11 18h2" },
+];
+
+// Each report opens its own page.
+const REPORT_ITEMS = [
+  { key: "kundli", label: "Personalised Kundli Report", href: "/report/kundli", icon: "M12 3l9 9-9 9-9-9zM12 8l4 4-4 4-4-4z" },
+  { key: "varshphal", label: "Varshphal 2027 Report", href: "/report/varshphal", icon: "M4 6h16v14H4zM4 10h16M8 3v4M16 3v4" },
+  { key: "milan", label: "Couple Kundli Milan", href: "/report/milan", icon: "M12 20s-7-4.4-9.3-9A5.4 5.4 0 0112 5.6 5.4 5.4 0 0121.3 11C19 15.6 12 20 12 20z" },
+  { key: "lal-kitab", label: "Lal Kitab Report", href: "/report/lal-kitab", icon: "M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3zM5 17a3 3 0 013-3h11" },
+  { key: "name", label: "Name Numerology Report", href: "/report/name-numerology", icon: "M9 4L7 20M17 4l-2 16M4 9h17M3 15h17" },
+  { key: "mobile", label: "Mobile Number Report", href: "/report/mobile-number", icon: "M8 2h8a1 1 0 011 1v18a1 1 0 01-1 1H8a1 1 0 01-1-1V3a1 1 0 011-1zM11 18h2" },
 ];
 
 function useSign() {
@@ -127,4 +138,12 @@ export function CalculatorsMenu() {
 
 export function CalculatorsMobileMenu({ onNavigate }) {
   return <Accordion label="Free Calculators" items={CALC_ITEMS} onNavigate={onNavigate} hrefOf={(it) => it.href} />;
+}
+
+export function ReportsMenu() {
+  return <Dropdown label="Reports" href="/#reports" items={REPORT_ITEMS} menuId="reports-menu" ariaLabel="Reports menu" hrefOf={(it) => it.href} />;
+}
+
+export function ReportsMobileMenu({ onNavigate }) {
+  return <Accordion label="Reports" items={REPORT_ITEMS} onNavigate={onNavigate} hrefOf={(it) => it.href} />;
 }
