@@ -294,7 +294,7 @@ HoroscopePage.prototype.render = function render() {
                 {hole(v.heroTitle)}
               </h1>
               <p style={{margin: "0 auto 28px", maxWidth: "640px", fontSize: "17px", color: "#EADFF2"}}>
-                {"Plan your day with clarity: Auspicious timings, lucky numbers, lucky colours, see which hours favour new work, how love, career, money and health look for your sign."}
+                {"Plan your day with clarity: auspicious timings, lucky numbers and colours, the hours that favour new work, and how love, career, money and health look for your sign."}
               </p>
               <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px"}}>
                 <a href={"#rashi"} style={{display: "inline-flex", alignItems: "center", minHeight: "52px", padding: "0 26px", borderRadius: "999px", background: "#FCCE07", color: "#2E003E", fontWeight: "700", textDecoration: "none"}}>
