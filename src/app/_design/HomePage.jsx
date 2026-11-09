@@ -99,9 +99,9 @@ class HomePage extends React.Component {
     var isMan = this.state.expert !== 'san';
     var CP = isMan ? ['₹2,301', '₹4,101', '₹5,001', '₹7,201', '₹3,101'] : ['₹4,001', '₹6,301', '₹7,601', '₹11,111', '₹5,100'];
     var plans = [
-      { name: 'One area', blurb: 'A focused session on the area that matters most right now.', price: CP[0], mins: '20 min', i1: 'Pick any one: career, love, money, health, education or child', i2: 'Your chart studied before the call', i3: 'Simple, practical remedies', cta: 'Book one area', href: '/consult?expert=' + (isMan ? 'man' : 'san') + '&sess=one' },
-      { name: 'Two areas', blurb: 'For two questions that sit side by side, like career and money.', price: CP[1], mins: '30 min', i1: 'Pick any two areas of your life', i2: 'How the two connect in your chart', i3: 'Remedies for both areas', cta: 'Book two areas', href: '/consult?expert=' + (isMan ? 'man' : 'san') + '&sess=two' },
-      { name: 'Three areas', blurb: 'A broader reading that connects the different parts of your life.', price: CP[2], mins: '45 min', i1: 'Pick any three areas of your life', i2: 'Timing guidance from your dasha periods', i3: 'Personalised remedies for each area', cta: 'Book three areas', href: '/consult?expert=' + (isMan ? 'man' : 'san') + '&sess=three' }
+      { name: 'One area', blurb: 'A focused session on the area that matters most right now.', price: CP[0], mins: '20 min', i1: 'Pick any one: career, love, money, health, education or child', i2: 'Your chart studied before the call', i3: 'Simple, practical remedies', cta: 'Book one area', href: '/consultation?expert=' + (isMan ? 'man' : 'san') + '#plans' },
+      { name: 'Two areas', blurb: 'For two questions that sit side by side, like career and money.', price: CP[1], mins: '30 min', i1: 'Pick any two areas of your life', i2: 'How the two connect in your chart', i3: 'Remedies for both areas', cta: 'Book two areas', href: '/consultation?expert=' + (isMan ? 'man' : 'san') + '#plans' },
+      { name: 'Three areas', blurb: 'A broader reading that connects the different parts of your life.', price: CP[2], mins: '45 min', i1: 'Pick any three areas of your life', i2: 'Timing guidance from your dasha periods', i3: 'Personalised remedies for each area', cta: 'Book three areas', href: '/consultation?expert=' + (isMan ? 'man' : 'san') + '#plans' }
     ];
     var menuOpen = !!this.state.menuOpen;
     var tool = this.state.tool || 'kundli';
@@ -138,7 +138,7 @@ class HomePage extends React.Component {
       closeMenu: () => this.setState({ menuOpen: false }),
       pickMan: () => this.setState({ expert: 'man' }),
       pickSan: () => this.setState({ expert: 'san' }),
-      isMan: isMan, isSan: !isMan, completeHref: '/consult?expert=' + (isMan ? 'man' : 'san') + '&sess=all',
+      isMan: isMan, isSan: !isMan, completeHref: '/consultation?expert=' + (isMan ? 'man' : 'san') + '#plans',
       plans: plans, fullPrice: CP[3], diwaliPrice: CP[4],
       rashis: rashis,
       onMoon: (i) => { try { localStorage.setItem('ahllya:sign', signs[i].en.toLowerCase()); } catch (e) {} this.setState({ sign: i }); },
@@ -164,7 +164,7 @@ HomePage.prototype.render = function render() {
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
             <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "13.5px", fontWeight: "500"}}>
-              <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
+              <a href={"/consultation"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
               <a href={"/kundli"} style={{color: "#FFFFFF", textDecoration: "none"}}>
@@ -190,7 +190,7 @@ HomePage.prototype.render = function render() {
                   <path d={"M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"} />
                 </svg>
               </a>
-              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
+              <a href={"/consultation"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                 {"Book a consultation"}
               </a>
               <button type={"button"} className={"am-burger"} aria-label={"Open menu"} aria-controls={"am-drawer"} aria-expanded={v.menuExpanded} onClick={v.openMenu} style={{alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#FFFFFF", cursor: "pointer"}}>
@@ -222,7 +222,7 @@ HomePage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
+                  <a href={"/consultation"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -256,7 +256,7 @@ HomePage.prototype.render = function render() {
                     </svg>
                   </a>
                   <div style={{marginTop: "28px", display: "grid", gap: "12px"}}>
-                    <a href={"/consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "center", minHeight: "52px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", textDecoration: "none"}}>
+                    <a href={"/consultation"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "center", minHeight: "52px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", textDecoration: "none"}}>
                       {"Book a consultation"}
                     </a>
                     <a href={"https://wa.me/919129237566"} style={{display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", minHeight: "52px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.35)", color: "#FFFFFF", fontWeight: "600", textDecoration: "none"}}>
@@ -297,7 +297,7 @@ HomePage.prototype.render = function render() {
                   {"One-on-one consultations and hand-prepared reports by experts, never generated by software."}
                 </p>
                 <div className={"am-hero-flex"} style={{display: "flex", flexWrap: "wrap", gap: "14px", marginBottom: "40px"}}>
-                  <a href={"/consult"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "10px", minHeight: "52px", minWidth: "248px", boxSizing: "border-box", padding: "0 28px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "14.5px", textDecoration: "none", boxShadow: "0 10px 30px -10px rgba(252,206,7,0.55)"}}>
+                  <a href={"/consultation"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "10px", minHeight: "52px", minWidth: "248px", boxSizing: "border-box", padding: "0 28px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "14.5px", textDecoration: "none", boxShadow: "0 10px 30px -10px rgba(252,206,7,0.55)"}}>
                     {"Book a consultation "}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M5 12h14M13 6l6 6-6 6"} />
@@ -389,7 +389,7 @@ HomePage.prototype.render = function render() {
               </div>
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "20px"}}>
-              <a href={"#consult"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/consultation"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
                 <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "50px", height: "50px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", boxShadow: "0 0 0 4px #FFFFFF, 0 0 0 5px rgba(252,206,7,0.55)"}}>
                   <svg aria-hidden={"true"} width={"24"} height={"24"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.7"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                     <path d={"M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"} />
@@ -404,7 +404,7 @@ HomePage.prototype.render = function render() {
                   </span>
                 </span>
               </a>
-              <a href={"#consult"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/consultation"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
                 <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "50px", height: "50px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", boxShadow: "0 0 0 4px #FFFFFF, 0 0 0 5px rgba(252,206,7,0.55)"}}>
                   <svg aria-hidden={"true"} width={"24"} height={"24"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.7"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                     <rect x={"3"} y={"7"} width={"18"} height={"13"} rx={"2"} />
@@ -420,7 +420,7 @@ HomePage.prototype.render = function render() {
                   </span>
                 </span>
               </a>
-              <a href={"#consult"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/consultation"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
                 <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "50px", height: "50px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", boxShadow: "0 0 0 4px #FFFFFF, 0 0 0 5px rgba(252,206,7,0.55)"}}>
                   <svg aria-hidden={"true"} width={"24"} height={"24"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.7"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                     <ellipse cx={"12"} cy={"6"} rx={"7"} ry={"3"} />
@@ -436,7 +436,7 @@ HomePage.prototype.render = function render() {
                   </span>
                 </span>
               </a>
-              <a href={"#consult"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/consultation"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
                 <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "50px", height: "50px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", boxShadow: "0 0 0 4px #FFFFFF, 0 0 0 5px rgba(252,206,7,0.55)"}}>
                   <svg aria-hidden={"true"} width={"24"} height={"24"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.7"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                     <path d={"M5 19c0-8 6-14 15-14 0 9-6 15-14 15"} />
@@ -452,7 +452,7 @@ HomePage.prototype.render = function render() {
                   </span>
                 </span>
               </a>
-              <a href={"#consult"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/consultation"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
                 <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "50px", height: "50px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", boxShadow: "0 0 0 4px #FFFFFF, 0 0 0 5px rgba(252,206,7,0.55)"}}>
                   <svg aria-hidden={"true"} width={"24"} height={"24"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.7"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                     <path d={"M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"} />
@@ -468,7 +468,7 @@ HomePage.prototype.render = function render() {
                   </span>
                 </span>
               </a>
-              <a href={"#consult"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/consultation"} className={"am-lift"} style={{display: "flex", gap: "18px", padding: "26px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", textDecoration: "none", color: "#1E1830"}}>
                 <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "50px", height: "50px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", boxShadow: "0 0 0 4px #FFFFFF, 0 0 0 5px rgba(252,206,7,0.55)"}}>
                   <svg aria-hidden={"true"} width={"24"} height={"24"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.7"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                     <circle cx={"9"} cy={"8"} r={"3"} />
@@ -623,19 +623,6 @@ HomePage.prototype.render = function render() {
                 </a>
               </div>
             </div>
-            <p style={{margin: "22px auto 0", maxWidth: "760px", textAlign: "center", fontSize: "13px", color: "#FFFFFF"}}>
-              <span style={{display: "inline-block", background: "#921A11", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", padding: "4px 10px", borderRadius: "999px", marginRight: "8px"}}>
-                {"Diwali offer"}
-              </span>
-              {"Complete consultation for "}
-              {hole(v.diwaliPrice)}
-              {" instead of "}
-              {hole(v.fullPrice)}
-              {", till 8 November. "}
-              <a href={"/consult"} style={{color: "#FCCE07", fontWeight: "700"}}>
-                {"See the offer"}
-              </a>
-            </p>
             <ol style={{listStyle: "none", margin: "32px auto 0", padding: "0", maxWidth: "980px", alignItems: "start", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "24px"}}>
               <li style={{display: "grid", gap: "6px", alignContent: "start"}}>
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.55)", background: "rgba(255,255,255,0.06)", fontFamily: "'Marcellus', serif", fontSize: "13.5px", color: "#FFFFFF"}}>
@@ -1437,7 +1424,7 @@ HomePage.prototype.render = function render() {
                         <a href={"/horoscope/" + v.cur?.slug + "/2027"}>{"2027"}</a>
                       </span>
                     </div>
-                    <a href={"/consult"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
+                    <a href={"/consultation"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                       {"Get a personal reading"}
                     </a>
                   </div>
@@ -1869,7 +1856,7 @@ HomePage.prototype.render = function render() {
                 </p>
               </div>
               <div style={{display: "flex", flexWrap: "wrap", gap: "12px"}}>
-                <a href={"/consult"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: "52px", minWidth: "240px", boxSizing: "border-box", padding: "0 28px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", textDecoration: "none"}}>
+                <a href={"/consultation"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: "52px", minWidth: "240px", boxSizing: "border-box", padding: "0 28px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", textDecoration: "none"}}>
                   {"Book a consultation"}
                 </a>
                 <a href={"https://wa.me/919129237566"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px", minHeight: "52px", minWidth: "240px", boxSizing: "border-box", padding: "0 28px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.45)", color: "#FFFFFF", fontWeight: "700", textDecoration: "none"}}>
@@ -1896,7 +1883,7 @@ HomePage.prototype.render = function render() {
                 <p style={{margin: "0 0 4px", fontWeight: "700", color: "#FFFFFF"}}>
                   {"Explore"}
                 </p>
-                <a href={"/#consult"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                <a href={"/consultation"} style={{color: "#EADFF2", textDecoration: "none"}}>
                   {"Consultations"}
                 </a>
                 <a href={"/#reports"} style={{color: "#EADFF2", textDecoration: "none"}}>

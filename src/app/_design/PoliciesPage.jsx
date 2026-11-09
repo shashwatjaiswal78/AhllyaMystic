@@ -36,7 +36,7 @@ PoliciesPage.prototype.render = function render() {
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
             <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "13.5px", fontWeight: "500"}}>
-              <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
+              <a href={"/consultation"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
               <a href={"/kundli"} style={{color: "#FFFFFF", textDecoration: "none"}}>
@@ -62,7 +62,7 @@ PoliciesPage.prototype.render = function render() {
                   <path d={"M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"} />
                 </svg>
               </a>
-              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
+              <a href={"/consultation"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                 {"Book a consultation"}
               </a>
               <button type={"button"} className={"am-burger"} aria-label={"Open menu"} aria-controls={"am-drawer"} aria-expanded={v.menuExpanded} onClick={v.openMenu} style={{alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#FFFFFF", cursor: "pointer"}}>
@@ -94,7 +94,7 @@ PoliciesPage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
+                  <a href={"/consultation"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -128,7 +128,7 @@ PoliciesPage.prototype.render = function render() {
                     </svg>
                   </a>
                   <div style={{marginTop: "28px", display: "grid", gap: "12px"}}>
-                    <a href={"/consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "center", minHeight: "52px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", textDecoration: "none"}}>
+                    <a href={"/consultation"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "center", minHeight: "52px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", textDecoration: "none"}}>
                       {"Book a consultation"}
                     </a>
                     <a href={"https://wa.me/919129237566"} style={{display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", minHeight: "52px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.35)", color: "#FFFFFF", fontWeight: "600", textDecoration: "none"}}>
@@ -363,7 +363,7 @@ PoliciesPage.prototype.render = function render() {
                 <p style={{margin: "0 0 4px", fontWeight: "700", color: "#FFFFFF"}}>
                   {"Explore"}
                 </p>
-                <a href={"/#consult"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                <a href={"/consultation"} style={{color: "#EADFF2", textDecoration: "none"}}>
                   {"Consultations"}
                 </a>
                 <a href={"/#reports"} style={{color: "#EADFF2", textDecoration: "none"}}>
