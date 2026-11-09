@@ -61,8 +61,8 @@ NameNumberPage.prototype.render = function render() {
                 {"Courses"}
               </a>
               <HoroscopeMenu />
-              <a href={"/blog"} style={{color: "#FFFFFF", textDecoration: "none"}}>
-                {"Blogs"}
+              <a href={"/panchang"} style={{color: "#FFFFFF", textDecoration: "none"}}>
+                {"Panchang"}
               </a>
               <a href={"/about"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"About"}
@@ -128,8 +128,8 @@ NameNumberPage.prototype.render = function render() {
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
-                    {"Blogs"}
+                  <a href={"/panchang"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
+                    {"Panchang"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
@@ -217,6 +217,24 @@ NameNumberPage.prototype.render = function render() {
                 </a>
                 <a href={"/kundli"} style={{color: "#EADFF2", textDecoration: "none"}}>
                   {"Free Kundli"}
+                </a>
+                <a href={"/horoscope"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Daily Horoscope"}
+                </a>
+                <a href={"/panchang"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Panchang"}
+                </a>
+                <a href={"/kp-kundli"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Free KP Kundli"}
+                </a>
+                <a href={"/name-number"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Free Name Numerology"}
+                </a>
+                <a href={"/mobile-number"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Free Mobile Number Numerology"}
+                </a>
+                <a href={"/blog"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                  {"Blog"}
                 </a>
               </div>
               <div style={{display: "grid", gap: "10px", alignContent: "start"}}>

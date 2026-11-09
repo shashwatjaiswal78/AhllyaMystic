@@ -1,6 +1,6 @@
 "use client";
 // Header menus with a dropdown on desktop and an accordion in the phone menu:
-//  - Horoscope: Daily, Weekly, Monthly, Yearly, Rashifal 2027 and Panchang. The horoscope items open that view for the
+//  - Horoscope: Daily, Weekly, Monthly, Yearly, and Rashifal 2027. The horoscope items open that view for the
 //    sign the visitor last chose (Aries until they choose one).
 //  - Free Calculators: Free Kundli, Free KP Kundli, Free Name Numerology and Free Mobile Number Numerology, each opening its own calculator.
 //  - Reports: each report opens its own page.
@@ -14,7 +14,6 @@ const HOROSCOPE_ITEMS = [
   { key: "monthly", label: "Monthly Horoscope", path: "/monthly", icon: "M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z" },
   { key: "yearly", label: "Yearly Horoscope", path: "/yearly", icon: "M3 18a9 9 0 0118 0M7 18a5 5 0 0110 0M12 18V9" },
   { key: "2027", label: "Rashifal 2027 Horoscope", path: "/2027", icon: "M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.3l6.1-.7z" },
-  { key: "panchang", label: "Panchang", href: "/panchang", icon: "M12 7v5l3 2M12 3a9 9 0 100 18 9 9 0 000-18z" },
 ];
 
 // Each calculator has its own page, with the form on it.
