@@ -139,6 +139,20 @@ CalculatorPage.prototype.render = function render() {
                 <p style={{margin: "0"}}>
                   {"Astrology, numerology, Vastu and manifestation, read with care."}
                 </p>
+                <div style={{display: "grid", gap: "10px", alignContent: "start", marginTop: "24px"}}>
+                  <p style={{margin: "0 0 4px", fontWeight: "700", color: "#FFFFFF"}}>
+                    {"Follow"}
+                  </p>
+                  <a href={"https://www.instagram.com/ahllyamystic"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                    {"Instagram"}
+                  </a>
+                  <a href={"https://www.youtube.com/@AhllyaMystic"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                    {"YouTube"}
+                  </a>
+                  <a href={"https://www.facebook.com/ahllyamystic"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                    {"Facebook"}
+                  </a>
+                </div>
               </div>
               <div style={{display: "grid", gap: "10px", alignContent: "start"}}>
                 <p style={{margin: "0 0 4px", fontWeight: "700", color: "#FFFFFF"}}>
@@ -243,20 +257,6 @@ CalculatorPage.prototype.render = function render() {
                 <span>
                   {"Mon to Sun, 11am to 7pm"}
                 </span>
-              </div>
-              <div style={{display: "grid", gap: "10px", alignContent: "start"}}>
-                <p style={{margin: "0 0 4px", fontWeight: "700", color: "#FFFFFF"}}>
-                  {"Follow"}
-                </p>
-                <a href={"https://www.instagram.com/ahllyamystic"} style={{color: "#EADFF2", textDecoration: "none"}}>
-                  {"Instagram"}
-                </a>
-                <a href={"https://www.youtube.com/@AhllyaMystic"} style={{color: "#EADFF2", textDecoration: "none"}}>
-                  {"YouTube"}
-                </a>
-                <a href={"https://www.facebook.com/ahllyamystic"} style={{color: "#EADFF2", textDecoration: "none"}}>
-                  {"Facebook"}
-                </a>
               </div>
             </div>
             <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "13px"}}>
