@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/panchang" },
   title: "Daily Panchang and Choghadiya for Your City",
   description:
-    "Free daily Panchang for any city, town or village: tithi, nakshatra, yoga and karana with exact change times, sunrise and sunset, day and night Choghadiya, Rahu Kaal and the lunar month, calculated from real planet positions.",
+    "Free daily Panchang for any city or village: tithi, nakshatra, yoga, karana with change times, sunrise, Choghadiya, Rahu Kaal and the lunar month.",
 };
 
 const faq = [

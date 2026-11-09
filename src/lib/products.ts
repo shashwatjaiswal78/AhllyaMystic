@@ -29,9 +29,9 @@ export const PRODUCTS = {
   "consult-senior-two-areas": { name: "Consultation — Two areas (Senior Expert)", amountPaise: 630100 },
   "consult-senior-three-areas": { name: "Consultation — Three areas (Senior Expert)", amountPaise: 760100 },
   "consult-senior-complete": { name: "Consultation — Complete (Senior Expert)", amountPaise: 1111100 },
-  "consult-landing-expert": { name: "Consultation with Maneswita — Diwali offer", amountPaise: 310100 },
-  "consult-landing-senior": { name: "Consultation with Ahalya Sangeeta — Diwali offer", amountPaise: 510000 },
-  "consult-landing-vastu": { name: "Vastu consultation — Diwali offer", amountPaise: 330000 },
+  "consult-landing-expert": { name: "Consultation with Maneswita — Festive offer", amountPaise: 310100 },
+  "consult-landing-senior": { name: "Consultation with Ahalya Sangeeta — Festive offer", amountPaise: 510000 },
+  "consult-landing-vastu": { name: "Vastu consultation — Festive offer", amountPaise: 330000 },
   "masterclass-99": { name: "Manifestation Masterclass — commitment fee", amountPaise: 9900 },
   // Consult + report bundles (report at 10% off = ₹899)
   "consult-one-area+report": { name: "Consultation One area + Report Bundle (Expert)", amountPaise: 320000 },

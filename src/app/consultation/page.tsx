@@ -5,9 +5,9 @@ import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/consultation" },
-  title: "Book an Astrology Consultation: One-on-One Audio or Video Call",
+  title: "Astrology Consultation: Book a One-on-One Call",
   description:
-    "Speak one-on-one with Ahalya Sangeeta or Maneswita. Your chart is studied before the call, then you get clear answers on love, career, money, health and more, with simple remedies. Audio or video, in Hindi or English.",
+    "Speak one-on-one with Ahalya Sangeeta or Maneswita. Your chart is studied before the call, then you get clear answers and simple remedies. Audio or video.",
 };
 
 export default function Page() {

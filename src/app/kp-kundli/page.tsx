@@ -1,8 +1,24 @@
 import type { Metadata } from "next";
-import KpKundliPage from "@/app/_design/KpKundliPage";
+import KpRoute from "@/app/_design/KpRoute";
+import { CALCULATORS } from "@/lib/calculators";
+import { SITE_URL } from "@/lib/site";
 
-export const metadata: Metadata = { alternates: { canonical: "/kp-kundli" }, title: "Free KP Kundli calculator", description: "Free KP Kundli with cusps, significators and ruling planets." };
+const c = CALCULATORS.kp;
+
+export const metadata: Metadata = { alternates: { canonical: c.path }, title: c.title, description: c.description };
 
 export default function Page() {
-  return <KpKundliPage />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "FAQPage", mainEntity: c.faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
+      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: c.eyebrow.replace("Free ", ""), item: `${SITE_URL}${c.path}` }] },
+    ],
+  };
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
+      <KpRoute />
+    </>
+  );
 }

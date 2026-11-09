@@ -10,10 +10,25 @@ const nextConfig: NextConfig = {
   // The old all-signs pages now live inside the tabbed horoscope page, one sign at a time.
   async redirects() {
     return [
+      // The old prototype page was replaced by /kp-kundli.
+      { source: "/kp-kundli.html", destination: "/kp-kundli", permanent: true },
       ...["weekly", "monthly", "yearly", "2027"].map((p) => ({ source: `/horoscope/${p}`, destination: `/horoscope/aries/${p}`, permanent: false })),
       // 2028 is no longer shown; send old links to 2027.
       { source: "/horoscope/2028", destination: "/horoscope/aries/2027", permanent: false },
       { source: `/horoscope/:sign(${SIGNS})/2028`, destination: "/horoscope/:sign/2027", permanent: false },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+        ],
+      },
     ];
   },
   async rewrites() {

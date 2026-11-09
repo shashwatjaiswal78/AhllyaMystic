@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ sign: str
   if (!info) return {};
   return {
     alternates: { canonical: `/horoscope/${sign}` },
-    title: `${info.en} Horoscope Today (${info.hi} Rashifal): Daily Prediction`,
-    description: `${info.en} (${info.hi}) horoscope for today and tomorrow: love, career, money and health scores, lucky number and colour, mantra, Rahu Kaal and Abhijit Muhurat. Free, in English and Hindi, calculated from real planet positions.`,
+    title: `${info.en} Horoscope Today (${info.hi} Rashifal)`,
+    description: `${info.en} (${info.hi}) horoscope for today and tomorrow: love, career, money and health, lucky number and colour, Rahu Kaal and Abhijit Muhurat.`,
   };
 }
 

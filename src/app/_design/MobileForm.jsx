@@ -9,7 +9,7 @@ import { labelStyle, inputStyle, selectStyle, isoDate } from "./form-parts";
 
 export const MOBILE_KEY = "ahllya:mobile";
 
-export default function MobileForm() {
+export default function MobileForm({ onDone }) {
   const router = useRouter();
   const nameRef = useRef(null), genderRef = useRef(null), mobRef = useRef(null), dobRef = useRef(null);
   const [busy, setBusy] = useState(false);
@@ -49,7 +49,7 @@ export default function MobileForm() {
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Could not check your number. Please try again.");
       try { sessionStorage.setItem(MOBILE_KEY, JSON.stringify(data)); } catch { /* private mode: the result page asks again */ }
-      router.push("/mobile-number");
+      if (onDone) onDone(); else router.push("/mobile-number");
     } catch (err) {
       setBusy(false);
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");

@@ -44,7 +44,7 @@ KundliPage.prototype.componentDidMount = function componentDidMount() {
   // The home page form stores the chart it got from /api/kundli. Without one there is nothing to show, so go back to the form.
   let data = null;
   try { data = JSON.parse(sessionStorage.getItem(KUNDLI_KEY) || "null"); } catch (e) { data = null; }
-  if (!data || data.v !== 1 || !Array.isArray(data.dasha) || !data.dasha.length) { window.location.replace("/#free"); return; }
+  if (!data || data.v !== 1 || !Array.isArray(data.dasha) || !data.dasha.length) { window.location.replace("/kundli?edit=1"); return; }
   // The page grows once the chart is in, which can leave the visitor part-way down (the site scrolls smoothly).
   // Show the top, with the name and headline first, as soon as the result is drawn.
   const top = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -211,7 +211,7 @@ KundliPage.prototype.render = function render() {
               </h1>
               <p style={{margin: "0 0 32px", fontSize: "15px", color: "#EADFF2"}}>
                 {R ? R.headline + " " : ""}
-                <a href={"/?tool=kundli&edit=1#free"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
+                <a href={"/kundli?edit=1"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
                   {"Edit details"}
                 </a>
               </p>

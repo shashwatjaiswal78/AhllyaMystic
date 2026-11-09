@@ -251,7 +251,7 @@ ReportNamePage.prototype.render = function render() {
                   <a href={"#packages"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: "54px", minWidth: "220px", padding: "0 28px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", textDecoration: "none"}}>
                     {"See packages"}
                   </a>
-                  <a href={"/#free"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: "54px", minWidth: "220px", padding: "0 28px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.45)", color: "#FFFFFF", fontWeight: "700", textDecoration: "none"}}>
+                  <a href={"/name-number"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: "54px", minWidth: "220px", padding: "0 28px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.45)", color: "#FFFFFF", fontWeight: "700", textDecoration: "none"}}>
                     {"Check yours free"}
                   </a>
                 </div>
@@ -503,7 +503,7 @@ ReportNamePage.prototype.render = function render() {
                   {"Find out what your name number says, and whether one letter could change it."}
                 </p>
               </div>
-              <a href={"/#free"} style={{display: "block", textAlign: "center", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", padding: "13px 18px", borderRadius: "999px", textDecoration: "none"}}>
+              <a href={"/name-number"} style={{display: "block", textAlign: "center", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", padding: "13px 18px", borderRadius: "999px", textDecoration: "none"}}>
                 {"Check my name"}
               </a>
             </div>

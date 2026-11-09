@@ -25,7 +25,7 @@ KpKundliPage.prototype.componentDidMount = function componentDidMount() {
   // Without a chart from the home page form there is nothing to show, so go back to the KP form.
   let data = null;
   try { data = JSON.parse(sessionStorage.getItem(KP_KEY) || "null"); } catch (e) { data = null; }
-  if (!data || data.v !== 1 || !data.chart || !Array.isArray(data.dasha) || !data.dasha.length) { window.location.replace("/?tool=kp#free"); return; }
+  if (!data || data.v !== 1 || !data.chart || !Array.isArray(data.dasha) || !data.dasha.length) { window.location.replace("/kp-kundli?edit=1"); return; }
   // The page grows once the chart is in, which can leave the visitor part-way down (the site scrolls smoothly).
   const top = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   top();
@@ -184,7 +184,7 @@ KpKundliPage.prototype.render = function render() {
               </h1>
               <p style={{margin: "0", fontSize: "15px", color: "#EADFF2"}}>
                 {R ? R.meta.when + " \u00B7 " + R.meta.place + " \u00B7 " + R.meta.off + " " : ""}
-                <a href={"/?tool=kp&edit=1#free"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
+                <a href={"/kp-kundli?edit=1"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
                   {"Edit details"}
                 </a>
               </p>

@@ -12,20 +12,20 @@ export function generateStaticParams() {
 
 const TITLE: Record<ViewKey, (en: string, hi: string) => { title: string; description: string }> = {
   weekly: (en, hi) => ({
-    title: `${en} Weekly Horoscope (${hi} Saptahik Rashifal) This Week`,
-    description: `${en} (${hi}) weekly horoscope: day-by-day love, career, money and health scores, your best and most careful day, and the planet changes to watch. Calculated from real planet positions.`,
+    title: `${en} Weekly Horoscope (${hi} Rashifal)`,
+    description: `${en} (${hi}) weekly horoscope: day-by-day scores for love, career, money and health, your best day and the planet changes to watch.`,
   }),
   monthly: (en, hi) => ({
-    title: `${en} Monthly Horoscope (${hi} Masik Rashifal): Next 30 Days`,
-    description: `${en} (${hi}) monthly horoscope: scores for the next 30 days, your best and most careful dates, and when Sun, Mars, Mercury and Venus change sign. Calculated from real planet positions.`,
+    title: `${en} Monthly Horoscope (${hi} Rashifal)`,
+    description: `${en} (${hi}) monthly horoscope: scores for the next 30 days, your best and most careful dates, and when the planets change sign.`,
   }),
   yearly: (en, hi) => ({
-    title: `${en} Yearly Horoscope (${hi} Varshik Rashifal): Next 12 Months`,
-    description: `${en} (${hi}) horoscope for the next 12 months: where Jupiter, Saturn and Rahu stand for your Moon sign, the dates they change house, and your Sade Sati and dhaiya status.`,
+    title: `${en} Yearly Horoscope (${hi} Rashifal)`,
+    description: `${en} (${hi}) yearly horoscope for the next 12 months: where Jupiter, Saturn and Rahu stand and when they change house.`,
   }),
   "2027": (en, hi) => ({
-    title: `${en} Horoscope 2027 (${hi} Rashifal 2027): Yearly Prediction`,
-    description: `${en} (${hi}) horoscope for 2027: where Jupiter, Saturn and Rahu stand for your Moon sign, the exact dates they change house, and your Sade Sati and dhaiya status.`,
+    title: `${en} Horoscope 2027 (${hi} Rashifal)`,
+    description: `${en} (${hi}) horoscope 2027: the dates Jupiter, Saturn and Rahu change house, plus your Sade Sati and dhaiya status.`,
   }),
 };
 

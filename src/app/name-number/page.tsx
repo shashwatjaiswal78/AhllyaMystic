@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
-import NameNumberPage from "@/app/_design/NameNumberPage";
+import NameRoute from "@/app/_design/NameRoute";
+import { CALCULATORS } from "@/lib/calculators";
+import { SITE_URL } from "@/lib/site";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/name-number" }, 
-  title: "Free name number check",
-  description: "Check whether your name supports your birth numbers: a name vibration score, your core numbers, Lo Shu grid and spelling options.",
-};
+const c = CALCULATORS.name;
+
+export const metadata: Metadata = { alternates: { canonical: c.path }, title: c.title, description: c.description };
 
 export default function Page() {
-  return <NameNumberPage />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "FAQPage", mainEntity: c.faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
+      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: c.eyebrow.replace("Free ", ""), item: `${SITE_URL}${c.path}` }] },
+    ],
+  };
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
+      <NameRoute />
+    </>
+  );
 }

@@ -8,6 +8,7 @@ import KundliForm from "./KundliForm";
 import MobileForm from "./MobileForm";
 import NameForm from "./NameForm";
 import MoonForm from "./MoonForm";
+import { FESTIVE_OFFER_ENDS } from "@/lib/offer";
 import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class HomePage extends React.Component {
@@ -139,7 +140,7 @@ class HomePage extends React.Component {
       pickMan: () => this.setState({ expert: 'man' }),
       pickSan: () => this.setState({ expert: 'san' }),
       isMan: isMan, isSan: !isMan, completeHref: '/consultation?expert=' + (isMan ? 'man' : 'san') + '#plans',
-      plans: plans, fullPrice: CP[3], diwaliPrice: CP[4],
+      plans: plans, fullPrice: CP[3], diwaliPrice: CP[4], offerOn: !!this.state.__now && this.state.__now <= FESTIVE_OFFER_ENDS,
       rashis: rashis,
       onMoon: (i) => { try { localStorage.setItem('ahllya:sign', signs[i].en.toLowerCase()); } catch (e) {} this.setState({ sign: i }); },
       cur: cur,
@@ -623,6 +624,21 @@ HomePage.prototype.render = function render() {
                 </a>
               </div>
             </div>
+            {v.offerOn ? (
+            <p style={{margin: "22px auto 0", maxWidth: "760px", textAlign: "center", fontSize: "13px", color: "#FFFFFF"}}>
+              <span style={{display: "inline-block", background: "#921A11", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", padding: "4px 10px", borderRadius: "999px", marginRight: "8px"}}>
+                {"Festive offer"}
+              </span>
+              {"Complete consultation for "}
+              {hole(v.diwaliPrice)}
+              {" instead of "}
+              {hole(v.fullPrice)}
+              {", till 30 November. "}
+              <a href={"/consult-landing"} style={{color: "#FCCE07", fontWeight: "700"}}>
+                {"See the offer"}
+              </a>
+            </p>
+            ) : null}
             <ol style={{listStyle: "none", margin: "32px auto 0", padding: "0", maxWidth: "980px", alignItems: "start", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "24px"}}>
               <li style={{display: "grid", gap: "6px", alignContent: "start"}}>
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.55)", background: "rgba(255,255,255,0.06)", fontFamily: "'Marcellus', serif", fontSize: "13.5px", color: "#FFFFFF"}}>

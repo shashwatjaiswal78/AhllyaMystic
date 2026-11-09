@@ -25,7 +25,7 @@ NameNumberPage.prototype.componentDidMount = function componentDidMount() {
   // Without a result from the home page form there is nothing to show, so go back to the form.
   let data = null;
   try { data = JSON.parse(sessionStorage.getItem(NAME_KEY) || "null"); } catch (e) { data = null; }
-  if (!data || data.v !== 1 || !data.verdict || !data.loShu) { window.location.replace("/?tool=name#free"); return; }
+  if (!data || data.v !== 1 || !data.verdict || !data.loShu) { window.location.replace("/name-number?edit=1"); return; }
   // The page grows once the chart is in, which can leave the visitor part-way down (the site scrolls smoothly).
   const top = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   top();
@@ -184,7 +184,7 @@ NameNumberPage.prototype.render = function render() {
               </h1>
               <p style={{margin: "0", fontSize: "15px", color: "#EADFF2"}}>
                 {R ? R.core.kicker + " " : ""}
-                <a href={"/?tool=name&edit=1#free"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
+                <a href={"/name-number?edit=1"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
                   {"Edit details"}
                 </a>
               </p>

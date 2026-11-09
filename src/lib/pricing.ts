@@ -1,3 +1,4 @@
+import { FESTIVE_PRODUCT_IDS, festiveOfferEnded } from "./offer";
 import { PRODUCTS, isValidProductId, type ProductId } from "./products";
 
 // Add-ons offered on the report checkouts. Totals are always rebuilt here from these
@@ -27,6 +28,9 @@ export function priceOrder(req: OrderRequest): PricedOrder {
   const { productId } = req;
   if (typeof productId !== "string" || !isValidProductId(productId)) {
     return { ok: false, error: "Invalid product." };
+  }
+  if (FESTIVE_PRODUCT_IDS.has(productId) && festiveOfferEnded()) {
+    return { ok: false, error: "This festive offer has ended. Please see our consultation page for current prices." };
   }
 
   const extra = req.extraQuestions ?? 0;

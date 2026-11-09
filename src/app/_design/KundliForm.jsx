@@ -43,7 +43,7 @@ function isoDate(text) {
   return t.getUTCFullYear() === y && t.getUTCMonth() === mo - 1 && t.getUTCDate() === d ? `${m[3]}-${m[2]}-${m[1]}` : "";
 }
 
-export default function KundliForm({ kind = "kundli" }) {
+export default function KundliForm({ kind = "kundli", onDone }) {
   const cfg = KINDS[kind] || KINDS.kundli;
   const router = useRouter();
   const nameRef = useRef(null), genderRef = useRef(null), dobRef = useRef(null), tobRef = useRef(null), placeRef = useRef(null);
@@ -148,7 +148,7 @@ export default function KundliForm({ kind = "kundli" }) {
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Could not cast your Kundli. Please try again.");
       try { sessionStorage.setItem(cfg.key, JSON.stringify(data)); } catch { /* private mode: the result page asks again */ }
-      router.push(cfg.href);
+      if (onDone) onDone(); else router.push(cfg.href);
     } catch (err) {
       setBusy(false);
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");

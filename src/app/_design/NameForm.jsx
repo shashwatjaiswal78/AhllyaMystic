@@ -9,7 +9,7 @@ import { labelStyle, inputStyle, selectStyle, isoDate } from "./form-parts";
 
 export const NAME_KEY = "ahllya:name";
 
-export default function NameForm() {
+export default function NameForm({ onDone }) {
   const router = useRouter();
   const nameRef = useRef(null), genderRef = useRef(null), dobRef = useRef(null);
   const [busy, setBusy] = useState(false);
@@ -46,7 +46,7 @@ export default function NameForm() {
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Could not check your name. Please try again.");
       try { sessionStorage.setItem(NAME_KEY, JSON.stringify(data)); } catch { /* private mode: the result page asks again */ }
-      router.push("/name-number");
+      if (onDone) onDone(); else router.push("/name-number");
     } catch (err) {
       setBusy(false);
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");

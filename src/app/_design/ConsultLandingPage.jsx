@@ -3,6 +3,7 @@
 // Generated from the design file ConsultLanding.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
 import { sx, hole } from "./sx";
+import OfferCountdown from "./OfferCountdown";
 import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 class ConsultLandingPage extends React.Component {
@@ -30,42 +31,9 @@ ConsultLandingPage.prototype.render = function render() {
         <div style={{position: "sticky", top: "0", zIndex: "30", background: "#921A11", color: "#FFFFFF", boxShadow: "0 8px 20px -12px rgba(0,0,0,0.55)"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "10px 24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "10px 20px", textAlign: "center"}}>
             <span style={{fontWeight: "700"}}>
-              {"Diwali offer sirf 8 November tak"}
+              {"Festive offer sirf 30 November tak"}
             </span>
-            <div style={{display: "inline-flex", gap: "8px"}}>
-              <div style={{minWidth: "58px", textAlign: "center", background: "rgba(255,255,255,0.12)", borderRadius: "10px", padding: "6px 4px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.1", color: "#FFFFFF"}}>
-                  {"15"}
-                </p>
-                <p style={{margin: "0", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#EADFF2"}}>
-                  {"Din"}
-                </p>
-              </div>
-              <div style={{minWidth: "58px", textAlign: "center", background: "rgba(255,255,255,0.12)", borderRadius: "10px", padding: "6px 4px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.1", color: "#FFFFFF"}}>
-                  {"06"}
-                </p>
-                <p style={{margin: "0", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#EADFF2"}}>
-                  {"Ghante"}
-                </p>
-              </div>
-              <div style={{minWidth: "58px", textAlign: "center", background: "rgba(255,255,255,0.12)", borderRadius: "10px", padding: "6px 4px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.1", color: "#FFFFFF"}}>
-                  {"33"}
-                </p>
-                <p style={{margin: "0", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#EADFF2"}}>
-                  {"Minute"}
-                </p>
-              </div>
-              <div style={{minWidth: "58px", textAlign: "center", background: "rgba(255,255,255,0.12)", borderRadius: "10px", padding: "6px 4px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.1", color: "#FFFFFF"}}>
-                  {"09"}
-                </p>
-                <p style={{margin: "0", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#EADFF2"}}>
-                  {"Second"}
-                </p>
-              </div>
-            </div>
+            <OfferCountdown />
             <a href={"#plans"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none", whiteSpace: "nowrap"}}>
               {"Book an expert"}
             </a>
@@ -397,7 +365,7 @@ ConsultLandingPage.prototype.render = function render() {
                     </p>
                     <p style={{margin: "0 0 6px"}}>
                       <span style={{display: "inline-block", fontSize: "12px", fontWeight: "700", color: "#FFFFFF", background: "#921A11", padding: "3px 10px", borderRadius: "999px"}}>
-                        {"Diwali offer · ₹6,011 ki bachat"}
+                        {"Festive offer · ₹6,011 ki bachat"}
                       </span>
                     </p>
                     <p style={{margin: "0", fontSize: "12px", color: "#EADFF2"}}>
@@ -470,7 +438,7 @@ ConsultLandingPage.prototype.render = function render() {
                     </p>
                     <p style={{margin: "0 0 6px"}}>
                       <span style={{display: "inline-block", fontSize: "12px", fontWeight: "700", color: "#FFFFFF", background: "#921A11", padding: "3px 10px", borderRadius: "999px"}}>
-                        {"Diwali offer · ₹4,100 ki bachat"}
+                        {"Festive offer · ₹4,100 ki bachat"}
                       </span>
                     </p>
                     <p style={{margin: "0", fontSize: "12px", color: "#5C5470"}}>
@@ -669,13 +637,13 @@ ConsultLandingPage.prototype.render = function render() {
           <div style={{position: "relative", maxWidth: "1200px", margin: "0 auto", padding: "88px 24px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: "28px 56px", alignItems: "center"}}>
             <div style={{position: "relative"}}>
               <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
-                {"Vastu consultation · Diwali offer"}
+                {"Vastu consultation · Festive offer"}
               </p>
               <p style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontSize: "clamp(24px, 2.55vw, 32px)", lineHeight: "1.2"}}>
                 {"Kya aapka ghar aapke saath hai, ya aapke khilaaf?"}
               </p>
               <p style={{margin: "0 0 18px", color: "#EADFF2", fontSize: "14.5px"}}>
-                {"Diwali se pehle ghar ki urja theek kijiye. Aapke ghar ke floor plan ke basis par Vastu consultation aur saral upay, bina deewar tode."}
+                {"Is festive season mein ghar ki urja theek kijiye. Aapke ghar ke floor plan ke basis par Vastu consultation aur saral upay, bina deewar tode."}
               </p>
               <p style={{margin: "0", display: "flex", alignItems: "baseline", gap: "12px", flexWrap: "wrap"}}>
                 <span style={{fontSize: "17.5px", color: "#CDB8DA", textDecoration: "line-through"}}>
@@ -685,7 +653,7 @@ ConsultLandingPage.prototype.render = function render() {
                   {"₹3,300"}
                 </span>
                 <span style={{fontSize: "12px", fontWeight: "700", color: "#921A11", background: "#FCCE07", padding: "4px 10px", borderRadius: "999px"}}>
-                  {"8 November tak"}
+                  {"30 November tak"}
                 </span>
               </p>
             </div>
@@ -926,7 +894,7 @@ ConsultLandingPage.prototype.render = function render() {
                 </span>
               </summary>
               <p style={{margin: "0 0 18px", color: "#5C5470", lineHeight: "1.65"}}>
-                {"Diwali offer 8 November 2026, raat 11:59 baje tak hai."}
+                {"Festive offer 30 November 2026, raat 11:59 baje tak hai."}
               </p>
             </details>
           </div>
@@ -935,46 +903,13 @@ ConsultLandingPage.prototype.render = function render() {
           <div style={{position: "relative", overflow: "hidden", textAlign: "center", background: "linear-gradient(120deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "28px", padding: "clamp(32px, 5vw, 60px)"}}>
             <div className={"am-stars"} aria-hidden={"true"} />
             <p style={{position: "relative", margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
-              {"Diwali offer · 8 November 2026, raat 11:59 baje tak"}
+              {"Festive offer · 30 November 2026, raat 11:59 baje tak"}
             </p>
             <p style={{position: "relative", margin: "0 0 18px", fontFamily: "'Marcellus', serif", fontSize: "clamp(24px, 2.89vw, 35px)", lineHeight: "1.2"}}>
               {"Jawaab aapki kundli mein hai. Aaiye, saath mein padhte hain."}
             </p>
             <div style={{position: "relative", marginBottom: "24px"}}>
-              <div style={{display: "inline-flex", gap: "8px"}}>
-                <div style={{minWidth: "58px", textAlign: "center", background: "rgba(255,255,255,0.12)", borderRadius: "10px", padding: "6px 4px"}}>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.1", color: "#FFFFFF"}}>
-                    {"15"}
-                  </p>
-                  <p style={{margin: "0", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#EADFF2"}}>
-                    {"Din"}
-                  </p>
-                </div>
-                <div style={{minWidth: "58px", textAlign: "center", background: "rgba(255,255,255,0.12)", borderRadius: "10px", padding: "6px 4px"}}>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.1", color: "#FFFFFF"}}>
-                    {"06"}
-                  </p>
-                  <p style={{margin: "0", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#EADFF2"}}>
-                    {"Ghante"}
-                  </p>
-                </div>
-                <div style={{minWidth: "58px", textAlign: "center", background: "rgba(255,255,255,0.12)", borderRadius: "10px", padding: "6px 4px"}}>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.1", color: "#FFFFFF"}}>
-                    {"33"}
-                  </p>
-                  <p style={{margin: "0", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#EADFF2"}}>
-                    {"Minute"}
-                  </p>
-                </div>
-                <div style={{minWidth: "58px", textAlign: "center", background: "rgba(255,255,255,0.12)", borderRadius: "10px", padding: "6px 4px"}}>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.1", color: "#FFFFFF"}}>
-                    {"09"}
-                  </p>
-                  <p style={{margin: "0", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#EADFF2"}}>
-                    {"Second"}
-                  </p>
-                </div>
-              </div>
+              <OfferCountdown />
             </div>
             <a href={"#plans"} style={{position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: "56px", padding: "0 30px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "14.5px", textDecoration: "none"}}>
               {"Apna expert chuniye"}
@@ -983,7 +918,7 @@ ConsultLandingPage.prototype.render = function render() {
               <b style={{color: "#FFFFFF"}}>
                 {"P.S."}
               </b>
-              {" 45 minutes ki 1:1 call, saare areas, jitne chahe sawaal: Senior Expert Ahalya Sangeeta ke saath ₹5,100, ya Expert Maneswita ke saath ₹3,101. Aur Diwali tak Vastu consultation sirf ₹3,300 mein."}
+              {" 45 minutes ki 1:1 call, saare areas, jitne chahe sawaal: Senior Expert Ahalya Sangeeta ke saath ₹5,100, ya Expert Maneswita ke saath ₹3,101. Aur 30 November tak Vastu consultation sirf ₹3,300 mein."}
             </p>
           </div>
         </div>
