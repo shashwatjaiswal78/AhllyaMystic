@@ -37,13 +37,13 @@ export default function CalculatorContent({ kind, onDone }) {
           <p style={{ fontSize: "13px", color: "#CDB8DA", margin: "0 0 30px" }}>
             <a href="/" style={{ color: "#CDB8DA", textDecoration: "none" }}>Home</a> / <a href="/#free" style={{ color: "#CDB8DA", textDecoration: "none" }}>Free calculators</a> / <b style={{ color: "#FFFFFF", fontWeight: 600 }}>{c.eyebrow.replace("Free ", "")}</b>
           </p>
-          <div style={{ maxWidth: "820px" }}>
+          <div>
             <p style={{ ...eyebrow, color: "#FCCE07" }}>{c.eyebrow}</p>
             <h1 style={{ margin: "0 0 14px", fontFamily: serif, fontWeight: 400, fontSize: "clamp(30px, 4.4vw, 50px)", lineHeight: 1.12 }}>{c.h1}</h1>
-            <p style={{ margin: "0 0 28px", fontSize: "16px", color: "#EADFF2", maxWidth: "680px" }}>{c.sub}</p>
+            <p style={{ margin: "0 0 28px", fontSize: "16px", color: "#EADFF2" }}>{c.sub}</p>
           </div>
-          <div style={{ background: "#FFFFFF", color: "#1E1830", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "26px 28px", maxWidth: "880px", boxShadow: "0 30px 60px -30px rgba(0,0,0,0.6)" }}>
-            <div className="cc-form"><Form kind={kind} onDone={onDone} /></div>
+          <div style={{ background: "#FFFFFF", color: "#1E1830", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "26px 28px", boxShadow: "0 30px 60px -30px rgba(0,0,0,0.6)" }}>
+            <div className={"cc-form" + (kind === "kundli" || kind === "kp" ? " cc-three" : "")}><Form kind={kind} onDone={onDone} /></div>
             <p style={{ margin: "16px 0 0", fontSize: "12.5px", color: "#736B8A", textAlign: "center" }}>Please use your actual date of birth, even if your documents show a different one. Your details are used only for the calculation and are not stored.</p>
           </div>
         </div>

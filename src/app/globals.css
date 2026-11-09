@@ -181,6 +181,13 @@
   input, select, textarea { font-size: 16px !important; }
 }
 
+@media (min-width: 901px) {
+  .cc-three form { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 900px) {
+  .cc-form form { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
 /* The calculator forms are two columns wide; on a phone each field gets the full width. */
 @media (max-width: 560px) {
   .cc-form form { grid-template-columns: minmax(0, 1fr) !important; }

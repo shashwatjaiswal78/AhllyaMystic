@@ -29,7 +29,7 @@ export const CALCULATORS: Record<CalcKind, CalcConfig> = {
     path: "/kundli",
     eyebrow: "Free Janam Kundali",
     h1: "Janam Kundali Calculator",
-    sub: "Your Vedic birth chart in seconds. See the Lagna and Navamsa charts, graha positions with nakshatra and pada, the Vimshottari dasha, and the classical dosha screen. Sidereal Lahiri positions, whole sign houses.",
+    sub: "Your Vedic birth chart in seconds: Lagna and Navamsa charts, graha positions, Vimshottari dasha and dosha screen.",
     method: "Sidereal Lahiri positions, whole sign houses, Vimshottari dasha.",
     features: [
       { t: "Lagna and Navamsa charts", d: "Your birth chart and the D9 chart, drawn in the North Indian style." },
@@ -54,7 +54,7 @@ export const CALCULATORS: Record<CalcKind, CalcConfig> = {
     path: "/kp-kundli",
     eyebrow: "Free KP Kundli",
     h1: "KP Kundli Calculator",
-    sub: "Your Krishnamurti Paddhati birth chart in seconds. See the planets and house cusps with sign, star, sub and sub-sub lords, the Vimshottari dasha, significators, Nakshatra Nadi and ruling planets.",
+    sub: "Your KP birth chart in seconds: planets and cusps with sub lords, dasha, significators and ruling planets.",
     method: "Placidus house cusps, KP sub lords, Vimshottari dasha.",
     features: [
       { t: "Planets and house cusps", d: "Each planet and cusp with its sign, star, sub and sub-sub lords, the base of every KP judgement." },
@@ -79,7 +79,7 @@ export const CALCULATORS: Record<CalcKind, CalcConfig> = {
     path: "/name-number",
     eyebrow: "Free Name Numerology",
     h1: "Is your name helping you?",
-    sub: "Your birth date is fixed. Your spelling is not. This checks whether the two agree, letter by letter, using Chaldean name values, Vedic planetary friendship and the Lo Shu grid, and shows the working.",
+    sub: "Your birth date is fixed, your spelling is not. See whether the two agree, with the working shown.",
     method: "Chaldean name values, Vedic planetary friendship, Lo Shu grid.",
     features: [
       { t: "A name vibration score", d: "One clear score for how well your name agrees with your birth numbers." },
@@ -103,7 +103,7 @@ export const CALCULATORS: Record<CalcKind, CalcConfig> = {
     path: "/mobile-number",
     eyebrow: "Free Mobile Number Numerology",
     h1: "Is your mobile number lucky for you?",
-    sub: "You carry your number everywhere and give it to everyone. This adds up your digits, checks the total against your birth date and name using Vedic planetary friendship, and shows the working.",
+    sub: "Add up your digits and check the total against your birth date and name, with the working shown.",
     method: "Digit total, Vedic planetary friendship, with your birth date and name.",
     features: [
       { t: "Your number's total", d: "The sum of your digits reduced to a single number, and the planet that rules it." },
