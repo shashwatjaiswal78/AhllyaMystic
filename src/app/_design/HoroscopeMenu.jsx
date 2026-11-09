@@ -11,6 +11,7 @@ const ITEMS = [
   { key: "monthly", label: "Monthly Horoscope", path: "/monthly", icon: "M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z" },
   { key: "yearly", label: "Yearly Horoscope", path: "/yearly", icon: "M3 18a9 9 0 0118 0M7 18a5 5 0 0110 0M12 18V9" },
   { key: "2027", label: "Rashifal 2027 Horoscope", path: "/2027", icon: "M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.3l6.1-.7z" },
+  { key: "panchang", label: "Panchang", href: "/panchang", icon: "M12 7v5l3 2M12 3a9 9 0 100 18 9 9 0 000-18z" },
 ];
 
 function useSign() {
@@ -24,7 +25,7 @@ function useSign() {
   return sign;
 }
 
-const hrefFor = (sign, item) => "/horoscope/" + sign + item.path;
+const hrefFor = (sign, item) => item.href || "/horoscope/" + sign + item.path;
 
 function Icon({ d }) {
   return (

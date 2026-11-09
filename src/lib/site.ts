@@ -12,6 +12,7 @@ export const SOCIAL = [
 export const ROUTES: { path: string; priority: number; changeFrequency: "daily" | "weekly" | "monthly" | "yearly" }[] = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/horoscope", priority: 0.9, changeFrequency: "daily" },
+  { path: "/panchang", priority: 0.8, changeFrequency: "daily" },
   { path: "/kundli", priority: 0.9, changeFrequency: "monthly" },
   { path: "/kp-kundli", priority: 0.8, changeFrequency: "monthly" },
   { path: "/name-number", priority: 0.8, changeFrequency: "monthly" },
