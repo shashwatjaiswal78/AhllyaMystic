@@ -84,7 +84,7 @@ class HoroscopePage extends React.Component {
     var pageTitle = !daily ? (hi ? sg.hi + ' राशिफल ' + VIEW_LABEL[this.state.day][0] : sg.en + ' ' + (this.state.day === 'yearly' ? 'Yearly Horoscope' : /^\d+$/.test(this.state.day) ? 'Horoscope ' + this.state.day : VIEW_LABEL[this.state.day][1] + ' Horoscope')) : hi ? sg.hi + ' राशिफल ' + (this.state.day === 'today' ? 'आज' : 'कल') : sg.en + ' Horoscope ' + (this.state.day === 'today' ? 'Today' : 'Tomorrow');
     return {
       menuOpen: !!this.state.menuOpen, menuExpanded: this.state.menuOpen ? 'true' : 'false', openMenu: () => this.setState({ menuOpen: true }), closeMenu: () => this.setState({ menuOpen: false }),
-      heroTitle: this.state.picked ? pageTitle : 'Vedic Horoscope: Daily Rashifal Insights',
+      heroTitle: this.state.picked ? pageTitle : 'Daily Horoscope, Your Vedic Rashifal Insights',
       eyebrow: daily ? L.eyebrow : (hi ? 'राशिफल' : 'Horoscope'),
       signSlug: this.state.picked ? sg.en.toLowerCase() : undefined,
       L: L, langCode: this.state.lang, rashis: rashis, cur: sg,
@@ -294,7 +294,7 @@ HoroscopePage.prototype.render = function render() {
                 {hole(v.heroTitle)}
               </h1>
               <p style={{margin: "0 auto 28px", maxWidth: "640px", fontSize: "17px", color: "#EADFF2"}}>
-                {"Start your day with authentic Vedic astrology: daily predictions, lucky numbers, auspicious timings and spiritual guidance."}
+                {"Plan your day with clarity: Auspicious timings, lucky numbers, lucky colours, see which hours favour new work, how love, career, money and health look for your sign."}
               </p>
               <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px"}}>
                 <a href={"#rashi"} style={{display: "inline-flex", alignItems: "center", minHeight: "52px", padding: "0 26px", borderRadius: "999px", background: "#FCCE07", color: "#2E003E", fontWeight: "700", textDecoration: "none"}}>
