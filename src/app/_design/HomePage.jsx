@@ -152,8 +152,8 @@ HomePage.prototype.render = function render() {
   const v = this.renderVals() || {};
   return (
     <div data-design-page="Main" style={{ display: "contents" }}>
-      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "16px", lineHeight: "1.6"}}>
-        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "14px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
+      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "14.5px", lineHeight: "1.6"}}>
+        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "13px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
           <a href={"/masterclass"} style={{color: "#921A11", textDecoration: "none"}}>
             {"Live 2-day Manifestation Masterclass. Dates announced soon. Register for ₹99 →"}
           </a>
@@ -163,7 +163,7 @@ HomePage.prototype.render = function render() {
             <a href={"/"} aria-label={"Ahllya Mystic home"} style={{display: "block", flex: "none"}}>
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
-            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "15px", fontWeight: "500"}}>
+            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "13.5px", fontWeight: "500"}}>
               <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
@@ -194,7 +194,7 @@ HomePage.prototype.render = function render() {
                   <path d={"M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"} />
                 </svg>
               </a>
-              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                 {"Book a consultation"}
               </a>
               <button type={"button"} className={"am-burger"} aria-label={"Open menu"} aria-controls={"am-drawer"} aria-expanded={v.menuExpanded} onClick={v.openMenu} style={{alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#FFFFFF", cursor: "pointer"}}>
@@ -226,44 +226,44 @@ HomePage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Kundli"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Calculators"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Reports"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Courses"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"About"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -280,7 +280,7 @@ HomePage.prototype.render = function render() {
                       {"WhatsApp us"}
                     </a>
                   </div>
-                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", color: "#EADFF2", textAlign: "center"}}>
+                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#EADFF2", textAlign: "center"}}>
                     {"ज्योतिष · अंक शास्त्र · वास्तु"}
                   </p>
                 </div>
@@ -295,14 +295,14 @@ HomePage.prototype.render = function render() {
             <div className={"am-hero-row"} style={{display: "flex", flexWrap: "wrap", alignItems: "center"}}>
               <div className={"am-hero-copy"} style={{flex: "1.5 1 520px", minWidth: "0"}}>
                 <p style={{margin: "0 0 14px"}}>
-                  <span style={{display: "inline-block", padding: "5px 18px 3px", borderRadius: "999px", background: "#FBF1EE", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "20px", lineHeight: "1.5", color: "#921A11"}}>
+                  <span style={{display: "inline-block", padding: "5px 18px 3px", borderRadius: "999px", background: "#FBF1EE", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", lineHeight: "1.5", color: "#921A11"}}>
                     {"ज्योतिष · अंक शास्त्र · वास्तु"}
                   </span>
                 </p>
-                <p style={{margin: "0 0 20px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#EADFF2", fontWeight: "600"}}>
+                <p style={{margin: "0 0 20px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#EADFF2", fontWeight: "600"}}>
                   {"Vedic astrology · KP astrology · Numerology · Vastu"}
                 </p>
-                <h1 style={{margin: "0 0 22px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(36px, 5vw, 64px)", lineHeight: "1.08", letterSpacing: "-0.01em", color: "#FFFFFF"}}>
+                <h1 style={{margin: "0 0 22px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 4.25vw, 53px)", lineHeight: "1.08", letterSpacing: "-0.01em", color: "#FFFFFF"}}>
                   {"Clarity on love,"}
                   <br />
                   {"career and money."}
@@ -311,17 +311,17 @@ HomePage.prototype.render = function render() {
                   {"One-on-one consultations and hand-prepared reports by experts, never generated by software."}
                 </p>
                 <div className={"am-hero-flex"} style={{display: "flex", flexWrap: "wrap", gap: "14px", marginBottom: "40px"}}>
-                  <a href={"/consult"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "10px", minHeight: "52px", minWidth: "248px", boxSizing: "border-box", padding: "0 28px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "16px", textDecoration: "none", boxShadow: "0 10px 30px -10px rgba(252,206,7,0.55)"}}>
+                  <a href={"/consult"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "10px", minHeight: "52px", minWidth: "248px", boxSizing: "border-box", padding: "0 28px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "14.5px", textDecoration: "none", boxShadow: "0 10px 30px -10px rgba(252,206,7,0.55)"}}>
                     {"Book a consultation "}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M5 12h14M13 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/kundli"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: "52px", minWidth: "248px", boxSizing: "border-box", padding: "0 28px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.45)", color: "#FFFFFF", fontWeight: "700", fontSize: "16px", textDecoration: "none"}}>
+                  <a href={"/kundli"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: "52px", minWidth: "248px", boxSizing: "border-box", padding: "0 28px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.45)", color: "#FFFFFF", fontWeight: "700", fontSize: "14.5px", textDecoration: "none"}}>
                     {"Get your free Kundli"}
                   </a>
                 </div>
-                <div className={"am-hero-flex"} style={{display: "flex", flexWrap: "wrap", gap: "12px 28px", fontSize: "14px", color: "#EADFF2"}}>
+                <div className={"am-hero-flex"} style={{display: "flex", flexWrap: "wrap", gap: "12px 28px", fontSize: "13px", color: "#EADFF2"}}>
                   <span style={{display: "inline-flex", alignItems: "center", gap: "8px"}}>
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#FFFFFF"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M5 12l4 4 10-10"} />
@@ -362,10 +362,10 @@ HomePage.prototype.render = function render() {
                     <img src={"/images/be669e4f4ef64c09b37d47c940f4daa1.png"} alt={"Maneswita and Ahalya Sangeeta, founders of Ahllya Mystic"} style={{width: "100%", height: "100%", display: "block", filter: "drop-shadow(0 24px 30px rgba(20,0,28,0.45))"}} />
                   </div>
                   <div className={"am-float"} style={{position: "absolute", left: "0", right: "0", margin: "0 auto", width: "fit-content", bottom: "-4%", background: "linear-gradient(135deg, rgba(46,0,62,0.92) 0%, rgba(108,21,148,0.92) 100%)", border: "1px solid rgba(255,255,255,0.22)", borderRadius: "16px", padding: "14px 18px", maxWidth: "calc(100% - 16px)", boxSizing: "border-box", textAlign: "center", boxShadow: "0 20px 40px -20px rgba(0,0,0,0.5)"}}>
-                    <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "18px", color: "#FFFFFF"}}>
+                    <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "16px", color: "#FFFFFF"}}>
                       {"Maneswita and Ahalya Sangeeta"}
                     </p>
-                    <p className={"am-nowrap"} style={{margin: "2px 0 0", fontSize: "13px", color: "#EADFF2", lineHeight: "1.45"}}>
+                    <p className={"am-nowrap"} style={{margin: "2px 0 0", fontSize: "12px", color: "#EADFF2", lineHeight: "1.45"}}>
                       {"Vedic, KP Astrology, Numerology & Vastu Expert"}
                     </p>
                   </div>
@@ -382,15 +382,15 @@ HomePage.prototype.render = function render() {
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px 88px", position: "relative"}}>
             <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "16px 40px", marginBottom: "44px"}}>
               <div className={"am-center-mobile"} style={{width: "100%"}}>
-                <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                   {"Where do you need clarity?"}
                 </p>
-                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
                   <span className={"am-nowrap"}>
                     {"Find answers for the areas that matter most."}
                   </span>
                 </h2>
-                <p style={{margin: "0", fontSize: "16px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "14.5px", color: "#5C5470"}}>
                   <span className={"am-nowrap-lg"}>
                     {"Whether you’re navigating love, health, career, or finances, we’re here to support you with compassion and clarity."}
                   </span>
@@ -410,10 +410,10 @@ HomePage.prototype.render = function render() {
                   </svg>
                 </span>
                 <span style={{display: "block"}}>
-                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "21px", marginBottom: "4px"}}>
+                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "18.5px", marginBottom: "4px"}}>
                     {"Love and marriage"}
                   </span>
-                  <span style={{display: "block", fontSize: "15px", color: "#5C5470"}}>
+                  <span style={{display: "block", fontSize: "13.5px", color: "#5C5470"}}>
                     {"Compatibility, delays in marriage, and whether this relationship is right for you."}
                   </span>
                 </span>
@@ -426,10 +426,10 @@ HomePage.prototype.render = function render() {
                   </svg>
                 </span>
                 <span style={{display: "block"}}>
-                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "21px", marginBottom: "4px"}}>
+                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "18.5px", marginBottom: "4px"}}>
                     {"Career and business"}
                   </span>
-                  <span style={{display: "block", fontSize: "15px", color: "#5C5470"}}>
+                  <span style={{display: "block", fontSize: "13.5px", color: "#5C5470"}}>
                     {"Job or business, the right time to switch, invest or expand."}
                   </span>
                 </span>
@@ -442,10 +442,10 @@ HomePage.prototype.render = function render() {
                   </svg>
                 </span>
                 <span style={{display: "block"}}>
-                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "21px", marginBottom: "4px"}}>
+                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "18.5px", marginBottom: "4px"}}>
                     {"Money and growth"}
                   </span>
-                  <span style={{display: "block", fontSize: "15px", color: "#5C5470"}}>
+                  <span style={{display: "block", fontSize: "13.5px", color: "#5C5470"}}>
                     {"Where the blocks in your finances come from and what to do about them."}
                   </span>
                 </span>
@@ -458,10 +458,10 @@ HomePage.prototype.render = function render() {
                   </svg>
                 </span>
                 <span style={{display: "block"}}>
-                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "21px", marginBottom: "4px"}}>
+                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "18.5px", marginBottom: "4px"}}>
                     {"Health and wellbeing"}
                   </span>
-                  <span style={{display: "block", fontSize: "15px", color: "#5C5470"}}>
+                  <span style={{display: "block", fontSize: "13.5px", color: "#5C5470"}}>
                     {"Understanding the phases in your chart that ask for extra care and balance."}
                   </span>
                 </span>
@@ -474,10 +474,10 @@ HomePage.prototype.render = function render() {
                   </svg>
                 </span>
                 <span style={{display: "block"}}>
-                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "21px", marginBottom: "4px"}}>
+                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "18.5px", marginBottom: "4px"}}>
                     {"Education"}
                   </span>
-                  <span style={{display: "block", fontSize: "15px", color: "#5C5470"}}>
+                  <span style={{display: "block", fontSize: "13.5px", color: "#5C5470"}}>
                     {"The right stream, exam timing and plans to study abroad."}
                   </span>
                 </span>
@@ -491,10 +491,10 @@ HomePage.prototype.render = function render() {
                   </svg>
                 </span>
                 <span style={{display: "block"}}>
-                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "21px", marginBottom: "4px"}}>
+                  <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "18.5px", marginBottom: "4px"}}>
                     {"Child and family"}
                   </span>
-                  <span style={{display: "block", fontSize: "15px", color: "#5C5470"}}>
+                  <span style={{display: "block", fontSize: "13.5px", color: "#5C5470"}}>
                     {"Family planning, your child's nature and talents, and naming."}
                   </span>
                 </span>
@@ -513,10 +513,10 @@ HomePage.prototype.render = function render() {
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "4%", left: "52%", animationDelay: "8s"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "56px 24px 52px", position: "relative"}}>
             <div style={{textAlign: "center", margin: "0 auto 28px"}}>
-              <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 2.9vw, 40px)", lineHeight: "1.15", color: "#FFFFFF"}}>
+              <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 2.46vw, 33.5px)", lineHeight: "1.15", color: "#FFFFFF"}}>
                 {"Sometimes all you need is the right person to listen."}
               </h2>
-              <p style={{margin: "0", color: "#EADFF2", fontSize: "17px"}}>
+              <p style={{margin: "0", color: "#EADFF2", fontSize: "15px"}}>
                 {"Tell us what’s on your mind, and we’ll help you find the way forward."}
               </p>
             </div>
@@ -524,20 +524,20 @@ HomePage.prototype.render = function render() {
               <div style={{display: "inline-flex", flexWrap: "wrap", justifyContent: "center", padding: "5px", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.28)", borderRadius: "999px", gap: "4px", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)"}}>
                 {v.isMan ? (
                   <>
-                    <button type={"button"} aria-pressed={"true"} onClick={v.pickMan} style={{font: "inherit", fontSize: "15px", fontWeight: "700", minHeight: "44px", padding: "0 22px", border: "0", borderRadius: "999px", cursor: "pointer", background: "#FFFFFF", color: "#2E003E"}}>
+                    <button type={"button"} aria-pressed={"true"} onClick={v.pickMan} style={{font: "inherit", fontSize: "13.5px", fontWeight: "700", minHeight: "44px", padding: "0 22px", border: "0", borderRadius: "999px", cursor: "pointer", background: "#FFFFFF", color: "#2E003E"}}>
                       {"Expert"}
                     </button>
-                    <button type={"button"} aria-pressed={"false"} onClick={v.pickSan} style={{font: "inherit", fontSize: "15px", fontWeight: "700", minHeight: "44px", padding: "0 22px", border: "0", borderRadius: "999px", cursor: "pointer", background: "transparent", color: "#EADFF2"}}>
+                    <button type={"button"} aria-pressed={"false"} onClick={v.pickSan} style={{font: "inherit", fontSize: "13.5px", fontWeight: "700", minHeight: "44px", padding: "0 22px", border: "0", borderRadius: "999px", cursor: "pointer", background: "transparent", color: "#EADFF2"}}>
                       {"Senior Expert"}
                     </button>
                   </>
                 ) : null}
                 {v.isSan ? (
                   <>
-                    <button type={"button"} aria-pressed={"false"} onClick={v.pickMan} style={{font: "inherit", fontSize: "15px", fontWeight: "700", minHeight: "44px", padding: "0 22px", border: "0", borderRadius: "999px", cursor: "pointer", background: "transparent", color: "#EADFF2"}}>
+                    <button type={"button"} aria-pressed={"false"} onClick={v.pickMan} style={{font: "inherit", fontSize: "13.5px", fontWeight: "700", minHeight: "44px", padding: "0 22px", border: "0", borderRadius: "999px", cursor: "pointer", background: "transparent", color: "#EADFF2"}}>
                       {"Expert"}
                     </button>
-                    <button type={"button"} aria-pressed={"true"} onClick={v.pickSan} style={{font: "inherit", fontSize: "15px", fontWeight: "700", minHeight: "44px", padding: "0 22px", border: "0", borderRadius: "999px", cursor: "pointer", background: "#FFFFFF", color: "#2E003E"}}>
+                    <button type={"button"} aria-pressed={"true"} onClick={v.pickSan} style={{font: "inherit", fontSize: "13.5px", fontWeight: "700", minHeight: "44px", padding: "0 22px", border: "0", borderRadius: "999px", cursor: "pointer", background: "#FFFFFF", color: "#2E003E"}}>
                       {"Senior Expert"}
                     </button>
                   </>
@@ -549,23 +549,23 @@ HomePage.prototype.render = function render() {
                 <React.Fragment key={$index}>
                   <div className={"am-lift"} style={{background: "#FFFFFF", color: "#1E1830", border: "1px solid #E2D7C4", borderRadius: "24px", padding: "24px 24px", display: "flex", flexDirection: "column", gap: "14px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", boxShadow: "0 30px 70px -30px rgba(0,0,0,0.7)"}}>
                     <div>
-                      <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "25px"}}>
+                      <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
                         {hole(pl?.name)}
                       </p>
-                      <p style={{margin: "0", fontSize: "14.5px", color: "#5C5470"}}>
+                      <p style={{margin: "0", fontSize: "13px", color: "#5C5470"}}>
                         {hole(pl?.blurb)}
                       </p>
                     </div>
                     <p style={{margin: "0", display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap"}}>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "38px", lineHeight: "1"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "32px", lineHeight: "1"}}>
                         {hole(pl?.price)}
                       </span>
-                      <span style={{fontSize: "14px", color: "#5C5470"}}>
+                      <span style={{fontSize: "13px", color: "#5C5470"}}>
                         {hole(pl?.mins)}
                         {" call"}
                       </span>
                     </p>
-                    <ul style={{margin: "0", padding: "0", listStyle: "none", display: "grid", gap: "10px", fontSize: "14.5px"}}>
+                    <ul style={{margin: "0", padding: "0", listStyle: "none", display: "grid", gap: "10px", fontSize: "13px"}}>
                       <li style={{display: "flex", gap: "10px"}}>
                         <svg aria-hidden={"true"} width={"20"} height={"20"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#921A11"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"} style={{flex: "none", marginTop: "2px"}}>
                           <path d={"M5 12l4 4 10-10"} />
@@ -597,22 +597,22 @@ HomePage.prototype.render = function render() {
                   {"Most complete"}
                 </span>
                 <div style={{position: "relative"}}>
-                  <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "25px", color: "#FFFFFF"}}>
+                  <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#FFFFFF"}}>
                     {"Complete"}
                   </p>
-                  <p style={{margin: "0", fontSize: "14.5px", color: "#EADFF2"}}>
+                  <p style={{margin: "0", fontSize: "13px", color: "#EADFF2"}}>
                     {"Your whole chart, every area, and as many questions as you have."}
                   </p>
                 </div>
                 <p style={{position: "relative", margin: "0", display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "38px", lineHeight: "1", color: "#FFFFFF"}}>
+                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "32px", lineHeight: "1", color: "#FFFFFF"}}>
                     {hole(v.fullPrice)}
                   </span>
-                  <span style={{fontSize: "14px", color: "#EADFF2"}}>
+                  <span style={{fontSize: "13px", color: "#EADFF2"}}>
                     {"60 min call"}
                   </span>
                 </p>
-                <ul style={{position: "relative", margin: "0", padding: "0", listStyle: "none", display: "grid", gap: "10px", fontSize: "14.5px", color: "#FFFFFF"}}>
+                <ul style={{position: "relative", margin: "0", padding: "0", listStyle: "none", display: "grid", gap: "10px", fontSize: "13px", color: "#FFFFFF"}}>
                   <li style={{display: "flex", gap: "10px"}}>
                     <svg aria-hidden={"true"} width={"20"} height={"20"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#FFFFFF"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"} style={{flex: "none", marginTop: "2px"}}>
                       <path d={"M5 12l4 4 10-10"} />
@@ -637,7 +637,7 @@ HomePage.prototype.render = function render() {
                 </a>
               </div>
             </div>
-            <p style={{margin: "22px auto 0", maxWidth: "760px", textAlign: "center", fontSize: "14.5px", color: "#FFFFFF"}}>
+            <p style={{margin: "22px auto 0", maxWidth: "760px", textAlign: "center", fontSize: "13px", color: "#FFFFFF"}}>
               <span style={{display: "inline-block", background: "#921A11", color: "#FFFFFF", fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", padding: "4px 10px", borderRadius: "999px", marginRight: "8px"}}>
                 {"Diwali offer"}
               </span>
@@ -652,46 +652,46 @@ HomePage.prototype.render = function render() {
             </p>
             <ol style={{listStyle: "none", margin: "32px auto 0", padding: "0", maxWidth: "980px", alignItems: "start", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "24px"}}>
               <li style={{display: "grid", gap: "6px", alignContent: "start"}}>
-                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.55)", background: "rgba(255,255,255,0.06)", fontFamily: "'Marcellus', serif", fontSize: "15px", color: "#FFFFFF"}}>
+                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.55)", background: "rgba(255,255,255,0.06)", fontFamily: "'Marcellus', serif", fontSize: "13.5px", color: "#FFFFFF"}}>
                   {"01"}
                 </span>
                 <span style={{fontWeight: "700"}}>
                   {"Choose your call"}
                 </span>
-                <span style={{fontSize: "14px", color: "#EADFF2"}}>
+                <span style={{fontSize: "13px", color: "#EADFF2"}}>
                   {"Your expert, and one, two, three or all areas."}
                 </span>
               </li>
               <li style={{display: "grid", gap: "6px", alignContent: "start"}}>
-                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.55)", background: "rgba(255,255,255,0.06)", fontFamily: "'Marcellus', serif", fontSize: "15px", color: "#FFFFFF"}}>
+                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.55)", background: "rgba(255,255,255,0.06)", fontFamily: "'Marcellus', serif", fontSize: "13.5px", color: "#FFFFFF"}}>
                   {"02"}
                 </span>
                 <span style={{fontWeight: "700"}}>
                   {"Pay securely"}
                 </span>
-                <span style={{fontSize: "14px", color: "#EADFF2"}}>
+                <span style={{fontSize: "13px", color: "#EADFF2"}}>
                   {"UPI, card or netbanking."}
                 </span>
               </li>
               <li style={{display: "grid", gap: "6px", alignContent: "start"}}>
-                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.55)", background: "rgba(255,255,255,0.06)", fontFamily: "'Marcellus', serif", fontSize: "15px", color: "#FFFFFF"}}>
+                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.55)", background: "rgba(255,255,255,0.06)", fontFamily: "'Marcellus', serif", fontSize: "13.5px", color: "#FFFFFF"}}>
                   {"03"}
                 </span>
                 <span style={{fontWeight: "700"}}>
                   {"Share your birth details"}
                 </span>
-                <span style={{fontSize: "14px", color: "#EADFF2"}}>
+                <span style={{fontSize: "13px", color: "#EADFF2"}}>
                   {"Date, time and place of birth."}
                 </span>
               </li>
               <li style={{display: "grid", gap: "6px", alignContent: "start"}}>
-                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.55)", background: "rgba(255,255,255,0.06)", fontFamily: "'Marcellus', serif", fontSize: "15px", color: "#FFFFFF"}}>
+                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.55)", background: "rgba(255,255,255,0.06)", fontFamily: "'Marcellus', serif", fontSize: "13.5px", color: "#FFFFFF"}}>
                   {"04"}
                 </span>
                 <span style={{fontWeight: "700"}}>
                   {"Pick your slot"}
                 </span>
-                <span style={{fontSize: "14px", color: "#EADFF2"}}>
+                <span style={{fontSize: "13px", color: "#EADFF2"}}>
                   {"We call you within 24 hours to confirm your birth details."}
                 </span>
               </li>
@@ -704,14 +704,14 @@ HomePage.prototype.render = function render() {
             <img className={"am-spin"} src={"/images/9d2168b8cba50907515a4814ec827ca1.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-190px", bottom: "-230px", width: "540px", height: "540px", opacity: "0.18", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(28px, 4vw, 56px)", display: "flex", flexWrap: "wrap", gap: "40px", alignItems: "center"}}>
               <div style={{flex: "1 1 380px", minWidth: "0"}}>
-                <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
+                <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                   {"Free, in under a minute"}
                 </p>
-                <h2 style={{margin: "0 0 24px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.4vw, 42px)", lineHeight: "1.15", color: "#FFFFFF"}}>
+                <h2 style={{margin: "0 0 24px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 2.89vw, 35px)", lineHeight: "1.15", color: "#FFFFFF"}}>
                   {"Try our free tools before you book anything."}
                 </h2>
                 <div style={{borderLeft: "2px solid rgba(255,255,255,0.35)", paddingLeft: "16px"}}>
-                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#FFFFFF"}}>
+                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "19px", color: "#FFFFFF"}}>
                     {hole(v.toolLabel)}
                   </p>
                   <p style={{margin: "0", color: "#EADFF2"}}>
@@ -725,14 +725,14 @@ HomePage.prototype.render = function render() {
                     <React.Fragment key={$index}>
                       {t?.sel ? (
                         <>
-                          <button type={"button"} role={"tab"} aria-selected={"true"} onClick={t?.pick} style={{font: "inherit", fontSize: "13px", fontWeight: "700", minHeight: "44px", padding: "0 6px", border: "0", borderRadius: "10px", cursor: "pointer", background: "#FFFFFF", color: "#2E003E", boxShadow: "0 4px 12px -6px rgba(46,0,62,0.35)"}}>
+                          <button type={"button"} role={"tab"} aria-selected={"true"} onClick={t?.pick} style={{font: "inherit", fontSize: "12px", fontWeight: "700", minHeight: "44px", padding: "0 6px", border: "0", borderRadius: "10px", cursor: "pointer", background: "#FFFFFF", color: "#2E003E", boxShadow: "0 4px 12px -6px rgba(46,0,62,0.35)"}}>
                             {hole(t?.label)}
                           </button>
                         </>
                       ) : null}
                       {t?.notSel ? (
                         <>
-                          <button type={"button"} role={"tab"} aria-selected={"false"} onClick={t?.pick} style={{font: "inherit", fontSize: "13px", fontWeight: "700", minHeight: "44px", padding: "0 6px", border: "0", borderRadius: "10px", cursor: "pointer", background: "transparent", color: "#5C5470"}}>
+                          <button type={"button"} role={"tab"} aria-selected={"false"} onClick={t?.pick} style={{font: "inherit", fontSize: "12px", fontWeight: "700", minHeight: "44px", padding: "0 6px", border: "0", borderRadius: "10px", cursor: "pointer", background: "transparent", color: "#5C5470"}}>
                             {hole(t?.label)}
                           </button>
                         </>
@@ -760,7 +760,7 @@ HomePage.prototype.render = function render() {
                     <MobileForm />
                   </>
                 ) : null}
-                <p style={{margin: "16px 0 0", padding: "10px 14px", borderRadius: "12px", background: "#F3E8F7", fontSize: "13px", lineHeight: "1.5", color: "#2E003E", textAlign: "center"}}>
+                <p style={{margin: "16px 0 0", padding: "10px 14px", borderRadius: "12px", background: "#F3E8F7", fontSize: "12px", lineHeight: "1.5", color: "#2E003E", textAlign: "center"}}>
                   {"If the date of birth on your documents is different from your real one, please enter your "}
                   <strong>
                     {"actual date of birth"}
@@ -777,15 +777,15 @@ HomePage.prototype.render = function render() {
         <div id={"reports"} style={{position: "relative", overflow: "hidden", background: "#FBF7F0"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 96px", position: "relative"}}>
             <div className={"am-center-mobile"} style={{marginBottom: "44px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Written reports"}
               </p>
-              <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
                 <span className={"am-nowrap"}>
                   {"A reading you can keep and return to."}
                 </span>
               </h2>
-              <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+              <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                 {"Each report is personally prepared by our experts and sent to you as a PDF on email and WhatsApp within 5 to 7 working days."}
               </p>
             </div>
@@ -794,19 +794,19 @@ HomePage.prototype.render = function render() {
                 <span style={{position: "absolute", top: "-13px", left: "26px", fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", color: "#FFFFFF", background: "#921A11", padding: "5px 12px", borderRadius: "999px", boxShadow: "0 6px 14px -6px rgba(146,26,17,0.6)"}}>
                   {"Most popular"}
                 </span>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Personalised Kundli Report"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                   {"Career, money, health, love and marriage predictions, your dasha timeline, doshas and easy to follow remedies."}
                 </p>
                 <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "10px"}}>
                   <span style={{display: "flex", flexDirection: "column", gap: "2px"}}>
                     <span style={{display: "flex", alignItems: "baseline", gap: "6px"}}>
-                      <span style={{fontSize: "15px", color: "#5C5470", textDecoration: "line-through"}}>
+                      <span style={{fontSize: "13.5px", color: "#5C5470", textDecoration: "line-through"}}>
                         {"₹1,998"}
                       </span>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "26px"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22.5px"}}>
                         {"₹999"}
                       </span>
                     </span>
@@ -814,7 +814,7 @@ HomePage.prototype.render = function render() {
                       {"50% OFF"}
                     </span>
                   </span>
-                  <a href={"/report/kundli"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                  <a href={"/report/kundli"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                     {"Order now"}
                   </a>
                 </div>
@@ -823,19 +823,19 @@ HomePage.prototype.render = function render() {
                 <span style={{position: "absolute", top: "-13px", left: "26px", fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", color: "#FFFFFF", background: "#921A11", padding: "5px 12px", borderRadius: "999px", boxShadow: "0 6px 14px -6px rgba(146,26,17,0.6)"}}>
                   {"New"}
                 </span>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Varshphal 2027"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                   {"Your next 12 months, month by month: the year’s main focus, key phases and simple remedies."}
                 </p>
                 <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "10px"}}>
                   <span style={{display: "flex", flexDirection: "column", gap: "2px"}}>
                     <span style={{display: "flex", alignItems: "baseline", gap: "6px"}}>
-                      <span style={{fontSize: "15px", color: "#5C5470", textDecoration: "line-through"}}>
+                      <span style={{fontSize: "13.5px", color: "#5C5470", textDecoration: "line-through"}}>
                         {"₹1,478"}
                       </span>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "26px"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22.5px"}}>
                         {"₹739"}
                       </span>
                     </span>
@@ -843,25 +843,25 @@ HomePage.prototype.render = function render() {
                       {"50% OFF"}
                     </span>
                   </span>
-                  <a href={"/report/varshphal"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                  <a href={"/report/varshphal"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                     {"Order now"}
                   </a>
                 </div>
               </div>
               <div className={"am-lift"} style={{position: "relative", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "30px", display: "flex", flexDirection: "column", gap: "14px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Couple Kundli Milan"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                   {"Gun Milan, Mangal Dosha check and an honest view of long-term compatibility before marriage."}
                 </p>
                 <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "10px"}}>
                   <span style={{display: "flex", flexDirection: "column", gap: "2px"}}>
                     <span style={{display: "flex", alignItems: "baseline", gap: "6px"}}>
-                      <span style={{fontSize: "15px", color: "#5C5470", textDecoration: "line-through"}}>
+                      <span style={{fontSize: "13.5px", color: "#5C5470", textDecoration: "line-through"}}>
                         {"₹6,798"}
                       </span>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "26px"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22.5px"}}>
                         {"₹3,399"}
                       </span>
                     </span>
@@ -869,25 +869,25 @@ HomePage.prototype.render = function render() {
                       {"50% OFF"}
                     </span>
                   </span>
-                  <a href={"/report/milan"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                  <a href={"/report/milan"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                     {"Order now"}
                   </a>
                 </div>
               </div>
               <div className={"am-lift"} style={{position: "relative", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "30px", display: "flex", flexDirection: "column", gap: "14px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Lal Kitab Report"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                   {"Lal Kitab predictions with simple remedies you can follow at home, no complex rituals."}
                 </p>
                 <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "10px"}}>
                   <span style={{display: "flex", flexDirection: "column", gap: "2px"}}>
                     <span style={{display: "flex", alignItems: "baseline", gap: "6px"}}>
-                      <span style={{fontSize: "15px", color: "#5C5470", textDecoration: "line-through"}}>
+                      <span style={{fontSize: "13.5px", color: "#5C5470", textDecoration: "line-through"}}>
                         {"₹1,998"}
                       </span>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "26px"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22.5px"}}>
                         {"₹999"}
                       </span>
                     </span>
@@ -895,25 +895,25 @@ HomePage.prototype.render = function render() {
                       {"50% OFF"}
                     </span>
                   </span>
-                  <a href={"/report/lal-kitab"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                  <a href={"/report/lal-kitab"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                     {"Order now"}
                   </a>
                 </div>
               </div>
               <div className={"am-lift"} style={{position: "relative", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "30px", display: "flex", flexDirection: "column", gap: "14px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Name Numerology Report"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                   {"For yourself, a newborn or a business. Align the name you carry with your numbers."}
                 </p>
                 <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "10px"}}>
                   <span style={{display: "flex", flexDirection: "column", gap: "2px"}}>
                     <span style={{display: "flex", alignItems: "baseline", gap: "6px"}}>
-                      <span style={{fontSize: "15px", color: "#5C5470", textDecoration: "line-through"}}>
+                      <span style={{fontSize: "13.5px", color: "#5C5470", textDecoration: "line-through"}}>
                         {"₹798"}
                       </span>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "26px"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22.5px"}}>
                         {"₹399"}
                       </span>
                     </span>
@@ -921,25 +921,25 @@ HomePage.prototype.render = function render() {
                       {"50% OFF"}
                     </span>
                   </span>
-                  <a href={"/report/name-numerology"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                  <a href={"/report/name-numerology"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                     {"Order now"}
                   </a>
                 </div>
               </div>
               <div className={"am-lift"} style={{position: "relative", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "30px", display: "flex", flexDirection: "column", gap: "14px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Mobile Number Report"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                   {"Check whether your mobile number supports you, with lucky combinations to choose from."}
                 </p>
                 <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "10px"}}>
                   <span style={{display: "flex", flexDirection: "column", gap: "2px"}}>
                     <span style={{display: "flex", alignItems: "baseline", gap: "6px"}}>
-                      <span style={{fontSize: "15px", color: "#5C5470", textDecoration: "line-through"}}>
+                      <span style={{fontSize: "13.5px", color: "#5C5470", textDecoration: "line-through"}}>
                         {"₹498"}
                       </span>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "26px"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22.5px"}}>
                         {"₹249"}
                       </span>
                     </span>
@@ -947,28 +947,28 @@ HomePage.prototype.render = function render() {
                       {"50% OFF"}
                     </span>
                   </span>
-                  <a href={"/report/mobile-number"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                  <a href={"/report/mobile-number"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                     {"Order now"}
                   </a>
                 </div>
               </div>
               <div className={"am-lift"} style={{gridColumn: "1 / -1", position: "relative", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "26px 30px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "14px 32px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
                 <div style={{flex: "1 1 360px", minWidth: "0"}}>
-                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                     {"Rudraksha and gemstones"}
                   </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                  <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                     {"Natural, energised stones and rudraksha, recommended only after we have seen your chart."}
                   </p>
                 </div>
                 <div style={{position: "relative", display: "flex", alignItems: "center", justifyContent: "flex-end"}}>
-                  <a href={"/contact"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                  <a href={"/contact"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                     {"Buy now"}
                   </a>
                 </div>
               </div>
             </div>
-            <p style={{margin: "28px 0 0", textAlign: "center", fontSize: "15px"}}>
+            <p style={{margin: "28px 0 0", textAlign: "center", fontSize: "13.5px"}}>
               <a href={"/report/kundli"}>
                 {"See a sample page from a Kundli report →"}
               </a>
@@ -981,10 +981,10 @@ HomePage.prototype.render = function render() {
           <img className={"am-orbit"} src={"/images/e9e66e432da62be0b75896cf7ef0608e.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-40px", top: "20px", width: "460px", height: "460px", opacity: "0.3", pointerEvents: "none"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "104px 24px", position: "relative"}}>
             <div style={{marginBottom: "52px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                 {"Why it takes us 5 to 7 days"}
               </p>
-              <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28px, 3vw, 38px)", lineHeight: "1.25", color: "#FFFFFF"}}>
+              <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(24px, 2.55vw, 32px)", lineHeight: "1.25", color: "#FFFFFF"}}>
                 <span className={"am-nowrap-lg"}>
                   {"Instant reports are generated by software."}
                 </span>
@@ -996,26 +996,26 @@ HomePage.prototype.render = function render() {
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: "24px"}}>
               <div style={{borderTop: "1px solid rgba(255,255,255,0.4)", paddingTop: "22px"}}>
-                <p style={{margin: "0 0 8px", fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#FFFFFF"}}>
+                <p style={{margin: "0 0 8px", fontFamily: "'Marcellus', serif", fontSize: "19px", color: "#FFFFFF"}}>
                   {"Read, not generated"}
                 </p>
-                <p style={{margin: "0", color: "#EADFF2", fontSize: "15px"}}>
+                <p style={{margin: "0", color: "#EADFF2", fontSize: "13.5px"}}>
                   {"Every Kundli is analysed house by house before a single line is written."}
                 </p>
               </div>
               <div style={{borderTop: "1px solid rgba(255,255,255,0.4)", paddingTop: "22px"}}>
-                <p style={{margin: "0 0 8px", fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#FFFFFF"}}>
+                <p style={{margin: "0 0 8px", fontFamily: "'Marcellus', serif", fontSize: "19px", color: "#FFFFFF"}}>
                   {"Personalised remedies"}
                 </p>
-                <p style={{margin: "0", color: "#EADFF2", fontSize: "15px"}}>
+                <p style={{margin: "0", color: "#EADFF2", fontSize: "13.5px"}}>
                   {"Practical, easy to follow remedies that fit your everyday life."}
                 </p>
               </div>
               <div style={{borderTop: "1px solid rgba(255,255,255,0.4)", paddingTop: "22px"}}>
-                <p style={{margin: "0 0 8px", fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#FFFFFF"}}>
+                <p style={{margin: "0 0 8px", fontFamily: "'Marcellus', serif", fontSize: "19px", color: "#FFFFFF"}}>
                   {"Support after your report"}
                 </p>
-                <p style={{margin: "0", color: "#EADFF2", fontSize: "15px"}}>
+                <p style={{margin: "0", color: "#EADFF2", fontSize: "13.5px"}}>
                   {"Unsure about something in your report? Send us one or two questions and we’ll clarify."}
                 </p>
               </div>
@@ -1049,10 +1049,10 @@ HomePage.prototype.render = function render() {
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "96px 24px", position: "relative"}}>
             <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "16px 40px", marginBottom: "36px"}}>
               <div style={{maxWidth: "620px"}}>
-                <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                   {"Learn with us"}
                 </p>
-                <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(32px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+                <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(27px, 3.06vw, 37px)", lineHeight: "1.15"}}>
                   {"Why wonder about life when you can learn to read it?"}
                 </h2>
               </div>
@@ -1064,20 +1064,20 @@ HomePage.prototype.render = function render() {
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column"}}>
                 <img src={"/images/f096e04a039d9feb59de98d1d02de7f1.jpg"} alt={"Numerology Foundation Course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
                 <div style={{flex: "1", padding: "22px 26px 26px", display: "flex", flexDirection: "column", gap: "10px"}}>
-                  <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "20px", color: "#921A11", lineHeight: "1"}}>
+                  <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", color: "#921A11", lineHeight: "1"}}>
                     {"अंक शास्त्र"}
                   </span>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                     {"Numerology Foundation"}
                   </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                  <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                     {"Birth, destiny and name numbers from the ground up."}
                   </p>
                   <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "10px"}}>
                     <span style={{fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", color: "#921A11", background: "#F8E8E6", padding: "5px 10px", borderRadius: "999px"}}>
                       {"Coming soon"}
                     </span>
-                    <a href={"https://wa.me/919129237566"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 18px", borderRadius: "999px", border: "1.5px solid #6C1594", color: "#6C1594", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                    <a href={"https://wa.me/919129237566"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 18px", borderRadius: "999px", border: "1.5px solid #6C1594", color: "#6C1594", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                       {"Notify me"}
                     </a>
                   </div>
@@ -1086,20 +1086,20 @@ HomePage.prototype.render = function render() {
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column"}}>
                 <img src={"/images/ea15b3e1780bbd6844ecaa33bda0c926.jpg"} alt={"Astrology Foundation Course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
                 <div style={{flex: "1", padding: "22px 26px 26px", display: "flex", flexDirection: "column", gap: "10px"}}>
-                  <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "20px", color: "#921A11", lineHeight: "1"}}>
+                  <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", color: "#921A11", lineHeight: "1"}}>
                     {"ज्योतिष"}
                   </span>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                     {"Astrology Foundation"}
                   </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                  <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                     {"Houses, planets and signs, step by step, to read a chart on your own."}
                   </p>
                   <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "10px"}}>
                     <span style={{fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", color: "#921A11", background: "#F8E8E6", padding: "5px 10px", borderRadius: "999px"}}>
                       {"Coming soon"}
                     </span>
-                    <a href={"https://wa.me/919129237566"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 18px", borderRadius: "999px", border: "1.5px solid #6C1594", color: "#6C1594", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                    <a href={"https://wa.me/919129237566"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 18px", borderRadius: "999px", border: "1.5px solid #6C1594", color: "#6C1594", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                       {"Notify me"}
                     </a>
                   </div>
@@ -1108,20 +1108,20 @@ HomePage.prototype.render = function render() {
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column"}}>
                 <img src={"/images/6da4179d5dfa9489ed3e3e39f8aa92bd.jpg"} alt={"Decoding Marriage and Compatibility course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
                 <div style={{flex: "1", padding: "22px 26px 26px", display: "flex", flexDirection: "column", gap: "10px"}}>
-                  <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "20px", color: "#921A11", lineHeight: "1"}}>
+                  <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", color: "#921A11", lineHeight: "1"}}>
                     {"विवाह"}
                   </span>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                     {"Decoding Marriage and Compatibility"}
                   </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                  <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                     {"How to read compatibility, timing and doshas for marriage."}
                   </p>
                   <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "10px"}}>
                     <span style={{fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", color: "#921A11", background: "#F8E8E6", padding: "5px 10px", borderRadius: "999px"}}>
                       {"Coming soon"}
                     </span>
-                    <a href={"https://wa.me/919129237566"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 18px", borderRadius: "999px", border: "1.5px solid #6C1594", color: "#6C1594", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                    <a href={"https://wa.me/919129237566"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 18px", borderRadius: "999px", border: "1.5px solid #6C1594", color: "#6C1594", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                       {"Notify me"}
                     </a>
                   </div>
@@ -1133,16 +1133,16 @@ HomePage.prototype.render = function render() {
                 <img src={"/images/f51fdba3c3c077276fab777f3ecab46d.jpg"} alt={"Manifestation Masterclass with Maneswita"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", borderRadius: "18px", display: "block", boxShadow: "0 24px 48px -26px rgba(46,0,62,0.55)"}} />
               </div>
               <div style={{flex: "1 1 400px", minWidth: "0", padding: "clamp(20px, 3vw, 36px) clamp(24px, 4vw, 48px) clamp(28px, 4vw, 44px) clamp(20px, 2vw, 12px)", display: "flex", flexDirection: "column", justifyContent: "center", gap: "14px", position: "relative"}}>
-                <p style={{margin: "0", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                <p style={{margin: "0", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                   {"Live 2-day webinar · Dates announced soon"}
                 </p>
-                <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28px, 3vw, 38px)", lineHeight: "1.15", color: "#2E003E"}}>
+                <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(24px, 2.55vw, 32px)", lineHeight: "1.15", color: "#2E003E"}}>
                   {"Manifestation Masterclass"}
                 </h2>
                 <p style={{margin: "0", color: "#5C5470"}}>
                   {"Your personal manifestation blueprint, in two live sessions with Maneswita."}
                 </p>
-                <ul style={{margin: "0", padding: "0", listStyle: "none", display: "grid", gap: "8px", fontSize: "15px", color: "#1E1830"}}>
+                <ul style={{margin: "0", padding: "0", listStyle: "none", display: "grid", gap: "8px", fontSize: "13.5px", color: "#1E1830"}}>
                   <li style={{display: "flex", gap: "10px"}}>
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 14 14"} style={{flex: "none", marginTop: "4px"}}>
                       <path d={"M7 1L13 7L7 13L1 7Z"} fill={"none"} stroke={"#6C1594"} strokeWidth={"1.4"} />
@@ -1170,10 +1170,10 @@ HomePage.prototype.render = function render() {
                 </ul>
                 <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", gap: "16px 20px", marginTop: "8px"}}>
                   <p style={{margin: "0", display: "flex", alignItems: "baseline", gap: "10px"}}>
-                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "40px", lineHeight: "1", color: "#2E003E"}}>
+                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "33.5px", lineHeight: "1", color: "#2E003E"}}>
                       {"₹99"}
                     </span>
-                    <span style={{fontSize: "18px", color: "#5C5470", textDecoration: "line-through"}}>
+                    <span style={{fontSize: "16px", color: "#5C5470", textDecoration: "line-through"}}>
                       {"₹799"}
                     </span>
                   </p>
@@ -1196,13 +1196,13 @@ HomePage.prototype.render = function render() {
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "48%", left: "84%", animationDelay: "10s"}} />
           <div style={{position: "relative", maxWidth: "1200px", margin: "0 auto", padding: "88px 24px"}}>
             <div id={"rashi"} style={{textAlign: "center", scrollMarginTop: "90px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                 {"Today’s horoscope"}
               </p>
-              <h2 style={{margin: "0 0 8px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.4vw, 40px)", lineHeight: "1.15", color: "#FFFFFF"}}>
+              <h2 style={{margin: "0 0 8px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 2.89vw, 33.5px)", lineHeight: "1.15", color: "#FFFFFF"}}>
                 {"What do the stars hold for you today?"}
               </h2>
-              <p style={{margin: "0 0 36px", fontSize: "15px", color: "#EADFF2"}}>
+              <p style={{margin: "0 0 36px", fontSize: "13.5px", color: "#EADFF2"}}>
                 {hole(v.todayDate)}
               </p>
               <MoonForm onFound={v.onMoon} />
@@ -1221,10 +1221,10 @@ HomePage.prototype.render = function render() {
                               <img className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
                             </span>
                           </span>
-                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "15px", lineHeight: "1.15", color: "#FCCE07"}}>
+                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "13.5px", lineHeight: "1.15", color: "#FCCE07"}}>
                             {hole(r?.en)}
                           </span>
-                          <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "14px", lineHeight: "1.1", color: "#CBB154", marginTop: "-4px"}}>
+                          <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "13px", lineHeight: "1.1", color: "#CBB154", marginTop: "-4px"}}>
                             {hole(r?.hi)}
                           </span>
                         </button>
@@ -1242,10 +1242,10 @@ HomePage.prototype.render = function render() {
                               <img className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
                             </span>
                           </span>
-                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "15px", lineHeight: "1.15"}}>
+                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "13.5px", lineHeight: "1.15"}}>
                             {hole(r?.en)}
                           </span>
-                          <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "14px", lineHeight: "1.1", color: "#CBB154", marginTop: "-4px"}}>
+                          <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "13px", lineHeight: "1.1", color: "#CBB154", marginTop: "-4px"}}>
                             {hole(r?.hi)}
                           </span>
                         </button>
@@ -1258,11 +1258,11 @@ HomePage.prototype.render = function render() {
                 <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "24px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", display: "flex", flexDirection: "column", gap: "18px"}}>
                   <div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px"}}>
                     <div>
-                      <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "32px", lineHeight: "1.1"}}>
+                      <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "27px", lineHeight: "1.1"}}>
                         {hole(v.cur?.en)}
                       </p>
-                      <p style={{margin: "6px 0 0", fontSize: "14px", color: "#5C5470"}}>
-                        <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", color: "#921A11"}}>
+                      <p style={{margin: "6px 0 0", fontSize: "13px", color: "#5C5470"}}>
+                        <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#921A11"}}>
                           {hole(v.cur?.hi)}
                         </span>
                         {" · Ruled by "}
@@ -1275,7 +1275,7 @@ HomePage.prototype.render = function render() {
                     {(v.cur?.bars || []).map((b, $index) => (
                       <React.Fragment key={$index}>
                         <div style={{display: "grid", gap: "6px"}}>
-                          <div style={{display: "flex", justifyContent: "space-between", fontSize: "14px", fontWeight: "600"}}>
+                          <div style={{display: "flex", justifyContent: "space-between", fontSize: "13px", fontWeight: "600"}}>
                             <span>
                               {hole(b?.label)}
                             </span>
@@ -1293,7 +1293,7 @@ HomePage.prototype.render = function render() {
                       <p style={{margin: "0", fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", color: "#5C5470", fontWeight: "700"}}>
                         {"Overall"}
                       </p>
-                      <p style={{margin: "4px 0 0", fontFamily: "'Marcellus', serif", fontSize: "24px", color: "#6C1594"}}>
+                      <p style={{margin: "4px 0 0", fontFamily: "'Marcellus', serif", fontSize: "21px", color: "#6C1594"}}>
                         {hole(v.cur?.overall)}
                       </p>
                     </div>
@@ -1301,7 +1301,7 @@ HomePage.prototype.render = function render() {
                       <p style={{margin: "0", fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", color: "#5C5470", fontWeight: "700"}}>
                         {"Lucky number"}
                       </p>
-                      <p style={{margin: "4px 0 0", fontFamily: "'Marcellus', serif", fontSize: "24px"}}>
+                      <p style={{margin: "4px 0 0", fontFamily: "'Marcellus', serif", fontSize: "21px"}}>
                         {hole(v.cur?.num)}
                       </p>
                     </div>
@@ -1309,19 +1309,19 @@ HomePage.prototype.render = function render() {
                       <p style={{margin: "0", fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", color: "#5C5470", fontWeight: "700"}}>
                         {"Lucky colour"}
                       </p>
-                      <p style={{margin: "4px 0 0", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                      <p style={{margin: "4px 0 0", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                         {hole(v.cur?.colour)}
                       </p>
                     </div>
                   </div>
                   <div>
-                    <p style={{margin: "0 0 8px", fontSize: "13px", fontWeight: "700", color: "#1E1830"}}>
+                    <p style={{margin: "0 0 8px", fontSize: "12px", fontWeight: "700", color: "#1E1830"}}>
                       {"Today’s mood"}
                     </p>
                     <div style={{display: "flex", flexWrap: "wrap", gap: "8px"}}>
                       {(v.cur?.moods || []).map((m, $index) => (
                         <React.Fragment key={$index}>
-                          <span style={{fontSize: "13px", fontWeight: "600", color: "#921A11", background: "#FCCE07", padding: "5px 12px", borderRadius: "999px"}}>
+                          <span style={{fontSize: "12px", fontWeight: "600", color: "#921A11", background: "#FCCE07", padding: "5px 12px", borderRadius: "999px"}}>
                             {hole(m?.word)}
                           </span>
                         </React.Fragment>
@@ -1334,10 +1334,10 @@ HomePage.prototype.render = function render() {
                         {"Mantra to strengthen · "}
                         {hole(v.cur?.strongPlanet)}
                       </p>
-                      <p style={{margin: "8px 0 0", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "19px", lineHeight: "1.4"}}>
+                      <p style={{margin: "8px 0 0", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", lineHeight: "1.4"}}>
                         {hole(v.cur?.strongHi)}
                       </p>
-                      <p style={{margin: "2px 0 0", fontFamily: "'Marcellus', serif", fontSize: "16px", lineHeight: "1.35", color: "#EADFF2"}}>
+                      <p style={{margin: "2px 0 0", fontFamily: "'Marcellus', serif", fontSize: "14.5px", lineHeight: "1.35", color: "#EADFF2"}}>
                         {hole(v.cur?.strongEn)}
                       </p>
                     </div>
@@ -1348,13 +1348,13 @@ HomePage.prototype.render = function render() {
                             {"Mantra to calm · "}
                             {hole(v.cur?.calmPlanet)}
                           </p>
-                          <p style={{margin: "8px 0 0", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "19px", lineHeight: "1.4", color: "#921A11"}}>
+                          <p style={{margin: "8px 0 0", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", lineHeight: "1.4", color: "#921A11"}}>
                             {hole(v.cur?.calmHi)}
                           </p>
-                          <p style={{margin: "2px 0 0", fontFamily: "'Marcellus', serif", fontSize: "16px", lineHeight: "1.35"}}>
+                          <p style={{margin: "2px 0 0", fontFamily: "'Marcellus', serif", fontSize: "14.5px", lineHeight: "1.35"}}>
                             {hole(v.cur?.calmEn)}
                           </p>
-                          <p style={{margin: "8px 0 0", fontSize: "13px", lineHeight: "1.45", color: "#5C5470"}}>
+                          <p style={{margin: "8px 0 0", fontSize: "12px", lineHeight: "1.45", color: "#5C5470"}}>
                             {hole(v.cur?.calmWhy)}
                           </p>
                         </div>
@@ -1366,7 +1366,7 @@ HomePage.prototype.render = function render() {
                           <p style={{margin: "0", fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                             {"Mantra to calm"}
                           </p>
-                          <p style={{margin: "6px 0 0", fontSize: "14px", lineHeight: "1.45", color: "#5C5470"}}>
+                          <p style={{margin: "6px 0 0", fontSize: "13px", lineHeight: "1.45", color: "#5C5470"}}>
                             {"No planet is troubling "}
                             {hole(v.cur?.en)}
                             {" today, so no calming mantra is needed."}
@@ -1374,17 +1374,17 @@ HomePage.prototype.render = function render() {
                         </div>
                       </>
                     ) : null}
-                    <p style={{margin: "2px 0 0", fontSize: "12.5px", lineHeight: "1.5", color: "#5C5470", textAlign: "center"}}>
+                    <p style={{margin: "2px 0 0", fontSize: "12px", lineHeight: "1.5", color: "#5C5470", textAlign: "center"}}>
                       {"Chant each mantra 108 times. These are based on your moon sign. Your own chart may call for a different remedy."}
                     </p>
                   </div>
                 </div>
                 <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "28px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", display: "flex", flexDirection: "column", gap: "20px"}}>
                   <div>
-                    <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                    <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                       {"Today’s overview"}
                     </p>
-                    <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "clamp(19px, 1.8vw, 23px)", lineHeight: "1.45"}}>
+                    <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "clamp(17px, 1.53vw, 20px)", lineHeight: "1.45"}}>
                       {hole(v.cur?.overview)}
                     </p>
                   </div>
@@ -1400,7 +1400,7 @@ HomePage.prototype.render = function render() {
                         <p style={{margin: "0 0 2px", fontWeight: "700"}}>
                           {"Love and relationships"}
                         </p>
-                        <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                        <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                           {hole(v.cur?.love)}
                         </p>
                       </div>
@@ -1416,7 +1416,7 @@ HomePage.prototype.render = function render() {
                         <p style={{margin: "0 0 2px", fontWeight: "700"}}>
                           {"Career and finance"}
                         </p>
-                        <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                        <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                           {hole(v.cur?.career)}
                         </p>
                       </div>
@@ -1432,7 +1432,7 @@ HomePage.prototype.render = function render() {
                         <p style={{margin: "0 0 2px", fontWeight: "700"}}>
                           {"Health and wellbeing"}
                         </p>
-                        <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                        <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                           {hole(v.cur?.health)}
                         </p>
                       </div>
@@ -1445,19 +1445,19 @@ HomePage.prototype.render = function render() {
                         {hole(v.cur?.en)}
                         {" horoscope →"}
                       </a>
-                      <span style={{display: "inline-flex", flexWrap: "wrap", gap: "4px 14px", fontSize: "14px"}}>
+                      <span style={{display: "inline-flex", flexWrap: "wrap", gap: "4px 14px", fontSize: "13px"}}>
                         <a href={"/horoscope/" + v.cur?.slug + "/weekly"}>{"Weekly"}</a>
                         <a href={"/horoscope/" + v.cur?.slug + "/monthly"}>{"Monthly"}</a>
                         <a href={"/horoscope/" + v.cur?.slug + "/2027"}>{"2027"}</a>
                       </span>
                     </div>
-                    <a href={"/consult"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+                    <a href={"/consult"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                       {"Get a personal reading"}
                     </a>
                   </div>
                 </div>
               </div>
-              <p style={{margin: "18px auto 0", maxWidth: "720px", fontSize: "13px", color: "#CDB8DA"}}>
+              <p style={{margin: "18px auto 0", maxWidth: "720px", fontSize: "12px", color: "#CDB8DA"}}>
                 {"Daily horoscopes are general readings for each moon sign. For guidance based on your own chart, book a personal consultation."}
               </p>
             </div>
@@ -1467,13 +1467,13 @@ HomePage.prototype.render = function render() {
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px"}}>
             <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "16px 40px", marginBottom: "36px"}}>
               <div style={{maxWidth: "620px"}}>
-                <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                   {"From our journal"}
                 </p>
-                <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(32px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+                <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(27px, 3.06vw, 37px)", lineHeight: "1.15"}}>
                   {"Read, learn, and understand yourself better."}
                 </h2>
-                <p style={{margin: "0", fontSize: "16px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "14.5px", color: "#5C5470"}}>
                   {"Simple articles on astrology, numerology and Vastu, written by Maneswita."}
                 </p>
               </div>
@@ -1509,21 +1509,21 @@ HomePage.prototype.render = function render() {
                     <span style={{fontSize: "12px", fontWeight: "700", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6C1594", background: "#F3E8F7", padding: "5px 10px", borderRadius: "999px"}}>
                       {"Astrology"}
                     </span>
-                    <span style={{fontSize: "13px", color: "#736B8A"}}>
+                    <span style={{fontSize: "12px", color: "#736B8A"}}>
                       {"6 min read"}
                     </span>
                   </div>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.25"}}>
+                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.25"}}>
                     {"Sade Sati: what it really means, and why it is not something to fear"}
                   </p>
-                  <p style={{margin: "0", fontSize: "15px", lineHeight: "1.6", color: "#5C5470"}}>
+                  <p style={{margin: "0", fontSize: "13.5px", lineHeight: "1.6", color: "#5C5470"}}>
                     {"Saturn’s seven and a half years have a scary reputation. Here is what actually changes, and how to use the phase well."}
                   </p>
                   <div style={{marginTop: "auto", paddingTop: "10px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", borderTop: "1px solid #EFE6D8"}}>
-                    <span style={{fontSize: "13px", color: "#5C5470"}}>
+                    <span style={{fontSize: "12px", color: "#5C5470"}}>
                       {"By Maneswita"}
                     </span>
-                    <span style={{fontWeight: "700", color: "#921A11", fontSize: "14px"}}>
+                    <span style={{fontWeight: "700", color: "#921A11", fontSize: "13px"}}>
                       {"Read article →"}
                     </span>
                   </div>
@@ -1578,21 +1578,21 @@ HomePage.prototype.render = function render() {
                     <span style={{fontSize: "12px", fontWeight: "700", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6C1594", background: "#F3E8F7", padding: "5px 10px", borderRadius: "999px"}}>
                       {"Numerology"}
                     </span>
-                    <span style={{fontSize: "13px", color: "#736B8A"}}>
+                    <span style={{fontSize: "12px", color: "#736B8A"}}>
                       {"5 min read"}
                     </span>
                   </div>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.25"}}>
+                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.25"}}>
                     {"Should you change the spelling of your name? How we decide"}
                   </p>
-                  <p style={{margin: "0", fontSize: "15px", lineHeight: "1.6", color: "#5C5470"}}>
+                  <p style={{margin: "0", fontSize: "13.5px", lineHeight: "1.6", color: "#5C5470"}}>
                     {"A name correction is not about luck. We check how your name number agrees with your birth numbers first."}
                   </p>
                   <div style={{marginTop: "auto", paddingTop: "10px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", borderTop: "1px solid #EFE6D8"}}>
-                    <span style={{fontSize: "13px", color: "#5C5470"}}>
+                    <span style={{fontSize: "12px", color: "#5C5470"}}>
                       {"By Maneswita"}
                     </span>
-                    <span style={{fontWeight: "700", color: "#921A11", fontSize: "14px"}}>
+                    <span style={{fontWeight: "700", color: "#921A11", fontSize: "13px"}}>
                       {"Read article →"}
                     </span>
                   </div>
@@ -1622,21 +1622,21 @@ HomePage.prototype.render = function render() {
                     <span style={{fontSize: "12px", fontWeight: "700", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6C1594", background: "#F3E8F7", padding: "5px 10px", borderRadius: "999px"}}>
                       {"Vastu"}
                     </span>
-                    <span style={{fontSize: "13px", color: "#736B8A"}}>
+                    <span style={{fontSize: "12px", color: "#736B8A"}}>
                       {"4 min read"}
                     </span>
                   </div>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.25"}}>
+                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.25"}}>
                     {"Five simple Vastu fixes for your home before Diwali"}
                   </p>
-                  <p style={{margin: "0", fontSize: "15px", lineHeight: "1.6", color: "#5C5470"}}>
+                  <p style={{margin: "0", fontSize: "13.5px", lineHeight: "1.6", color: "#5C5470"}}>
                     {"No walls broken, no big spends. Small changes room by room that bring the energy of your home back into balance."}
                   </p>
                   <div style={{marginTop: "auto", paddingTop: "10px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", borderTop: "1px solid #EFE6D8"}}>
-                    <span style={{fontSize: "13px", color: "#5C5470"}}>
+                    <span style={{fontSize: "12px", color: "#5C5470"}}>
                       {"By Maneswita"}
                     </span>
-                    <span style={{fontWeight: "700", color: "#921A11", fontSize: "14px"}}>
+                    <span style={{fontWeight: "700", color: "#921A11", fontSize: "13px"}}>
                       {"Read article →"}
                     </span>
                   </div>
@@ -1654,10 +1654,10 @@ HomePage.prototype.render = function render() {
                 <img src={"/images/26c9dadb7f4b6a08ec59999c3d9e9332.jpg"} alt={"Maneswita and Ahalya Sangeeta, founders of Ahllya Mystic"} style={{position: "relative", width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "center 35%", borderRadius: "240px 240px 20px 20px", display: "block"}} />
               </div>
               <div style={{flex: "1.6 1 460px", minWidth: "0"}}>
-                <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                   {"Who reads your chart"}
                 </p>
-                <h2 style={{margin: "0 0 18px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28px, 3vw, 38px)", lineHeight: "1.2"}}>
+                <h2 style={{margin: "0 0 18px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(24px, 2.55vw, 32px)", lineHeight: "1.2"}}>
                   {"A mother and daughter,"}
                   <br />
                   <span className={"am-nowrap"}>
@@ -1669,13 +1669,13 @@ HomePage.prototype.render = function render() {
                 </p>
                 <div style={{display: "grid", gap: "16px"}}>
                   <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "22px 24px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-                    <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                    <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                       {"Ahalya Sangeeta"}
                     </p>
-                    <p style={{margin: "2px 0 10px", fontSize: "14px", color: "#921A11", fontWeight: "600"}}>
+                    <p style={{margin: "2px 0 10px", fontSize: "13px", color: "#921A11", fontWeight: "600"}}>
                       {"Founder"}
                     </p>
-                    <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                    <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                       <span className={"am-nowrap"}>
                         {"Vedic and KP astrology, numerology and Vastu."}
                       </span>
@@ -1684,13 +1684,13 @@ HomePage.prototype.render = function render() {
                     </p>
                   </div>
                   <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "22px 24px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-                    <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                    <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                       {"Maneswita"}
                     </p>
-                    <p style={{margin: "2px 0 10px", fontSize: "14px", color: "#921A11", fontWeight: "600"}}>
+                    <p style={{margin: "2px 0 10px", fontSize: "13px", color: "#921A11", fontWeight: "600"}}>
                       {"Co-founder"}
                     </p>
-                    <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                    <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                       <span className={"am-nowrap"}>
                         {"Vedic and KP astrology and numerology."}
                       </span>
@@ -1707,10 +1707,10 @@ HomePage.prototype.render = function render() {
           <img className={"am-spin"} src={"/images/139dc9f8771bafe47e83ebdfd8f024a6.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-140px", bottom: "-160px", width: "440px", height: "440px", opacity: "0.12", pointerEvents: "none"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px 96px", position: "relative"}}>
             <div style={{textAlign: "center", margin: "0 auto 44px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Client stories"}
               </p>
-              <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
                 <span className={"am-nowrap"}>
                   {"Words from those we have guided."}
                 </span>
@@ -1723,7 +1723,7 @@ HomePage.prototype.render = function render() {
                     <span style={{display: "block", fontWeight: "700"}}>
                       {"Arushi B."}
                     </span>
-                    <span style={{display: "block", fontSize: "13px", color: "#5C5470"}}>
+                    <span style={{display: "block", fontSize: "12px", color: "#5C5470"}}>
                       {"Delhi"}
                     </span>
                   </span>
@@ -1731,7 +1731,7 @@ HomePage.prototype.render = function render() {
                     {"Mobile Number Report"}
                   </span>
                 </figcaption>
-                <blockquote style={{margin: "0", position: "relative", background: "#F3E8F7", borderRadius: "4px 16px 16px 16px", padding: "14px 16px 28px", fontSize: "15px", lineHeight: "1.6", color: "#1E1830"}}>
+                <blockquote style={{margin: "0", position: "relative", background: "#F3E8F7", borderRadius: "4px 16px 16px 16px", padding: "14px 16px 28px", fontSize: "13.5px", lineHeight: "1.6", color: "#1E1830"}}>
                   {"I never thought my phone number could matter, but the report explained everything so simply. I switched to one of the suggested numbers and it just feels right. Thank you!"}
                   <span style={{position: "absolute", right: "12px", bottom: "7px", display: "flex", alignItems: "center", gap: "4px", fontSize: "11px", color: "#6C1594"}}>
                     <svg aria-hidden={"true"} width={"16"} height={"10"} viewBox={"0 0 16 10"} fill={"none"} stroke={"#6C1594"} strokeWidth={"1.6"} strokeLinecap={"round"} strokeLinejoin={"round"}>
@@ -1746,7 +1746,7 @@ HomePage.prototype.render = function render() {
                     <span style={{display: "block", fontWeight: "700"}}>
                       {"Tikesh Negi"}
                     </span>
-                    <span style={{display: "block", fontSize: "13px", color: "#5C5470"}}>
+                    <span style={{display: "block", fontSize: "12px", color: "#5C5470"}}>
                       {"Haldwani"}
                     </span>
                   </span>
@@ -1754,7 +1754,7 @@ HomePage.prototype.render = function render() {
                     {"Name and Mobile Reports"}
                   </span>
                 </figcaption>
-                <blockquote style={{margin: "0", position: "relative", background: "#F3E8F7", borderRadius: "4px 16px 16px 16px", padding: "14px 16px 28px", fontSize: "15px", lineHeight: "1.6", color: "#1E1830"}}>
+                <blockquote style={{margin: "0", position: "relative", background: "#F3E8F7", borderRadius: "4px 16px 16px 16px", padding: "14px 16px 28px", fontSize: "13.5px", lineHeight: "1.6", color: "#1E1830"}}>
                   {"Got both my name and mobile number reports done. They explained clearly why my current spelling wasn’t supporting me and suggested a small, easy change. Very detailed, and patient with all my questions."}
                   <span style={{position: "absolute", right: "12px", bottom: "7px", display: "flex", alignItems: "center", gap: "4px", fontSize: "11px", color: "#6C1594"}}>
                     <svg aria-hidden={"true"} width={"16"} height={"10"} viewBox={"0 0 16 10"} fill={"none"} stroke={"#6C1594"} strokeWidth={"1.6"} strokeLinecap={"round"} strokeLinejoin={"round"}>
@@ -1769,7 +1769,7 @@ HomePage.prototype.render = function render() {
                     <span style={{display: "block", fontWeight: "700"}}>
                       {"Gaurav Jha"}
                     </span>
-                    <span style={{display: "block", fontSize: "13px", color: "#5C5470"}}>
+                    <span style={{display: "block", fontSize: "12px", color: "#5C5470"}}>
                       {"Lucknow"}
                     </span>
                   </span>
@@ -1777,7 +1777,7 @@ HomePage.prototype.render = function render() {
                     {"Personalised Kundli"}
                   </span>
                 </figcaption>
-                <blockquote style={{margin: "0", position: "relative", background: "#F3E8F7", borderRadius: "4px 16px 16px 16px", padding: "14px 16px 28px", fontSize: "15px", lineHeight: "1.6", color: "#1E1830"}}>
+                <blockquote style={{margin: "0", position: "relative", background: "#F3E8F7", borderRadius: "4px 16px 16px 16px", padding: "14px 16px 28px", fontSize: "13.5px", lineHeight: "1.6", color: "#1E1830"}}>
                   {"The Kundli report was far more detailed than I expected, and you can tell someone actually studied my chart. The remedies are practical and easy to follow. Highly recommend."}
                   <span style={{position: "absolute", right: "12px", bottom: "7px", display: "flex", alignItems: "center", gap: "4px", fontSize: "11px", color: "#6C1594"}}>
                     <svg aria-hidden={"true"} width={"16"} height={"10"} viewBox={"0 0 16 10"} fill={"none"} stroke={"#6C1594"} strokeWidth={"1.6"} strokeLinecap={"round"} strokeLinejoin={"round"}>
@@ -1787,7 +1787,7 @@ HomePage.prototype.render = function render() {
                 </blockquote>
               </figure>
             </div>
-            <p style={{margin: "36px 0 0", textAlign: "center", fontSize: "15px", color: "#5C5470"}}>
+            <p style={{margin: "36px 0 0", textAlign: "center", fontSize: "13.5px", color: "#5C5470"}}>
               {"Have we guided you? "}
               <a href={"https://wa.me/919129237566"} style={{fontWeight: "700"}}>
                 {"Share your experience on WhatsApp →"}
@@ -1797,17 +1797,17 @@ HomePage.prototype.render = function render() {
         </div>
         <div style={{position: "relative", overflow: "hidden"}}>
           <div style={{maxWidth: "860px", margin: "0 auto", padding: "96px 24px", position: "relative"}}>
-            <p style={{margin: "0 0 10px", textAlign: "center", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+            <p style={{margin: "0 0 10px", textAlign: "center", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
               {"Questions"}
             </p>
-            <h2 style={{margin: "0 0 40px", textAlign: "center", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(32px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+            <h2 style={{margin: "0 0 40px", textAlign: "center", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(27px, 3.06vw, 37px)", lineHeight: "1.15"}}>
               {"Before you book"}
             </h2>
             <div style={{display: "grid", gap: "12px"}}>
               <details style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 24px"}}>
                 <summary style={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", minHeight: "64px", fontWeight: "700"}}>
                   {"Are readings done by a person or by software?"}
-                  <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "24px", color: "#921A11", transition: "transform 0.2s"}}>
+                  <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "21px", color: "#921A11", transition: "transform 0.2s"}}>
                     {"+"}
                   </span>
                 </summary>
@@ -1818,7 +1818,7 @@ HomePage.prototype.render = function render() {
               <details style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 24px"}}>
                 <summary style={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", minHeight: "64px", fontWeight: "700"}}>
                   {"When and how will I receive my report?"}
-                  <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "24px", color: "#921A11", transition: "transform 0.2s"}}>
+                  <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "21px", color: "#921A11", transition: "transform 0.2s"}}>
                     {"+"}
                   </span>
                 </summary>
@@ -1829,7 +1829,7 @@ HomePage.prototype.render = function render() {
               <details style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 24px"}}>
                 <summary style={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", minHeight: "64px", fontWeight: "700"}}>
                   {"How soon will my consultation happen?"}
-                  <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "24px", color: "#921A11", transition: "transform 0.2s"}}>
+                  <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "21px", color: "#921A11", transition: "transform 0.2s"}}>
                     {"+"}
                   </span>
                 </summary>
@@ -1840,7 +1840,7 @@ HomePage.prototype.render = function render() {
               <details style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 24px"}}>
                 <summary style={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", minHeight: "64px", fontWeight: "700"}}>
                   {"What if I cannot follow a remedy exactly?"}
-                  <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "24px", color: "#921A11", transition: "transform 0.2s"}}>
+                  <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "21px", color: "#921A11", transition: "transform 0.2s"}}>
                     {"+"}
                   </span>
                 </summary>
@@ -1851,7 +1851,7 @@ HomePage.prototype.render = function render() {
               <details style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 24px"}}>
                 <summary style={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", minHeight: "64px", fontWeight: "700"}}>
                   {"Will my birth details stay private?"}
-                  <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "24px", color: "#921A11", transition: "transform 0.2s"}}>
+                  <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "21px", color: "#921A11", transition: "transform 0.2s"}}>
                     {"+"}
                   </span>
                 </summary>
@@ -1868,7 +1868,7 @@ HomePage.prototype.render = function render() {
             <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(32px, 5vw, 64px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "28px"}}>
               <div style={{flex: "1 1 100%", minWidth: "0"}}>
-                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(26px, 2.8vw, 38px)", lineHeight: "1.2", color: "#FFFFFF"}}>
+                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.38vw, 32px)", lineHeight: "1.2", color: "#FFFFFF"}}>
                   <span className={"am-nowrap-lg"}>
                     {"Let the stars guide you, the numbers support you,"}
                   </span>
@@ -1896,7 +1896,7 @@ HomePage.prototype.render = function render() {
             </div>
           </div>
         </div>
-        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "15px"}}>
+        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "13.5px"}}>
           <div className={"am-stars2"} aria-hidden={"true"} style={{opacity: "0.6"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 32px", position: "relative"}}>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "40px", marginBottom: "48px"}}>
@@ -1952,7 +1952,7 @@ HomePage.prototype.render = function render() {
                 </a>
               </div>
             </div>
-            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "14px"}}>
+            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "13px"}}>
               <span>
                 {"© 2026 Ahllya Mystic. All rights reserved."}
               </span>

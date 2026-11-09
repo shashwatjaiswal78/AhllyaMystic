@@ -36,7 +36,7 @@ export function HoroscopeExtras({ current }: { current?: string }) {
     <section style={{ background: "#FBF7F0", padding: "8px 24px 56px", fontFamily: "var(--font-sans-body), system-ui, sans-serif", color: "#1E1830" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gap: 28 }}>
         <nav aria-label="Horoscope by sign">
-          <h2 style={{ margin: "0 0 12px", fontFamily: "var(--font-serif-display), serif", fontWeight: 400, fontSize: 26 }}>Horoscope for every sign</h2>
+          <h2 style={{ margin: "0 0 12px", fontFamily: "var(--font-serif-display), serif", fontWeight: 400, fontSize: 22.5 }}>Horoscope for every sign</h2>
           <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexWrap: "wrap", gap: "10px 22px" }}>
             {SIGN_INFO.map((s) => (
               <li key={s.en}>
@@ -50,8 +50,8 @@ export function HoroscopeExtras({ current }: { current?: string }) {
         </nav>
         <div style={{ background: "#2E003E", color: "#FFFFFF", borderRadius: 22, padding: "26px 28px", display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ maxWidth: 640 }}>
-            <h2 style={{ margin: "0 0 6px", fontFamily: "var(--font-serif-display), serif", fontWeight: 400, fontSize: 26 }}>Get your daily rashifal on WhatsApp</h2>
-            <p style={{ margin: 0, color: "#EADFF2", fontSize: 15 }}>Message us your Moon sign and we will add you to the daily list.</p>
+            <h2 style={{ margin: "0 0 6px", fontFamily: "var(--font-serif-display), serif", fontWeight: 400, fontSize: 22.5 }}>Get your daily rashifal on WhatsApp</h2>
+            <p style={{ margin: 0, color: "#EADFF2", fontSize: 13.5 }}>Message us your Moon sign and we will add you to the daily list.</p>
           </div>
           <a href={wa} style={{ display: "inline-flex", alignItems: "center", minHeight: 52, padding: "0 26px", borderRadius: 999, background: "#FCCE07", color: "#2E003E", fontWeight: 700, textDecoration: "none" }}>
             Message us on WhatsApp

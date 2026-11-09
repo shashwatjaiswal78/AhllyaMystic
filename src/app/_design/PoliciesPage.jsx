@@ -24,8 +24,8 @@ PoliciesPage.prototype.render = function render() {
   const v = this.renderVals() || {};
   return (
     <div data-design-page="Policies" style={{ display: "contents" }}>
-      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "16px", lineHeight: "1.6"}}>
-        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "14px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
+      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "14.5px", lineHeight: "1.6"}}>
+        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "13px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
           <a href={"/masterclass"} style={{color: "#921A11", textDecoration: "none"}}>
             {"Live 2-day Manifestation Masterclass. Dates announced soon. Register for ₹99 →"}
           </a>
@@ -35,7 +35,7 @@ PoliciesPage.prototype.render = function render() {
             <a href={"/"} aria-label={"Ahllya Mystic home"} style={{display: "block", flex: "none"}}>
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
-            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "15px", fontWeight: "500"}}>
+            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "13.5px", fontWeight: "500"}}>
               <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
@@ -66,7 +66,7 @@ PoliciesPage.prototype.render = function render() {
                   <path d={"M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"} />
                 </svg>
               </a>
-              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                 {"Book a consultation"}
               </a>
               <button type={"button"} className={"am-burger"} aria-label={"Open menu"} aria-controls={"am-drawer"} aria-expanded={v.menuExpanded} onClick={v.openMenu} style={{alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#FFFFFF", cursor: "pointer"}}>
@@ -98,44 +98,44 @@ PoliciesPage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Kundli"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Calculators"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Reports"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Courses"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"About"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -152,7 +152,7 @@ PoliciesPage.prototype.render = function render() {
                       {"WhatsApp us"}
                     </a>
                   </div>
-                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", color: "#EADFF2", textAlign: "center"}}>
+                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#EADFF2", textAlign: "center"}}>
                     {"ज्योतिष · अंक शास्त्र · वास्तु"}
                   </p>
                 </div>
@@ -162,7 +162,7 @@ PoliciesPage.prototype.render = function render() {
         ) : null}
         <div style={{background: "radial-gradient(ellipse at 100% 0%, rgba(108,21,148,0.08), rgba(108,21,148,0) 50%), #FBF7F0", borderBottom: "1px solid #E8DFD0"}}>
           <div style={{maxWidth: "900px", margin: "0 auto", padding: "22px 24px 40px"}}>
-            <nav aria-label={"Breadcrumb"} style={{fontSize: "14px", color: "#5C5470", marginBottom: "28px"}}>
+            <nav aria-label={"Breadcrumb"} style={{fontSize: "13px", color: "#5C5470", marginBottom: "28px"}}>
               <a href={"/"} style={{color: "#5C5470", textDecoration: "none"}}>
                 {"Home"}
               </a>
@@ -173,13 +173,13 @@ PoliciesPage.prototype.render = function render() {
                 {hole(v.cur?.title)}
               </span>
             </nav>
-            <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+            <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
               {hole(v.cur?.eyebrow)}
             </p>
-            <h1 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(34px, 4vw, 50px)", lineHeight: "1.1"}}>
+            <h1 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28.5px, 3.4vw, 42px)", lineHeight: "1.1"}}>
               {hole(v.cur?.title)}
             </h1>
-            <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+            <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
               {hole(v.cur?.updated)}
             </p>
           </div>
@@ -190,12 +190,12 @@ PoliciesPage.prototype.render = function render() {
               {v.cur?.hasTodos ? (
                 <>
                   <div style={{marginBottom: "28px", padding: "16px 18px", border: "1.5px dashed #C9B3D6", borderRadius: "14px", background: "#FBF7FD"}}>
-                    <p style={{margin: "0 0 8px", fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: "700", color: "#6C1594"}}>
+                    <p style={{margin: "0 0 8px", fontSize: "12px", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: "700", color: "#6C1594"}}>
                       {"Design note: confirm before going live"}
                     </p>
                     {(v.cur?.todos || []).map((t, $index) => (
                       <React.Fragment key={$index}>
-                        <p style={{margin: "0 0 4px", fontSize: "14px", color: "#3D0752"}}>
+                        <p style={{margin: "0 0 4px", fontSize: "13px", color: "#3D0752"}}>
                           {"· "}
                           {hole(t)}
                         </p>
@@ -204,7 +204,7 @@ PoliciesPage.prototype.render = function render() {
                   </div>
                 </>
               ) : null}
-              <p style={{margin: "0 0 32px", fontSize: "18px", lineHeight: "1.7", color: "#3A3350"}}>
+              <p style={{margin: "0 0 32px", fontSize: "16px", lineHeight: "1.7", color: "#3A3350"}}>
                 {hole(v.cur?.intro)}
               </p>
               {v.cur?.isContact ? (
@@ -217,10 +217,10 @@ PoliciesPage.prototype.render = function render() {
                         </svg>
                       </span>
                       <span>
-                        <span style={{display: "block", fontSize: "13px", color: "#5C5470"}}>
+                        <span style={{display: "block", fontSize: "12px", color: "#5C5470"}}>
                           {"WhatsApp"}
                         </span>
-                        <span style={{display: "block", fontWeight: "700", fontSize: "17px"}}>
+                        <span style={{display: "block", fontWeight: "700", fontSize: "15px"}}>
                           {"+91 91292 37566"}
                         </span>
                       </span>
@@ -233,35 +233,35 @@ PoliciesPage.prototype.render = function render() {
                         </svg>
                       </span>
                       <span>
-                        <span style={{display: "block", fontSize: "13px", color: "#5C5470"}}>
+                        <span style={{display: "block", fontSize: "12px", color: "#5C5470"}}>
                           {"Email"}
                         </span>
-                        <span style={{display: "block", fontWeight: "700", fontSize: "17px"}}>
+                        <span style={{display: "block", fontWeight: "700", fontSize: "15px"}}>
                           {"ahllyamystic@gmail.com"}
                         </span>
                       </span>
                     </a>
                   </div>
                   <form style={{display: "grid", gap: "16px", paddingTop: "28px", borderTop: "1px solid #EFE6D8"}}>
-                    <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "26px"}}>
+                    <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22.5px"}}>
                       {"Send us a message"}
                     </p>
                     <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                      <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                         {"Name"}
                         <input type={"text"} placeholder={"Your name"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                      <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                         {"WhatsApp number"}
                         <input type={"tel"} placeholder={"+91"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </label>
                     </div>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"Email"}
                       <input type={"email"} placeholder={"you@example.com"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
                     <div style={{display: "grid", gap: "8px"}}>
-                      <span style={{fontSize: "14px", fontWeight: "600"}}>
+                      <span style={{fontSize: "13px", fontWeight: "600"}}>
                         {"What is it about?"}
                       </span>
                       <div style={{display: "flex", flexWrap: "wrap", gap: "8px"}}>
@@ -269,14 +269,14 @@ PoliciesPage.prototype.render = function render() {
                           <React.Fragment key={$index}>
                             {t?.sel ? (
                               <>
-                                <button type={"button"} role={"radio"} aria-checked={"true"} onClick={t?.pick} style={{minHeight: "42px", padding: "0 16px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "14px", fontWeight: "700", cursor: "pointer"}}>
+                                <button type={"button"} role={"radio"} aria-checked={"true"} onClick={t?.pick} style={{minHeight: "42px", padding: "0 16px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "13px", fontWeight: "700", cursor: "pointer"}}>
                                   {hole(t?.label)}
                                 </button>
                               </>
                             ) : null}
                             {t?.notSel ? (
                               <>
-                                <button type={"button"} role={"radio"} aria-checked={"false"} onClick={t?.pick} style={{minHeight: "42px", padding: "0 16px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "14px", fontWeight: "600", cursor: "pointer"}}>
+                                <button type={"button"} role={"radio"} aria-checked={"false"} onClick={t?.pick} style={{minHeight: "42px", padding: "0 16px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "13px", fontWeight: "600", cursor: "pointer"}}>
                                   {hole(t?.label)}
                                 </button>
                               </>
@@ -285,14 +285,14 @@ PoliciesPage.prototype.render = function render() {
                         ))}
                       </div>
                     </div>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"Your message"}
                       <textarea rows={"5"} placeholder={"Tell us how we can help"} style={{padding: "12px 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9", resize: "vertical"}} />
                     </label>
                     <FormButton as="button" endpoint="/api/contact" extra={{ topic: this.state.topic }} style={{justifySelf: "start", minHeight: "52px", padding: "0 32px", border: "0", borderRadius: "999px", background: "#FCCE07", color: "#921A11", font: "inherit", fontWeight: "700", cursor: "pointer"}}>
                       {"Send message"}
                     </FormButton>
-                    <p style={{margin: "0", fontSize: "13px", color: "#5C5470"}}>
+                    <p style={{margin: "0", fontSize: "12px", color: "#5C5470"}}>
                       {"We reply on WhatsApp or email. Your details are used only to answer you."}
                     </p>
                   </form>
@@ -301,12 +301,12 @@ PoliciesPage.prototype.render = function render() {
               {(v.cur?.sections || []).map((s, $index) => (
                 <React.Fragment key={$index}>
                   <section style={{padding: "22px 0", borderTop: "1px solid #EFE6D8"}}>
-                    <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "24px", lineHeight: "1.25"}}>
+                    <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "21px", lineHeight: "1.25"}}>
                       {hole(s?.h)}
                     </h2>
                     {(s?.ps || []).map((p, $index) => (
                       <React.Fragment key={$index}>
-                        <p style={{margin: "0 0 10px", fontSize: "16px", lineHeight: "1.75", color: "#3A3350"}}>
+                        <p style={{margin: "0 0 10px", fontSize: "14.5px", lineHeight: "1.75", color: "#3A3350"}}>
                           {(p || []).map((x, $index) => (
                             <React.Fragment key={$index}>
                               {x?.plain ? (
@@ -316,7 +316,7 @@ PoliciesPage.prototype.render = function render() {
                               ) : null}
                               {x?.chip ? (
                                 <>
-                                  <span style={{display: "inline-block", margin: "2px 0", padding: "1px 10px", border: "1.5px dashed #C9B3D6", borderRadius: "8px", background: "#F8F1FB", color: "#6C1594", fontSize: "14px", fontWeight: "600"}}>
+                                  <span style={{display: "inline-block", margin: "2px 0", padding: "1px 10px", border: "1.5px dashed #C9B3D6", borderRadius: "8px", background: "#F8F1FB", color: "#6C1594", fontSize: "13px", fontWeight: "600"}}>
                                     {hole(x?.t)}
                                   </span>
                                 </>
@@ -331,7 +331,7 @@ PoliciesPage.prototype.render = function render() {
                         <ul style={{margin: "4px 0 0", padding: "0", listStyle: "none", display: "grid", gap: "10px"}}>
                           {(s?.items || []).map((i, $index) => (
                             <React.Fragment key={$index}>
-                              <li style={{display: "flex", gap: "12px", fontSize: "16px", lineHeight: "1.65", color: "#3A3350"}}>
+                              <li style={{display: "flex", gap: "12px", fontSize: "14.5px", lineHeight: "1.65", color: "#3A3350"}}>
                                 <span aria-hidden={"true"} style={{flex: "none", width: "7px", height: "7px", marginTop: "10px", borderRadius: "999px", background: "#6C1594"}} />
                                 <span>
                                   {(i || []).map((x, $index) => (
@@ -343,7 +343,7 @@ PoliciesPage.prototype.render = function render() {
                                       ) : null}
                                       {x?.chip ? (
                                         <>
-                                          <span style={{display: "inline-block", margin: "2px 0", padding: "1px 10px", border: "1.5px dashed #C9B3D6", borderRadius: "8px", background: "#F8F1FB", color: "#6C1594", fontSize: "14px", fontWeight: "600"}}>
+                                          <span style={{display: "inline-block", margin: "2px 0", padding: "1px 10px", border: "1.5px dashed #C9B3D6", borderRadius: "8px", background: "#F8F1FB", color: "#6C1594", fontSize: "13px", fontWeight: "600"}}>
                                             {hole(x?.t)}
                                           </span>
                                         </>
@@ -363,7 +363,7 @@ PoliciesPage.prototype.render = function render() {
             </article>
           </div>
         </div>
-        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "15px"}}>
+        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "13.5px"}}>
           <div className={"am-stars2"} aria-hidden={"true"} style={{opacity: "0.6"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 32px", position: "relative"}}>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "40px", marginBottom: "48px"}}>
@@ -419,7 +419,7 @@ PoliciesPage.prototype.render = function render() {
                 </a>
               </div>
             </div>
-            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "14px"}}>
+            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "13px"}}>
               <span>
                 {"© 2026 Ahllya Mystic. All rights reserved."}
               </span>

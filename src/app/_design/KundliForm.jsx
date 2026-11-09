@@ -20,7 +20,7 @@ const KINDS = {
   },
 };
 
-const labelStyle = { display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600" };
+const labelStyle = { display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600" };
 const inputStyle = { font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830" };
 const selectStyle = {
   ...inputStyle, padding: "0 40px 0 14px", minWidth: "0", cursor: "pointer", WebkitAppearance: "none", appearance: "none",
@@ -191,7 +191,7 @@ export default function KundliForm({ kind = "kundli" }) {
                 <li key={i} role="option" aria-selected={i === active}>
                   <button
                     type="button" onMouseDown={(e) => { e.preventDefault(); pick(p); }} onMouseEnter={() => setActive(i)}
-                    style={{ display: "block", width: "100%", textAlign: "left", padding: "10px 14px", border: 0, borderBottom: "1px solid #EFE6D8", background: i === active ? "#F3E8F7" : "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "14px", fontWeight: "400", cursor: "pointer" }}
+                    style={{ display: "block", width: "100%", textAlign: "left", padding: "10px 14px", border: 0, borderBottom: "1px solid #EFE6D8", background: i === active ? "#F3E8F7" : "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "13px", fontWeight: "400", cursor: "pointer" }}
                   >
                     {p.n}
                     <span style={{ display: "block", fontSize: "12px", color: "#5C5470" }}>{p.r}</span>
@@ -212,8 +212,8 @@ export default function KundliForm({ kind = "kundli" }) {
       <button type="submit" disabled={busy} aria-busy={busy || undefined} style={{ gridColumn: "1 / -1", font: "inherit", fontWeight: "700", minHeight: "52px", border: "0", borderRadius: "999px", background: "#FCCE07", color: "#921A11", cursor: busy ? "default" : "pointer", opacity: busy ? 0.8 : 1 }}>
         {busy ? cfg.busy : cfg.cta}
       </button>
-      {error ? <p role="alert" style={{ gridColumn: "1 / -1", margin: "0", fontSize: "14px", fontWeight: "600", color: "#921A11", textAlign: "center" }}>{error}</p> : null}
-      <p style={{ gridColumn: "1 / -1", margin: "0", fontSize: "13px", color: "#5C5470", textAlign: "center" }}>
+      {error ? <p role="alert" style={{ gridColumn: "1 / -1", margin: "0", fontSize: "13px", fontWeight: "600", color: "#921A11", textAlign: "center" }}>{error}</p> : null}
+      <p style={{ gridColumn: "1 / -1", margin: "0", fontSize: "12px", color: "#5C5470", textAlign: "center" }}>
         {cfg.noteText}
         <a href={cfg.noteHref}>{cfg.noteLink}</a>
         {"."}

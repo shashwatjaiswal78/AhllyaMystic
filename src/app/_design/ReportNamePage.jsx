@@ -88,8 +88,8 @@ ReportNamePage.prototype.render = function render() {
   const v = this.renderVals() || {};
   return (
     <div data-design-page="Name" style={{ display: "contents" }}>
-      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "16px", lineHeight: "1.6"}}>
-        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "14px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
+      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "14.5px", lineHeight: "1.6"}}>
+        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "13px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
           <a href={"/masterclass"} style={{color: "#921A11", textDecoration: "none"}}>
             {"Live 2-day Manifestation Masterclass. Dates announced soon. Register for ₹99 →"}
           </a>
@@ -99,7 +99,7 @@ ReportNamePage.prototype.render = function render() {
             <a href={"/"} aria-label={"Ahllya Mystic home"} style={{display: "block", flex: "none"}}>
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
-            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "15px", fontWeight: "500"}}>
+            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "13.5px", fontWeight: "500"}}>
               <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
@@ -130,7 +130,7 @@ ReportNamePage.prototype.render = function render() {
                   <path d={"M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"} />
                 </svg>
               </a>
-              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                 {"Book a consultation"}
               </a>
               <button type={"button"} className={"am-burger"} aria-label={"Open menu"} aria-controls={"am-drawer"} aria-expanded={v.menuExpanded} onClick={v.openMenu} style={{alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#FFFFFF", cursor: "pointer"}}>
@@ -162,44 +162,44 @@ ReportNamePage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Kundli"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Calculators"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Reports"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Courses"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"About"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -216,7 +216,7 @@ ReportNamePage.prototype.render = function render() {
                       {"WhatsApp us"}
                     </a>
                   </div>
-                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", color: "#EADFF2", textAlign: "center"}}>
+                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#EADFF2", textAlign: "center"}}>
                     {"ज्योतिष · अंक शास्त्र · वास्तु"}
                   </p>
                 </div>
@@ -228,7 +228,7 @@ ReportNamePage.prototype.render = function render() {
           <div className={"am-stars"} aria-hidden={"true"} />
           <div className={"am-stars2"} aria-hidden={"true"} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "28px 24px 80px", position: "relative"}}>
-            <nav aria-label={"Breadcrumb"} style={{fontSize: "14px", color: "#EADFF2", marginBottom: "40px"}}>
+            <nav aria-label={"Breadcrumb"} style={{fontSize: "13px", color: "#EADFF2", marginBottom: "40px"}}>
               <a href={"/"} style={{color: "#EADFF2", textDecoration: "none"}}>
                 {"Home"}
               </a>
@@ -248,17 +248,17 @@ ReportNamePage.prototype.render = function render() {
             <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", gap: "48px"}}>
               <div className={"am-center-mobile"} style={{flex: "1.3 1 480px", minWidth: "0"}}>
                 <p style={{margin: "0 0 14px"}}>
-                  <span style={{display: "inline-block", padding: "5px 18px 3px", borderRadius: "999px", background: "#FBF1EE", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "19px", lineHeight: "1.5", color: "#921A11"}}>
+                  <span style={{display: "inline-block", padding: "5px 18px 3px", borderRadius: "999px", background: "#FBF1EE", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", lineHeight: "1.5", color: "#921A11"}}>
                     {"नामांक ज्योतिष"}
                   </span>
                 </p>
-                <p style={{margin: "0 0 12px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
+                <p style={{margin: "0 0 12px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                   {"Chaldean numerology"}
                 </p>
-                <h1 style={{margin: "0 0 16px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(36px, 4.6vw, 58px)", lineHeight: "1.08"}}>
+                <h1 style={{margin: "0 0 16px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.91vw, 48px)", lineHeight: "1.08"}}>
                   {"Name Numerology"}
                 </h1>
-                <p style={{margin: "0 0 28px", fontSize: "18px", color: "#EADFF2", maxWidth: "560px"}}>
+                <p style={{margin: "0 0 28px", fontSize: "16px", color: "#EADFF2", maxWidth: "560px"}}>
                   {"Find out whether your name supports your birth numbers, and if it does not, get a correction designed by our experts. For yourself, your child or your business."}
                 </p>
                 <div className={"am-hero-flex"} style={{display: "flex", flexWrap: "wrap", gap: "12px"}}>
@@ -275,12 +275,12 @@ ReportNamePage.prototype.render = function render() {
                   <p style={{margin: "0 0 4px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                     {"How a name becomes a number"}
                   </p>
-                  <p style={{margin: "0 0 16px", fontSize: "14px", color: "#EADFF2"}}>
+                  <p style={{margin: "0 0 16px", fontSize: "13px", color: "#EADFF2"}}>
                     {"Each letter carries a value in Chaldean numerology. Add them up to find the name number."}
                   </p>
                   <div style={{display: "flex", gap: "6px", flexWrap: "wrap", marginBottom: "14px"}}>
                     <span style={{display: "flex", flexDirection: "column", alignItems: "center", minWidth: "44px", padding: "8px 6px", borderRadius: "12px", background: "rgba(255,255,255,0.1)"}}>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1"}}>
                         {"R"}
                       </span>
                       <span style={{fontSize: "12px", color: "#FCCE07", fontWeight: "700", marginTop: "4px"}}>
@@ -288,7 +288,7 @@ ReportNamePage.prototype.render = function render() {
                       </span>
                     </span>
                     <span style={{display: "flex", flexDirection: "column", alignItems: "center", minWidth: "44px", padding: "8px 6px", borderRadius: "12px", background: "rgba(255,255,255,0.1)"}}>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1"}}>
                         {"I"}
                       </span>
                       <span style={{fontSize: "12px", color: "#FCCE07", fontWeight: "700", marginTop: "4px"}}>
@@ -296,7 +296,7 @@ ReportNamePage.prototype.render = function render() {
                       </span>
                     </span>
                     <span style={{display: "flex", flexDirection: "column", alignItems: "center", minWidth: "44px", padding: "8px 6px", borderRadius: "12px", background: "rgba(255,255,255,0.1)"}}>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1"}}>
                         {"Y"}
                       </span>
                       <span style={{fontSize: "12px", color: "#FCCE07", fontWeight: "700", marginTop: "4px"}}>
@@ -304,7 +304,7 @@ ReportNamePage.prototype.render = function render() {
                       </span>
                     </span>
                     <span style={{display: "flex", flexDirection: "column", alignItems: "center", minWidth: "44px", padding: "8px 6px", borderRadius: "12px", background: "rgba(255,255,255,0.1)"}}>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1"}}>
                         {"A"}
                       </span>
                       <span style={{fontSize: "12px", color: "#FCCE07", fontWeight: "700", marginTop: "4px"}}>
@@ -312,9 +312,9 @@ ReportNamePage.prototype.render = function render() {
                       </span>
                     </span>
                   </div>
-                  <p style={{margin: "0 0 16px", fontSize: "15px"}}>
+                  <p style={{margin: "0 0 16px", fontSize: "13.5px"}}>
                     {"2 + 1 + 1 + 1 = "}
-                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "26px", color: "#FCCE07"}}>
+                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "22.5px", color: "#FCCE07"}}>
                       {"5"}
                     </span>
                     {" "}
@@ -372,7 +372,7 @@ ReportNamePage.prototype.render = function render() {
                       {" F P"}
                     </span>
                   </div>
-                  <p style={{margin: "14px 0 0", fontSize: "13px", color: "#EADFF2"}}>
+                  <p style={{margin: "14px 0 0", fontSize: "12px", color: "#EADFF2"}}>
                     {"The full analysis also checks the compound number and how it fits your Mulank and Bhagyank."}
                   </p>
                 </div>
@@ -382,180 +382,180 @@ ReportNamePage.prototype.render = function render() {
         </div>
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px 24px"}}>
           <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
-            <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+            <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
               {"Famous name changes"}
             </p>
-            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
               {"Celebrities who took the numerological plunge"}
             </h2>
-            <p style={{margin: "0", fontSize: "16px", color: "#5C5470", maxWidth: "700px"}}>
+            <p style={{margin: "0", fontSize: "14.5px", color: "#5C5470", maxWidth: "700px"}}>
               {"A single letter added or dropped. These stars changed the spelling of their names, reportedly for numerological reasons."}
             </p>
           </div>
           <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(230px, 100%), 1fr))", gap: "16px", marginBottom: "22px"}}>
             <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-              <p style={{margin: "0 0 4px", fontSize: "14px", color: "#736B8A", textDecoration: "line-through"}}>
+              <p style={{margin: "0 0 4px", fontSize: "13px", color: "#736B8A", textDecoration: "line-through"}}>
                 {"Ajay Devgan"}
               </p>
               <p style={{margin: "0 0 12px", display: "flex", alignItems: "flex-start", gap: "8px"}}>
                 <svg style={{flex: "none", marginTop: "7px"}} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#921A11"} strokeWidth={"2.2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                   <path d={"M5 12h14M13 6l6 6-6 6"} />
                 </svg>
-                <span style={{fontFamily: "Marcellus, serif", fontSize: "23px", lineHeight: "1.25", color: "#2E003E"}}>
+                <span style={{fontFamily: "Marcellus, serif", fontSize: "20px", lineHeight: "1.25", color: "#2E003E"}}>
                   {"Ajay Devgn"}
                 </span>
               </p>
-              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "14px", lineHeight: "1.6", color: "#5C5470"}}>
+              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "13px", lineHeight: "1.6", color: "#5C5470"}}>
                 {"Originally Ajay Devgan, but he dropped the “a” from his surname for numerological reasons. This small change coincided with his massive box-office hits and lasting Bollywood stardom."}
               </p>
             </div>
             <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-              <p style={{margin: "0 0 4px", fontSize: "14px", color: "#736B8A", textDecoration: "line-through"}}>
+              <p style={{margin: "0 0 4px", fontSize: "13px", color: "#736B8A", textDecoration: "line-through"}}>
                 {"Rani Mukherjee"}
               </p>
               <p style={{margin: "0 0 12px", display: "flex", alignItems: "flex-start", gap: "8px"}}>
                 <svg style={{flex: "none", marginTop: "7px"}} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#921A11"} strokeWidth={"2.2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                   <path d={"M5 12h14M13 6l6 6-6 6"} />
                 </svg>
-                <span style={{fontFamily: "Marcellus, serif", fontSize: "23px", lineHeight: "1.25", color: "#2E003E"}}>
+                <span style={{fontFamily: "Marcellus, serif", fontSize: "20px", lineHeight: "1.25", color: "#2E003E"}}>
                   {"Rani Mukerji"}
                 </span>
               </p>
-              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "14px", lineHeight: "1.6", color: "#5C5470"}}>
+              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "13px", lineHeight: "1.6", color: "#5C5470"}}>
                 {"The actress modified her surname from “Mukherjee” to “Mukerji” to align with numerological beliefs. Her superstardom with films like “Black” and “Bunty Aur Babli” came soon after."}
               </p>
             </div>
             <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-              <p style={{margin: "0 0 4px", fontSize: "14px", color: "#736B8A", textDecoration: "line-through"}}>
+              <p style={{margin: "0 0 4px", fontSize: "13px", color: "#736B8A", textDecoration: "line-through"}}>
                 {"Sunil Shetty"}
               </p>
               <p style={{margin: "0 0 12px", display: "flex", alignItems: "flex-start", gap: "8px"}}>
                 <svg style={{flex: "none", marginTop: "7px"}} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#921A11"} strokeWidth={"2.2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                   <path d={"M5 12h14M13 6l6 6-6 6"} />
                 </svg>
-                <span style={{fontFamily: "Marcellus, serif", fontSize: "23px", lineHeight: "1.25", color: "#2E003E"}}>
+                <span style={{fontFamily: "Marcellus, serif", fontSize: "20px", lineHeight: "1.25", color: "#2E003E"}}>
                   {"Suniel Shetty"}
                 </span>
               </p>
-              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "14px", lineHeight: "1.6", color: "#5C5470"}}>
+              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "13px", lineHeight: "1.6", color: "#5C5470"}}>
                 {"Suniel Shetty added an extra “e” to his first name, making it Suniel from Sunil. He changed his name as a numerological adjustment. After this change, he became known for his successful action and comedy films."}
               </p>
             </div>
             <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-              <p style={{margin: "0 0 4px", fontSize: "14px", color: "#736B8A", textDecoration: "line-through"}}>
+              <p style={{margin: "0 0 4px", fontSize: "13px", color: "#736B8A", textDecoration: "line-through"}}>
                 {"Karishmaa Kapoor"}
               </p>
               <p style={{margin: "0 0 12px", display: "flex", alignItems: "flex-start", gap: "8px"}}>
                 <svg style={{flex: "none", marginTop: "7px"}} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#921A11"} strokeWidth={"2.2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                   <path d={"M5 12h14M13 6l6 6-6 6"} />
                 </svg>
-                <span style={{fontFamily: "Marcellus, serif", fontSize: "23px", lineHeight: "1.25", color: "#2E003E"}}>
+                <span style={{fontFamily: "Marcellus, serif", fontSize: "20px", lineHeight: "1.25", color: "#2E003E"}}>
                   {"Karisma Kapoor"}
                 </span>
               </p>
-              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "14px", lineHeight: "1.6", color: "#5C5470"}}>
+              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "13px", lineHeight: "1.6", color: "#5C5470"}}>
                 {"She altered the spelling of her name to “Karisma” from “Karishmaa” at the beginning of her career, reportedly for numerological reasons. The change worked well, and she became one of the leading stars of the 1990s."}
               </p>
             </div>
             <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-              <p style={{margin: "0 0 4px", fontSize: "14px", color: "#736B8A", textDecoration: "line-through"}}>
+              <p style={{margin: "0 0 4px", fontSize: "13px", color: "#736B8A", textDecoration: "line-through"}}>
                 {"Jimmy Shergill"}
               </p>
               <p style={{margin: "0 0 12px", display: "flex", alignItems: "flex-start", gap: "8px"}}>
                 <svg style={{flex: "none", marginTop: "7px"}} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#921A11"} strokeWidth={"2.2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                   <path d={"M5 12h14M13 6l6 6-6 6"} />
                 </svg>
-                <span style={{fontFamily: "Marcellus, serif", fontSize: "23px", lineHeight: "1.25", color: "#2E003E"}}>
+                <span style={{fontFamily: "Marcellus, serif", fontSize: "20px", lineHeight: "1.25", color: "#2E003E"}}>
                   {"Jimmy Sheirgill"}
                 </span>
               </p>
-              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "14px", lineHeight: "1.6", color: "#5C5470"}}>
+              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "13px", lineHeight: "1.6", color: "#5C5470"}}>
                 {"Jimmy Sheirgill altered the spelling of his surname from “Shergill” to “Sheirgill” as per numerology. Since the change, he has delivered memorable performances in films like “Mohabbatein” and “Tanu Weds Manu”."}
               </p>
             </div>
             <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-              <p style={{margin: "0 0 4px", fontSize: "14px", color: "#736B8A", textDecoration: "line-through"}}>
+              <p style={{margin: "0 0 4px", fontSize: "13px", color: "#736B8A", textDecoration: "line-through"}}>
                 {"Rajkumar Rao"}
               </p>
               <p style={{margin: "0 0 12px", display: "flex", alignItems: "flex-start", gap: "8px"}}>
                 <svg style={{flex: "none", marginTop: "7px"}} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#921A11"} strokeWidth={"2.2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                   <path d={"M5 12h14M13 6l6 6-6 6"} />
                 </svg>
-                <span style={{fontFamily: "Marcellus, serif", fontSize: "23px", lineHeight: "1.25", color: "#2E003E"}}>
+                <span style={{fontFamily: "Marcellus, serif", fontSize: "20px", lineHeight: "1.25", color: "#2E003E"}}>
                   {"Rajkummar Rao"}
                 </span>
               </p>
-              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "14px", lineHeight: "1.6", color: "#5C5470"}}>
+              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "13px", lineHeight: "1.6", color: "#5C5470"}}>
                 {"Rajkummar Rao modified his stage name, adding an extra “m” after numerological advice. The adjustment coincided with his rise as one of Bollywood’s most respected actors."}
               </p>
             </div>
             <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-              <p style={{margin: "0 0 4px", fontSize: "14px", color: "#736B8A", textDecoration: "line-through"}}>
+              <p style={{margin: "0 0 4px", fontSize: "13px", color: "#736B8A", textDecoration: "line-through"}}>
                 {"Tushar Kapoor"}
               </p>
               <p style={{margin: "0 0 12px", display: "flex", alignItems: "flex-start", gap: "8px"}}>
                 <svg style={{flex: "none", marginTop: "7px"}} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#921A11"} strokeWidth={"2.2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                   <path d={"M5 12h14M13 6l6 6-6 6"} />
                 </svg>
-                <span style={{fontFamily: "Marcellus, serif", fontSize: "23px", lineHeight: "1.25", color: "#2E003E"}}>
+                <span style={{fontFamily: "Marcellus, serif", fontSize: "20px", lineHeight: "1.25", color: "#2E003E"}}>
                   {"Tusshar Kapoor"}
                 </span>
               </p>
-              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "14px", lineHeight: "1.6", color: "#5C5470"}}>
+              <p style={{margin: "0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "13px", lineHeight: "1.6", color: "#5C5470"}}>
                 {"Tusshar Kapoor added an extra “s” to his name after consulting a numerologist. While his acting career had ups and downs, the adjustment brought him recognition in comedies like the “Golmaal” series."}
               </p>
             </div>
             <div style={{background: "linear-gradient(160deg, #2E003E 0%, #6C1594 100%)", borderRadius: "18px", padding: "26px", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "18px"}}>
               <div>
-                <p style={{margin: "0 0 8px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#E9D7F2", fontWeight: "700"}}>
+                <p style={{margin: "0 0 8px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#E9D7F2", fontWeight: "700"}}>
                   {"Your turn"}
                 </p>
-                <p style={{margin: "0", fontFamily: "Marcellus, serif", fontSize: "26px", lineHeight: "1.25", color: "#FFFFFF"}}>
+                <p style={{margin: "0", fontFamily: "Marcellus, serif", fontSize: "22.5px", lineHeight: "1.25", color: "#FFFFFF"}}>
                   {"Is your name working for you?"}
                 </p>
-                <p style={{margin: "10px 0 0", fontSize: "14px", lineHeight: "1.6", color: "#E9D7F2"}}>
+                <p style={{margin: "10px 0 0", fontSize: "13px", lineHeight: "1.6", color: "#E9D7F2"}}>
                   {"Find out what your name number says, and whether one letter could change it."}
                 </p>
               </div>
-              <a href={"/#free"} style={{display: "block", textAlign: "center", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", padding: "13px 18px", borderRadius: "999px", textDecoration: "none"}}>
+              <a href={"/#free"} style={{display: "block", textAlign: "center", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "13.5px", padding: "13px 18px", borderRadius: "999px", textDecoration: "none"}}>
                 {"Check my name"}
               </a>
             </div>
           </div>
           <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px", marginBottom: "16px"}}>
-            <span style={{fontSize: "14px", fontWeight: "700", marginRight: "4px"}}>
+            <span style={{fontSize: "13px", fontWeight: "700", marginRight: "4px"}}>
               {"Film and show titles too:"}
             </span>
-            <span style={{fontFamily: "Marcellus, serif", fontSize: "16px", color: "#3D0752", background: "#F3E8F7", padding: "6px 14px", borderRadius: "999px"}}>
+            <span style={{fontFamily: "Marcellus, serif", fontSize: "14.5px", color: "#3D0752", background: "#F3E8F7", padding: "6px 14px", borderRadius: "999px"}}>
               {"Dabangg"}
             </span>
-            <span style={{fontFamily: "Marcellus, serif", fontSize: "16px", color: "#3D0752", background: "#F3E8F7", padding: "6px 14px", borderRadius: "999px"}}>
+            <span style={{fontFamily: "Marcellus, serif", fontSize: "14.5px", color: "#3D0752", background: "#F3E8F7", padding: "6px 14px", borderRadius: "999px"}}>
               {"Simmba"}
             </span>
-            <span style={{fontFamily: "Marcellus, serif", fontSize: "16px", color: "#3D0752", background: "#F3E8F7", padding: "6px 14px", borderRadius: "999px"}}>
+            <span style={{fontFamily: "Marcellus, serif", fontSize: "14.5px", color: "#3D0752", background: "#F3E8F7", padding: "6px 14px", borderRadius: "999px"}}>
               {"Bigg Boss"}
             </span>
-            <span style={{fontFamily: "Marcellus, serif", fontSize: "16px", color: "#3D0752", background: "#F3E8F7", padding: "6px 14px", borderRadius: "999px"}}>
+            <span style={{fontFamily: "Marcellus, serif", fontSize: "14.5px", color: "#3D0752", background: "#F3E8F7", padding: "6px 14px", borderRadius: "999px"}}>
               {"Padmaavat"}
             </span>
-            <span style={{fontFamily: "Marcellus, serif", fontSize: "16px", color: "#3D0752", background: "#F3E8F7", padding: "6px 14px", borderRadius: "999px"}}>
+            <span style={{fontFamily: "Marcellus, serif", fontSize: "14.5px", color: "#3D0752", background: "#F3E8F7", padding: "6px 14px", borderRadius: "999px"}}>
               {"Singh Is Kinng"}
             </span>
           </div>
-          <p style={{margin: "0", fontSize: "13px", color: "#736B8A"}}>
+          <p style={{margin: "0", fontSize: "12px", color: "#736B8A"}}>
             {"Publicly reported spelling changes, shown for illustration. These people are not clients of Ahllya Mystic and do not endorse our services."}
           </p>
         </div>
         <div id={"packages"} style={{background: "radial-gradient(ellipse at 100% 0%, rgba(108,21,148,0.07), rgba(108,21,148,0) 50%), #FBF7F0"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px"}}>
             <div style={{textAlign: "center", marginBottom: "28px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Choose your package"}
               </p>
-              <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
                 {"Whose name are we looking at?"}
               </h2>
-              <p style={{margin: "0 auto", fontSize: "16px", color: "#5C5470", maxWidth: "640px"}}>
+              <p style={{margin: "0 auto", fontSize: "14.5px", color: "#5C5470", maxWidth: "640px"}}>
                 {"Reports arrive as a PDF on email and WhatsApp within 5 to 7 working days. Consultation calls are scheduled on WhatsApp."}
               </p>
             </div>
@@ -594,21 +594,21 @@ ReportNamePage.prototype.render = function render() {
                         <span style={{position: "absolute", top: "-13px", left: "22px", fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", color: "#FFFFFF", background: "#921A11", padding: "5px 12px", borderRadius: "999px"}}>
                           {hole(t?.tag)}
                         </span>
-                        <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.25"}}>
+                        <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.25"}}>
                           {hole(t?.name)}
                         </p>
-                        <p style={{margin: "0", fontSize: "14px", color: "#5C5470", minHeight: "42px"}}>
+                        <p style={{margin: "0", fontSize: "13px", color: "#5C5470", minHeight: "42px"}}>
                           {hole(t?.best)}
                         </p>
                         <p style={{margin: "0", display: "flex", alignItems: "baseline", flexWrap: "wrap", gap: "8px"}}>
                           {t?.hasMrp ? (
                             <>
-                              <span style={{fontSize: "15px", color: "#5C5470", textDecoration: "line-through"}}>
+                              <span style={{fontSize: "13.5px", color: "#5C5470", textDecoration: "line-through"}}>
                                 {hole(t?.mrp)}
                               </span>
                             </>
                           ) : null}
-                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "32px", lineHeight: "1"}}>
+                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "27px", lineHeight: "1"}}>
                             {hole(t?.price)}
                           </span>
                         </p>
@@ -620,12 +620,12 @@ ReportNamePage.prototype.render = function render() {
                         <div style={{height: "1px", background: "#EFE6D8", margin: "2px 0"}} />
                         {t?.hasBase ? (
                           <>
-                            <p style={{margin: "0", fontSize: "13px", fontWeight: "700", color: "#921A11"}}>
+                            <p style={{margin: "0", fontSize: "12px", fontWeight: "700", color: "#921A11"}}>
                               {hole(t?.base)}
                             </p>
                           </>
                         ) : null}
-                        <div style={{display: "grid", gap: "8px", fontSize: "14px", lineHeight: "1.5"}}>
+                        <div style={{display: "grid", gap: "8px", fontSize: "13px", lineHeight: "1.5"}}>
                           {(t?.items || []).map((i, $index) => (
                             <React.Fragment key={$index}>
                               <p style={{margin: "0", display: "flex", gap: "8px"}}>
@@ -648,21 +648,21 @@ ReportNamePage.prototype.render = function render() {
                   {t?.cool ? (
                     <>
                       <div className={"am-lift"} style={{position: "relative", display: "flex", flexDirection: "column", gap: "12px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "26px 22px"}}>
-                        <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.25"}}>
+                        <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.25"}}>
                           {hole(t?.name)}
                         </p>
-                        <p style={{margin: "0", fontSize: "14px", color: "#5C5470", minHeight: "42px"}}>
+                        <p style={{margin: "0", fontSize: "13px", color: "#5C5470", minHeight: "42px"}}>
                           {hole(t?.best)}
                         </p>
                         <p style={{margin: "0", display: "flex", alignItems: "baseline", flexWrap: "wrap", gap: "8px"}}>
                           {t?.hasMrp ? (
                             <>
-                              <span style={{fontSize: "15px", color: "#5C5470", textDecoration: "line-through"}}>
+                              <span style={{fontSize: "13.5px", color: "#5C5470", textDecoration: "line-through"}}>
                                 {hole(t?.mrp)}
                               </span>
                             </>
                           ) : null}
-                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "32px", lineHeight: "1"}}>
+                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "27px", lineHeight: "1"}}>
                             {hole(t?.price)}
                           </span>
                         </p>
@@ -674,12 +674,12 @@ ReportNamePage.prototype.render = function render() {
                         <div style={{height: "1px", background: "#EFE6D8", margin: "2px 0"}} />
                         {t?.hasBase ? (
                           <>
-                            <p style={{margin: "0", fontSize: "13px", fontWeight: "700", color: "#921A11"}}>
+                            <p style={{margin: "0", fontSize: "12px", fontWeight: "700", color: "#921A11"}}>
                               {hole(t?.base)}
                             </p>
                           </>
                         ) : null}
-                        <div style={{display: "grid", gap: "8px", fontSize: "14px", lineHeight: "1.5"}}>
+                        <div style={{display: "grid", gap: "8px", fontSize: "13px", lineHeight: "1.5"}}>
                           {(t?.items || []).map((i, $index) => (
                             <React.Fragment key={$index}>
                               <p style={{margin: "0", display: "flex", gap: "8px"}}>
@@ -702,20 +702,20 @@ ReportNamePage.prototype.render = function render() {
                 </React.Fragment>
               ))}
             </div>
-            <p style={{margin: "28px 0 0", textAlign: "center", fontSize: "15px", color: "#5C5470"}}>
+            <p style={{margin: "28px 0 0", textAlign: "center", fontSize: "13.5px", color: "#5C5470"}}>
               {hole(v.tabNote)}
             </p>
           </div>
         </div>
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px 24px"}}>
           <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
-            <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+            <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
               {"Who it is for"}
             </p>
-            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
               {"For anyone whose name matters."}
             </h2>
-            <p style={{margin: "0", fontSize: "16px", color: "#5C5470", maxWidth: "680px"}}>
+            <p style={{margin: "0", fontSize: "14.5px", color: "#5C5470", maxWidth: "680px"}}>
               {"Your name is the word you hear most in life. Numerology checks whether its vibration works with your date of birth, and suggests small spelling changes when it does not."}
             </p>
           </div>
@@ -729,10 +729,10 @@ ReportNamePage.prototype.render = function render() {
                     </svg>
                   </span>
                   <div>
-                    <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {hole(a?.title)}
                     </p>
-                    <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                    <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                       {hole(a?.text)}
                     </p>
                   </div>
@@ -743,10 +743,10 @@ ReportNamePage.prototype.render = function render() {
         </div>
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px"}}>
           <div style={{textAlign: "center", marginBottom: "40px"}}>
-            <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+            <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
               {"How it works"}
             </p>
-            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
               {"From your name to your report."}
             </h2>
           </div>
@@ -754,13 +754,13 @@ ReportNamePage.prototype.render = function render() {
             {(v.steps || []).map((s, $index) => (
               <React.Fragment key={$index}>
                 <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "26px 22px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-                  <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "44px", height: "44px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "20px", marginBottom: "16px"}}>
+                  <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "44px", height: "44px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "17.5px", marginBottom: "16px"}}>
                     {hole(s?.num)}
                   </span>
-                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "21px"}}>
+                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "18.5px"}}>
                     {hole(s?.title)}
                   </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                  <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                     {hole(s?.text)}
                   </p>
                 </div>
@@ -770,10 +770,10 @@ ReportNamePage.prototype.render = function render() {
         </div>
         <div style={{background: "#FFFFFF", borderTop: "1px solid #E8DFD0"}}>
           <div style={{maxWidth: "860px", margin: "0 auto", padding: "88px 24px"}}>
-            <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700", textAlign: "center"}}>
+            <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700", textAlign: "center"}}>
               {"Questions"}
             </p>
-            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15", textAlign: "center", marginBottom: "36px"}}>
+            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15", textAlign: "center", marginBottom: "36px"}}>
               {"About name numerology"}
             </h2>
             <div style={{display: "grid", gap: "12px"}}>
@@ -782,7 +782,7 @@ ReportNamePage.prototype.render = function render() {
                   <details style={{background: "#FBF7F0", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 24px"}}>
                     <summary style={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", minHeight: "64px", fontWeight: "700"}}>
                       {hole(q?.q)}
-                      <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "24px", color: "#921A11", transition: "transform 0.2s"}}>
+                      <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "21px", color: "#921A11", transition: "transform 0.2s"}}>
                         {"+"}
                       </span>
                     </summary>
@@ -802,7 +802,7 @@ ReportNamePage.prototype.render = function render() {
             <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(32px, 5vw, 64px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "28px"}}>
               <div style={{flex: "1 1 100%", minWidth: "0"}}>
-                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(26px, 2.8vw, 38px)", lineHeight: "1.2", color: "#FFFFFF"}}>
+                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.38vw, 32px)", lineHeight: "1.2", color: "#FFFFFF"}}>
                   <span className={"am-nowrap-lg"}>
                     {"Let the stars guide you, the numbers support you,"}
                   </span>
@@ -830,7 +830,7 @@ ReportNamePage.prototype.render = function render() {
             </div>
           </div>
         </div>
-        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "15px"}}>
+        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "13.5px"}}>
           <div className={"am-stars2"} aria-hidden={"true"} style={{opacity: "0.6"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 32px", position: "relative"}}>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "40px", marginBottom: "48px"}}>
@@ -886,7 +886,7 @@ ReportNamePage.prototype.render = function render() {
                 </a>
               </div>
             </div>
-            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "14px"}}>
+            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "13px"}}>
               <span>
                 {"© 2026 Ahllya Mystic. All rights reserved."}
               </span>

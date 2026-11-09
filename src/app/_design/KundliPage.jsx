@@ -64,8 +64,8 @@ KundliPage.prototype.render = function render() {
   }
   return (
     <div data-design-page="Kundli" style={{ display: "contents" }}>
-      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "16px", lineHeight: "1.6"}}>
-        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "14px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
+      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "14.5px", lineHeight: "1.6"}}>
+        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "13px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
           <a href={"/masterclass"} style={{color: "#921A11", textDecoration: "none"}}>
             {"Live 2-day Manifestation Masterclass. Dates announced soon. Register for ₹99 →"}
           </a>
@@ -75,7 +75,7 @@ KundliPage.prototype.render = function render() {
             <a href={"/"} aria-label={"Ahllya Mystic home"} style={{display: "block", flex: "none"}}>
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
-            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "15px", fontWeight: "500"}}>
+            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "13.5px", fontWeight: "500"}}>
               <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
@@ -106,7 +106,7 @@ KundliPage.prototype.render = function render() {
                   <path d={"M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"} />
                 </svg>
               </a>
-              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                 {"Book a consultation"}
               </a>
               <button type={"button"} className={"am-burger"} aria-label={"Open menu"} aria-controls={"am-drawer"} aria-expanded={v.menuExpanded} onClick={v.openMenu} style={{alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#FFFFFF", cursor: "pointer"}}>
@@ -138,44 +138,44 @@ KundliPage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Kundli"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Calculators"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Reports"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Courses"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"About"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -192,7 +192,7 @@ KundliPage.prototype.render = function render() {
                       {"WhatsApp us"}
                     </a>
                   </div>
-                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", color: "#EADFF2", textAlign: "center"}}>
+                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#EADFF2", textAlign: "center"}}>
                     {"ज्योतिष · अंक शास्त्र · वास्तु"}
                   </p>
                 </div>
@@ -205,7 +205,7 @@ KundliPage.prototype.render = function render() {
           <div className={"am-stars2"} aria-hidden={"true"} />
           <img className={"am-spin"} src={"/images/9f12ecbbc1351b2a79d2c5c2543824a3.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-180px", top: "-120px", width: "620px", height: "620px", opacity: "0.12", pointerEvents: "none"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "28px 24px 72px", position: "relative"}}>
-            <nav aria-label={"Breadcrumb"} style={{fontSize: "14px", color: "#EADFF2", marginBottom: "36px"}}>
+            <nav aria-label={"Breadcrumb"} style={{fontSize: "13px", color: "#EADFF2", marginBottom: "36px"}}>
               <a href={"/"} style={{color: "#EADFF2", textDecoration: "none"}}>
                 {"Home"}
               </a>
@@ -217,13 +217,13 @@ KundliPage.prototype.render = function render() {
               </span>
             </nav>
             <div className={"am-center-mobile"}>
-              <p style={{margin: "0 0 12px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
+              <p style={{margin: "0 0 12px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                 {"Your free Kundli"}
               </p>
-              <h1 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(34px, 4.4vw, 56px)", lineHeight: "1.1"}}>
+              <h1 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28.5px, 3.74vw, 46.5px)", lineHeight: "1.1"}}>
                 {R ? R.firstName + ", here is your Kundli." : "Preparing your Kundli…"}
               </h1>
-              <p style={{margin: "0 0 32px", fontSize: "17px", color: "#EADFF2"}}>
+              <p style={{margin: "0 0 32px", fontSize: "15px", color: "#EADFF2"}}>
                 {R ? R.headline + " " : ""}
                 <a href={"/#free"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
                   {"Edit details"}
@@ -238,14 +238,14 @@ KundliPage.prototype.render = function render() {
                     {t.label}
                   </p>
                   <p style={{margin: "6px 0 0", display: "flex", alignItems: "baseline", gap: "10px", flexWrap: "wrap"}}>
-                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "30px", lineHeight: "1.1"}}>
+                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "25.5px", lineHeight: "1.1"}}>
                       {t.en}
                     </span>
-                    <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "20px", color: "#FCCE07"}}>
+                    <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", color: "#FCCE07"}}>
                       {t.hi}
                     </span>
                   </p>
-                  <p style={{margin: "6px 0 0", fontSize: "14px", color: "#EADFF2"}}>
+                  <p style={{margin: "6px 0 0", fontSize: "13px", color: "#EADFF2"}}>
                     {t.sub}
                   </p>
                 </div>
@@ -260,10 +260,10 @@ KundliPage.prototype.render = function render() {
                   </svg>
                 </span>
                 <div>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "21px"}}>
+                  <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "18.5px"}}>
                     {"Your free Kundli PDF"}
                   </p>
-                  <p style={{margin: "2px 0 0", fontSize: "14px", color: "#5C5470"}}>
+                  <p style={{margin: "2px 0 0", fontSize: "13px", color: "#5C5470"}}>
                     {"Charts, planet positions, dasha periods and dosha checks in one file. Calculated instantly by software."}
                   </p>
                 </div>
@@ -286,25 +286,25 @@ KundliPage.prototype.render = function render() {
         {R ? (
         <div className={"am-subnav"} style={{position: "sticky", top: "72px", zIndex: "40", background: "rgba(251,247,240,0.96)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", borderBottom: "1px solid #E8DFD0"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "0 24px", display: "flex", gap: "28px", overflowX: "auto", whiteSpace: "nowrap"}}>
-            <a href={"#profile"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "15px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
+            <a href={"#profile"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "13.5px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
               {"Birth profile"}
             </a>
-            <a href={"#charts"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "15px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
+            <a href={"#charts"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "13.5px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
               {"Charts"}
             </a>
-            <a href={"#planets"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "15px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
+            <a href={"#planets"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "13.5px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
               {"Planets"}
             </a>
-            <a href={"#doshas"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "15px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
+            <a href={"#doshas"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "13.5px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
               {"Doshas"}
             </a>
-            <a href={"#dasha"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "15px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
+            <a href={"#dasha"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "13.5px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
               {"Dasha"}
             </a>
-            <a href={"#nature"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "15px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
+            <a href={"#nature"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "13.5px", fontWeight: "600", color: "#1E1830", textDecoration: "none"}}>
               {"Your nature"}
             </a>
-            <a href={"#ask"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "15px", fontWeight: "600", color: "#921A11", textDecoration: "none"}}>
+            <a href={"#ask"} style={{display: "inline-flex", alignItems: "center", minHeight: "54px", fontSize: "13.5px", fontWeight: "600", color: "#921A11", textDecoration: "none"}}>
               {"Ask our experts"}
             </a>
           </div>
@@ -314,23 +314,23 @@ KundliPage.prototype.render = function render() {
           {R ? (<>
           <div id={"profile"} style={{maxWidth: "1200px", margin: "0 auto", padding: "72px 24px 24px"}}>
             <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Birth profile"}
               </p>
-              <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28px, 3.2vw, 40px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(24px, 2.72vw, 33.5px)", lineHeight: "1.15"}}>
                 {"The basics of your chart."}
               </h2>
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(340px, 100%), 1fr))", gap: "20px"}}>
               <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "24px 26px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                   {"Birth details"}
                 </p>
-                <p style={{margin: "0 0 8px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#921A11"}}>
+                <p style={{margin: "0 0 8px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "13.5px", color: "#921A11"}}>
                   {"जन्म विवरण"}
                 </p>
                 {(R ? R.details : []).map(([k, val], i) => (
-                  <div key={i} style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
+                  <div key={i} style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "13.5px"}}>
                     <span style={{color: "#5C5470"}}>
                       {k}
                     </span>
@@ -341,14 +341,14 @@ KundliPage.prototype.render = function render() {
                 ))}
               </div>
               <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "24px 26px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                   {"Panchang and Avkahada"}
                 </p>
-                <p style={{margin: "0 0 8px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#921A11"}}>
+                <p style={{margin: "0 0 8px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "13.5px", color: "#921A11"}}>
                   {"पंचांग और अवकहड़ा चक्र"}
                 </p>
                 {(R ? R.panchang : []).map(([k, val], i) => (
-                  <div key={i} style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "15px"}}>
+                  <div key={i} style={{display: "flex", justifyContent: "space-between", gap: "16px", padding: "11px 0", borderBottom: "1px solid #EFE6D8", fontSize: "13.5px"}}>
                     <span style={{color: "#5C5470"}}>
                       {k}
                     </span>
@@ -362,20 +362,20 @@ KundliPage.prototype.render = function render() {
           </div>
           <div id={"charts"} style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 24px"}}>
             <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Your charts"}
               </p>
-              <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28px, 3.2vw, 40px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(24px, 2.72vw, 33.5px)", lineHeight: "1.15"}}>
                 {"Lagna and Navamsa charts."}
               </h2>
-              <p style={{margin: "0 auto", fontSize: "16px", color: "#5C5470", maxWidth: "720px", marginLeft: "0"}}>
+              <p style={{margin: "0 auto", fontSize: "14.5px", color: "#5C5470", maxWidth: "720px", marginLeft: "0"}}>
                 {"North Indian style. The top centre box is your first house, and houses run anticlockwise. Red numbers are signs, from 1 for Aries to 12 for Pisces."}
               </p>
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: "24px"}}>
               <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "22px"}}>
                 <p style={{margin: "0 0 14px", display: "flex", justifyContent: "space-between", alignItems: "baseline"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Lagna chart (D1)"}
                   </span>
                   <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", color: "#921A11"}}>
@@ -386,7 +386,7 @@ KundliPage.prototype.render = function render() {
               </div>
               <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "22px"}}>
                 <p style={{margin: "0 0 14px", display: "flex", justifyContent: "space-between", alignItems: "baseline"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Navamsa chart (D9)"}
                   </span>
                   <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", color: "#921A11"}}>
@@ -400,24 +400,24 @@ KundliPage.prototype.render = function render() {
               <p style={{margin: "0 0 10px", fontWeight: "700", color: "#3D0752"}}>
                 {"Placements that stand out"}
               </p>
-              <ul style={{margin: "0", paddingLeft: "20px", color: "#3D0752", fontSize: "15px"}}>
+              <ul style={{margin: "0", paddingLeft: "20px", color: "#3D0752", fontSize: "13.5px"}}>
                 {(R ? R.stand : []).map((t, i) => (
                   <li key={i} style={{marginBottom: "8px"}}>
                     {t}
                   </li>
                 ))}
               </ul>
-              <p style={{margin: "8px 0 0", fontSize: "14px", color: "#5C5470"}}>
+              <p style={{margin: "8px 0 0", fontSize: "13px", color: "#5C5470"}}>
                 {"What these mean for your life is explained in the Personalised Kundli Report."}
               </p>
             </div>
           </div>
           <div id={"planets"} style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 24px"}}>
             <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Planet positions"}
               </p>
-              <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28px, 3.2vw, 40px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(24px, 2.72vw, 33.5px)", lineHeight: "1.15"}}>
                 {"Where each planet was when you were born."}
               </h2>
             </div>
@@ -451,25 +451,25 @@ KundliPage.prototype.render = function render() {
                 <tbody>
                   {(R ? R.planets : []).map((p, i) => (
                     <tr key={p.name}>
-                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "700"}}>
+                      <td style={{padding: "11px 14px", fontSize: "13.5px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "700"}}>
                         {p.name}
                       </td>
-                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                      <td style={{padding: "11px 14px", fontSize: "13.5px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
                         {p.sign}
                       </td>
-                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                      <td style={{padding: "11px 14px", fontSize: "13.5px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
                         {p.deg}
                       </td>
-                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                      <td style={{padding: "11px 14px", fontSize: "13.5px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
                         {p.nak}
                       </td>
-                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                      <td style={{padding: "11px 14px", fontSize: "13.5px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
                         {p.nakLord}
                       </td>
-                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                      <td style={{padding: "11px 14px", fontSize: "13.5px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
                         {String(p.house)}
                       </td>
-                      <td style={{padding: "11px 14px", fontSize: "15px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
+                      <td style={{padding: "11px 14px", fontSize: "13.5px", borderBottom: "1px solid #EFE6D8", background: i % 2 ? "#FBF7F0" : "#FFFFFF", whiteSpace: "nowrap", fontWeight: "400"}}>
                         {p.strength}
                       </td>
                     </tr>
@@ -477,16 +477,16 @@ KundliPage.prototype.render = function render() {
                 </tbody>
               </table>
             </div>
-            <p style={{margin: "12px 0 0", fontSize: "14px", color: "#5C5470"}}>
+            <p style={{margin: "12px 0 0", fontSize: "13px", color: "#5C5470"}}>
               {"Sidereal zodiac, Lahiri ayanamsa, whole sign houses. Rahu and Ketu always move in reverse, so they are not marked retrograde."}
             </p>
           </div>
           <div id={"doshas"} style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 24px"}}>
             <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Dosha check"}
               </p>
-              <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28px, 3.2vw, 40px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(24px, 2.72vw, 33.5px)", lineHeight: "1.15"}}>
                 {"Three doshas, checked automatically."}
               </h2>
             </div>
@@ -494,23 +494,23 @@ KundliPage.prototype.render = function render() {
               {(R ? R.doshas : []).map((dz) => (
                               <div key={dz.key} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderTop: "4px solid " + (dz.present ? "#921A11" : "#1F7A4C"), borderRadius: "18px", padding: "22px"}}>
                                 <p style={{margin: "0", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px"}}>
-                                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                                     {dz.title}
                                   </span>
-                                  <span style={{fontSize: "13px", fontWeight: "700", color: dz.present ? "#921A11" : "#1F7A4C", background: dz.present ? "#F8E8E6" : "#EAF5EE", padding: "4px 12px", borderRadius: "999px"}}>
+                                  <span style={{fontSize: "12px", fontWeight: "700", color: dz.present ? "#921A11" : "#1F7A4C", background: dz.present ? "#F8E8E6" : "#EAF5EE", padding: "4px 12px", borderRadius: "999px"}}>
                                     {dz.label}
                                   </span>
                                 </p>
                                 <p style={{margin: "2px 0 12px", fontFamily: "'Tiro Devanagari Hindi', serif", color: "#921A11"}}>
                                   {dz.hi}
                                 </p>
-                                <p style={{margin: "0 0 8px", fontSize: "15px"}}>
+                                <p style={{margin: "0 0 8px", fontSize: "13.5px"}}>
                                   <b>
                                     {"In your chart:"}
                                   </b>
                                   {" " + dz.chart}
                                 </p>
-                                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                                   {dz.note}
                                 </p>
                                 {dz.remedy ? (
@@ -524,22 +524,22 @@ KundliPage.prototype.render = function render() {
           </div>
           <div id={"dasha"} style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 24px"}}>
             <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Vimshottari dasha"}
               </p>
-              <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28px, 3.2vw, 40px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(24px, 2.72vw, 33.5px)", lineHeight: "1.15"}}>
                 {"The planetary periods of your life."}
               </h2>
             </div>
             <div style={{display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "20px"}}>
-              <span style={{fontSize: "15px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "999px", padding: "8px 16px"}}>
+              <span style={{fontSize: "13.5px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "999px", padding: "8px 16px"}}>
                 {"Mahadasha: "}
                 <b>
                   {curM ? curM.lord : ""}
                 </b>
                 {curM ? " · " + curM.range : ""}
               </span>
-              <span style={{fontSize: "15px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "999px", padding: "8px 16px"}}>
+              <span style={{fontSize: "13.5px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "999px", padding: "8px 16px"}}>
                 {"Antardasha: "}
                 <b>
                   {curA ? curA.lord : ""}
@@ -550,7 +550,7 @@ KundliPage.prototype.render = function render() {
             <div style={{display: "flex", border: "1px solid #E8DFD0", borderRadius: "14px", overflow: "hidden", marginBottom: "24px", overflowX: "auto"}}>
               {(R ? R.dasha : []).map((m) => (
                 <div key={m.lord} style={{flex: m.years + " 1 0", minWidth: "0", padding: "10px 6px", textAlign: "center", background: m === curM ? "#6C1594" : "#FFFFFF", color: m === curM ? "#FFFFFF" : "#1E1830", borderRight: "1px solid #E8DFD0"}}>
-                  <p style={{margin: "0", fontWeight: "700", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis"}}>
+                  <p style={{margin: "0", fontWeight: "700", fontSize: "13px", overflow: "hidden", textOverflow: "ellipsis"}}>
                     {m.lord}
                   </p>
                   <p style={{margin: "2px 0 0", fontSize: "12px", opacity: "0.8"}}>
@@ -567,7 +567,7 @@ KundliPage.prototype.render = function render() {
                 {(curM ? curM.antar : []).map((a) => {
                   const isNow = a === curA;
                   return (
-                                    <div key={a.name} style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: isNow ? "#F3E8F7" : "#FFFFFF", fontSize: "15px"}}>
+                                    <div key={a.name} style={{display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: "12px", padding: "12px 16px", borderBottom: "1px solid #EFE6D8", background: isNow ? "#F3E8F7" : "#FFFFFF", fontSize: "13.5px"}}>
                                       <span style={{fontWeight: isNow ? "700" : "500"}}>
                                         {a.name + " "}
                                         {isNow ? (
@@ -588,7 +588,7 @@ KundliPage.prototype.render = function render() {
                 <p style={{position: "relative", margin: "0 0 8px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                   {"What does " + (curM && curA ? curM.lord + "–" + curA.lord : "this period") + " mean for you?"}
                 </p>
-                <p style={{position: "relative", margin: "0 0 18px", fontFamily: "'Marcellus', serif", fontSize: "24px", lineHeight: "1.3"}}>
+                <p style={{position: "relative", margin: "0 0 18px", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.3"}}>
                   {"Your report reads your next three years period by period, with dates and what to do in each."}
                 </p>
                 <a href={"#ask"} style={{position: "relative", display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 22px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", textDecoration: "none"}}>
@@ -600,26 +600,26 @@ KundliPage.prototype.render = function render() {
           <div id={"nature"} style={{background: "#FFFFFF", borderTop: "1px solid #E8DFD0", borderBottom: "1px solid #E8DFD0", marginTop: "64px"}}>
             <div style={{maxWidth: "1200px", margin: "0 auto", padding: "72px 24px"}}>
               <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
-                <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                   {"Your birth panchang"}
                 </p>
-                <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28px, 3.2vw, 40px)", lineHeight: "1.15"}}>
+                <h2 style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(24px, 2.72vw, 33.5px)", lineHeight: "1.15"}}>
                   {"What the day you were born says about you."}
                 </h2>
-                <p style={{margin: "0 auto", fontSize: "16px", color: "#5C5470", maxWidth: "720px", marginLeft: "0"}}>
+                <p style={{margin: "0 auto", fontSize: "14.5px", color: "#5C5470", maxWidth: "720px", marginLeft: "0"}}>
                   {"General traits for your weekday, nakshatra, tithi, karana and yoga. They describe tendencies shared by everyone born under them, not a reading of your full chart."}
                 </p>
               </div>
               <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: "18px"}}>
                 {(R ? R.nature : []).map((nt) => (
                   <div key={nt.title} style={{background: "#FBF7F0", border: "1px solid #EFE6D8", borderRadius: "18px", padding: "22px 24px"}}>
-                    <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                    <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                       {nt.title}
                     </p>
-                    <p style={{margin: "0 0 12px", paddingLeft: "12px", borderLeft: "3px solid #921A11", fontSize: "14px", fontWeight: "700", color: "#921A11"}}>
+                    <p style={{margin: "0 0 12px", paddingLeft: "12px", borderLeft: "3px solid #921A11", fontSize: "13px", fontWeight: "700", color: "#921A11"}}>
                       {nt.basis}
                     </p>
-                    <p style={{margin: "0", fontSize: "15px", color: "#3B3350"}}>
+                    <p style={{margin: "0", fontSize: "13.5px", color: "#3B3350"}}>
                       {nt.text}
                     </p>
                   </div>
@@ -631,13 +631,13 @@ KundliPage.prototype.render = function render() {
           <div id={"ask"} style={{position: "relative", overflow: "hidden", background: "radial-gradient(ellipse at 100% 0%, rgba(108,21,148,0.08), rgba(108,21,148,0) 55%), #F4EDE1"}}>
             <div style={{maxWidth: "1200px", margin: "0 auto", padding: "80px 24px 88px"}}>
               <div className={"am-center-mobile"} style={{marginBottom: "36px"}}>
-                <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                   {"Ask our experts"}
                 </p>
-                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
                   {"Want answers, not just a chart?"}
                 </h2>
-                <p style={{margin: "0", fontSize: "17px", color: "#5C5470", maxWidth: "760px"}}>
+                <p style={{margin: "0", fontSize: "15px", color: "#5C5470", maxWidth: "760px"}}>
                   {"Your chart shows where the planets are. Our experts tell you what it means for your life. Pick the questions you want answered in your Personalised Kundli Report: two are included, and each extra question is ₹159."}
                 </p>
               </div>
@@ -652,7 +652,7 @@ KundliPage.prototype.render = function render() {
                               <path d={grp?.icon} />
                             </svg>
                           </span>
-                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "21px"}}>
+                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "18.5px"}}>
                             {hole(grp?.title)}
                           </span>
                         </p>
@@ -661,7 +661,7 @@ KundliPage.prototype.render = function render() {
                             <React.Fragment key={$index}>
                               {it?.sel ? (
                                 <>
-                                  <button type={"button"} role={"checkbox"} aria-checked={"true"} onClick={it?.toggle} style={{display: "flex", alignItems: "center", gap: "12px", width: "100%", textAlign: "left", padding: "12px 14px", borderRadius: "14px", border: "1.5px solid #6C1594", background: "#F3E8F7", font: "inherit", fontSize: "15px", fontWeight: "600", color: "#2E003E", cursor: "pointer"}}>
+                                  <button type={"button"} role={"checkbox"} aria-checked={"true"} onClick={it?.toggle} style={{display: "flex", alignItems: "center", gap: "12px", width: "100%", textAlign: "left", padding: "12px 14px", borderRadius: "14px", border: "1.5px solid #6C1594", background: "#F3E8F7", font: "inherit", fontSize: "13.5px", fontWeight: "600", color: "#2E003E", cursor: "pointer"}}>
                                     <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "22px", height: "22px", borderRadius: "6px", background: "#6C1594", color: "#FFFFFF"}}>
                                       <svg aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"3"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                                         <path d={"M5 12l5 5 9-10"} />
@@ -673,7 +673,7 @@ KundliPage.prototype.render = function render() {
                               ) : null}
                               {it?.notSel ? (
                                 <>
-                                  <button type={"button"} role={"checkbox"} aria-checked={"false"} onClick={it?.toggle} style={{display: "flex", alignItems: "center", gap: "12px", width: "100%", textAlign: "left", padding: "12px 14px", borderRadius: "14px", border: "1px solid #E8DFD0", background: "#FFFFFF", font: "inherit", fontSize: "15px", color: "#1E1830", cursor: "pointer"}}>
+                                  <button type={"button"} role={"checkbox"} aria-checked={"false"} onClick={it?.toggle} style={{display: "flex", alignItems: "center", gap: "12px", width: "100%", textAlign: "left", padding: "12px 14px", borderRadius: "14px", border: "1px solid #E8DFD0", background: "#FFFFFF", font: "inherit", fontSize: "13.5px", color: "#1E1830", cursor: "pointer"}}>
                                     <span style={{flex: "none", width: "22px", height: "22px", boxSizing: "border-box", borderRadius: "6px", border: "1.5px solid #B9AEC6", background: "#FFFFFF"}} />
                                     {hole(it?.text)}
                                   </button>
@@ -688,13 +688,13 @@ KundliPage.prototype.render = function render() {
                 </div>
                 <aside className={"am-ask-aside"} style={{position: "sticky", top: "150px", display: "grid", gap: "14px"}}>
                   <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "24px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                    <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                    <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                       {"Personalised Kundli Report"}
                     </p>
-                    <p style={{margin: "0 0 18px", fontSize: "14px", color: "#5C5470"}}>
+                    <p style={{margin: "0 0 18px", fontSize: "13px", color: "#5C5470"}}>
                       {"32-page report prepared by Ahalya Sangeeta and Maneswita, in English or Hindi."}
                     </p>
-                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "15px", marginBottom: "8px"}}>
+                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "13.5px", marginBottom: "8px"}}>
                       <span>
                         {"Report with 2 questions"}
                       </span>
@@ -705,7 +705,7 @@ KundliPage.prototype.render = function render() {
                         {"₹999"}
                       </span>
                     </div>
-                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "15px", marginBottom: "8px"}}>
+                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "13.5px", marginBottom: "8px"}}>
                       <span>
                         {"Questions selected"}
                       </span>
@@ -713,7 +713,7 @@ KundliPage.prototype.render = function render() {
                         {hole(v.qCount)}
                       </span>
                     </div>
-                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "15px", marginBottom: "14px"}}>
+                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "13.5px", marginBottom: "14px"}}>
                       <span>
                         {"Extra questions ("}
                         {hole(v.extraCount)}
@@ -728,18 +728,18 @@ KundliPage.prototype.render = function render() {
                       <span style={{fontWeight: "700"}}>
                         {"Total"}
                       </span>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "32px"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "27px"}}>
                         {hole(v.total)}
                       </span>
                     </div>
-                    <a href={"/checkout/kundli"} style={{display: "flex", alignItems: "center", justifyContent: "center", minHeight: "54px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "16px", textDecoration: "none"}}>
+                    <a href={"/checkout/kundli"} style={{display: "flex", alignItems: "center", justifyContent: "center", minHeight: "54px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "14.5px", textDecoration: "none"}}>
                       {"Continue to order"}
                     </a>
-                    <p style={{margin: "12px 0 0", textAlign: "center", fontSize: "13px", color: "#5C5470"}}>
+                    <p style={{margin: "12px 0 0", textAlign: "center", fontSize: "12px", color: "#5C5470"}}>
                       {hole(v.hint)}
                     </p>
                   </div>
-                  <div style={{background: "#F3E8F7", borderRadius: "18px", padding: "16px 18px", fontSize: "14px", color: "#3D0752"}}>
+                  <div style={{background: "#F3E8F7", borderRadius: "18px", padding: "16px 18px", fontSize: "13px", color: "#3D0752"}}>
                     {"Your birth details are already filled in, so ordering takes under a minute."}
                   </div>
                 </aside>
@@ -748,23 +748,23 @@ KundliPage.prototype.render = function render() {
           </div>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "80px 24px 32px"}}>
             <div className={"am-center-mobile"} style={{marginBottom: "28px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Other ways we can help"}
               </p>
-              <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28px, 3vw, 38px)"}}>
+              <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(24px, 2.55vw, 32px)"}}>
                 {"Prefer to talk, or plan your year?"}
               </h2>
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "20px"}}>
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "26px", display: "flex", flexDirection: "column", gap: "10px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Consultation"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                   {"Talk to our experts one-on-one about your chart, on an audio or video call."}
                 </p>
                 <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "8px"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "24px"}}>
+                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "21px"}}>
                     {"From ₹2,301"}
                   </span>
                   <a href={"/consult"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", color: "#6C1594", fontWeight: "700", textDecoration: "none"}}>
@@ -773,14 +773,14 @@ KundliPage.prototype.render = function render() {
                 </div>
               </div>
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "26px", display: "flex", flexDirection: "column", gap: "10px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Varshphal 2027"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                   {"Your next 12 months, month by month: the year’s main focus, key phases and simple remedies."}
                 </p>
                 <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "8px"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "24px"}}>
+                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "21px"}}>
                     {"₹739"}
                   </span>
                   <a href={"/report/varshphal"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", color: "#6C1594", fontWeight: "700", textDecoration: "none"}}>
@@ -789,14 +789,14 @@ KundliPage.prototype.render = function render() {
                 </div>
               </div>
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "26px", display: "flex", flexDirection: "column", gap: "10px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Couple Kundli Milan"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                   {"Gun Milan, Mangal Dosha check and an honest view of long-term compatibility before marriage."}
                 </p>
                 <div style={{marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", paddingTop: "8px"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "24px"}}>
+                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "21px"}}>
                     {"₹3,399"}
                   </span>
                   <a href={"/report/milan"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", color: "#6C1594", fontWeight: "700", textDecoration: "none"}}>
@@ -809,14 +809,14 @@ KundliPage.prototype.render = function render() {
           <div style={{position: "sticky", bottom: "0", zIndex: "30", background: "rgba(46,0,62,0.96)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", color: "#FFFFFF", borderTop: "1px solid rgba(255,255,255,0.12)"}}>
             <div style={{maxWidth: "1200px", margin: "0 auto", padding: "12px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "14px", flexWrap: "wrap"}}>
               <div style={{display: "flex", alignItems: "center", gap: "14px", minWidth: "0"}}>
-                <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "42px", height: "42px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "800", fontSize: "16px"}}>
+                <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "42px", height: "42px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "800", fontSize: "14.5px"}}>
                   {hole(v.qCount)}
                 </span>
                 <div style={{minWidth: "0"}}>
                   <p style={{margin: "0", fontWeight: "700"}}>
                     {hole(v.barTitle)}
                   </p>
-                  <p style={{margin: "0", fontSize: "13px", color: "#EADFF2"}}>
+                  <p style={{margin: "0", fontSize: "12px", color: "#EADFF2"}}>
                     {"2 questions included · ₹159 for each extra"}
                   </p>
                 </div>
@@ -828,7 +828,7 @@ KundliPage.prototype.render = function render() {
             </div>
           </div>
         </div>
-        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "15px"}}>
+        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "13.5px"}}>
           <div className={"am-stars2"} aria-hidden={"true"} style={{opacity: "0.6"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 32px", position: "relative"}}>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "40px", marginBottom: "48px"}}>
@@ -884,7 +884,7 @@ KundliPage.prototype.render = function render() {
                 </a>
               </div>
             </div>
-            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "14px"}}>
+            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "13px"}}>
               <span>
                 {"© 2026 Ahllya Mystic. All rights reserved."}
               </span>

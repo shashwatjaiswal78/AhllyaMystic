@@ -34,13 +34,13 @@ CheckoutMilanPage.prototype.render = function render() {
   const v = this.renderVals() || {};
   return (
     <div data-design-page="MilanCheckout" style={{ display: "contents" }}>
-      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "16px", lineHeight: "1.6"}}>
+      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "14.5px", lineHeight: "1.6"}}>
         <header style={{background: "linear-gradient(90deg, #2E003E 0%, #4A0A66 100%)", borderBottom: "1px solid rgba(255,255,255,0.08)"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "12px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px"}}>
             <a href={"/"} aria-label={"Ahllya Mystic home"} style={{display: "block"}}>
               <img src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "44px", width: "auto", display: "block"}} />
             </a>
-            <span style={{display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "14px", fontWeight: "600", color: "#EADFF2"}}>
+            <span style={{display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "13px", fontWeight: "600", color: "#EADFF2"}}>
               <svg aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                 <rect x={"5"} y={"11"} width={"14"} height={"10"} rx={"2"} />
                 <path d={"M8 11V8a4 4 0 0 1 8 0v3"} />
@@ -50,26 +50,26 @@ CheckoutMilanPage.prototype.render = function render() {
           </div>
         </header>
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "28px 24px 28px"}}>
-          <a href={"/report/milan"} style={{display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "15px", fontWeight: "600", textDecoration: "none", marginBottom: "22px"}}>
+          <a href={"/report/milan"} style={{display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "13.5px", fontWeight: "600", textDecoration: "none", marginBottom: "22px"}}>
             <svg aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
               <path d={"M15 6l-6 6 6 6"} />
             </svg>
             {"Back to Couple Kundli Milan"}
           </a>
           <div style={{display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: "16px"}}>
-            <h1 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+            <h1 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
               {"Order your Kundli Milan"}
             </h1>
-            <ol aria-label={"Checkout steps"} style={{margin: "0", padding: "0", listStyle: "none", display: "flex", alignItems: "center", gap: "10px", fontSize: "14px", fontWeight: "600"}}>
+            <ol aria-label={"Checkout steps"} style={{margin: "0", padding: "0", listStyle: "none", display: "flex", alignItems: "center", gap: "10px", fontSize: "13px", fontWeight: "600"}}>
               <li style={{display: "flex", alignItems: "center", gap: "8px", color: "#6C1594"}}>
-                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "26px", height: "26px", borderRadius: "999px", background: "#6C1594", color: "#FFFFFF", fontSize: "13px"}}>
+                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "26px", height: "26px", borderRadius: "999px", background: "#6C1594", color: "#FFFFFF", fontSize: "12px"}}>
                   {"1"}
                 </span>
                 {"Your details"}
               </li>
               <li aria-hidden={"true"} style={{width: "28px", height: "1px", background: "#D9CEBD"}} />
               <li style={{display: "flex", alignItems: "center", gap: "8px", color: "#736B8A"}}>
-                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "26px", height: "26px", borderRadius: "999px", border: "1.5px solid #C9B3D6", fontSize: "13px"}}>
+                <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "26px", height: "26px", borderRadius: "999px", border: "1.5px solid #C9B3D6", fontSize: "12px"}}>
                   {"2"}
                 </span>
                 {"Payment"}
@@ -81,13 +81,13 @@ CheckoutMilanPage.prototype.render = function render() {
           <div className={"am-order"} style={{display: "grid", gridTemplateColumns: "minmax(0, 1.55fr) minmax(0, 1fr)", gap: "28px", alignItems: "start"}}>
             <form style={{display: "grid", gap: "20px"}}>
               <section style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "clamp(22px, 3vw, 36px)", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0 0 8px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                <p style={{margin: "0 0 8px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                   {"Step 1 · Your package"}
                 </p>
-                <h2 style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(26px, 2.6vw, 32px)", lineHeight: "1.2"}}>
+                <h2 style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.21vw, 27px)", lineHeight: "1.2"}}>
                   {"How would you like your match read?"}
                 </h2>
-                <p style={{margin: "0 0 22px", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0 0 22px", fontSize: "13.5px", color: "#5C5470"}}>
                   {"Your charts may show compatibility, but a consultation deepens the insight."}
                 </p>
                 <div role={"radiogroup"} aria-label={"Package"} style={{display: "grid", gap: "8px"}}>
@@ -103,19 +103,19 @@ CheckoutMilanPage.prototype.render = function render() {
                               <span style={{display: "block", fontWeight: "700", color: "#2E003E"}}>
                                 {hole(p?.name)}
                               </span>
-                              <span style={{display: "block", fontSize: "14px", color: "#5C5470"}}>
+                              <span style={{display: "block", fontSize: "13px", color: "#5C5470"}}>
                                 {hole(p?.format)}
                               </span>
                             </span>
                             <span style={{flex: "none", textAlign: "right"}}>
                               {p?.hasMrp ? (
                                 <>
-                                  <span style={{display: "block", fontSize: "13px", color: "#736B8A", textDecoration: "line-through"}}>
+                                  <span style={{display: "block", fontSize: "12px", color: "#736B8A", textDecoration: "line-through"}}>
                                     {hole(p?.mrp)}
                                   </span>
                                 </>
                               ) : null}
-                              <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#2E003E"}}>
+                              <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "19px", color: "#2E003E"}}>
                                 {hole(p?.price)}
                               </span>
                             </span>
@@ -130,19 +130,19 @@ CheckoutMilanPage.prototype.render = function render() {
                               <span style={{display: "block", fontWeight: "600", color: "#1E1830"}}>
                                 {hole(p?.name)}
                               </span>
-                              <span style={{display: "block", fontSize: "14px", color: "#5C5470"}}>
+                              <span style={{display: "block", fontSize: "13px", color: "#5C5470"}}>
                                 {hole(p?.format)}
                               </span>
                             </span>
                             <span style={{flex: "none", textAlign: "right"}}>
                               {p?.hasMrp ? (
                                 <>
-                                  <span style={{display: "block", fontSize: "13px", color: "#736B8A", textDecoration: "line-through"}}>
+                                  <span style={{display: "block", fontSize: "12px", color: "#736B8A", textDecoration: "line-through"}}>
                                     {hole(p?.mrp)}
                                   </span>
                                 </>
                               ) : null}
-                              <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#1E1830"}}>
+                              <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "19px", color: "#1E1830"}}>
                                 {hole(p?.price)}
                               </span>
                             </span>
@@ -154,13 +154,13 @@ CheckoutMilanPage.prototype.render = function render() {
                 </div>
               </section>
               <section style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "clamp(22px, 3vw, 36px)", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0 0 8px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                <p style={{margin: "0 0 8px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                   {"Step 2 · Birth details"}
                 </p>
-                <h2 style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(26px, 2.6vw, 32px)", lineHeight: "1.2"}}>
+                <h2 style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.21vw, 27px)", lineHeight: "1.2"}}>
                   {"Tell us about both of you"}
                 </h2>
-                <p style={{margin: "0 0 22px", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0 0 22px", fontSize: "13.5px", color: "#5C5470"}}>
                   {"Enter each person’s details exactly as on their birth record. We read both charts from these, so accuracy matters."}
                 </p>
                 <div style={{display: "grid", gap: "16px"}}>
@@ -169,22 +169,22 @@ CheckoutMilanPage.prototype.render = function render() {
                       <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "#6C1594", color: "#FFFFFF", fontWeight: "700"}}>
                         {"1"}
                       </span>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                         {"Partner one"}
                       </span>
                     </div>
                     <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                      <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                         {"First name"}
                         <input type={"text"} placeholder={"First name"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                      <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                         {"Last name"}
                         <input type={"text"} placeholder={"Last name"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </label>
                     </div>
                     <div style={{display: "grid", gap: "8px"}}>
-                      <span style={{fontSize: "14px", fontWeight: "600", display: "grid", gap: "2px"}}>
+                      <span style={{fontSize: "13px", fontWeight: "600", display: "grid", gap: "2px"}}>
                         {"Gender"}
                       </span>
                       <div role={"radiogroup"} aria-label={"Gender"} style={{display: "flex", flexWrap: "wrap", gap: "8px"}}>
@@ -192,14 +192,14 @@ CheckoutMilanPage.prototype.render = function render() {
                           <React.Fragment key={$index}>
                             {g?.sel ? (
                               <>
-                                <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "15px", fontWeight: "700", cursor: "pointer"}}>
+                                <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "13.5px", fontWeight: "700", cursor: "pointer"}}>
                                   {hole(g?.label)}
                                 </button>
                               </>
                             ) : null}
                             {g?.notSel ? (
                               <>
-                                <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "15px", fontWeight: "600", cursor: "pointer"}}>
+                                <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "13.5px", fontWeight: "600", cursor: "pointer"}}>
                                   {hole(g?.label)}
                                 </button>
                               </>
@@ -209,16 +209,16 @@ CheckoutMilanPage.prototype.render = function render() {
                       </div>
                     </div>
                     <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                      <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                         {"Date of birth"}
                         <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                      <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                         {"Time of birth"}
                         <input type={"text"} placeholder={"HH : MM, 24-hour"} inputMode={"numeric"} autoComplete={"off"} onInput={maskTimeHM} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </label>
                     </div>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"Place of birth"}
                       <input type={"text"} placeholder={"Start typing the town or city"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
@@ -228,22 +228,22 @@ CheckoutMilanPage.prototype.render = function render() {
                       <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "#6C1594", color: "#FFFFFF", fontWeight: "700"}}>
                         {"2"}
                       </span>
-                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                      <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                         {"Partner two"}
                       </span>
                     </div>
                     <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                      <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                         {"First name"}
                         <input type={"text"} placeholder={"First name"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                      <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                         {"Last name"}
                         <input type={"text"} placeholder={"Last name"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </label>
                     </div>
                     <div style={{display: "grid", gap: "8px"}}>
-                      <span style={{fontSize: "14px", fontWeight: "600", display: "grid", gap: "2px"}}>
+                      <span style={{fontSize: "13px", fontWeight: "600", display: "grid", gap: "2px"}}>
                         {"Gender"}
                       </span>
                       <div role={"radiogroup"} aria-label={"Gender"} style={{display: "flex", flexWrap: "wrap", gap: "8px"}}>
@@ -251,14 +251,14 @@ CheckoutMilanPage.prototype.render = function render() {
                           <React.Fragment key={$index}>
                             {g?.sel ? (
                               <>
-                                <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "15px", fontWeight: "700", cursor: "pointer"}}>
+                                <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "13.5px", fontWeight: "700", cursor: "pointer"}}>
                                   {hole(g?.label)}
                                 </button>
                               </>
                             ) : null}
                             {g?.notSel ? (
                               <>
-                                <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "15px", fontWeight: "600", cursor: "pointer"}}>
+                                <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "13.5px", fontWeight: "600", cursor: "pointer"}}>
                                   {hole(g?.label)}
                                 </button>
                               </>
@@ -268,27 +268,27 @@ CheckoutMilanPage.prototype.render = function render() {
                       </div>
                     </div>
                     <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                      <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                         {"Date of birth"}
                         <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </label>
-                      <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                      <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                         {"Time of birth"}
                         <input type={"text"} placeholder={"HH : MM, 24-hour"} inputMode={"numeric"} autoComplete={"off"} onInput={maskTimeHM} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                       </label>
                     </div>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"Place of birth"}
                       <input type={"text"} placeholder={"Start typing the town or city"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
                   </div>
-                  <p style={{margin: "0", background: "#F3E8F7", borderRadius: "12px", padding: "12px 14px", fontSize: "14px", lineHeight: "1.5", color: "#3D0752"}}>
+                  <p style={{margin: "0", background: "#F3E8F7", borderRadius: "12px", padding: "12px 14px", fontSize: "13px", lineHeight: "1.5", color: "#3D0752"}}>
                     {"Don’t know an exact birth time? Add what you know, such as morning or evening, in the note below. We can still prepare the report, but house-based readings will be less precise."}
                   </p>
                   <div style={{display: "grid", gap: "8px"}}>
-                    <span style={{fontSize: "14px", fontWeight: "600", display: "grid", gap: "2px"}}>
+                    <span style={{fontSize: "13px", fontWeight: "600", display: "grid", gap: "2px"}}>
                       {"Where are you in your journey?"}
-                      <span style={{fontSize: "13px", fontWeight: "400", color: "#5C5470"}}>
+                      <span style={{fontSize: "12px", fontWeight: "400", color: "#5C5470"}}>
                         {"This helps us focus the reading. It stays private."}
                       </span>
                     </span>
@@ -297,14 +297,14 @@ CheckoutMilanPage.prototype.render = function render() {
                         <React.Fragment key={$index}>
                           {g?.sel ? (
                             <>
-                              <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "15px", fontWeight: "700", cursor: "pointer"}}>
+                              <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "13.5px", fontWeight: "700", cursor: "pointer"}}>
                                 {hole(g?.label)}
                               </button>
                             </>
                           ) : null}
                           {g?.notSel ? (
                             <>
-                              <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "15px", fontWeight: "600", cursor: "pointer"}}>
+                              <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "13.5px", fontWeight: "600", cursor: "pointer"}}>
                                 {hole(g?.label)}
                               </button>
                             </>
@@ -316,18 +316,18 @@ CheckoutMilanPage.prototype.render = function render() {
                 </div>
               </section>
               <section style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "clamp(22px, 3vw, 36px)", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0 0 8px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                <p style={{margin: "0 0 8px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                   {"Step 3 · Delivery"}
                 </p>
-                <h2 style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(26px, 2.6vw, 32px)", lineHeight: "1.2"}}>
+                <h2 style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.21vw, 27px)", lineHeight: "1.2"}}>
                   {"Where should we send it?"}
                 </h2>
-                <p style={{margin: "0 0 22px", fontSize: "15px", color: "#5C5470"}}>
+                <p style={{margin: "0 0 22px", fontSize: "13.5px", color: "#5C5470"}}>
                   {"We call you within 24 hours of payment to confirm your name and birth details, so your analysis is accurate."}
                 </p>
                 <div style={{display: "grid", gap: "18px"}}>
                   <div style={{display: "grid", gap: "8px"}}>
-                    <span style={{fontSize: "14px", fontWeight: "600", display: "grid", gap: "2px"}}>
+                    <span style={{fontSize: "13px", fontWeight: "600", display: "grid", gap: "2px"}}>
                       {"Report language"}
                     </span>
                     <div role={"radiogroup"} aria-label={"Report language"} style={{display: "flex", flexWrap: "wrap", gap: "8px"}}>
@@ -335,14 +335,14 @@ CheckoutMilanPage.prototype.render = function render() {
                         <React.Fragment key={$index}>
                           {g?.sel ? (
                             <>
-                              <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "15px", fontWeight: "700", cursor: "pointer"}}>
+                              <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "13.5px", fontWeight: "700", cursor: "pointer"}}>
                                 {hole(g?.label)}
                               </button>
                             </>
                           ) : null}
                           {g?.notSel ? (
                             <>
-                              <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "15px", fontWeight: "600", cursor: "pointer"}}>
+                              <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "13.5px", fontWeight: "600", cursor: "pointer"}}>
                                 {hole(g?.label)}
                               </button>
                             </>
@@ -352,19 +352,19 @@ CheckoutMilanPage.prototype.render = function render() {
                     </div>
                   </div>
                   <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"Email"}
                       <input type={"email"} placeholder={"you@example.com"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"WhatsApp number"}
                       <input type={"tel"} placeholder={"+91"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
                   </div>
-                  <p style={{margin: "-8px 0 0", fontSize: "13px", color: "#5C5470"}}>
+                  <p style={{margin: "-8px 0 0", fontSize: "12px", color: "#5C5470"}}>
                     {"Your report and updates will be sent to both."}
                   </p>
-                  <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                  <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                     {"Anything else we should know? (optional)"}
                     <textarea rows={"2"} placeholder={"For example, a wedding date already in mind, or a concern a family astrologer raised"} style={{padding: "12px 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9", resize: "vertical"}} />
                   </label>
@@ -373,16 +373,16 @@ CheckoutMilanPage.prototype.render = function render() {
                   <>
                     <div style={{marginTop: "22px", borderTop: "1px solid #EFE6D8", paddingTop: "22px", display: "grid", gap: "18px"}}>
                       <div>
-                        <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                        <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                           {"Your consultation call"}
                         </p>
-                        <p style={{margin: "2px 0 0", fontSize: "14px", color: "#5C5470"}}>
+                        <p style={{margin: "2px 0 0", fontSize: "13px", color: "#5C5470"}}>
                           {"A call with Ahalya Sangeeta or Maneswita, for one or both of you. We fix the exact time with you on WhatsApp once your report is ready."}
                         </p>
                       </div>
                       <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
                         <div style={{display: "grid", gap: "8px"}}>
-                          <span style={{fontSize: "14px", fontWeight: "600", display: "grid", gap: "2px"}}>
+                          <span style={{fontSize: "13px", fontWeight: "600", display: "grid", gap: "2px"}}>
                             {"Call language"}
                           </span>
                           <div role={"radiogroup"} aria-label={"Call language"} style={{display: "flex", flexWrap: "wrap", gap: "8px"}}>
@@ -390,14 +390,14 @@ CheckoutMilanPage.prototype.render = function render() {
                               <React.Fragment key={$index}>
                                 {g?.sel ? (
                                   <>
-                                    <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "15px", fontWeight: "700", cursor: "pointer"}}>
+                                    <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "13.5px", fontWeight: "700", cursor: "pointer"}}>
                                       {hole(g?.label)}
                                     </button>
                                   </>
                                 ) : null}
                                 {g?.notSel ? (
                                   <>
-                                    <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "15px", fontWeight: "600", cursor: "pointer"}}>
+                                    <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "13.5px", fontWeight: "600", cursor: "pointer"}}>
                                       {hole(g?.label)}
                                     </button>
                                   </>
@@ -407,7 +407,7 @@ CheckoutMilanPage.prototype.render = function render() {
                           </div>
                         </div>
                         <div style={{display: "grid", gap: "8px"}}>
-                          <span style={{fontSize: "14px", fontWeight: "600", display: "grid", gap: "2px"}}>
+                          <span style={{fontSize: "13px", fontWeight: "600", display: "grid", gap: "2px"}}>
                             {"Call type"}
                           </span>
                           <div role={"radiogroup"} aria-label={"Call type"} style={{display: "flex", flexWrap: "wrap", gap: "8px"}}>
@@ -415,14 +415,14 @@ CheckoutMilanPage.prototype.render = function render() {
                               <React.Fragment key={$index}>
                                 {g?.sel ? (
                                   <>
-                                    <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "15px", fontWeight: "700", cursor: "pointer"}}>
+                                    <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "13.5px", fontWeight: "700", cursor: "pointer"}}>
                                       {hole(g?.label)}
                                     </button>
                                   </>
                                 ) : null}
                                 {g?.notSel ? (
                                   <>
-                                    <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "15px", fontWeight: "600", cursor: "pointer"}}>
+                                    <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "13.5px", fontWeight: "600", cursor: "pointer"}}>
                                       {hole(g?.label)}
                                     </button>
                                   </>
@@ -433,7 +433,7 @@ CheckoutMilanPage.prototype.render = function render() {
                         </div>
                       </div>
                       <div style={{display: "grid", gap: "8px"}}>
-                        <span style={{fontSize: "14px", fontWeight: "600", display: "grid", gap: "2px"}}>
+                        <span style={{fontSize: "13px", fontWeight: "600", display: "grid", gap: "2px"}}>
                           {"Best time for your call"}
                         </span>
                         <div role={"radiogroup"} aria-label={"Best time for your call"} style={{display: "flex", flexWrap: "wrap", gap: "8px"}}>
@@ -441,14 +441,14 @@ CheckoutMilanPage.prototype.render = function render() {
                             <React.Fragment key={$index}>
                               {g?.sel ? (
                                 <>
-                                  <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "15px", fontWeight: "700", cursor: "pointer"}}>
+                                  <button type={"button"} role={"radio"} aria-checked={"true"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1.5px solid #6C1594", background: "#F3E8F7", color: "#6C1594", font: "inherit", fontSize: "13.5px", fontWeight: "700", cursor: "pointer"}}>
                                     {hole(g?.label)}
                                   </button>
                                 </>
                               ) : null}
                               {g?.notSel ? (
                                 <>
-                                  <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "15px", fontWeight: "600", cursor: "pointer"}}>
+                                  <button type={"button"} role={"radio"} aria-checked={"false"} onClick={g?.pick} style={{minHeight: "44px", padding: "0 20px", borderRadius: "999px", border: "1px solid #D9CEBD", background: "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "13.5px", fontWeight: "600", cursor: "pointer"}}>
                                     {hole(g?.label)}
                                   </button>
                                 </>
@@ -464,7 +464,7 @@ CheckoutMilanPage.prototype.render = function render() {
             </form>
             <aside className={"am-order-aside"} style={{position: "sticky", top: "24px", display: "grid", gap: "14px"}}>
               <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "26px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0 0 16px", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0 0 16px", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Order summary"}
                 </p>
                 <div style={{display: "flex", gap: "14px", alignItems: "center", marginBottom: "18px", paddingBottom: "18px", borderBottom: "1px solid #EFE6D8"}}>
@@ -477,7 +477,7 @@ CheckoutMilanPage.prototype.render = function render() {
                     <p style={{margin: "0", fontWeight: "700"}}>
                       {hole(v.cur?.name)}
                     </p>
-                    <p style={{margin: "2px 0 0", fontSize: "13px", color: "#5C5470"}}>
+                    <p style={{margin: "2px 0 0", fontSize: "12px", color: "#5C5470"}}>
                       {hole(v.cur?.format)}
                       {" · "}
                       {hole(v.langLabel)}
@@ -487,7 +487,7 @@ CheckoutMilanPage.prototype.render = function render() {
                 <div style={{display: "grid", gap: "8px", marginBottom: "18px", paddingBottom: "18px", borderBottom: "1px solid #EFE6D8"}}>
                   {(v.cur?.gets || []).map((i, $index) => (
                     <React.Fragment key={$index}>
-                      <p style={{margin: "0", display: "flex", gap: "10px", fontSize: "14px", color: "#3D0752"}}>
+                      <p style={{margin: "0", display: "flex", gap: "10px", fontSize: "13px", color: "#3D0752"}}>
                         <span style={{flex: "none", color: "#6C1594", marginTop: "3px"}}>
                           <svg aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"3"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                             <path d={"M5 12l5 5 9-10"} />
@@ -500,7 +500,7 @@ CheckoutMilanPage.prototype.render = function render() {
                 </div>
                 {v.cur?.hasMrp ? (
                   <>
-                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "15px", marginBottom: "10px"}}>
+                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "13.5px", marginBottom: "10px"}}>
                       <span>
                         {"Report price"}
                       </span>
@@ -508,7 +508,7 @@ CheckoutMilanPage.prototype.render = function render() {
                         {hole(v.cur?.mrp)}
                       </span>
                     </div>
-                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "15px", color: "#6C1594", fontWeight: "600", marginBottom: "16px"}}>
+                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "13.5px", color: "#6C1594", fontWeight: "600", marginBottom: "16px"}}>
                       <span>
                         {"Launch discount"}
                       </span>
@@ -524,11 +524,11 @@ CheckoutMilanPage.prototype.render = function render() {
                   <span style={{fontWeight: "700"}}>
                     {"Total"}
                   </span>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "32px"}}>
+                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "27px"}}>
                     {hole(v.cur?.price)}
                   </span>
                 </div>
-                <PayButton as="a" order={{ productId: this.state.pkg === 'call' ? 'report-milan-call' : 'report-milan' }} href={"#"} style={{display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", minHeight: "54px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "16px", textDecoration: "none"}}>
+                <PayButton as="a" order={{ productId: this.state.pkg === 'call' ? 'report-milan-call' : 'report-milan' }} href={"#"} style={{display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", minHeight: "54px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "14.5px", textDecoration: "none"}}>
                   <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                     <rect x={"5"} y={"11"} width={"14"} height={"10"} rx={"2"} />
                     <path d={"M8 11V8a4 4 0 0 1 8 0v3"} />
@@ -537,14 +537,14 @@ CheckoutMilanPage.prototype.render = function render() {
                   {hole(v.cur?.price)}
                   {" securely"}
                 </PayButton>
-                <p style={{margin: "12px 0 0", textAlign: "center", fontSize: "13px", color: "#5C5470"}}>
+                <p style={{margin: "12px 0 0", textAlign: "center", fontSize: "12px", color: "#5C5470"}}>
                   {"UPI, cards and net banking via Razorpay"}
                 </p>
                 <p style={{margin: "6px 0 0", textAlign: "center", fontSize: "10.5px", color: "#736B8A"}}>
                   {"Payments are non-refundable, except for delays from our side."}
                 </p>
               </div>
-              <div style={{background: "#F3E8F7", borderRadius: "18px", padding: "18px 20px", display: "grid", gap: "10px", fontSize: "14px", color: "#3D0752"}}>
+              <div style={{background: "#F3E8F7", borderRadius: "18px", padding: "18px 20px", display: "grid", gap: "10px", fontSize: "13px", color: "#3D0752"}}>
                 <p style={{margin: "0", display: "flex", gap: "10px"}}>
                   <span style={{flex: "none", color: "#6C1594", marginTop: "3px"}}>
                     <svg aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"3"} strokeLinecap={"round"} strokeLinejoin={"round"}>
@@ -574,7 +574,7 @@ CheckoutMilanPage.prototype.render = function render() {
           </div>
         </div>
         <footer style={{borderTop: "1px solid #E8DFD0", background: "#FFFFFF"}}>
-          <div style={{maxWidth: "1200px", margin: "0 auto", padding: "24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "12px", fontSize: "14px", color: "#5C5470"}}>
+          <div style={{maxWidth: "1200px", margin: "0 auto", padding: "24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "12px", fontSize: "13px", color: "#5C5470"}}>
             <span>
               {"Need help? "}
               <a href={"https://wa.me/919129237566"} style={{fontWeight: "700"}}>

@@ -15,8 +15,8 @@ MasterclassPage.prototype.render = function render() {
   const v = this.renderVals() || {};
   return (
     <div data-design-page="Masterclass" style={{ display: "contents" }}>
-      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "16px", lineHeight: "1.6"}}>
-        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "14px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
+      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "14.5px", lineHeight: "1.6"}}>
+        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "13px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
           <a href={"/masterclass"} style={{color: "#921A11", textDecoration: "none"}}>
             {"Live 2-day Manifestation Masterclass. Dates announced soon. Register for ₹99 →"}
           </a>
@@ -26,7 +26,7 @@ MasterclassPage.prototype.render = function render() {
             <a href={"/"} aria-label={"Ahllya Mystic home"} style={{display: "block", flex: "none"}}>
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
-            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "15px", fontWeight: "500"}}>
+            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "13.5px", fontWeight: "500"}}>
               <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
@@ -57,7 +57,7 @@ MasterclassPage.prototype.render = function render() {
                   <path d={"M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"} />
                 </svg>
               </a>
-              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                 {"Book a consultation"}
               </a>
               <button type={"button"} className={"am-burger"} aria-label={"Open menu"} aria-controls={"am-drawer"} aria-expanded={v.menuExpanded} onClick={v.openMenu} style={{alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#FFFFFF", cursor: "pointer"}}>
@@ -89,44 +89,44 @@ MasterclassPage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Kundli"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Calculators"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Reports"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Courses"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"About"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -143,7 +143,7 @@ MasterclassPage.prototype.render = function render() {
                       {"WhatsApp us"}
                     </a>
                   </div>
-                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", color: "#EADFF2", textAlign: "center"}}>
+                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#EADFF2", textAlign: "center"}}>
                     {"ज्योतिष · अंक शास्त्र · वास्तु"}
                   </p>
                 </div>
@@ -157,7 +157,7 @@ MasterclassPage.prototype.render = function render() {
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "90px", left: "58%"}} />
           <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-200px", top: "-160px", width: "620px", height: "620px", opacity: "0.16", pointerEvents: "none"}} />
           <div style={{position: "relative", maxWidth: "1200px", margin: "0 auto", padding: "22px 24px 88px"}}>
-            <nav aria-label={"Breadcrumb"} style={{fontSize: "14px", color: "#CDB8DA", marginBottom: "40px"}}>
+            <nav aria-label={"Breadcrumb"} style={{fontSize: "13px", color: "#CDB8DA", marginBottom: "40px"}}>
               <a href={"/"} style={{color: "#CDB8DA", textDecoration: "none"}}>
                 {"Home"}
               </a>
@@ -184,13 +184,13 @@ MasterclassPage.prototype.render = function render() {
                     {"Online"}
                   </span>
                 </p>
-                <p style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontSize: "clamp(20px, 2vw, 24px)", color: "#FCCE07"}}>
+                <p style={{margin: "0 0 10px", fontFamily: "'Marcellus', serif", fontSize: "clamp(17.5px, 1.7vw, 21px)", color: "#FCCE07"}}>
                   {"Manifestation Masterclass"}
                 </p>
-                <h1 style={{margin: "0 0 18px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(34px, 4.2vw, 54px)", lineHeight: "1.1"}}>
+                <h1 style={{margin: "0 0 18px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(28.5px, 3.57vw, 45px)", lineHeight: "1.1"}}>
                   {"Doing everything right, but still not manifesting results?"}
                 </h1>
-                <p style={{margin: "0 0 28px", fontSize: "18px", color: "#EADFF2", maxWidth: "580px"}}>
+                <p style={{margin: "0 0 28px", fontSize: "16px", color: "#EADFF2", maxWidth: "580px"}}>
                   {"Your personal manifestation blueprint, in two live evenings with Maneswita. Learn why manifestations fail, how to let go, and a simple daily habit that makes it work."}
                 </p>
                 <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(160px, 100%), 1fr))", gap: "10px", maxWidth: "620px"}}>
@@ -223,34 +223,34 @@ MasterclassPage.prototype.render = function render() {
               <div style={{flex: "1 1 380px", minWidth: "0", maxWidth: "460px", margin: "0 auto"}}>
                 <img src={"/images/f51fdba3c3c077276fab777f3ecab46d.jpg"} alt={"Manifestation Masterclass with Maneswita"} style={{position: "relative", zIndex: "1", width: "92%", margin: "0 auto -28px", aspectRatio: "16 / 9", objectFit: "cover", borderRadius: "18px", display: "block", boxShadow: "0 30px 60px -30px rgba(0,0,0,0.7)", border: "3px solid rgba(255,255,255,0.9)"}} />
                 <div style={{background: "#FFFFFF", color: "#1E1830", borderRadius: "24px", padding: "28px", boxShadow: "0 40px 80px -40px rgba(0,0,0,0.6)", paddingTop: "44px"}}>
-                  <p style={{margin: "0 0 4px", fontSize: "13px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+                  <p style={{margin: "0 0 4px", fontSize: "12px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                     {"Commitment fee"}
                   </p>
                   <p style={{margin: "0 0 6px", display: "flex", alignItems: "baseline", gap: "10px"}}>
-                    <span style={{fontSize: "20px", color: "#736B8A", textDecoration: "line-through"}}>
+                    <span style={{fontSize: "17.5px", color: "#736B8A", textDecoration: "line-through"}}>
                       {"₹799"}
                     </span>
-                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "56px", lineHeight: "1"}}>
+                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "46.5px", lineHeight: "1"}}>
                       {"₹99"}
                     </span>
                   </p>
-                  <p style={{margin: "0 0 20px", fontSize: "14px", color: "#5C5470"}}>
+                  <p style={{margin: "0 0 20px", fontSize: "13px", color: "#5C5470"}}>
                     {"Both live sessions, plus the surprise bonus."}
                   </p>
                   <div style={{display: "grid", gap: "12px", marginBottom: "20px"}}>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"Your name"}
                       <input type={"text"} placeholder={"Full name"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"WhatsApp number"}
                       <input type={"tel"} placeholder={"+91"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
                   </div>
-                  <PayButton as="a" order={{ productId: 'masterclass-99' }} href={"#"} style={{display: "flex", alignItems: "center", justifyContent: "center", minHeight: "54px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "16px", textDecoration: "none"}}>
+                  <PayButton as="a" order={{ productId: 'masterclass-99' }} href={"#"} style={{display: "flex", alignItems: "center", justifyContent: "center", minHeight: "54px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "14.5px", textDecoration: "none"}}>
                     {"Register now at ₹99"}
                   </PayButton>
-                  <p style={{margin: "12px 0 0", textAlign: "center", fontSize: "13px", color: "#5C5470"}}>
+                  <p style={{margin: "12px 0 0", textAlign: "center", fontSize: "12px", color: "#5C5470"}}>
                     {"We send the session details on WhatsApp."}
                   </p>
                 </div>
@@ -261,54 +261,54 @@ MasterclassPage.prototype.render = function render() {
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px"}}>
           <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: "32px 64px", alignItems: "start"}}>
             <div className={"am-center-mobile"}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Have you ever..."}
               </p>
-              <h2 style={{margin: "0 0 14px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.4vw, 42px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 14px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 2.89vw, 35px)", lineHeight: "1.15"}}>
                 {"Wished for something with all your heart, and watched it slip away?"}
               </h2>
-              <p style={{margin: "0", fontSize: "16px", color: "#5C5470"}}>
+              <p style={{margin: "0", fontSize: "14.5px", color: "#5C5470"}}>
                 {"If any of these sound familiar, it is not you. Most people are never taught how manifestation actually works. In two evenings, this masterclass shows you."}
               </p>
             </div>
             <div style={{display: "grid", gap: "10px"}}>
               <div style={{display: "flex", gap: "14px", alignItems: "flex-start", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "16px 18px"}}>
-                <span aria-hidden={"true"} style={{flex: "none", fontFamily: "'Marcellus', serif", fontSize: "26px", lineHeight: "1", color: "#921A11"}}>
+                <span aria-hidden={"true"} style={{flex: "none", fontFamily: "'Marcellus', serif", fontSize: "22.5px", lineHeight: "1", color: "#921A11"}}>
                   {"?"}
                 </span>
-                <span style={{fontSize: "16px", lineHeight: "1.5"}}>
+                <span style={{fontSize: "14.5px", lineHeight: "1.5"}}>
                   {"Tried to manifest money, but kept overspending instead?"}
                 </span>
               </div>
               <div style={{display: "flex", gap: "14px", alignItems: "flex-start", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "16px 18px"}}>
-                <span aria-hidden={"true"} style={{flex: "none", fontFamily: "'Marcellus', serif", fontSize: "26px", lineHeight: "1", color: "#921A11"}}>
+                <span aria-hidden={"true"} style={{flex: "none", fontFamily: "'Marcellus', serif", fontSize: "22.5px", lineHeight: "1", color: "#921A11"}}>
                   {"?"}
                 </span>
-                <span style={{fontSize: "16px", lineHeight: "1.5"}}>
+                <span style={{fontSize: "14.5px", lineHeight: "1.5"}}>
                   {"Visualised the dream job, and still faced rejection?"}
                 </span>
               </div>
               <div style={{display: "flex", gap: "14px", alignItems: "flex-start", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "16px 18px"}}>
-                <span aria-hidden={"true"} style={{flex: "none", fontFamily: "'Marcellus', serif", fontSize: "26px", lineHeight: "1", color: "#921A11"}}>
+                <span aria-hidden={"true"} style={{flex: "none", fontFamily: "'Marcellus', serif", fontSize: "22.5px", lineHeight: "1", color: "#921A11"}}>
                   {"?"}
                 </span>
-                <span style={{fontSize: "16px", lineHeight: "1.5"}}>
+                <span style={{fontSize: "14.5px", lineHeight: "1.5"}}>
                   {"Wished for love, only to see a relationship fall apart?"}
                 </span>
               </div>
               <div style={{display: "flex", gap: "14px", alignItems: "flex-start", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "16px 18px"}}>
-                <span aria-hidden={"true"} style={{flex: "none", fontFamily: "'Marcellus', serif", fontSize: "26px", lineHeight: "1", color: "#921A11"}}>
+                <span aria-hidden={"true"} style={{flex: "none", fontFamily: "'Marcellus', serif", fontSize: "22.5px", lineHeight: "1", color: "#921A11"}}>
                   {"?"}
                 </span>
-                <span style={{fontSize: "16px", lineHeight: "1.5"}}>
+                <span style={{fontSize: "14.5px", lineHeight: "1.5"}}>
                   {"Planned the perfect trip, and watched it get postponed again?"}
                 </span>
               </div>
               <div style={{display: "flex", gap: "14px", alignItems: "flex-start", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "16px 18px"}}>
-                <span aria-hidden={"true"} style={{flex: "none", fontFamily: "'Marcellus', serif", fontSize: "26px", lineHeight: "1", color: "#921A11"}}>
+                <span aria-hidden={"true"} style={{flex: "none", fontFamily: "'Marcellus', serif", fontSize: "22.5px", lineHeight: "1", color: "#921A11"}}>
                   {"?"}
                 </span>
-                <span style={{fontSize: "16px", lineHeight: "1.5"}}>
+                <span style={{fontSize: "14.5px", lineHeight: "1.5"}}>
                   {"Practised gratitude every day, with little changing?"}
                 </span>
               </div>
@@ -318,10 +318,10 @@ MasterclassPage.prototype.render = function render() {
         <div style={{background: "#F4EDE1"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px"}}>
             <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"What you will learn"}
               </p>
-              <h2 style={{margin: "0 0 14px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.4vw, 42px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 14px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 2.89vw, 35px)", lineHeight: "1.15"}}>
                 {"Over two live evenings."}
               </h2>
             </div>
@@ -330,10 +330,10 @@ MasterclassPage.prototype.render = function render() {
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "#F3E8F7", color: "#6C1594", fontWeight: "700", marginBottom: "12px"}}>
                   {"1"}
                 </span>
-                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.2"}}>
+                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.2"}}>
                   {"The right way to manifest"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470", lineHeight: "1.6"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470", lineHeight: "1.6"}}>
                   {"What actually works, and the small mistakes that quietly block results."}
                 </p>
               </div>
@@ -341,10 +341,10 @@ MasterclassPage.prototype.render = function render() {
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "#F3E8F7", color: "#6C1594", fontWeight: "700", marginBottom: "12px"}}>
                   {"2"}
                 </span>
-                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.2"}}>
+                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.2"}}>
                   {"Letting go"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470", lineHeight: "1.6"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470", lineHeight: "1.6"}}>
                   {"How to stop obsessing over the outcome, so it can arrive."}
                 </p>
               </div>
@@ -352,10 +352,10 @@ MasterclassPage.prototype.render = function render() {
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "#F3E8F7", color: "#6C1594", fontWeight: "700", marginBottom: "12px"}}>
                   {"3"}
                 </span>
-                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.2"}}>
+                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.2"}}>
                   {"Why manifestations fail"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470", lineHeight: "1.6"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470", lineHeight: "1.6"}}>
                   {"The most common reasons, and how to fix each one."}
                 </p>
               </div>
@@ -363,10 +363,10 @@ MasterclassPage.prototype.render = function render() {
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "#F3E8F7", color: "#6C1594", fontWeight: "700", marginBottom: "12px"}}>
                   {"4"}
                 </span>
-                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.2"}}>
+                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.2"}}>
                   {"The mind and the world"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470", lineHeight: "1.6"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470", lineHeight: "1.6"}}>
                   {"Experiments that explore how the mind affects things outside the body."}
                 </p>
               </div>
@@ -374,10 +374,10 @@ MasterclassPage.prototype.render = function render() {
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "#F3E8F7", color: "#6C1594", fontWeight: "700", marginBottom: "12px"}}>
                   {"5"}
                 </span>
-                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.2"}}>
+                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.2"}}>
                   {"The language of the Universe"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470", lineHeight: "1.6"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470", lineHeight: "1.6"}}>
                   {"How to ask clearly for what you want."}
                 </p>
               </div>
@@ -385,10 +385,10 @@ MasterclassPage.prototype.render = function render() {
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "#F3E8F7", color: "#6C1594", fontWeight: "700", marginBottom: "12px"}}>
                   {"6"}
                 </span>
-                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.2"}}>
+                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.2"}}>
                   {"Aligned goals"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470", lineHeight: "1.6"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470", lineHeight: "1.6"}}>
                   {"Setting goals that fit who you are and where you are headed."}
                 </p>
               </div>
@@ -396,10 +396,10 @@ MasterclassPage.prototype.render = function render() {
                 <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "#F3E8F7", color: "#6C1594", fontWeight: "700", marginBottom: "12px"}}>
                   {"7"}
                 </span>
-                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.2"}}>
+                <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.2"}}>
                   {"A daily habit"}
                 </p>
-                <p style={{margin: "0", fontSize: "15px", color: "#5C5470", lineHeight: "1.6"}}>
+                <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470", lineHeight: "1.6"}}>
                   {"Building a simple routine of consistent manifestation."}
                 </p>
               </div>
@@ -410,10 +410,10 @@ MasterclassPage.prototype.render = function render() {
                     <path d={"M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"} />
                   </svg>
                 </span>
-                <p style={{position: "relative", margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                <p style={{position: "relative", margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                   {"A surprise bonus"}
                 </p>
-                <p style={{position: "relative", margin: "0", fontSize: "15px", color: "#F4EAF9", lineHeight: "1.6"}}>
+                <p style={{position: "relative", margin: "0", fontSize: "13.5px", color: "#F4EAF9", lineHeight: "1.6"}}>
                   {"Revealed only to those who attend, live."}
                 </p>
               </div>
@@ -425,10 +425,10 @@ MasterclassPage.prototype.render = function render() {
             <div className={"am-stars"} aria-hidden={"true"} />
             <div style={{position: "relative", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "32px 56px", alignItems: "center"}}>
               <div>
-                <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
+                <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                   {"Who should attend"}
                 </p>
-                <h2 style={{margin: "0 0 14px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.4vw, 42px)", lineHeight: "1.15", color: "#FFFFFF"}}>
+                <h2 style={{margin: "0 0 14px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 2.89vw, 35px)", lineHeight: "1.15", color: "#FFFFFF"}}>
                   {"This masterclass is for you if..."}
                 </h2>
                 <PayButton as="a" order={{ productId: 'masterclass-99' }} href={"#"} style={{display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: "54px", padding: "0 30px", marginTop: "8px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", textDecoration: "none"}}>
@@ -442,7 +442,7 @@ MasterclassPage.prototype.render = function render() {
                       <path d={"M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM9 9l6 6M15 9l-6 6"} />
                     </svg>
                   </span>
-                  <p style={{margin: "10px 0 0", fontSize: "16px", lineHeight: "1.5", color: "#FFFFFF"}}>
+                  <p style={{margin: "10px 0 0", fontSize: "14.5px", lineHeight: "1.5", color: "#FFFFFF"}}>
                     {"You have tried manifesting, but it has not worked for you."}
                   </p>
                 </div>
@@ -452,7 +452,7 @@ MasterclassPage.prototype.render = function render() {
                       <path d={"M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"} />
                     </svg>
                   </span>
-                  <p style={{margin: "10px 0 0", fontSize: "16px", lineHeight: "1.5", color: "#FFFFFF"}}>
+                  <p style={{margin: "10px 0 0", fontSize: "14.5px", lineHeight: "1.5", color: "#FFFFFF"}}>
                     {"You want more money, love, health or happiness."}
                   </p>
                 </div>
@@ -462,7 +462,7 @@ MasterclassPage.prototype.render = function render() {
                       <path d={"M4 6h16M4 12h10M4 18h7"} />
                     </svg>
                   </span>
-                  <p style={{margin: "10px 0 0", fontSize: "16px", lineHeight: "1.5", color: "#FFFFFF"}}>
+                  <p style={{margin: "10px 0 0", fontSize: "14.5px", lineHeight: "1.5", color: "#FFFFFF"}}>
                     {"You want a simple, practical way to manifest, without jargon."}
                   </p>
                 </div>
@@ -472,7 +472,7 @@ MasterclassPage.prototype.render = function render() {
                       <path d={"M9 3h6M10 3v6L4 19a1 1 0 0 0 .9 1.5h14.2A1 1 0 0 0 20 19l-6-10V3"} />
                     </svg>
                   </span>
-                  <p style={{margin: "10px 0 0", fontSize: "16px", lineHeight: "1.5", color: "#FFFFFF"}}>
+                  <p style={{margin: "10px 0 0", fontSize: "14.5px", lineHeight: "1.5", color: "#FFFFFF"}}>
                     {"You are curious how manifestation and science connect."}
                   </p>
                 </div>
@@ -481,17 +481,17 @@ MasterclassPage.prototype.render = function render() {
           </div>
         </div>
         <div style={{maxWidth: "860px", margin: "0 auto", padding: "72px 24px 96px"}}>
-          <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700", textAlign: "center"}}>
+          <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700", textAlign: "center"}}>
             {"Questions"}
           </p>
-          <h2 style={{margin: "0 0 14px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.4vw, 42px)", lineHeight: "1.15", textAlign: "center", marginBottom: "28px"}}>
+          <h2 style={{margin: "0 0 14px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 2.89vw, 35px)", lineHeight: "1.15", textAlign: "center", marginBottom: "28px"}}>
             {"About the masterclass"}
           </h2>
           <div style={{display: "grid", gap: "10px"}}>
             <details style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 20px"}}>
               <summary style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", minHeight: "60px", fontWeight: "700"}}>
                 {"Is the masterclass live?"}
-                <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "22px", color: "#921A11", transition: "transform .2s"}}>
+                <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "19px", color: "#921A11", transition: "transform .2s"}}>
                   {"+"}
                 </span>
               </summary>
@@ -502,7 +502,7 @@ MasterclassPage.prototype.render = function render() {
             <details style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 20px"}}>
               <summary style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", minHeight: "60px", fontWeight: "700"}}>
                 {"Why is it only ₹99?"}
-                <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "22px", color: "#921A11", transition: "transform .2s"}}>
+                <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "19px", color: "#921A11", transition: "transform .2s"}}>
                   {"+"}
                 </span>
               </summary>
@@ -513,7 +513,7 @@ MasterclassPage.prototype.render = function render() {
             <details style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 20px"}}>
               <summary style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", minHeight: "60px", fontWeight: "700"}}>
                 {"Who teaches the masterclass?"}
-                <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "22px", color: "#921A11", transition: "transform .2s"}}>
+                <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "19px", color: "#921A11", transition: "transform .2s"}}>
                   {"+"}
                 </span>
               </summary>
@@ -529,7 +529,7 @@ MasterclassPage.prototype.render = function render() {
             <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(32px, 5vw, 64px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "28px"}}>
               <div style={{flex: "1 1 100%", minWidth: "0"}}>
-                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(26px, 2.8vw, 38px)", lineHeight: "1.2", color: "#FFFFFF"}}>
+                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.38vw, 32px)", lineHeight: "1.2", color: "#FFFFFF"}}>
                   <span className={"am-nowrap-lg"}>
                     {"Let the stars guide you, the numbers support you,"}
                   </span>
@@ -557,7 +557,7 @@ MasterclassPage.prototype.render = function render() {
             </div>
           </div>
         </div>
-        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "15px"}}>
+        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "13.5px"}}>
           <div className={"am-stars2"} aria-hidden={"true"} style={{opacity: "0.6"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 32px", position: "relative"}}>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "40px", marginBottom: "48px"}}>
@@ -613,7 +613,7 @@ MasterclassPage.prototype.render = function render() {
                 </a>
               </div>
             </div>
-            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "14px"}}>
+            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "13px"}}>
               <span>
                 {"© 2026 Ahllya Mystic. All rights reserved."}
               </span>

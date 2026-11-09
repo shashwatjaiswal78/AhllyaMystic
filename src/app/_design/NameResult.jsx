@@ -92,7 +92,7 @@ export default function NameResult({ R }) {
                     const c = g.counts[n];
                     const cls = c === 0 ? "empty" : c >= 3 ? "rep" : "";
                     const txt = c === 0 ? String(n) : String(n).repeat(Math.min(c, 4));
-                    const fs = c <= 1 ? 24 : c === 2 ? 20 : c === 3 ? 16 : 13;
+                    const fs = c <= 1 ? 21 : c === 2 ? 17.5 : c === 3 ? 14.5 : 12;
                     return <div key={n} className={"cell " + cls} style={{ fontSize: fs }}>{txt}</div>;
                   }))}
                 </div>

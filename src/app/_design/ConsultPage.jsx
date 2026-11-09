@@ -88,13 +88,13 @@ ConsultPage.prototype.render = function render() {
   const v = this.renderVals() || {};
   return (
     <div data-design-page="Consult" style={{ display: "contents" }}>
-      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "16px", lineHeight: "1.6"}}>
+      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "14.5px", lineHeight: "1.6"}}>
         <header style={{background: "linear-gradient(90deg, #2E003E 0%, #4A0A66 100%)", borderBottom: "1px solid rgba(255,255,255,0.08)"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "12px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px"}}>
             <a href={"/"} aria-label={"Ahllya Mystic home"} style={{display: "block"}}>
               <img src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "44px", width: "auto", display: "block"}} />
             </a>
-            <span style={{display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "14px", fontWeight: "600", color: "#EADFF2"}}>
+            <span style={{display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "13px", fontWeight: "600", color: "#EADFF2"}}>
               <svg aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                 <rect x={"5"} y={"11"} width={"14"} height={"10"} rx={"2"} />
                 <path d={"M8 11V8a4 4 0 0 1 8 0v3"} />
@@ -104,7 +104,7 @@ ConsultPage.prototype.render = function render() {
           </div>
         </header>
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "28px 24px 28px"}}>
-          <a href={"/"} style={{display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "15px", fontWeight: "600", textDecoration: "none", marginBottom: "22px"}}>
+          <a href={"/"} style={{display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "13.5px", fontWeight: "600", textDecoration: "none", marginBottom: "22px"}}>
             <svg aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
               <path d={"M15 6l-6 6 6 6"} />
             </svg>
@@ -112,20 +112,20 @@ ConsultPage.prototype.render = function render() {
           </a>
           <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px"}}>
             <div>
-              <p style={{margin: "0 0 8px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 8px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"One-on-one consultation"}
               </p>
-              <h1 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(32px, 3.8vw, 46px)", lineHeight: "1.12"}}>
+              <h1 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(27px, 3.23vw, 38.5px)", lineHeight: "1.12"}}>
                 {"Book a consultation"}
               </h1>
             </div>
             <div style={{display: "flex", alignItems: "center", gap: "14px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "999px", padding: "6px 18px 6px 6px"}}>
               <img src={"/images/26c9dadb7f4b6a08ec59999c3d9e9332.jpg"} alt={""} style={{width: "52px", height: "52px", borderRadius: "999px", objectFit: "cover"}} />
               <div>
-                <p style={{margin: "0", fontWeight: "700", fontSize: "15px"}}>
+                <p style={{margin: "0", fontWeight: "700", fontSize: "13.5px"}}>
                   {"You will speak with our experts"}
                 </p>
-                <p style={{margin: "0", fontSize: "13px", color: "#5C5470"}}>
+                <p style={{margin: "0", fontSize: "12px", color: "#5C5470"}}>
                   {"Maneswita and Ahalya Sangeeta · Astrology, Numerology and Vastu"}
                 </p>
               </div>
@@ -137,14 +137,14 @@ ConsultPage.prototype.render = function render() {
             <div style={{display: "grid", gap: "20px"}}>
               <section style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "clamp(22px, 3vw, 32px)", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
                 <div style={{display: "flex", alignItems: "center", gap: "12px", marginBottom: "18px"}}>
-                  <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "17px"}}>
+                  <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "15px"}}>
                     {"1"}
                   </span>
-                  <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22px, 2.4vw, 27px)"}}>
+                  <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(19px, 2.04vw, 23px)"}}>
                     {"Choose your expert and plan"}
                   </h2>
                 </div>
-                <p style={{margin: "0 0 10px", fontSize: "14px", fontWeight: "600"}}>
+                <p style={{margin: "0 0 10px", fontSize: "13px", fontWeight: "600"}}>
                   {"Who would you like to speak with?"}
                 </p>
                 <div role={"radiogroup"} aria-label={"Expert"} style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: "12px", marginBottom: "22px"}}>
@@ -158,13 +158,13 @@ ConsultPage.prototype.render = function render() {
                               <span style={{fontSize: "11.5px", fontWeight: "700", letterSpacing: "0.08em", textTransform: "uppercase", color: "#921A11"}}>
                                 {hole(e?.level)}
                               </span>
-                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#2E003E", lineHeight: "1.15"}}>
+                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px", color: "#2E003E", lineHeight: "1.15"}}>
                                 {hole(e?.name)}
                               </span>
-                              <span style={{fontSize: "13.5px", color: "#5C5470"}}>
+                              <span style={{fontSize: "12.5px", color: "#5C5470"}}>
                                 {hole(e?.role)}
                               </span>
-                              <span style={{fontSize: "13px", fontWeight: "700", color: "#6C1594"}}>
+                              <span style={{fontSize: "12px", fontWeight: "700", color: "#6C1594"}}>
                                 {hole(e?.from)}
                               </span>
                             </span>
@@ -179,13 +179,13 @@ ConsultPage.prototype.render = function render() {
                               <span style={{fontSize: "11.5px", fontWeight: "700", letterSpacing: "0.08em", textTransform: "uppercase", color: "#921A11"}}>
                                 {hole(e?.level)}
                               </span>
-                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#2E003E", lineHeight: "1.15"}}>
+                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px", color: "#2E003E", lineHeight: "1.15"}}>
                                 {hole(e?.name)}
                               </span>
-                              <span style={{fontSize: "13.5px", color: "#5C5470"}}>
+                              <span style={{fontSize: "12.5px", color: "#5C5470"}}>
                                 {hole(e?.role)}
                               </span>
-                              <span style={{fontSize: "13px", fontWeight: "700", color: "#6C1594"}}>
+                              <span style={{fontSize: "12px", fontWeight: "700", color: "#6C1594"}}>
                                 {hole(e?.from)}
                               </span>
                             </span>
@@ -195,7 +195,7 @@ ConsultPage.prototype.render = function render() {
                     </React.Fragment>
                   ))}
                 </div>
-                <p style={{margin: "0 0 10px", fontSize: "14px", fontWeight: "600"}}>
+                <p style={{margin: "0 0 10px", fontSize: "13px", fontWeight: "600"}}>
                   {"How much would you like to cover?"}
                 </p>
                 <div role={"radiogroup"} aria-label={"Plan"} style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))", gap: "12px", marginBottom: "20px"}}>
@@ -205,17 +205,17 @@ ConsultPage.prototype.render = function render() {
                         <>
                           <button type={"button"} role={"radio"} aria-checked={"true"} onClick={x?.pick} style={{position: "relative", display: "grid", gap: "6px", alignContent: "start", textAlign: "left", padding: "18px 20px", borderRadius: "18px", border: "2px solid #6C1594", background: "#F3E8F7", font: "inherit", color: "#1E1830", cursor: "pointer"}}>
                             <span style={{display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "10px"}}>
-                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#2E003E"}}>
+                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px", color: "#2E003E"}}>
                                 {hole(x?.name)}
                               </span>
-                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                                 {hole(x?.price)}
                               </span>
                             </span>
-                            <span style={{fontSize: "14px", color: "#3D0752"}}>
+                            <span style={{fontSize: "13px", color: "#3D0752"}}>
                               {hole(x?.desc)}
                             </span>
-                            <span style={{fontSize: "13px", fontWeight: "700", color: "#6C1594"}}>
+                            <span style={{fontSize: "12px", fontWeight: "700", color: "#6C1594"}}>
                               {hole(x?.length)}
                             </span>
                           </button>
@@ -225,17 +225,17 @@ ConsultPage.prototype.render = function render() {
                         <>
                           <button type={"button"} role={"radio"} aria-checked={"false"} onClick={x?.pick} style={{position: "relative", display: "grid", gap: "6px", alignContent: "start", textAlign: "left", padding: "18px 20px", borderRadius: "18px", border: "1px solid #E8DFD0", background: "#FFFFFF", font: "inherit", color: "#1E1830", cursor: "pointer"}}>
                             <span style={{display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "10px"}}>
-                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px", color: "#2E003E"}}>
+                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px", color: "#2E003E"}}>
                                 {hole(x?.name)}
                               </span>
-                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                                 {hole(x?.price)}
                               </span>
                             </span>
-                            <span style={{fontSize: "14px", color: "#5C5470"}}>
+                            <span style={{fontSize: "13px", color: "#5C5470"}}>
                               {hole(x?.desc)}
                             </span>
-                            <span style={{fontSize: "13px", fontWeight: "700", color: "#5C5470"}}>
+                            <span style={{fontSize: "12px", fontWeight: "700", color: "#5C5470"}}>
                               {hole(x?.length)}
                             </span>
                           </button>
@@ -245,7 +245,7 @@ ConsultPage.prototype.render = function render() {
                   ))}
                 </div>
                 <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", gap: "12px"}}>
-                  <span style={{fontSize: "14px", fontWeight: "600"}}>
+                  <span style={{fontSize: "13px", fontWeight: "600"}}>
                     {"How would you like to talk?"}
                   </span>
                   <div role={"radiogroup"} aria-label={"Call type"} style={{display: "flex", flexWrap: "wrap", gap: "8px"}}>
@@ -268,21 +268,21 @@ ConsultPage.prototype.render = function render() {
                       </React.Fragment>
                     ))}
                   </div>
-                  <span style={{fontSize: "13px", color: "#5C5470"}}>
+                  <span style={{fontSize: "12px", color: "#5C5470"}}>
                     {"Same price for both."}
                   </span>
                 </div>
               </section>
               <section style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "clamp(22px, 3vw, 32px)", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
                 <div style={{display: "flex", alignItems: "center", gap: "12px", marginBottom: "6px"}}>
-                  <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "17px"}}>
+                  <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "15px"}}>
                     {"2"}
                   </span>
-                  <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22px, 2.4vw, 27px)"}}>
+                  <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(19px, 2.04vw, 23px)"}}>
                     {"Choose your areas"}
                   </h2>
                 </div>
-                <p style={{margin: "0 0 18px 46px", fontSize: "14px", color: "#5C5470"}}>
+                <p style={{margin: "0 0 18px 46px", fontSize: "13px", color: "#5C5470"}}>
                   {hole(v.areaHint)}
                 </p>
                 <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(230px, 100%), 1fr))", gap: "10px"}}>
@@ -300,7 +300,7 @@ ConsultPage.prototype.render = function render() {
                               <span style={{display: "block", fontWeight: "700", color: "#2E003E"}}>
                                 {hole(a?.name)}
                               </span>
-                              <span style={{display: "block", fontSize: "13px", color: "#3D0752"}}>
+                              <span style={{display: "block", fontSize: "12px", color: "#3D0752"}}>
                                 {hole(a?.note)}
                               </span>
                             </span>
@@ -319,7 +319,7 @@ ConsultPage.prototype.render = function render() {
                               <span style={{display: "block", fontWeight: "700", color: "#1E1830"}}>
                                 {hole(a?.name)}
                               </span>
-                              <span style={{display: "block", fontSize: "13px", color: "#5C5470"}}>
+                              <span style={{display: "block", fontSize: "12px", color: "#5C5470"}}>
                                 {hole(a?.note)}
                               </span>
                             </span>
@@ -329,7 +329,7 @@ ConsultPage.prototype.render = function render() {
                     </React.Fragment>
                   ))}
                 </div>
-                <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600", marginTop: "18px"}}>
+                <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600", marginTop: "18px"}}>
                   {"What would you like to ask? "}
                   <span style={{fontWeight: "400", color: "#5C5470"}}>
                     {"(optional)"}
@@ -339,34 +339,34 @@ ConsultPage.prototype.render = function render() {
               </section>
               <section style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "clamp(22px, 3vw, 32px)", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
                 <div style={{display: "flex", alignItems: "center", gap: "12px", marginBottom: "6px"}}>
-                  <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "17px"}}>
+                  <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "15px"}}>
                     {"3"}
                   </span>
-                  <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22px, 2.4vw, 27px)"}}>
+                  <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(19px, 2.04vw, 23px)"}}>
                     {"Your birth details"}
                   </h2>
                 </div>
-                <p style={{margin: "0 0 18px 46px", fontSize: "14px", color: "#5C5470"}}>
+                <p style={{margin: "0 0 18px 46px", fontSize: "13px", color: "#5C5470"}}>
                   {"We study your chart before the call, so please enter these exactly as on your birth record."}
                 </p>
                 <div style={{display: "grid", gap: "16px"}}>
                   <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"First name"}
                       <input type={"text"} placeholder={"First name"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"Last name"}
                       <input type={"text"} placeholder={"Last name"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
                   </div>
                   <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"Date of birth"}
                       <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
                     <div style={{display: "grid", gap: "6px"}}>
-                      <span style={{fontSize: "14px", fontWeight: "600"}}>
+                      <span style={{fontSize: "13px", fontWeight: "600"}}>
                         {"Time of birth"}
                       </span>
                       <div style={{display: "flex", alignItems: "center", gap: "6px"}}>
@@ -382,22 +382,22 @@ ConsultPage.prototype.render = function render() {
                       </div>
                     </div>
                   </div>
-                  <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                  <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                     {"Place of birth"}
                     <input type={"text"} placeholder={"Start typing your town or city"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                   </label>
                   <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"WhatsApp number"}
                       <input type={"tel"} placeholder={"+91"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
-                    <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                    <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                       {"Email"}
                       <input type={"email"} placeholder={"you@example.com"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                     </label>
                   </div>
                   <div style={{display: "grid", gap: "8px"}}>
-                    <span style={{fontSize: "14px", fontWeight: "600"}}>
+                    <span style={{fontSize: "13px", fontWeight: "600"}}>
                       {"Language for the call"}
                     </span>
                     <div role={"radiogroup"} aria-label={"Language"} style={{display: "flex", flexWrap: "wrap", gap: "8px"}}>
@@ -429,7 +429,7 @@ ConsultPage.prototype.render = function render() {
                             <button type={"button"} onClick={v.togglePartner} style={{justifySelf: "start", display: "inline-flex", alignItems: "center", gap: "8px", minHeight: "44px", padding: "0 18px", borderRadius: "999px", border: "1.5px dashed #6C1594", background: "#FFFFFF", color: "#6C1594", font: "inherit", fontWeight: "700", cursor: "pointer"}}>
                               {"+ Add your partner’s birth details (optional)"}
                             </button>
-                            <p style={{margin: "0", fontSize: "13px", color: "#5C5470"}}>
+                            <p style={{margin: "0", fontSize: "12px", color: "#5C5470"}}>
                               {"For love and marriage questions, your partner’s chart lets us check compatibility too."}
                             </p>
                           </>
@@ -437,7 +437,7 @@ ConsultPage.prototype.render = function render() {
                         {v.hasPartner ? (
                           <>
                             <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px"}}>
-                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                              <span style={{fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                                 {"Partner’s birth details"}
                               </span>
                               <button type={"button"} onClick={v.togglePartner} style={{border: "0", background: "none", color: "#921A11", font: "inherit", fontWeight: "700", cursor: "pointer"}}>
@@ -445,22 +445,22 @@ ConsultPage.prototype.render = function render() {
                               </button>
                             </div>
                             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                              <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                              <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                                 {"First name"}
                                 <input type={"text"} placeholder={"First name"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                               </label>
-                              <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                              <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                                 {"Last name"}
                                 <input type={"text"} placeholder={"Last name"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                               </label>
                             </div>
                             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "14px"}}>
-                              <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                              <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                                 {"Date of birth"}
                                 <input type={"text"} placeholder={"DD / MM / YYYY"} inputMode={"numeric"} autoComplete={"off"} onInput={maskDate} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                               </label>
                               <div style={{display: "grid", gap: "6px"}}>
-                                <span style={{fontSize: "14px", fontWeight: "600"}}>
+                                <span style={{fontSize: "13px", fontWeight: "600"}}>
                                   {"Time of birth"}
                                 </span>
                                 <div style={{display: "flex", alignItems: "center", gap: "6px"}}>
@@ -476,7 +476,7 @@ ConsultPage.prototype.render = function render() {
                                 </div>
                               </div>
                             </div>
-                            <label style={{display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600"}}>
+                            <label style={{display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600"}}>
                               {"Place of birth"}
                               <input type={"text"} placeholder={"Start typing your town or city"} style={{minHeight: "48px", padding: "0 14px", border: "1px solid #D9CEBD", borderRadius: "12px", font: "inherit", fontWeight: "400", background: "#FFFDF9"}} />
                             </label>
@@ -489,17 +489,17 @@ ConsultPage.prototype.render = function render() {
               </section>
               <section style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "clamp(22px, 3vw, 32px)", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
                 <div style={{display: "flex", alignItems: "center", gap: "12px", marginBottom: "6px"}}>
-                  <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "17px"}}>
+                  <span style={{flex: "none", display: "flex", alignItems: "center", justifyContent: "center", width: "34px", height: "34px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "15px"}}>
                     {"4"}
                   </span>
-                  <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22px, 2.4vw, 27px)"}}>
+                  <h2 style={{margin: "0", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(19px, 2.04vw, 23px)"}}>
                     {"Your preferred time"}
                   </h2>
                 </div>
-                <p style={{margin: "0 0 18px 46px", fontSize: "14px", color: "#5C5470"}}>
+                <p style={{margin: "0 0 18px 46px", fontSize: "13px", color: "#5C5470"}}>
                   {"Consultations take place 7 to 10 days after booking, so we can study your chart first. Pick up to three days and the times that suit you, and we call you within 24 hours of payment to confirm your name, birth details and slot."}
                 </p>
-                <p style={{margin: "0 0 10px", fontSize: "14px", fontWeight: "600"}}>
+                <p style={{margin: "0 0 10px", fontSize: "13px", fontWeight: "600"}}>
                   {"Days "}
                   <span style={{fontWeight: "400", color: "#5C5470"}}>
                     {"("}
@@ -516,7 +516,7 @@ ConsultPage.prototype.render = function render() {
                             <span style={{display: "block", fontSize: "12px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.06em"}}>
                               {hole(d?.wd)}
                             </span>
-                            <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "24px", lineHeight: "1.2"}}>
+                            <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.2"}}>
                               {hole(d?.day)}
                             </span>
                             <span style={{display: "block", fontSize: "12px"}}>
@@ -531,7 +531,7 @@ ConsultPage.prototype.render = function render() {
                             <span style={{display: "block", fontSize: "12px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.06em", color: "#5C5470"}}>
                               {hole(d?.wd)}
                             </span>
-                            <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "24px", lineHeight: "1.2"}}>
+                            <span style={{display: "block", fontFamily: "'Marcellus', serif", fontSize: "21px", lineHeight: "1.2"}}>
                               {hole(d?.day)}
                             </span>
                             <span style={{display: "block", fontSize: "12px", color: "#5C5470"}}>
@@ -543,7 +543,7 @@ ConsultPage.prototype.render = function render() {
                     </React.Fragment>
                   ))}
                 </div>
-                <p style={{margin: "0 0 10px", fontSize: "14px", fontWeight: "600"}}>
+                <p style={{margin: "0 0 10px", fontSize: "13px", fontWeight: "600"}}>
                   {"Times"}
                 </p>
                 <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(160px, 100%), 1fr))", gap: "10px"}}>
@@ -555,7 +555,7 @@ ConsultPage.prototype.render = function render() {
                             <span style={{display: "block", fontWeight: "700", color: "#2E003E"}}>
                               {hole(t?.name)}
                             </span>
-                            <span style={{display: "block", fontSize: "13px", color: "#3D0752"}}>
+                            <span style={{display: "block", fontSize: "12px", color: "#3D0752"}}>
                               {hole(t?.range)}
                             </span>
                           </button>
@@ -567,7 +567,7 @@ ConsultPage.prototype.render = function render() {
                             <span style={{display: "block", fontWeight: "700", color: "#1E1830"}}>
                               {hole(t?.name)}
                             </span>
-                            <span style={{display: "block", fontSize: "13px", color: "#5C5470"}}>
+                            <span style={{display: "block", fontSize: "12px", color: "#5C5470"}}>
                               {hole(t?.range)}
                             </span>
                           </button>
@@ -579,14 +579,14 @@ ConsultPage.prototype.render = function render() {
               </section>
               <section style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "clamp(22px, 3vw, 32px)", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
                 <div style={{display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px", flexWrap: "wrap", marginBottom: "6px"}}>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Add a written report"}
                   </span>
                   <span style={{fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", color: "#FFFFFF", background: "#921A11", padding: "4px 10px", borderRadius: "999px"}}>
                     {"10% OFF THE REPORT"}
                   </span>
                 </div>
-                <p style={{margin: "0 0 14px", fontSize: "14px", color: "#5C5470"}}>
+                <p style={{margin: "0 0 14px", fontSize: "13px", color: "#5C5470"}}>
                   {"Add the Personalised Kundli Report along with your consultation and get 10% off the report. Your report arrives in 5 to 7 working days, so you can keep and revisit your reading."}
                 </p>
                 {v.noReport ? (
@@ -597,7 +597,7 @@ ConsultPage.prototype.render = function render() {
                         <span style={{display: "block", fontWeight: "700", color: "#1E1830"}}>
                           {"Add the Personalised Kundli Report"}
                         </span>
-                        <span style={{display: "block", fontSize: "14px", color: "#5C5470"}}>
+                        <span style={{display: "block", fontSize: "13px", color: "#5C5470"}}>
                           <span style={{textDecoration: "line-through"}}>
                             {"₹1,998"}
                           </span>
@@ -619,7 +619,7 @@ ConsultPage.prototype.render = function render() {
                         <span style={{display: "block", fontWeight: "700", color: "#2E003E"}}>
                           {"Report added: 10% off the report"}
                         </span>
-                        <span style={{display: "block", fontSize: "14px", color: "#3D0752"}}>
+                        <span style={{display: "block", fontSize: "13px", color: "#3D0752"}}>
                           {"Includes two questions of your choice, which we will ask you about on WhatsApp."}
                         </span>
                       </span>
@@ -630,10 +630,10 @@ ConsultPage.prototype.render = function render() {
             </div>
             <aside className={"am-book-aside"} style={{position: "sticky", top: "24px", display: "grid", gap: "14px"}}>
               <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "clamp(22px, 3vw, 32px)", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <p style={{margin: "0 0 16px", fontFamily: "'Marcellus', serif", fontSize: "23px"}}>
+                <p style={{margin: "0 0 16px", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
                   {"Your booking"}
                 </p>
-                <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "15px", marginBottom: "4px"}}>
+                <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "13.5px", marginBottom: "4px"}}>
                   <span style={{fontWeight: "700"}}>
                     {hole(v.sessName)}
                     {" consultation"}
@@ -642,7 +642,7 @@ ConsultPage.prototype.render = function render() {
                     {hole(v.sessPrice)}
                   </span>
                 </div>
-                <p style={{margin: "0 0 14px", fontSize: "13px", color: "#5C5470"}}>
+                <p style={{margin: "0 0 14px", fontSize: "12px", color: "#5C5470"}}>
                   {"With "}
                   {hole(v.exName)}
                   {" · "}
@@ -650,7 +650,7 @@ ConsultPage.prototype.render = function render() {
                   {" · "}
                   {hole(v.sessLength)}
                 </p>
-                <div style={{display: "grid", gap: "6px", padding: "12px 14px", borderRadius: "12px", background: "#FBF7F0", marginBottom: "14px", fontSize: "14px"}}>
+                <div style={{display: "grid", gap: "6px", padding: "12px 14px", borderRadius: "12px", background: "#FBF7F0", marginBottom: "14px", fontSize: "13px"}}>
                   <p style={{margin: "0", display: "flex", justifyContent: "space-between", gap: "10px"}}>
                     <span style={{color: "#5C5470"}}>
                       {"Areas"}
@@ -678,7 +678,7 @@ ConsultPage.prototype.render = function render() {
                 </div>
                 {v.hasReport ? (
                   <>
-                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "15px", marginBottom: "10px"}}>
+                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "13.5px", marginBottom: "10px"}}>
                       <span>
                         {"Personalised Kundli Report"}
                       </span>
@@ -686,7 +686,7 @@ ConsultPage.prototype.render = function render() {
                         {"₹999"}
                       </span>
                     </div>
-                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "15px", color: "#921A11", fontWeight: "700", marginBottom: "14px"}}>
+                    <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "13.5px", color: "#921A11", fontWeight: "700", marginBottom: "14px"}}>
                       <span>
                         {"Report discount (10%)"}
                       </span>
@@ -702,11 +702,11 @@ ConsultPage.prototype.render = function render() {
                   <span style={{fontWeight: "700"}}>
                     {"Total"}
                   </span>
-                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "32px"}}>
+                  <span style={{fontFamily: "'Marcellus', serif", fontSize: "27px"}}>
                     {hole(v.total)}
                   </span>
                 </div>
-                <PayButton as="a" order={{ productId: consultProduct(this.state) }} href={"#"} style={{display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", minHeight: "54px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "16px", textDecoration: "none"}}>
+                <PayButton as="a" order={{ productId: consultProduct(this.state) }} href={"#"} style={{display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", minHeight: "54px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "14.5px", textDecoration: "none"}}>
                   <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                     <rect x={"5"} y={"11"} width={"14"} height={"10"} rx={"2"} />
                     <path d={"M8 11V8a4 4 0 0 1 8 0v3"} />
@@ -715,14 +715,14 @@ ConsultPage.prototype.render = function render() {
                   {hole(v.total)}
                   {" securely"}
                 </PayButton>
-                <p style={{margin: "12px 0 0", textAlign: "center", fontSize: "13px", color: "#5C5470"}}>
+                <p style={{margin: "12px 0 0", textAlign: "center", fontSize: "12px", color: "#5C5470"}}>
                   {"UPI, cards and net banking via Razorpay"}
                 </p>
                 <p style={{margin: "6px 0 0", textAlign: "center", fontSize: "10.5px", color: "#736B8A"}}>
                   {"Payments are non-refundable, except for delays from our side."}
                 </p>
               </div>
-              <div style={{background: "#F3E8F7", borderRadius: "18px", padding: "18px 20px", display: "grid", gap: "10px", fontSize: "14px", color: "#3D0752"}}>
+              <div style={{background: "#F3E8F7", borderRadius: "18px", padding: "18px 20px", display: "grid", gap: "10px", fontSize: "13px", color: "#3D0752"}}>
                 <p style={{margin: "0", display: "flex", gap: "10px"}}>
                   <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#6C1594"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"} style={{flex: "none", marginTop: "2px"}}>
                     <path d={"M5 12l5 5 9-10"} />
@@ -746,7 +746,7 @@ ConsultPage.prototype.render = function render() {
           </div>
         </div>
         <footer style={{borderTop: "1px solid #E8DFD0", background: "#FFFFFF"}}>
-          <div style={{maxWidth: "1200px", margin: "0 auto", padding: "24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "12px", fontSize: "14px", color: "#5C5470"}}>
+          <div style={{maxWidth: "1200px", margin: "0 auto", padding: "24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "12px", fontSize: "13px", color: "#5C5470"}}>
             <span>
               {"Need help? "}
               <a href={"https://wa.me/919129237566"} style={{fontWeight: "700"}}>

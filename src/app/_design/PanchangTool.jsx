@@ -355,7 +355,7 @@ export default function PanchangTool({ initial }) {
                   <div className="pn-field"><label className="pn-lbl" htmlFor="pn-lon">Longitude</label><input id="pn-lon" ref={lonRef} inputMode="decimal" placeholder="76.7179" defaultValue={d.place.lo} /></div>
                   <div className="pn-field"><label className="pn-lbl" htmlFor="pn-tz">Time zone</label><select id="pn-tz" ref={tzRef} defaultValue={d.place.tz}>{zones.map((z) => <option key={z}>{z}</option>)}</select></div>
                 </div>
-                <p style={{ margin: "0 0 12px", fontSize: 13, color: "#5C5470" }}>North and East are positive.</p>
+                <p style={{ margin: "0 0 12px", fontSize: 12, color: "#5C5470" }}>North and East are positive.</p>
               </div>
             ) : null}
             <div className="pn-frow">
@@ -445,7 +445,7 @@ export default function PanchangTool({ initial }) {
           </>
         )}
         <Edu />
-        <p style={{ fontSize: 13.5, color: "#5C5470", maxWidth: "70ch" }}>For learning and guidance. Timings are calculated for the place you choose and can differ by a minute or two from a printed panchang. It is not a substitute for a reading by an astrologer.</p>
+        <p style={{ fontSize: 12.5, color: "#5C5470", maxWidth: "70ch" }}>For learning and guidance. Timings are calculated for the place you choose and can differ by a minute or two from a printed panchang. It is not a substitute for a reading by an astrologer.</p>
       </div>
     </>
   );

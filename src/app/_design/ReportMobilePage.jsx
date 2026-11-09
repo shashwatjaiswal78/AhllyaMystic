@@ -62,8 +62,8 @@ ReportMobilePage.prototype.render = function render() {
   const v = this.renderVals() || {};
   return (
     <div data-design-page="Mobile" style={{ display: "contents" }}>
-      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "16px", lineHeight: "1.6"}}>
-        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "14px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
+      <div style={{fontFamily: "'Manrope', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "14.5px", lineHeight: "1.6"}}>
+        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "13px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
           <a href={"/masterclass"} style={{color: "#921A11", textDecoration: "none"}}>
             {"Live 2-day Manifestation Masterclass. Dates announced soon. Register for ₹99 →"}
           </a>
@@ -73,7 +73,7 @@ ReportMobilePage.prototype.render = function render() {
             <a href={"/"} aria-label={"Ahllya Mystic home"} style={{display: "block", flex: "none"}}>
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
-            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "15px", fontWeight: "500"}}>
+            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "13.5px", fontWeight: "500"}}>
               <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
@@ -104,7 +104,7 @@ ReportMobilePage.prototype.render = function render() {
                   <path d={"M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"} />
                 </svg>
               </a>
-              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                 {"Book a consultation"}
               </a>
               <button type={"button"} className={"am-burger"} aria-label={"Open menu"} aria-controls={"am-drawer"} aria-expanded={v.menuExpanded} onClick={v.openMenu} style={{alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#FFFFFF", cursor: "pointer"}}>
@@ -136,44 +136,44 @@ ReportMobilePage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Kundli"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Calculators"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Reports"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Courses"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"About"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -190,7 +190,7 @@ ReportMobilePage.prototype.render = function render() {
                       {"WhatsApp us"}
                     </a>
                   </div>
-                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", color: "#EADFF2", textAlign: "center"}}>
+                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#EADFF2", textAlign: "center"}}>
                     {"ज्योतिष · अंक शास्त्र · वास्तु"}
                   </p>
                 </div>
@@ -202,7 +202,7 @@ ReportMobilePage.prototype.render = function render() {
           <div className={"am-stars"} aria-hidden={"true"} />
           <div className={"am-stars2"} aria-hidden={"true"} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "28px 24px 80px", position: "relative"}}>
-            <nav aria-label={"Breadcrumb"} style={{fontSize: "14px", color: "#EADFF2", marginBottom: "40px"}}>
+            <nav aria-label={"Breadcrumb"} style={{fontSize: "13px", color: "#EADFF2", marginBottom: "40px"}}>
               <a href={"/"} style={{color: "#EADFF2", textDecoration: "none"}}>
                 {"Home"}
               </a>
@@ -222,17 +222,17 @@ ReportMobilePage.prototype.render = function render() {
             <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", gap: "48px"}}>
               <div className={"am-center-mobile"} style={{flex: "1.3 1 480px", minWidth: "0"}}>
                 <p style={{margin: "0 0 14px"}}>
-                  <span style={{display: "inline-block", padding: "5px 18px 3px", borderRadius: "999px", background: "#FBF1EE", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "19px", lineHeight: "1.5", color: "#921A11"}}>
+                  <span style={{display: "inline-block", padding: "5px 18px 3px", borderRadius: "999px", background: "#FBF1EE", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", lineHeight: "1.5", color: "#921A11"}}>
                     {"मोबाइल अंक ज्योतिष"}
                   </span>
                 </p>
-                <p style={{margin: "0 0 12px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
+                <p style={{margin: "0 0 12px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                   {"Numerology"}
                 </p>
-                <h1 style={{margin: "0 0 16px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(36px, 4.6vw, 58px)", lineHeight: "1.08"}}>
+                <h1 style={{margin: "0 0 16px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.91vw, 48px)", lineHeight: "1.08"}}>
                   {"Mobile Number Numerology"}
                 </h1>
-                <p style={{margin: "0 0 28px", fontSize: "18px", color: "#EADFF2", maxWidth: "560px"}}>
+                <p style={{margin: "0 0 28px", fontSize: "16px", color: "#EADFF2", maxWidth: "560px"}}>
                   {"You use your phone number every day. Find out whether it works with your birth numbers, and if not, get a number designed for your goals."}
                 </p>
                 <div className={"am-hero-flex"} style={{display: "flex", flexWrap: "wrap", gap: "12px"}}>
@@ -249,44 +249,44 @@ ReportMobilePage.prototype.render = function render() {
                   <p style={{margin: "0 0 4px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                     {"How a number is read"}
                   </p>
-                  <p style={{margin: "0 0 16px", fontSize: "14px", color: "#EADFF2"}}>
+                  <p style={{margin: "0 0 16px", fontSize: "13px", color: "#EADFF2"}}>
                     {"Add all ten digits and reduce to a single number."}
                   </p>
                   <div style={{display: "flex", gap: "5px", flexWrap: "wrap", marginBottom: "14px"}}>
-                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {"9"}
                     </span>
-                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {"8"}
                     </span>
-                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {"7"}
                     </span>
-                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {"6"}
                     </span>
-                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {"5"}
                     </span>
-                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {"4"}
                     </span>
-                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {"3"}
                     </span>
-                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {"2"}
                     </span>
-                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {"1"}
                     </span>
-                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "32px", height: "40px", borderRadius: "8px", background: "rgba(255,255,255,0.1)", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {"0"}
                     </span>
                   </div>
-                  <p style={{margin: "0 0 14px", fontSize: "15px"}}>
+                  <p style={{margin: "0 0 14px", fontSize: "13.5px"}}>
                     {"9+8+7+6+5+4+3+2+1+0 = 45 → 4+5 = "}
-                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "26px", color: "#FCCE07"}}>
+                    <span style={{fontFamily: "'Marcellus', serif", fontSize: "22.5px", color: "#FCCE07"}}>
                       {"9"}
                     </span>
                     {" "}
@@ -294,7 +294,7 @@ ReportMobilePage.prototype.render = function render() {
                       {"· ruled by Mars"}
                     </span>
                   </p>
-                  <div style={{display: "grid", gap: "8px", fontSize: "14px", color: "#EADFF2"}}>
+                  <div style={{display: "grid", gap: "8px", fontSize: "13px", color: "#EADFF2"}}>
                     <p style={{margin: "0", display: "flex", gap: "8px"}}>
                       <span style={{color: "#FCCE07", fontWeight: "700"}}>
                         {"1"}
@@ -322,13 +322,13 @@ ReportMobilePage.prototype.render = function render() {
         <div id={"packages"} style={{background: "radial-gradient(ellipse at 100% 0%, rgba(108,21,148,0.07), rgba(108,21,148,0) 50%), #FBF7F0"}}>
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px"}}>
             <div style={{textAlign: "center", marginBottom: "40px"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                 {"Choose your package"}
               </p>
-              <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
                 {"Check your number, or find a better one."}
               </h2>
-              <p style={{margin: "0 auto", fontSize: "16px", color: "#5C5470", maxWidth: "640px"}}>
+              <p style={{margin: "0 auto", fontSize: "14.5px", color: "#5C5470", maxWidth: "640px"}}>
                 {"Reports arrive as a PDF on email and WhatsApp within 5 to 7 working days."}
               </p>
             </div>
@@ -341,21 +341,21 @@ ReportMobilePage.prototype.render = function render() {
                         <span style={{position: "absolute", top: "-13px", left: "22px", fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", color: "#FFFFFF", background: "#921A11", padding: "5px 12px", borderRadius: "999px"}}>
                           {hole(t?.tag)}
                         </span>
-                        <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.25"}}>
+                        <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.25"}}>
                           {hole(t?.name)}
                         </p>
-                        <p style={{margin: "0", fontSize: "14px", color: "#5C5470", minHeight: "42px"}}>
+                        <p style={{margin: "0", fontSize: "13px", color: "#5C5470", minHeight: "42px"}}>
                           {hole(t?.best)}
                         </p>
                         <p style={{margin: "0", display: "flex", alignItems: "baseline", flexWrap: "wrap", gap: "8px"}}>
                           {t?.hasMrp ? (
                             <>
-                              <span style={{fontSize: "15px", color: "#5C5470", textDecoration: "line-through"}}>
+                              <span style={{fontSize: "13.5px", color: "#5C5470", textDecoration: "line-through"}}>
                                 {hole(t?.mrp)}
                               </span>
                             </>
                           ) : null}
-                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "32px", lineHeight: "1"}}>
+                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "27px", lineHeight: "1"}}>
                             {hole(t?.price)}
                           </span>
                         </p>
@@ -367,12 +367,12 @@ ReportMobilePage.prototype.render = function render() {
                         <div style={{height: "1px", background: "#EFE6D8", margin: "2px 0"}} />
                         {t?.hasBase ? (
                           <>
-                            <p style={{margin: "0", fontSize: "13px", fontWeight: "700", color: "#921A11"}}>
+                            <p style={{margin: "0", fontSize: "12px", fontWeight: "700", color: "#921A11"}}>
                               {hole(t?.base)}
                             </p>
                           </>
                         ) : null}
-                        <div style={{display: "grid", gap: "8px", fontSize: "14px", lineHeight: "1.5"}}>
+                        <div style={{display: "grid", gap: "8px", fontSize: "13px", lineHeight: "1.5"}}>
                           {(t?.items || []).map((i, $index) => (
                             <React.Fragment key={$index}>
                               <p style={{margin: "0", display: "flex", gap: "8px"}}>
@@ -395,21 +395,21 @@ ReportMobilePage.prototype.render = function render() {
                   {t?.cool ? (
                     <>
                       <div className={"am-lift"} style={{position: "relative", display: "flex", flexDirection: "column", gap: "12px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", padding: "26px 22px"}}>
-                        <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "22px", lineHeight: "1.25"}}>
+                        <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.25"}}>
                           {hole(t?.name)}
                         </p>
-                        <p style={{margin: "0", fontSize: "14px", color: "#5C5470", minHeight: "42px"}}>
+                        <p style={{margin: "0", fontSize: "13px", color: "#5C5470", minHeight: "42px"}}>
                           {hole(t?.best)}
                         </p>
                         <p style={{margin: "0", display: "flex", alignItems: "baseline", flexWrap: "wrap", gap: "8px"}}>
                           {t?.hasMrp ? (
                             <>
-                              <span style={{fontSize: "15px", color: "#5C5470", textDecoration: "line-through"}}>
+                              <span style={{fontSize: "13.5px", color: "#5C5470", textDecoration: "line-through"}}>
                                 {hole(t?.mrp)}
                               </span>
                             </>
                           ) : null}
-                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "32px", lineHeight: "1"}}>
+                          <span style={{fontFamily: "'Marcellus', serif", fontSize: "27px", lineHeight: "1"}}>
                             {hole(t?.price)}
                           </span>
                         </p>
@@ -421,12 +421,12 @@ ReportMobilePage.prototype.render = function render() {
                         <div style={{height: "1px", background: "#EFE6D8", margin: "2px 0"}} />
                         {t?.hasBase ? (
                           <>
-                            <p style={{margin: "0", fontSize: "13px", fontWeight: "700", color: "#921A11"}}>
+                            <p style={{margin: "0", fontSize: "12px", fontWeight: "700", color: "#921A11"}}>
                               {hole(t?.base)}
                             </p>
                           </>
                         ) : null}
-                        <div style={{display: "grid", gap: "8px", fontSize: "14px", lineHeight: "1.5"}}>
+                        <div style={{display: "grid", gap: "8px", fontSize: "13px", lineHeight: "1.5"}}>
                           {(t?.items || []).map((i, $index) => (
                             <React.Fragment key={$index}>
                               <p style={{margin: "0", display: "flex", gap: "8px"}}>
@@ -449,20 +449,20 @@ ReportMobilePage.prototype.render = function render() {
                 </React.Fragment>
               ))}
             </div>
-            <p style={{margin: "28px 0 0", textAlign: "center", fontSize: "15px", color: "#5C5470"}}>
+            <p style={{margin: "28px 0 0", textAlign: "center", fontSize: "13.5px", color: "#5C5470"}}>
               {"Want a specific digit pattern, like a number ending in your lucky digits? We quote for custom combinations on WhatsApp."}
             </p>
           </div>
         </div>
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px 24px"}}>
           <div className={"am-center-mobile"} style={{marginBottom: "32px"}}>
-            <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+            <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
               {"Who it is for"}
             </p>
-            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
               {"For anyone choosing or checking a number."}
             </h2>
-            <p style={{margin: "0", fontSize: "16px", color: "#5C5470", maxWidth: "680px"}}>
+            <p style={{margin: "0", fontSize: "14.5px", color: "#5C5470", maxWidth: "680px"}}>
               {"Whether you are buying a new SIM, using a number for business or simply curious, a quick check tells you if your number supports you."}
             </p>
           </div>
@@ -476,10 +476,10 @@ ReportMobilePage.prototype.render = function render() {
                     </svg>
                   </span>
                   <div>
-                    <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "20px"}}>
+                    <p style={{margin: "0 0 4px", fontFamily: "'Marcellus', serif", fontSize: "17.5px"}}>
                       {hole(a?.title)}
                     </p>
-                    <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                    <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                       {hole(a?.text)}
                     </p>
                   </div>
@@ -490,10 +490,10 @@ ReportMobilePage.prototype.render = function render() {
         </div>
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px"}}>
           <div style={{textAlign: "center", marginBottom: "40px"}}>
-            <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+            <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
               {"How it works"}
             </p>
-            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15"}}>
+            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15"}}>
               {"From your number to your report."}
             </h2>
           </div>
@@ -501,13 +501,13 @@ ReportMobilePage.prototype.render = function render() {
             {(v.steps || []).map((s, $index) => (
               <React.Fragment key={$index}>
                 <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "18px", padding: "26px 22px", outline: "1px solid #EFE6D8", outlineOffset: "-8px"}}>
-                  <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "44px", height: "44px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "20px", marginBottom: "16px"}}>
+                  <span style={{display: "flex", alignItems: "center", justifyContent: "center", width: "44px", height: "44px", borderRadius: "999px", background: "linear-gradient(135deg, #2E003E, #6C1594)", color: "#FFFFFF", fontFamily: "'Marcellus', serif", fontSize: "17.5px", marginBottom: "16px"}}>
                     {hole(s?.num)}
                   </span>
-                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "21px"}}>
+                  <p style={{margin: "0 0 6px", fontFamily: "'Marcellus', serif", fontSize: "18.5px"}}>
                     {hole(s?.title)}
                   </p>
-                  <p style={{margin: "0", fontSize: "15px", color: "#5C5470"}}>
+                  <p style={{margin: "0", fontSize: "13.5px", color: "#5C5470"}}>
                     {hole(s?.text)}
                   </p>
                 </div>
@@ -517,10 +517,10 @@ ReportMobilePage.prototype.render = function render() {
         </div>
         <div style={{background: "#FFFFFF", borderTop: "1px solid #E8DFD0"}}>
           <div style={{maxWidth: "860px", margin: "0 auto", padding: "88px 24px"}}>
-            <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700", textAlign: "center"}}>
+            <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700", textAlign: "center"}}>
               {"Questions"}
             </p>
-            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(30px, 3.6vw, 44px)", lineHeight: "1.15", textAlign: "center", marginBottom: "36px"}}>
+            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(25.5px, 3.06vw, 37px)", lineHeight: "1.15", textAlign: "center", marginBottom: "36px"}}>
               {"About mobile numerology"}
             </h2>
             <div style={{display: "grid", gap: "12px"}}>
@@ -529,7 +529,7 @@ ReportMobilePage.prototype.render = function render() {
                   <details style={{background: "#FBF7F0", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 24px"}}>
                     <summary style={{display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", minHeight: "64px", fontWeight: "700"}}>
                       {hole(q?.q)}
-                      <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "24px", color: "#921A11", transition: "transform 0.2s"}}>
+                      <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "21px", color: "#921A11", transition: "transform 0.2s"}}>
                         {"+"}
                       </span>
                     </summary>
@@ -549,7 +549,7 @@ ReportMobilePage.prototype.render = function render() {
             <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(32px, 5vw, 64px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "28px"}}>
               <div style={{flex: "1 1 100%", minWidth: "0"}}>
-                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(26px, 2.8vw, 38px)", lineHeight: "1.2", color: "#FFFFFF"}}>
+                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.38vw, 32px)", lineHeight: "1.2", color: "#FFFFFF"}}>
                   <span className={"am-nowrap-lg"}>
                     {"Let the stars guide you, the numbers support you,"}
                   </span>
@@ -577,7 +577,7 @@ ReportMobilePage.prototype.render = function render() {
             </div>
           </div>
         </div>
-        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "15px"}}>
+        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "13.5px"}}>
           <div className={"am-stars2"} aria-hidden={"true"} style={{opacity: "0.6"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 32px", position: "relative"}}>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "40px", marginBottom: "48px"}}>
@@ -633,7 +633,7 @@ ReportMobilePage.prototype.render = function render() {
                 </a>
               </div>
             </div>
-            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "14px"}}>
+            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "13px"}}>
               <span>
                 {"© 2026 Ahllya Mystic. All rights reserved."}
               </span>

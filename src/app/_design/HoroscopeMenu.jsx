@@ -66,7 +66,7 @@ export function HoroscopeMenu() {
             {ITEMS.map((it) => (
               <a
                 key={it.key} href={hrefFor(sign, it)} onClick={() => setOpen(false)}
-                style={{ display: "flex", alignItems: "center", gap: "14px", padding: "10px 12px", borderRadius: "14px", textDecoration: "none", color: "#1E1830", fontSize: "15px", fontWeight: 600 }}
+                style={{ display: "flex", alignItems: "center", gap: "14px", padding: "10px 12px", borderRadius: "14px", textDecoration: "none", color: "#1E1830", fontSize: "13.5px", fontWeight: 600 }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = "#F3E8F7"; }} onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}
                 onFocus={(e) => { e.currentTarget.style.background = "#F3E8F7"; }} onBlur={(e) => { e.currentTarget.style.background = "transparent"; }}
               >
@@ -85,7 +85,7 @@ export function HoroscopeMenu() {
 export function HoroscopeMobileMenu({ onNavigate }) {
   const sign = useSign();
   const [open, setOpen] = useState(false);
-  const row = { display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px" };
+  const row = { display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px" };
   return (
     <div>
       <button type="button" aria-expanded={open} onClick={() => setOpen(!open)} style={{ ...row, width: "100%", background: "transparent", border: 0, borderBottom: "1px solid rgba(255,255,255,0.14)", cursor: "pointer", padding: 0, textAlign: "left" }}>
@@ -95,7 +95,7 @@ export function HoroscopeMobileMenu({ onNavigate }) {
       {open ? (
         <div style={{ display: "grid", padding: "4px 0 8px 14px", borderBottom: "1px solid rgba(255,255,255,0.14)" }}>
           {ITEMS.map((it) => (
-            <a key={it.key} href={hrefFor(sign, it)} onClick={onNavigate} style={{ display: "flex", alignItems: "center", gap: "12px", minHeight: "48px", color: "#EADFF2", textDecoration: "none", fontSize: "17px" }}>
+            <a key={it.key} href={hrefFor(sign, it)} onClick={onNavigate} style={{ display: "flex", alignItems: "center", gap: "12px", minHeight: "48px", color: "#EADFF2", textDecoration: "none", fontSize: "15px" }}>
               <span style={{ display: "inline-flex", color: "#FCCE07" }}><Icon d={it.icon} /></span>{it.label}
             </a>
           ))}

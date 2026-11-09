@@ -124,8 +124,8 @@ HoroscopePage.prototype.render = function render() {
   const v = this.renderVals() || {};
   return (
     <div data-design-page="Horoscope" style={{ display: "contents" }}>
-      <div style={{fontFamily: "'Manrope', 'Noto Sans Devanagari', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "16px", lineHeight: "1.6"}}>
-        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "14px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
+      <div style={{fontFamily: "'Manrope', 'Noto Sans Devanagari', system-ui, sans-serif", color: "#1E1830", background: "#FBF7F0", fontSize: "14.5px", lineHeight: "1.6"}}>
+        <div style={{background: "#FFFFFF", color: "#921A11", fontSize: "13px", fontWeight: "600", textAlign: "center", padding: "10px 16px", borderBottom: "1px solid #EADFD3"}}>
           <a href={"/masterclass"} style={{color: "#921A11", textDecoration: "none"}}>
             {"Live 2-day Manifestation Masterclass. Dates announced soon. Register for ₹99 →"}
           </a>
@@ -135,7 +135,7 @@ HoroscopePage.prototype.render = function render() {
             <a href={"/"} aria-label={"Ahllya Mystic home"} style={{display: "block", flex: "none"}}>
               <img className={"am-navlogo"} src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={"Ahllya Mystic"} style={{height: "48px", width: "auto", display: "block"}} />
             </a>
-            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "15px", fontWeight: "500"}}>
+            <div className={"am-navlinks"} style={{alignItems: "center", gap: "30px", fontSize: "13.5px", fontWeight: "500"}}>
               <a href={"/#consult"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Consultations"}
               </a>
@@ -166,7 +166,7 @@ HoroscopePage.prototype.render = function render() {
                   <path d={"M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"} />
                 </svg>
               </a>
-              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
+              <a href={"/consult"} className={"am-navcta"} style={{alignItems: "center", minHeight: "44px", padding: "0 22px", borderRadius: "999px", border: "2px solid #FCCE07", color: "#FFFFFF", fontWeight: "700", fontSize: "13.5px", textDecoration: "none"}}>
                 {"Book a consultation"}
               </a>
               <button type={"button"} className={"am-burger"} aria-label={"Open menu"} aria-controls={"am-drawer"} aria-expanded={v.menuExpanded} onClick={v.openMenu} style={{alignItems: "center", justifyContent: "center", width: "44px", height: "44px", padding: "0", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.3)", background: "transparent", color: "#FFFFFF", cursor: "pointer"}}>
@@ -198,44 +198,44 @@ HoroscopePage.prototype.render = function render() {
                     </svg>
                     <span style={{flex: "1", height: "1px", background: "rgba(255,255,255,0.3)"}} />
                   </div>
-                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#consult"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Consultations"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/kundli"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Kundli"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Free Calculators"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Reports"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/courses"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Courses"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
+                  <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"About"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -252,7 +252,7 @@ HoroscopePage.prototype.render = function render() {
                       {"WhatsApp us"}
                     </a>
                   </div>
-                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17px", color: "#EADFF2", textAlign: "center"}}>
+                  <p style={{margin: "auto 0 0", paddingTop: "32px", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "15px", color: "#EADFF2", textAlign: "center"}}>
                     {"ज्योतिष · अंक शास्त्र · वास्तु"}
                   </p>
                 </div>
@@ -267,7 +267,7 @@ HoroscopePage.prototype.render = function render() {
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "20%", left: "62%", animationDelay: "2s"}} />
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "8%", left: "30%", animationDelay: "7s"}} />
           <div style={{position: "relative", maxWidth: "1200px", margin: "0 auto", padding: "22px 24px 72px"}}>
-            <nav aria-label={"Breadcrumb"} style={{fontSize: "14px", color: "#CDB8DA", marginBottom: "0"}}>
+            <nav aria-label={"Breadcrumb"} style={{fontSize: "13px", color: "#CDB8DA", marginBottom: "0"}}>
               <a href={"/"} style={{color: "#CDB8DA", textDecoration: "none"}}>
                 {hole(v.L?.home)}
               </a>
@@ -289,10 +289,10 @@ HoroscopePage.prototype.render = function render() {
               ) : null}
             </nav>
             <div style={{textAlign: "center", maxWidth: "780px", margin: "36px auto 0"}}>
-              <h1 style={{margin: "0 0 14px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(34px, 5vw, 58px)", lineHeight: "1.1", color: "#FFFFFF"}}>
+              <h1 style={{margin: "0 0 14px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(28.5px, 4.25vw, 48px)", lineHeight: "1.1", color: "#FFFFFF"}}>
                 {hole(v.heroTitle)}
               </h1>
-              <p style={{margin: "0 auto 28px", maxWidth: "640px", fontSize: "17px", color: "#EADFF2"}}>
+              <p style={{margin: "0 auto 28px", maxWidth: "640px", fontSize: "15px", color: "#EADFF2"}}>
                 {"Plan your day with clarity: auspicious timings, lucky numbers and colours, the hours that favour new work, and how love, career, money and health look for your sign."}
               </p>
               <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px"}}>
@@ -325,10 +325,10 @@ HoroscopePage.prototype.render = function render() {
                             <img className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
                           </span>
                         </span>
-                        <span style={{fontFamily: "'Marcellus', serif", fontSize: "15px", lineHeight: "1.15", color: "#6C1594"}}>
+                        <span style={{fontFamily: "'Marcellus', serif", fontSize: "13.5px", lineHeight: "1.15", color: "#6C1594"}}>
                           {hole(r?.en)}
                         </span>
-                        <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "14px", lineHeight: "1.1", color: "#921A11", marginTop: "-4px"}}>
+                        <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "13px", lineHeight: "1.1", color: "#921A11", marginTop: "-4px"}}>
                           {hole(r?.hi)}
                         </span>
                       </button>
@@ -346,10 +346,10 @@ HoroscopePage.prototype.render = function render() {
                             <img className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
                           </span>
                         </span>
-                        <span style={{fontFamily: "'Marcellus', serif", fontSize: "15px", lineHeight: "1.15"}}>
+                        <span style={{fontFamily: "'Marcellus', serif", fontSize: "13.5px", lineHeight: "1.15"}}>
                           {hole(r?.en)}
                         </span>
-                        <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "14px", lineHeight: "1.1", color: "#921A11", marginTop: "-4px"}}>
+                        <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "13px", lineHeight: "1.1", color: "#921A11", marginTop: "-4px"}}>
                           {hole(r?.hi)}
                         </span>
                       </button>
@@ -365,14 +365,14 @@ HoroscopePage.prototype.render = function render() {
                     <React.Fragment key={$index}>
                       {t?.sel ? (
                         <>
-                          <button type={"button"} role={"tab"} aria-selected={"true"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "#FFFFFF", color: "#2E003E", font: "inherit", fontSize: "14px", fontWeight: "700", boxShadow: "0 6px 14px -10px rgba(46,0,62,.55)", cursor: "pointer"}}>
+                          <button type={"button"} role={"tab"} aria-selected={"true"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "#FFFFFF", color: "#2E003E", font: "inherit", fontSize: "13px", fontWeight: "700", boxShadow: "0 6px 14px -10px rgba(46,0,62,.55)", cursor: "pointer"}}>
                             {hole(t?.label)}
                           </button>
                         </>
                       ) : null}
                       {t?.notSel ? (
                         <>
-                          <button type={"button"} role={"tab"} aria-selected={"false"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "transparent", color: "#5C5470", font: "inherit", fontSize: "14px", fontWeight: "600", cursor: "pointer"}}>
+                          <button type={"button"} role={"tab"} aria-selected={"false"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "transparent", color: "#5C5470", font: "inherit", fontSize: "13px", fontWeight: "600", cursor: "pointer"}}>
                             {hole(t?.label)}
                           </button>
                         </>
@@ -386,10 +386,10 @@ HoroscopePage.prototype.render = function render() {
         <div lang={v.langCode} style={{maxWidth: "1200px", margin: "0 auto", padding: "28px 24px 0"}}>
           <div style={{display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: "14px 18px", marginBottom: "18px"}}>
             <div style={{minWidth: "0"}}>
-              <h2 style={{margin: "0 0 4px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(26px, 3vw, 36px)", lineHeight: "1.15"}}>
+              <h2 style={{margin: "0 0 4px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.55vw, 30px)", lineHeight: "1.15"}}>
                 {hole(v.sectionTitle)}
               </h2>
-              <p style={{margin: "0", fontSize: "16px", color: "#5C5470"}}>
+              <p style={{margin: "0", fontSize: "14.5px", color: "#5C5470"}}>
                 {hole(v.dateLine)}
               </p>
             </div>
@@ -399,14 +399,14 @@ HoroscopePage.prototype.render = function render() {
                     <React.Fragment key={$index}>
                       {t?.sel ? (
                         <>
-                          <button type={"button"} role={"tab"} aria-selected={"true"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "#FFFFFF", color: "#2E003E", font: "inherit", fontSize: "14px", fontWeight: "700", boxShadow: "0 6px 14px -10px rgba(46,0,62,.55)", cursor: "pointer"}}>
+                          <button type={"button"} role={"tab"} aria-selected={"true"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "#FFFFFF", color: "#2E003E", font: "inherit", fontSize: "13px", fontWeight: "700", boxShadow: "0 6px 14px -10px rgba(46,0,62,.55)", cursor: "pointer"}}>
                             {hole(t?.label)}
                           </button>
                         </>
                       ) : null}
                       {t?.notSel ? (
                         <>
-                          <button type={"button"} role={"tab"} aria-selected={"false"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "transparent", color: "#5C5470", font: "inherit", fontSize: "14px", fontWeight: "600", cursor: "pointer"}}>
+                          <button type={"button"} role={"tab"} aria-selected={"false"} onClick={t?.pick} style={{minHeight: "40px", padding: "0 18px", borderRadius: "999px", border: "0", background: "transparent", color: "#5C5470", font: "inherit", fontSize: "13px", fontWeight: "600", cursor: "pointer"}}>
                             {hole(t?.label)}
                           </button>
                         </>
@@ -426,10 +426,10 @@ HoroscopePage.prototype.render = function render() {
               <div style={{position: "relative", display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px"}}>
                 <img src={v.cur?.img} alt={""} style={{flex: "none", width: "72px", height: "72px", borderRadius: "999px", background: "#FFFFFF", boxShadow: "0 0 0 4px rgba(252,206,7,0.35)"}} />
                 <div>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "30px", lineHeight: "1.1"}}>
+                  <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "25.5px", lineHeight: "1.1"}}>
                     {hole(v.signName)}
                   </p>
-                  <p style={{margin: "4px 0 0", fontSize: "14px", color: "#EADFF2"}}>
+                  <p style={{margin: "4px 0 0", fontSize: "13px", color: "#EADFF2"}}>
                     {hole(v.signSub)}
                   </p>
                 </div>
@@ -441,7 +441,7 @@ HoroscopePage.prototype.render = function render() {
                     <circle cx={"60"} cy={"60"} r={"52"} fill={"none"} stroke={"#FCCE07"} strokeWidth={"10"} strokeLinecap={"round"} strokeDasharray={v.ring} />
                   </svg>
                   <span style={{position: "absolute", inset: "0", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-                    <span style={{fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "32px", lineHeight: "1"}}>
+                    <span style={{fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "27px", lineHeight: "1"}}>
                       {hole(v.day?.overall)}
                     </span>
                     <span style={{fontSize: "11px", color: "#EADFF2"}}>
@@ -453,12 +453,12 @@ HoroscopePage.prototype.render = function render() {
                   <p style={{margin: "0 0 4px", fontSize: "12px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
                     {hole(v.L?.overall)}
                   </p>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "24px", lineHeight: "1.2"}}>
+                  <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "21px", lineHeight: "1.2"}}>
                     {hole(v.bandLabel)}
                   </p>
                 </div>
               </div>
-              <p style={{position: "relative", margin: "18px 0 0", fontSize: "15px", lineHeight: "1.65", color: "#F4EAF9"}}>
+              <p style={{position: "relative", margin: "18px 0 0", fontSize: "13.5px", lineHeight: "1.65", color: "#F4EAF9"}}>
                 {hole(v.summary)}
               </p>
               <div style={{position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginTop: "20px"}}>
@@ -466,7 +466,7 @@ HoroscopePage.prototype.render = function render() {
                   <p style={{margin: "0", fontSize: "12px", color: "#EADFF2"}}>
                     {hole(v.L?.luckyNumber)}
                   </p>
-                  <p style={{margin: "2px 0 0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "28px", lineHeight: "1.1"}}>
+                  <p style={{margin: "2px 0 0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "24px", lineHeight: "1.1"}}>
                     {hole(v.day?.lucky?.num)}
                   </p>
                 </div>
@@ -493,18 +493,18 @@ HoroscopePage.prototype.render = function render() {
                           <path d={a?.icon} />
                         </svg>
                       </span>
-                      <span style={{flex: "1", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "21px"}}>
+                      <span style={{flex: "1", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "18.5px"}}>
                         {hole(a?.label)}
                       </span>
                       <span style={{fontWeight: "700", color: "#2E003E"}}>
                         {hole(a?.score)}
-                        <span style={{fontWeight: "500", color: "#736B8A", fontSize: "13px"}}>
+                        <span style={{fontWeight: "500", color: "#736B8A", fontSize: "12px"}}>
                           {" / 100"}
                         </span>
                       </span>
                     </div>
                     <progress className={"am-bar"} value={a?.score} max={"100"} aria-label={`${(a?.label) ?? ''} score`} style={{marginBottom: "14px"}} />
-                    <p style={{margin: "0", fontSize: "15px", lineHeight: "1.65", color: "#3A3350"}}>
+                    <p style={{margin: "0", fontSize: "13.5px", lineHeight: "1.65", color: "#3A3350"}}>
                       {hole(a?.text)}
                     </p>
                   </div>
@@ -521,13 +521,13 @@ HoroscopePage.prototype.render = function render() {
                 {" · "}
                 {hole(v.luckyPlanet)}
               </p>
-              <p style={{margin: "0 0 10px", fontSize: "14px", color: "#5C5470"}}>
+              <p style={{margin: "0 0 10px", fontSize: "13px", color: "#5C5470"}}>
                 {hole(v.luckyWhy)}
               </p>
-              <p style={{margin: "0", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "22px", color: "#2E003E"}}>
+              <p style={{margin: "0", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "19px", color: "#2E003E"}}>
                 {hole(v.day?.lucky?.mHi)}
               </p>
-              <p style={{margin: "4px 0 0", fontSize: "15px", fontStyle: "italic", color: "#3D0752"}}>
+              <p style={{margin: "4px 0 0", fontSize: "13.5px", fontStyle: "italic", color: "#3D0752"}}>
                 {hole(v.day?.lucky?.mEn)}
               </p>
             </div>
@@ -539,13 +539,13 @@ HoroscopePage.prototype.render = function render() {
                     {" · "}
                     {hole(v.calmPlanet)}
                   </p>
-                  <p style={{margin: "0 0 10px", fontSize: "14px", color: "#5C5470"}}>
+                  <p style={{margin: "0 0 10px", fontSize: "13px", color: "#5C5470"}}>
                     {hole(v.calmWhy)}
                   </p>
-                  <p style={{margin: "0", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "22px", color: "#5A0F0A"}}>
+                  <p style={{margin: "0", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "19px", color: "#5A0F0A"}}>
                     {hole(v.day?.calm?.mHi)}
                   </p>
-                  <p style={{margin: "4px 0 0", fontSize: "15px", fontStyle: "italic", color: "#7A1A12"}}>
+                  <p style={{margin: "4px 0 0", fontSize: "13.5px", fontStyle: "italic", color: "#7A1A12"}}>
                     {hole(v.day?.calm?.mEn)}
                   </p>
                 </div>
@@ -557,51 +557,51 @@ HoroscopePage.prototype.render = function render() {
                   <p style={{margin: "0 0 4px", fontSize: "12px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                     {hole(v.L?.calm)}
                   </p>
-                  <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "22px", color: "#5A0F0A"}}>
+                  <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "19px", color: "#5A0F0A"}}>
                     {hole(v.L?.noCalm)}
                   </p>
                 </div>
               </>
             ) : null}
           </div>
-          <p style={{margin: "12px 0 0", fontSize: "13px", color: "#5C5470"}}>
+          <p style={{margin: "12px 0 0", fontSize: "12px", color: "#5C5470"}}>
             {hole(v.L?.mantraNote)}
           </p>
         </div>
         <div lang={v.langCode} style={{maxWidth: "1200px", margin: "0 auto", padding: "72px 24px 0"}}>
           <div className={"am-center-mobile"} style={{marginBottom: "24px"}}>
-            <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+            <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
               {hole(v.L?.whyEyebrow)}
             </p>
-            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(28px, 3.2vw, 40px)", lineHeight: "1.2"}}>
+            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(24px, 2.72vw, 33.5px)", lineHeight: "1.2"}}>
               {hole(v.L?.whyTitle)}
             </h2>
-            <p style={{margin: "0", fontSize: "16px", color: "#5C5470", maxWidth: "720px"}}>
+            <p style={{margin: "0", fontSize: "14.5px", color: "#5C5470", maxWidth: "720px"}}>
               {hole(v.L?.whySub)}
             </p>
           </div>
           <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", padding: "24px 26px", marginBottom: "16px", display: "grid", gap: "12px"}}>
             {(v.why || []).map((w, $index) => (
               <React.Fragment key={$index}>
-                <p style={{margin: "0", display: "flex", gap: "12px", fontSize: "15px", lineHeight: "1.6"}}>
+                <p style={{margin: "0", display: "flex", gap: "12px", fontSize: "13.5px", lineHeight: "1.6"}}>
                   <span style={{flex: "none", width: "8px", height: "8px", marginTop: "9px", borderRadius: "999px", background: "#6C1594"}} />
                   {hole(w)}
                 </p>
               </React.Fragment>
             ))}
-            <p style={{margin: "4px 0 0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "14px", color: "#5C5470"}}>
+            <p style={{margin: "4px 0 0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "13px", color: "#5C5470"}}>
               {hole(v.panchang)}
             </p>
             <div style={{paddingTop: "12px", borderTop: "1px solid #EFE6D8"}}>
-              <p style={{margin: "0 0 10px", fontSize: "13px", fontWeight: "700", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6C1594"}}>
+              <p style={{margin: "0 0 10px", fontSize: "12px", fontWeight: "700", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6C1594"}}>
                 {hole(v.muhuratTitle)}
               </p>
               <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(220px, 100%), 1fr))", gap: "10px"}}>
                 {(v.muhurat || []).map((m, $index) => (
                   <div key={$index} style={{borderRadius: "14px", padding: "12px 14px", background: m.good ? "#F1F8EE" : "#FBF0EE", border: m.good ? "1px solid #CFE3C6" : "1px solid #EBCBC6"}}>
-                    <div style={{fontWeight: "700", fontSize: "15px", color: m.good ? "#2C6B1F" : "#921A11"}}>{m.name}</div>
-                    <div style={{fontSize: "15px", margin: "2px 0"}}>{m.time}</div>
-                    <div style={{fontSize: "13px", color: "#5C5470"}}>{m.note}</div>
+                    <div style={{fontWeight: "700", fontSize: "13.5px", color: m.good ? "#2C6B1F" : "#921A11"}}>{m.name}</div>
+                    <div style={{fontSize: "13.5px", margin: "2px 0"}}>{m.time}</div>
+                    <div style={{fontSize: "12px", color: "#5C5470"}}>{m.note}</div>
                   </div>
                 ))}
               </div>
@@ -613,11 +613,11 @@ HoroscopePage.prototype.render = function render() {
                 {p?.good ? (
                   <>
                     <div style={{background: "#FFFFFF", border: "1px solid #D7C6E6", borderRadius: "16px", padding: "14px", textAlign: "center"}}>
-                      <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "18px"}}>
+                      <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "16px"}}>
                         {hole(p?.name)}
                         {hole(p?.r)}
                       </p>
-                      <p style={{margin: "2px 0 8px", fontSize: "13px", color: "#5C5470"}}>
+                      <p style={{margin: "2px 0 8px", fontSize: "12px", color: "#5C5470"}}>
                         {hole(p?.where)}
                       </p>
                       <span style={{display: "inline-block", fontSize: "12px", fontWeight: "700", color: "#1F7A45", background: "#E5F4EA", padding: "3px 10px", borderRadius: "999px"}}>
@@ -629,11 +629,11 @@ HoroscopePage.prototype.render = function render() {
                 {p?.bad ? (
                   <>
                     <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "14px", textAlign: "center"}}>
-                      <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "18px"}}>
+                      <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "16px"}}>
                         {hole(p?.name)}
                         {hole(p?.r)}
                       </p>
-                      <p style={{margin: "2px 0 8px", fontSize: "13px", color: "#5C5470"}}>
+                      <p style={{margin: "2px 0 8px", fontSize: "12px", color: "#5C5470"}}>
                         {hole(p?.where)}
                       </p>
                       <span style={{display: "inline-block", fontSize: "12px", fontWeight: "700", color: "#921A11", background: "#FBEDEB", padding: "3px 10px", borderRadius: "999px"}}>
@@ -645,7 +645,7 @@ HoroscopePage.prototype.render = function render() {
               </React.Fragment>
             ))}
           </div>
-          <p style={{margin: "12px 0 0", fontSize: "13px", color: "#736B8A"}}>
+          <p style={{margin: "12px 0 0", fontSize: "12px", color: "#736B8A"}}>
             {hole(v.L?.retroNote)}
           </p>
         </div>
@@ -659,10 +659,10 @@ HoroscopePage.prototype.render = function render() {
           <div style={{position: "relative", overflow: "hidden", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "22px 32px", background: "linear-gradient(120deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "24px", padding: "clamp(26px, 4vw, 40px)"}}>
             <div className={"am-stars"} aria-hidden={"true"} />
             <div style={{position: "relative", flex: "1 1 460px", minWidth: "0"}}>
-              <p style={{margin: "0 0 8px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "clamp(24px, 2.6vw, 32px)", lineHeight: "1.2"}}>
+              <p style={{margin: "0 0 8px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "clamp(21px, 2.21vw, 27px)", lineHeight: "1.2"}}>
                 {hole(v.ctaTitle)}
               </p>
-              <p style={{margin: "0", color: "#EADFF2", fontSize: "16px"}}>
+              <p style={{margin: "0", color: "#EADFF2", fontSize: "14.5px"}}>
                 {hole(v.L?.ctaSub)}
               </p>
             </div>
@@ -678,10 +678,10 @@ HoroscopePage.prototype.render = function render() {
         </div>
         <div lang={v.langCode} style={{maxWidth: "1200px", margin: "0 auto", padding: "72px 24px 0"}}>
           <div className={"am-center-mobile"} style={{marginBottom: "24px"}}>
-            <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
+            <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
               {hole(v.L?.aboutEyebrow)}
             </p>
-            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(28px, 3.2vw, 40px)", lineHeight: "1.2"}}>
+            <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(24px, 2.72vw, 33.5px)", lineHeight: "1.2"}}>
               {hole(v.aboutTitle)}
             </h2>
           </div>
@@ -689,7 +689,7 @@ HoroscopePage.prototype.render = function render() {
             <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", padding: "22px 24px", display: "grid", gap: "12px"}}>
               {(v.facts || []).map((f, $index) => (
                 <React.Fragment key={$index}>
-                  <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "15px", paddingBottom: "10px", borderBottom: "1px solid #EFE6D8"}}>
+                  <div style={{display: "flex", justifyContent: "space-between", gap: "12px", fontSize: "13.5px", paddingBottom: "10px", borderBottom: "1px solid #EFE6D8"}}>
                     <span style={{color: "#5C5470"}}>
                       {hole(f?.k)}
                     </span>
@@ -701,12 +701,12 @@ HoroscopePage.prototype.render = function render() {
               ))}
             </div>
             <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", padding: "22px 24px"}}>
-              <p style={{margin: "0 0 12px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "21px"}}>
+              <p style={{margin: "0 0 12px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "18.5px"}}>
                 {hole(v.L?.strengths)}
               </p>
               {(v.strengths || []).map((t, $index) => (
                 <React.Fragment key={$index}>
-                  <p style={{margin: "0 0 10px", display: "flex", gap: "10px", fontSize: "15px"}}>
+                  <p style={{margin: "0 0 10px", display: "flex", gap: "10px", fontSize: "13.5px"}}>
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#6C1594"} strokeWidth={"2.2"} strokeLinecap={"round"} strokeLinejoin={"round"} style={{flex: "none", marginTop: "3px"}}>
                       <path d={"M5 12l5 5 9-10"} />
                     </svg>
@@ -716,12 +716,12 @@ HoroscopePage.prototype.render = function render() {
               ))}
             </div>
             <div style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", padding: "22px 24px"}}>
-              <p style={{margin: "0 0 12px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "21px"}}>
+              <p style={{margin: "0 0 12px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "18.5px"}}>
                 {hole(v.L?.watch)}
               </p>
               {(v.challenges || []).map((t, $index) => (
                 <React.Fragment key={$index}>
-                  <p style={{margin: "0 0 10px", display: "flex", gap: "10px", fontSize: "15px"}}>
+                  <p style={{margin: "0 0 10px", display: "flex", gap: "10px", fontSize: "13.5px"}}>
                     <span style={{flex: "none", width: "8px", height: "8px", marginTop: "8px", borderRadius: "999px", background: "#921A11"}} />
                     {hole(t)}
                   </p>
@@ -731,7 +731,7 @@ HoroscopePage.prototype.render = function render() {
           </div>
         </div>
         <div lang={v.langCode} style={{maxWidth: "860px", margin: "0 auto", padding: "72px 24px 88px"}}>
-          <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(28px, 3.2vw, 40px)", lineHeight: "1.2", textAlign: "center", marginBottom: "28px"}}>
+          <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(24px, 2.72vw, 33.5px)", lineHeight: "1.2", textAlign: "center", marginBottom: "28px"}}>
             {hole(v.L?.faqTitle)}
           </h2>
           <div style={{display: "grid", gap: "10px"}}>
@@ -740,7 +740,7 @@ HoroscopePage.prototype.render = function render() {
                 <details style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "16px", padding: "0 20px"}}>
                   <summary style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", minHeight: "60px", fontWeight: "700"}}>
                     {hole(q?.q)}
-                    <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "22px", color: "#921A11", transition: "transform .2s"}}>
+                    <span className={"faq-plus"} aria-hidden={"true"} style={{flex: "none", fontSize: "19px", color: "#921A11", transition: "transform .2s"}}>
                       {"+"}
                     </span>
                   </summary>
@@ -759,7 +759,7 @@ HoroscopePage.prototype.render = function render() {
             <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(32px, 5vw, 64px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "28px"}}>
               <div style={{flex: "1 1 100%", minWidth: "0"}}>
-                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(26px, 2.8vw, 38px)", lineHeight: "1.2", color: "#FFFFFF"}}>
+                <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.38vw, 32px)", lineHeight: "1.2", color: "#FFFFFF"}}>
                   <span className={"am-nowrap-lg"}>
                     {"Let the stars guide you, the numbers support you,"}
                   </span>
@@ -787,7 +787,7 @@ HoroscopePage.prototype.render = function render() {
             </div>
           </div>
         </div>
-        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "15px"}}>
+        <footer style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #4A0A66 0%, #2E003E 70%)", color: "#EADFF2", fontSize: "13.5px"}}>
           <div className={"am-stars2"} aria-hidden={"true"} style={{opacity: "0.6"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 32px", position: "relative"}}>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "40px", marginBottom: "48px"}}>
@@ -843,7 +843,7 @@ HoroscopePage.prototype.render = function render() {
                 </a>
               </div>
             </div>
-            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "14px"}}>
+            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.14)", paddingTop: "24px", fontSize: "13px"}}>
               <span>
                 {"© 2026 Ahllya Mystic. All rights reserved."}
               </span>

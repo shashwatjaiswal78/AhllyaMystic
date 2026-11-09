@@ -4,7 +4,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { maskDate, maskTime } from "./wire";
 
-const labelStyle = { display: "grid", gap: "6px", fontSize: "14px", fontWeight: "600" };
+const labelStyle = { display: "grid", gap: "6px", fontSize: "13px", fontWeight: "600" };
 const inputStyle = { font: "inherit", fontWeight: "400", minHeight: "48px", padding: "0 14px", border: "1px solid #D9CFBE", borderRadius: "12px", background: "#FBF7F0", color: "#1E1830", minWidth: "0" };
 const listStyle = {
   position: "absolute", zIndex: 30, left: 0, right: 0, top: "calc(100% + 4px)", margin: 0, padding: 0, listStyle: "none", background: "#FFFFFF",
@@ -115,7 +115,7 @@ export default function MoonForm({ onFound, margin = "-12px auto 48px" }) {
 
   return (
     <form onSubmit={submit} noValidate style={{ maxWidth: "980px", margin: margin, color: "#1E1830", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "20px", padding: "22px 24px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", textAlign: "left", boxShadow: "0 30px 60px -30px rgba(0,0,0,0.6)" }}>
-      <p style={{ margin: "0 0 14px", fontSize: "15px", color: "#5C5470", textAlign: "center" }}>
+      <p style={{ margin: "0 0 14px", fontSize: "13.5px", color: "#5C5470", textAlign: "center" }}>
         <strong style={{ color: "#1E1830" }}>{"Don’t know your moon sign?"}</strong>
         {" Find it free in a few seconds, then pick your rashi below."}
       </p>
@@ -143,7 +143,7 @@ export default function MoonForm({ onFound, margin = "-12px auto 48px" }) {
                   <li key={i} role="option" aria-selected={i === active}>
                     <button
                       type="button" onMouseDown={(e) => { e.preventDefault(); pick(p); }} onMouseEnter={() => setActive(i)}
-                      style={{ display: "block", width: "100%", textAlign: "left", padding: "10px 14px", border: 0, borderBottom: "1px solid #EFE6D8", background: i === active ? "#F3E8F7" : "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "15px", cursor: "pointer" }}
+                      style={{ display: "block", width: "100%", textAlign: "left", padding: "10px 14px", border: 0, borderBottom: "1px solid #EFE6D8", background: i === active ? "#F3E8F7" : "#FFFFFF", color: "#1E1830", font: "inherit", fontSize: "13.5px", cursor: "pointer" }}
                     >
                       {p.n}
                       <span style={{ display: "block", fontSize: "12px", color: "#5C5470" }}>{p.r}</span>
@@ -158,9 +158,9 @@ export default function MoonForm({ onFound, margin = "-12px auto 48px" }) {
           {busy ? "Finding…" : "Find my moon sign"}
         </button>
       </div>
-      {error ? <p role="alert" style={{ margin: "12px 0 0", fontSize: "14px", fontWeight: "600", color: "#921A11", textAlign: "center" }}>{error}</p> : null}
+      {error ? <p role="alert" style={{ margin: "12px 0 0", fontSize: "13px", fontWeight: "600", color: "#921A11", textAlign: "center" }}>{error}</p> : null}
       {found ? (
-        <p role="status" style={{ margin: "12px 0 0", fontSize: "15px", fontWeight: "600", color: "#2C6B1F", textAlign: "center" }}>
+        <p role="status" style={{ margin: "12px 0 0", fontSize: "13.5px", fontWeight: "600", color: "#2C6B1F", textAlign: "center" }}>
           {"Your moon sign is " + found.en + " (" + found.hi + "), in " + found.nak + " nakshatra. Today’s horoscope for " + found.en + " is shown below."}
         </p>
       ) : (

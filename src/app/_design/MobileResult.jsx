@@ -73,7 +73,7 @@ export default function MobileResult({ R }) {
 
           <Section title="Final verdict" kicker={R.number}>
             <div className="card verdict">
-              <div className="vscore" style={{ fontSize: 42, color: TONE[R.verdict.tone] }}>{R.verdict.action}</div>
+              <div className="vscore" style={{ fontSize: 35, color: TONE[R.verdict.tone] }}>{R.verdict.action}</div>
               <div className="vtext"><h3>{R.verdict.title}</h3><p>{R.verdict.text}</p></div>
             </div>
             <ul className="whylist" style={{ margin: "16px 4px 0", paddingLeft: 20, lineHeight: 1.7 }}>

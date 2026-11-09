@@ -76,7 +76,7 @@ function loadRazorpay() {
   });
 }
 
-const notice = { display: "block", marginTop: 10, fontSize: 14, fontWeight: 600, textAlign: "center" };
+const notice = { display: "block", marginTop: 10, fontSize: 13, fontWeight: 600, textAlign: "center" };
 
 export function PayButton({ as = "a", order, requireCustomer = true, children, onClick, href, ...rest }) {
   const [state, setState] = useState("idle");

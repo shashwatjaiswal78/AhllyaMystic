@@ -87,8 +87,8 @@ export default function MobileForm() {
       <button type="submit" disabled={busy} aria-busy={busy || undefined} style={{ gridColumn: "1 / -1", font: "inherit", fontWeight: "700", minHeight: "52px", border: "0", borderRadius: "999px", background: "#FCCE07", color: "#921A11", cursor: busy ? "default" : "pointer", opacity: busy ? 0.8 : 1 }}>
         {busy ? "Checking your number…" : "Check my mobile number"}
       </button>
-      {error ? <p role="alert" style={{ gridColumn: "1 / -1", margin: "0", fontSize: "14px", fontWeight: "600", color: "#921A11", textAlign: "center" }}>{error}</p> : null}
-      <p style={{ gridColumn: "1 / -1", margin: "0", fontSize: "13px", color: "#5C5470", textAlign: "center" }}>
+      {error ? <p role="alert" style={{ gridColumn: "1 / -1", margin: "0", fontSize: "13px", fontWeight: "600", color: "#921A11", textAlign: "center" }}>{error}</p> : null}
+      <p style={{ gridColumn: "1 / -1", margin: "0", fontSize: "12px", color: "#5C5470", textAlign: "center" }}>
         {"Want lucky number combinations for you? See the "}
         <a href="/report/mobile-number">{"Mobile Number Report"}</a>
         {"."}
