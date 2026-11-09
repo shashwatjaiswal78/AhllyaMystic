@@ -3,6 +3,7 @@
 // Generated from the design file Kundli.dc.html by scripts/design/dc2jsx.py, then wired to the Kundli engine by hand:
 // the result blocks below read the chart returned by /api/kundli (see componentDidMount and render). Re-apply if regenerated.
 import React from "react";
+import { HoroscopeMenu, HoroscopeMobileMenu } from "./HoroscopeMenu";
 import { sx, hole } from "./sx";
 import NorthChart from "./KundliChart";
 import { KUNDLI_KEY } from "./KundliForm";
@@ -90,9 +91,7 @@ KundliPage.prototype.render = function render() {
               <a href={"/courses"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Courses"}
               </a>
-              <a href={"/horoscope"} style={{color: "#FFFFFF", textDecoration: "none"}}>
-                {"Horoscope"}
-              </a>
+              <HoroscopeMenu />
               <a href={"/#blog"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Blogs"}
               </a>
@@ -169,12 +168,7 @@ KundliPage.prototype.render = function render() {
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/horoscope"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Horoscope"}
-                    <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-                      <path d={"M9 6l6 6-6 6"} />
-                    </svg>
-                  </a>
+                  <HoroscopeMobileMenu onNavigate={v.closeMenu} />
                   <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>

@@ -2,6 +2,7 @@
 /* eslint-disable */
 // Generated from the design file Horoscope.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
+import { HoroscopeMenu, HoroscopeMobileMenu } from "./HoroscopeMenu";
 import { sx, hole } from "./sx";
 import PeriodPanel from "./PeriodPanel";
 import MoonForm from "./MoonForm";
@@ -41,7 +42,7 @@ class HoroscopePage extends React.Component {
   constructor(props) {
     super(props);
     // sign comes from the URL, for example /horoscope/taurus
-    this.state = Object.assign({ sign: 1, day: 'today', lang: 'en', menuOpen: false, picked: !!(props && props.initialState && props.initialState.sign != null), periods: props && props.period ? { [props.period.view + '|' + props.period.sign]: props.period } : {}, loadingKey: null, failedKey: null }, props && props.initialState);
+    this.state = Object.assign({ sign: 0, day: 'today', lang: 'en', menuOpen: false, picked: !!(props && props.initialState && props.initialState.sign != null), periods: props && props.period ? { [props.period.view + '|' + props.period.sign]: props.period } : {}, loadingKey: null, failedKey: null }, props && props.initialState);
     this.selectView = this.selectView.bind(this);
     this.selectSign = this.selectSign.bind(this);
   }
@@ -66,12 +67,17 @@ class HoroscopePage extends React.Component {
     this.syncUrl(day, this.state.sign);
     this.loadPeriod(day, this.state.sign);
   }
+  remember(i) { try { localStorage.setItem('ahllya:sign', this.slugOf(i)); } catch (e) {} }
   selectSign(i) {
+    this.remember(i);
     this.setState({ sign: i, picked: true });
     this.syncUrl(this.state.day, i);
     this.loadPeriod(this.state.day, i);
   }
-  componentDidMount() { this.loadPeriod(this.state.day, this.state.sign); }
+  componentDidMount() {
+    if (this.state.picked) this.remember(this.state.sign);
+    this.loadPeriod(this.state.day, this.state.sign);
+  }
   renderVals() {
     var hi = this.state.lang === 'hi', L = LANG[this.state.lang], si = this.state.sign;
     var daily = this.isDaily(this.state.day);
@@ -145,9 +151,7 @@ HoroscopePage.prototype.render = function render() {
               <a href={"/courses"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Courses"}
               </a>
-              <a href={"/horoscope"} style={{color: "#FFFFFF", textDecoration: "none"}}>
-                {"Horoscope"}
-              </a>
+              <HoroscopeMenu />
               <a href={"/#blog"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Blogs"}
               </a>
@@ -224,12 +228,7 @@ HoroscopePage.prototype.render = function render() {
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/horoscope"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Horoscope"}
-                    <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-                      <path d={"M9 6l6 6-6 6"} />
-                    </svg>
-                  </a>
+                  <HoroscopeMobileMenu onNavigate={v.closeMenu} />
                   <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>

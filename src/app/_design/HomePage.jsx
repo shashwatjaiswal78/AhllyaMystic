@@ -2,6 +2,7 @@
 /* eslint-disable */
 // Generated from the design file Main.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
+import { HoroscopeMenu, HoroscopeMobileMenu } from "./HoroscopeMenu";
 import { sx, hole } from "./sx";
 import KundliForm from "./KundliForm";
 import MobileForm from "./MobileForm";
@@ -92,7 +93,7 @@ class HomePage extends React.Component {
     var rashis = signs.map((x, i) => ({
       hi: x.hi, en: x.en, img: x.img,
       sel: i === si, notSel: i !== si,
-      pick: () => this.setState({ sign: i })
+      pick: () => { try { localStorage.setItem('ahllya:sign', x.en.toLowerCase()); } catch (e) {} this.setState({ sign: i }); }
     }));
     var todayDate = this.props.data ? this.props.data.days.today.dateEn : this.state.__now ? new Date(this.state.__now).toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : '';
     var isMan = this.state.expert !== 'san';
@@ -140,7 +141,7 @@ class HomePage extends React.Component {
       isMan: isMan, isSan: !isMan, completeHref: '/consult?expert=' + (isMan ? 'man' : 'san') + '&sess=all',
       plans: plans, fullPrice: CP[3], diwaliPrice: CP[4],
       rashis: rashis,
-      onMoon: (i) => this.setState({ sign: i }),
+      onMoon: (i) => { try { localStorage.setItem('ahllya:sign', signs[i].en.toLowerCase()); } catch (e) {} this.setState({ sign: i }); },
       cur: cur,
       todayDate: todayDate
     };
@@ -178,9 +179,7 @@ HomePage.prototype.render = function render() {
               <a href={"/courses"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Courses"}
               </a>
-              <a href={"/horoscope"} style={{color: "#FFFFFF", textDecoration: "none"}}>
-                {"Horoscope"}
-              </a>
+              <HoroscopeMenu />
               <a href={"/#blog"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Blogs"}
               </a>
@@ -257,12 +256,7 @@ HomePage.prototype.render = function render() {
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/horoscope"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
-                    {"Horoscope"}
-                    <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-                      <path d={"M9 6l6 6-6 6"} />
-                    </svg>
-                  </a>
+                  <HoroscopeMobileMenu onNavigate={v.closeMenu} />
                   <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "22px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
