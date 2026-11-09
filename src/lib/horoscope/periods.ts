@@ -122,10 +122,10 @@ export function monthlyHoroscopes(now: Date = new Date()): PeriodData {
 
 /* ---------------------------------------------------------------- Yearly (slow planets) */
 
-export interface YearStretch { from: string; to: string; house: number; good: boolean }
+export interface YearStretch { from: string; to: string; house: number; good: boolean; pct: number }
 export interface YearPlanet { planet: string; stretches: YearStretch[]; summary: string }
 export interface SignYear { planets: YearPlanet[]; saturnNote: string; supportive: number; highlights: string[] }
-export interface YearData { year: number; events: { planet: string; dateLabel: string; toSign: string }[]; signs: SignYear[] }
+export interface YearData { year: number; label: string; events: { planet: string; dateLabel: string; toSign: string }[]; signs: SignYear[] }
 
 const SLOW: { planet: string; topic: string; stepDays: number }[] = [
   { planet: "Jupiter", topic: "growth, luck and guidance", stepDays: 5 },
@@ -133,9 +133,20 @@ const SLOW: { planet: string; topic: string; stepDays: number }[] = [
   { planet: "Rahu", topic: "ambition, change and bold moves", stepDays: 7 },
 ];
 
+/** A calendar year, for example 2027. */
 export function yearlyHoroscopes(year = 2027): YearData {
-  const start = Date.UTC(year, 0, 1) - 5.5 * 36e5;
-  const end = Date.UTC(year + 1, 0, 1) - 5.5 * 36e5;
+  return yearlyBetween(Date.UTC(year, 0, 1) - 5.5 * 36e5, Date.UTC(year + 1, 0, 1) - 5.5 * 36e5, String(year), year, false);
+}
+
+/** The 12 months from today (IST). */
+export function next12Months(now: Date = new Date()): YearData {
+  const t = istParts(now.getTime());
+  const start = Date.UTC(t.y, t.m - 1, t.d) - 5.5 * 36e5;
+  return yearlyBetween(start, start + 365 * DAY_MS, "Next 12 months", t.y, true);
+}
+
+function yearlyBetween(start: number, end: number, label: string, year: number, rolling: boolean): YearData {
+  const lab = (ms: number) => (rolling ? `${dateLabel(ms)} ${istParts(ms).y}` : dateLabel(ms));
   const per: Record<string, { at: number; from: number; to: number }[]> = {};
   const startSign: Record<string, number> = {};
   for (const s of SLOW) { per[s.planet] = ingressesBetween([s.planet], start, end, s.stepDays); startSign[s.planet] = signOf(s.planet, start + 3 * 36e5); }
@@ -152,13 +163,17 @@ export function yearlyHoroscopes(year = 2027): YearData {
         const house = houseFrom(i, sg);
         const good = GOOD_HOUSES[s.planet as keyof typeof GOOD_HOUSES].includes(house);
         if (good) supportiveDays += (marks[k + 1] - marks[k]) / DAY_MS;
-        return { from: k === 0 ? "1 Jan" : dateLabel(marks[k]), to: k === signsIn.length - 1 ? "31 Dec" : dateLabel(marks[k + 1]), house, good };
+        return {
+          from: k === 0 ? (rolling ? lab(start) : "1 Jan") : lab(marks[k]),
+          to: k === signsIn.length - 1 ? (rolling ? lab(end - 1) : "31 Dec") : lab(marks[k + 1]),
+          house, good, pct: ((marks[k + 1] - marks[k]) / (end - start)) * 100,
+        };
       });
       const goodShare = stretches.reduce((sum, st, k) => sum + (st.good ? (marks[k + 1] - marks[k]) : 0), 0) / (end - start);
       const tone = goodShare > 0.75 ? "mostly supportive" : goodShare > 0.35 ? "a mixed influence" : goodShare > 0 ? "mostly challenging" : "challenging throughout";
       const lastTwo = stretches.length > 1 ? ` It changes house on ${stretches[1].from}.` : "";
       if (stretches.length > 1) highlights.push(`${s.planet} changes house on ${stretches[1].from}, from your ${ORD_EN[stretches[0].house]} to your ${ORD_EN[stretches[1].house]} house.`);
-      return { planet: s.planet, stretches, summary: `${s.planet} (${s.topic}) is ${tone} for you in ${year}.${lastTwo}` };
+      return { planet: s.planet, stretches, summary: `${s.planet} (${s.topic}) is ${tone} for you ${rolling ? "over the next 12 months" : "in " + year}.${lastTwo}` };
     });
     const satStretches = planets[1].stretches;
     const phases = satStretches.map((st) => (st.house === 12 ? "the first phase of Sade Sati" : st.house === 1 ? "the peak of Sade Sati" : st.house === 2 ? "the last phase of Sade Sati" : st.house === 4 ? "Kantaka Shani dhaiya" : st.house === 8 ? "Ashtama Shani dhaiya" : null));
@@ -166,5 +181,5 @@ export function yearlyHoroscopes(year = 2027): YearData {
     const saturnNote = active.length ? `Saturn is running ${active.join(", then ")}. Keep to routine, be patient with money and health, and avoid shortcuts.` : "You are not in Sade Sati or Shani dhaiya in this year.";
     return { planets, saturnNote, supportive: Math.round((supportiveDays / (3 * 365)) * 100), highlights };
   });
-  return { year, events, signs };
+  return { year, label, events, signs };
 }

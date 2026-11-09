@@ -46,12 +46,7 @@ export function HoroscopeExtras({ current }: { current?: string }) {
               </li>
             ))}
           </ul>
-          <p style={{ margin: "14px 0 0", fontSize: 15, display: "flex", flexWrap: "wrap", gap: "8px 22px" }}>
-            <a href="/horoscope/weekly" style={link}>Weekly horoscope</a>
-            <a href="/horoscope/monthly" style={link}>Monthly horoscope</a>
-            <a href="/horoscope/2027" style={link}>Horoscope 2027</a>
-            <a href="/horoscope/2028" style={link}>Horoscope 2028</a>
-          </p>
+
         </nav>
         <div style={{ background: "#2E003E", color: "#FFFFFF", borderRadius: 22, padding: "26px 28px", display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ maxWidth: 640 }}>

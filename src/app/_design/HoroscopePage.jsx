@@ -3,7 +3,7 @@
 // Generated from the design file Horoscope.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
 import { sx, hole } from "./sx";
-import { HoroscopeTabs } from "@/lib/horoscope/tabs";
+import PeriodPanel from "./PeriodPanel";
 import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 // DATA is computed fresh each day by src/lib/horoscope/engine.ts and passed in as the `data` prop.
@@ -14,7 +14,7 @@ var LANG = {
     supportive: 'Helps', notSupportive: 'Challenging', retroNote: 'R means the planet is retrograde. Rahu and Ketu always move backwards.',
     ctaSub: 'Your own Kundli shows what today means for you, with your dasha, your houses and your timing.', ctaReport: 'Get your personalised Kundli', ctaFree: 'Find your Moon sign free',
     aboutEyebrow: 'Know your sign', strengths: 'Strengths', watch: 'Watch out for', faqTitle: 'About your daily horoscope',
-    bands: ['Favourable day', 'Mixed day', 'Go carefully'], today: 'Today', tomorrow: 'Tomorrow',
+    bands: ['Favourable day', 'Mixed day', 'Go carefully'], today: 'Today', tomorrow: 'Tomorrow', weekly: 'Weekly', monthly: 'Monthly', yearly: 'Yearly',
     faqs: [
       { q: 'Is this based on my Moon sign or Sun sign?', a: 'Your Moon sign (rashi), as in Vedic astrology. It is the sign the Moon was in when you were born, and it is often different from the Sun sign used in western astrology.' },
       { q: 'How is it calculated?', a: 'From the actual positions of the planets at sunrise in New Delhi, counted from your Moon sign. The scores come from how supportive each planet is for each part of life today.' },
@@ -27,7 +27,7 @@ var LANG = {
     supportive: 'अनुकूल', notSupportive: 'चुनौती', retroNote: 'R का अर्थ है ग्रह वक्री है। राहु और केतु हमेशा वक्री चलते हैं।',
     ctaSub: 'आपकी अपनी कुंडली बताती है कि आज का दिन आपके लिए क्या है, आपकी दशा, भावों और समय के साथ।', ctaReport: 'अपनी व्यक्तिगत कुंडली बनवाएं', ctaFree: 'अपनी चंद्र राशि मुफ़्त जानें',
     aboutEyebrow: 'अपनी राशि को जानें', strengths: 'खूबियां', watch: 'ध्यान रखें', faqTitle: 'दैनिक राशिफल के बारे में',
-    bands: ['शुभ दिन', 'मिला-जुला दिन', 'सावधानी का दिन'], today: 'आज', tomorrow: 'कल',
+    bands: ['शुभ दिन', 'मिला-जुला दिन', 'सावधानी का दिन'], today: 'आज', tomorrow: 'कल', weekly: 'साप्ताहिक', monthly: 'मासिक', yearly: 'वार्षिक',
     faqs: [
       { q: 'यह चंद्र राशि पर आधारित है या सूर्य राशि पर?', a: 'वैदिक ज्योतिष की तरह आपकी चंद्र राशि पर। यह वह राशि है जिसमें आपके जन्म के समय चंद्रमा था, और यह अक्सर पश्चिमी ज्योतिष की सूर्य राशि से अलग होती है।' },
       { q: 'इसकी गणना कैसे होती है?', a: 'नई दिल्ली में सूर्योदय के समय ग्रहों की वास्तविक स्थिति से, आपकी चंद्र राशि से गिनकर। अंक इस बात से तय होते हैं कि आज हर ग्रह जीवन के हर क्षेत्र के लिए कितना अनुकूल है।' },
@@ -40,22 +40,56 @@ class HoroscopePage extends React.Component {
   constructor(props) {
     super(props);
     // sign comes from the URL, for example /horoscope/taurus
-    this.state = Object.assign({ sign: 1, day: 'today', lang: 'en', menuOpen: false, picked: !!(props && props.initialState && props.initialState.sign != null) }, props && props.initialState);
+    this.state = Object.assign({ sign: 1, day: 'today', lang: 'en', menuOpen: false, picked: !!(props && props.initialState && props.initialState.sign != null), periods: props && props.period ? { [props.period.view + '|' + props.period.sign]: props.period } : {}, loadingKey: null, failedKey: null }, props && props.initialState);
+    this.selectView = this.selectView.bind(this);
+    this.selectSign = this.selectSign.bind(this);
   }
+  slugOf(i) { return this.props.data.signs[i].en.toLowerCase(); }
+  isDaily(day) { return day === 'today' || day === 'tomorrow'; }
+  // Keeps the address bar in step with the view, so every view has its own shareable link.
+  syncUrl(day, i) {
+    try { window.history.replaceState(null, '', '/horoscope/' + this.slugOf(i) + (this.isDaily(day) ? '' : '/' + day)); } catch (e) {}
+  }
+  loadPeriod(day, i) {
+    if (this.isDaily(day)) return;
+    var slug = this.slugOf(i), key = day + '|' + slug;
+    if (this.state.periods[key]) return;
+    this.setState({ loadingKey: key, failedKey: null });
+    fetch('/api/horoscope/period?view=' + day + '&sign=' + slug)
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((d) => this.setState((st) => ({ periods: Object.assign({}, st.periods, { [key]: d }), loadingKey: st.loadingKey === key ? null : st.loadingKey })))
+      .catch(() => this.setState({ failedKey: key, loadingKey: null }));
+  }
+  selectView(day) {
+    this.setState({ day: day, picked: true });
+    this.syncUrl(day, this.state.sign);
+    this.loadPeriod(day, this.state.sign);
+  }
+  selectSign(i) {
+    this.setState({ sign: i, picked: true });
+    this.syncUrl(this.state.day, i);
+    this.loadPeriod(this.state.day, i);
+  }
+  componentDidMount() { this.loadPeriod(this.state.day, this.state.sign); }
   renderVals() {
     var hi = this.state.lang === 'hi', L = LANG[this.state.lang], si = this.state.sign;
-    var dd = this.props.data.days[this.state.day], d = dd.signs[si], sg = this.props.data.signs[si];
-    var rashis = this.props.data.signs.map((s, i) => ({ en: s.en, hi: s.hi, img: s.img, sel: i === si, notSel: i !== si, pick: () => { this.setState({ sign: i, picked: true }); try { window.history.replaceState(null, '', '/horoscope/' + s.en.toLowerCase()); } catch (e) {} } }));
+    var daily = this.isDaily(this.state.day);
+    var dd = this.props.data.days[daily ? this.state.day : 'today'], d = dd.signs[si], sg = this.props.data.signs[si];
+    var pkey = this.state.day + '|' + sg.en.toLowerCase(), pdata = daily ? null : (this.state.periods[pkey] || null);
+    var VIEW_LABEL = { weekly: [L.weekly, 'Weekly'], monthly: [L.monthly, 'Monthly'], yearly: [L.yearly, 'Yearly'], '2027': ['2027', '2027'], '2028': ['2028', '2028'] };
+    var rashis = this.props.data.signs.map((s, i) => ({ en: s.en, hi: s.hi, img: s.img, sel: i === si, notSel: i !== si, pick: () => this.selectSign(i) }));
     var tab = (key, opts) => opts.map((o) => ({ label: o[1], sel: this.state[key] === o[0], notSel: this.state[key] !== o[0], pick: () => { var x = {}; x[key] = o[0]; this.setState(x); } }));
     var C = 2 * Math.PI * 52;
     return {
       menuOpen: !!this.state.menuOpen, menuExpanded: this.state.menuOpen ? 'true' : 'false', openMenu: () => this.setState({ menuOpen: true }), closeMenu: () => this.setState({ menuOpen: false }),
+      eyebrow: daily ? L.eyebrow : (hi ? 'राशिफल' : 'Horoscope'),
       signSlug: this.state.picked ? sg.en.toLowerCase() : undefined,
       L: L, langCode: this.state.lang, rashis: rashis, cur: sg,
-      dayTabs: tab('day', [['today', L.today], ['tomorrow', L.tomorrow]]), langTabs: tab('lang', [['en', 'English'], ['hi', 'हिंदी']]),
-      title: hi ? sg.hi + ' राशिफल ' + (this.state.day === 'today' ? 'आज' : 'कल') : sg.en + ' Horoscope ' + (this.state.day === 'today' ? 'Today' : 'Tomorrow'),
+      dayTabs: [['today', L.today], ['tomorrow', L.tomorrow], ['weekly', L.weekly], ['monthly', L.monthly], ['yearly', L.yearly], ['2027', '2027'], ['2028', '2028']].map((o) => ({ label: o[1], sel: this.state.day === o[0], notSel: this.state.day !== o[0], pick: () => this.selectView(o[0]) })),
+      isDaily: daily, periodData: pdata, periodLoading: !daily && this.state.loadingKey === pkey, periodFailed: !daily && this.state.failedKey === pkey, curSign: { en: sg.en, hi: sg.hi }, langTabs: tab('lang', [['en', 'English'], ['hi', 'हिंदी']]),
+      title: !daily ? (hi ? sg.hi + ' राशिफल ' + VIEW_LABEL[this.state.day][0] : sg.en + ' ' + (this.state.day === 'yearly' ? 'Yearly Horoscope' : /^\d+$/.test(this.state.day) ? 'Horoscope ' + this.state.day : VIEW_LABEL[this.state.day][1] + ' Horoscope')) : hi ? sg.hi + ' राशिफल ' + (this.state.day === 'today' ? 'आज' : 'कल') : sg.en + ' Horoscope ' + (this.state.day === 'today' ? 'Today' : 'Tomorrow'),
       titleShort: hi ? sg.hi : sg.en,
-      dateLine: hi ? dd.dateHi : dd.dateEn,
+      dateLine: !daily ? (pdata ? pdata.range : '') : hi ? dd.dateHi : dd.dateEn,
       signName: hi ? sg.hi : sg.en, signSub: hi ? 'स्वामी ' + sg.lordHi + ' · ' + sg.elHi + ' तत्व' : sg.hi + ' · Ruled by ' + sg.lord,
       day: d, ring: (C * d.overall / 100).toFixed(1) + ' ' + C.toFixed(1), bandLabel: L.bands[d.band],
       summary: hi ? d.whyHi[0] : d.whyEn[0],
@@ -242,11 +276,10 @@ HoroscopePage.prototype.render = function render() {
                 {hole(v.titleShort)}
               </span>
             </nav>
-            <HoroscopeTabs active={"today"} sign={v.signSlug} />
             <div style={{display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: "18px", marginBottom: "26px"}}>
               <div style={{minWidth: "0"}}>
                 <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
-                  {hole(v.L?.eyebrow)}
+                  {hole(v.eyebrow)}
                 </p>
                 <h1 style={{margin: "0 0 8px", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontWeight: "400", fontSize: "clamp(34px, 4.2vw, 52px)", lineHeight: "1.1"}}>
                   {hole(v.title)}
@@ -256,7 +289,7 @@ HoroscopePage.prototype.render = function render() {
                 </p>
               </div>
               <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}}>
-                <div role={"tablist"} aria-label={"Day"} style={{display: "inline-flex", gap: "4px", background: "#F3EDE3", padding: "4px", borderRadius: "999px"}}>
+                <div role={"tablist"} aria-label={"Day"} style={{display: "inline-flex", flexWrap: "wrap", gap: "4px", background: "#F3EDE3", padding: "4px", borderRadius: "24px"}}>
                   {(v.dayTabs || []).map((t, $index) => (
                     <React.Fragment key={$index}>
                       {t?.sel ? (
@@ -348,6 +381,8 @@ HoroscopePage.prototype.render = function render() {
             </div>
           </div>
         </div>
+        {v.isDaily ? (
+        <>
         <div lang={v.langCode} style={{maxWidth: "1200px", margin: "0 auto", padding: "8px 24px 0"}}>
           <div className={"am-horo"} style={{display: "grid", gridTemplateColumns: "minmax(0, 380px) minmax(0, 1fr)", gap: "20px", alignItems: "start"}}>
             <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(160deg, #2E003E 0%, #4A0A66 55%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "22px", padding: "28px"}}>
@@ -578,6 +613,12 @@ HoroscopePage.prototype.render = function render() {
             {hole(v.L?.retroNote)}
           </p>
         </div>
+        </>
+      ) : (
+        <div lang={v.langCode} style={{maxWidth: "1200px", margin: "0 auto", padding: "8px 24px 0"}}>
+          <PeriodPanel data={v.periodData} loading={v.periodLoading} failed={v.periodFailed} sign={v.curSign} />
+        </div>
+      )}
         <div lang={v.langCode} style={{maxWidth: "1200px", margin: "0 auto", padding: "72px 24px 0"}}>
           <div style={{position: "relative", overflow: "hidden", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "22px 32px", background: "linear-gradient(120deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "24px", padding: "clamp(26px, 4vw, 40px)"}}>
             <div className={"am-stars"} aria-hidden={"true"} />

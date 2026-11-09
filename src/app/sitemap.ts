@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: `/horoscope/${slug}`, priority: 0.8, changeFrequency: "daily" as const },
     { path: `/horoscope/${slug}/weekly`, priority: 0.6, changeFrequency: "daily" as const },
     { path: `/horoscope/${slug}/monthly`, priority: 0.6, changeFrequency: "daily" as const },
+    { path: `/horoscope/${slug}/yearly`, priority: 0.6, changeFrequency: "daily" as const },
     { path: `/horoscope/${slug}/2027`, priority: 0.6, changeFrequency: "monthly" as const },
     { path: `/horoscope/${slug}/2028`, priority: 0.5, changeFrequency: "monthly" as const },
   ]);
