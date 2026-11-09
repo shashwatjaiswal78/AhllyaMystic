@@ -137,3 +137,5 @@
 .pn-t td:nth-child(2){font-weight:700;white-space:nowrap}.pn-t td:nth-child(3){white-space:nowrap}.pn-t td:nth-child(4){min-width:300px}
 .pn-t .best td:nth-child(2){color:var(--g1)}.pn-t .good td:nth-child(2){color:var(--g2)}.pn-t .gain td:nth-child(2){color:var(--g3)}
 .pn-t .bad td:nth-child(2){color:var(--r1)}.pn-t .evil td:nth-child(2){color:var(--r2)}.pn-t .loss td:nth-child(2){color:var(--r3)}.pn-t .mid td:nth-child(2){color:var(--s1)}
+
+.pn-sh{font-family:'Marcellus',serif;font-weight:400;color:var(--plum);font-size:22px;margin:26px 0 10px}

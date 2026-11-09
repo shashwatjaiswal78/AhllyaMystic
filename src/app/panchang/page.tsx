@@ -1,33 +1,29 @@
 import type { Metadata } from "next";
 import PanchangPage from "@/app/_design/PanchangPage";
+import { CityLinks } from "@/app/_design/PanchangCities";
 import { getDefaultPanchang } from "@/lib/panchang/data";
+import { faqFor, metaFor } from "@/lib/panchang/seo";
+import { SITE_URL } from "@/lib/site";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/panchang" },
-  title: "Daily Panchang and Choghadiya for Your City",
-  description:
-    "Free daily Panchang for any city or village: tithi, nakshatra, yoga, karana with change times, sunrise, Choghadiya, Rahu Kaal and the lunar month.",
-};
-
-const faq = [
-  { q: "What is Choghadiya?", a: "Choghadiya is a method of checking whether a time of day is favourable for starting something. The day from sunrise to sunset, and the night from sunset to the next sunrise, are each divided into 8 slots. Amrit, Shubh, Labh and Char are favourable. Rog, Kaal and Udveg are best avoided." },
-  { q: "What is a Panchang?", a: "A Panchang has five parts: Tithi (lunar day), Vaar (weekday), Nakshatra (the star the Moon is in), Yoga and Karana. A Panchang day starts at sunrise, not at midnight." },
-  { q: "What is Rahu Kaal?", a: "Rahu Kaal is one eighth of the daylight, counted from sunrise, which is considered unsuitable for starting new work. Which eighth it is depends on the weekday." },
-];
+const m = metaFor("panchang");
+export const metadata: Metadata = { alternates: { canonical: m.path }, title: m.title, description: m.description };
 
 export default async function Page() {
   const initial = await getDefaultPanchang();
+  const faq = faqFor("panchang");
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       { "@type": "FAQPage", mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
-      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://www.ahllyamystic.com" }, { "@type": "ListItem", position: 2, name: "Panchang", item: "https://www.ahllyamystic.com/panchang" }] },
+      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: "Daily Panchang", item: SITE_URL + m.path }] },
     ],
   };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <PanchangPage initial={initial} />
+      <PanchangPage initial={initial} mode="panchang">
+        <CityLinks mode="panchang" />
+      </PanchangPage>
     </>
   );
 }

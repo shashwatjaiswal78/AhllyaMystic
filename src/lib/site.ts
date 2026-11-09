@@ -8,11 +8,14 @@ export const SOCIAL = [
   "https://www.facebook.com/ahllyamystic",
 ];
 
+import { CITY_SLUGS } from "./panchang/cities";
+
 /** Indexable routes. Checkout pages are intentionally left out. */
 export const ROUTES: { path: string; priority: number; changeFrequency: "daily" | "weekly" | "monthly" | "yearly" }[] = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/horoscope", priority: 0.9, changeFrequency: "daily" },
   { path: "/panchang", priority: 0.8, changeFrequency: "daily" },
+  { path: "/choghadiya", priority: 0.8, changeFrequency: "daily" },
   { path: "/kundli", priority: 0.9, changeFrequency: "monthly" },
   { path: "/kp-kundli", priority: 0.8, changeFrequency: "monthly" },
   { path: "/name-number", priority: 0.8, changeFrequency: "monthly" },
@@ -31,6 +34,8 @@ export const ROUTES: { path: string; priority: number; changeFrequency: "daily" 
   { path: "/blog/sade-sati-what-it-really-means", priority: 0.6, changeFrequency: "monthly" },
   { path: "/blog/should-you-change-your-name-spelling", priority: 0.6, changeFrequency: "monthly" },
   { path: "/blog/simple-vastu-fixes-for-your-home", priority: 0.6, changeFrequency: "monthly" },
+  ...CITY_SLUGS.map((slug) => ({ path: `/panchang/${slug}`, priority: 0.6, changeFrequency: "daily" as const })),
+  ...CITY_SLUGS.map((slug) => ({ path: `/choghadiya/${slug}`, priority: 0.6, changeFrequency: "daily" as const })),
   { path: "/about", priority: 0.6, changeFrequency: "yearly" },
   { path: "/contact", priority: 0.5, changeFrequency: "yearly" },
   { path: "/policies/privacy", priority: 0.2, changeFrequency: "yearly" },

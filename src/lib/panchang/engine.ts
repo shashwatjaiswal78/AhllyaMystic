@@ -171,6 +171,52 @@ export interface PanchangDay {
   timeline: Record<TlRow, Seg[]> | null;
   lunar: ReturnType<typeof lunarInfo>;
   now: { slot: Slot; next: Slot | null } | null;
+  extra: Extra | null;
+}
+
+/* ---------------------------------------------------------------- the rest of the day's Panchang */
+type Span = [number, number];
+export interface Extra {
+  moon: { rise: number | null; set: number | null };
+  rashi: { moon: number; moonChange: number | null; moonNext: number; sun: number; pada: number };
+  durations: { day: number; night: number; midday: number };
+  auspicious: { brahma: Span; abhijit: Span | null };
+  inauspicious: { rahu: Span; yamaganda: Span; gulika: Span };
+  ritu: string;
+  ayana: string;
+  disha: string;
+}
+const YAMA_SLOT = [4, 3, 2, 1, 0, 6, 5]; // Sun..Sat: day eighth that is Yamaganda
+const GULIKA_SLOT = [6, 5, 4, 3, 2, 1, 0]; // Sun..Sat: day eighth that is Gulika
+const DISHA = ["West", "East", "North", "North", "South", "West", "East"]; // Sun..Sat: direction to avoid for travel
+const RITU: Record<string, string> = { Chaitra: "Vasanta", Vaishakha: "Vasanta", Jyeshtha: "Grishma", Ashadha: "Grishma", Shravana: "Varsha", Bhadrapada: "Varsha", Ashwina: "Sharad", Kartika: "Sharad", Margashirsha: "Hemanta", Pausha: "Hemanta", Magha: "Shishira", Phalguna: "Shishira" };
+
+function extraFor(dateStr: string, p: PanchangPlace, sun: { rise: number; set: number; next: number }, dow: number, monthName: string): Extra {
+  const q = parseYMD(dateStr), start = zonedToUtc(q.y, q.m, q.d, 0, 0, p.tz).getTime(), obs = new Astronomy.Observer(p.la, p.lo, 0);
+  const inDay = (r: { date: Date } | null) => (r && r.date.getTime() >= start && r.date.getTime() < start + DAYMS ? r.date.getTime() : null);
+  const moon = { rise: inDay(Astronomy.SearchRiseSet(Astronomy.Body.Moon, obs, +1, new Date(start), 1)), set: inDay(Astronomy.SearchRiseSet(Astronomy.Body.Moon, obs, -1, new Date(start), 1)) };
+
+  const sign = (ms: number) => Math.floor(moonSid(ms) / 30);
+  const m0 = sign(sun.rise);
+  let moonChange: number | null = null;
+  for (let t = sun.rise + 15 * 60000; t <= sun.next; t += 15 * 60000) {
+    if (sign(t) !== m0) { let a = t - 15 * 60000, b = t; while (b - a > 1000) { const m = (a + b) / 2; if (sign(m) === m0) a = m; else b = m; } moonChange = b; break; }
+  }
+  const pada = Math.floor((moonSid(sun.rise) % (360 / 27)) / (360 / 108)) + 1;
+
+  const dayMs = sun.set - sun.rise, dl = dayMs / 8, mu = dayMs / 15;
+  const slot = (i: number): Span => [sun.rise + i * dl, sun.rise + (i + 1) * dl];
+  const tropical = Astronomy.SunPosition(new Date(sun.rise)).elon;
+  return {
+    moon,
+    rashi: { moon: m0, moonChange, moonNext: (m0 + 1) % 12, sun: sunSign(sun.rise), pada },
+    durations: { day: dayMs, night: sun.next - sun.set, midday: sun.rise + dayMs / 2 },
+    auspicious: { brahma: [sun.rise - 96 * 60000, sun.rise - 48 * 60000], abhijit: dow === 3 ? null : [sun.rise + 7 * mu, sun.rise + 8 * mu] },
+    inauspicious: { rahu: slot(RAHU_SLOT[dow]), yamaganda: slot(YAMA_SLOT[dow]), gulika: slot(GULIKA_SLOT[dow]) },
+    ritu: RITU[monthName.replace("Adhika ", "")] ?? "",
+    ayana: tropical >= 270 || tropical < 90 ? "Uttarayana" : "Dakshinayana",
+    disha: DISHA[dow],
+  };
 }
 
 export function panchangFor(dateStr: string, p: PanchangPlace, now = Date.now()): PanchangDay {
@@ -178,11 +224,13 @@ export function panchangFor(dateStr: string, p: PanchangPlace, now = Date.now())
   const pr = periodsFor(dateStr, p);
   const noon = zonedToUtc(q.y, q.m, q.d, 12, 0, p.tz).getTime();
   const ref = pr ? pr.sun.rise : noon;
+  const lunar = lunarInfo(ref, p.tz);
   return {
     place: p, date: dateStr, dow: dowOf(dateStr), offMs: tzOffset(noon, p.tz), serverNow: now,
     sun: pr ? pr.sun : null, day: pr ? pr.day : [], night: pr ? pr.night : [],
     timeline: pr ? Object.fromEntries(TL_ROWS.map((r) => [r, segmentsOf(r, pr.sun.rise, pr.sun.next)])) as Record<TlRow, Seg[]> : null,
-    lunar: lunarInfo(ref, p.tz),
+    lunar,
     now: currentSlot(p, now),
+    extra: pr ? extraFor(dateStr, p, pr.sun, dowOf(dateStr), lunar.amanta) : null,
   };
 }

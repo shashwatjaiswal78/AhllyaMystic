@@ -2,7 +2,7 @@
 /* eslint-disable */
 // Generated from the design file LalKitab.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
-import { HoroscopeMenu, HoroscopeMobileMenu, CalculatorsMenu, CalculatorsMobileMenu, ReportsMenu, ReportsMobileMenu } from "./HoroscopeMenu";
+import { HoroscopeMenu, HoroscopeMobileMenu, CalculatorsMenu, CalculatorsMobileMenu, ReportsMenu, ReportsMobileMenu, PanchangMenu, PanchangMobileMenu } from "./HoroscopeMenu";
 import { sx, hole } from "./sx";
 import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
@@ -141,9 +141,7 @@ ReportLalKitabPage.prototype.render = function render() {
                 {"Courses"}
               </a>
               <HoroscopeMenu />
-              <a href={"/panchang"} style={{color: "#FFFFFF", textDecoration: "none"}}>
-                {"Panchang"}
-              </a>
+              <PanchangMenu />
               <a href={"/about"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"About"}
               </a>
@@ -209,12 +207,7 @@ ReportLalKitabPage.prototype.render = function render() {
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/panchang"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
-                    {"Panchang"}
-                    <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-                      <path d={"M9 6l6 6-6 6"} />
-                    </svg>
-                  </a>
+                  <PanchangMobileMenu onNavigate={v.closeMenu} />
                   <a href={"/about"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"About"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
@@ -747,9 +740,9 @@ ReportLalKitabPage.prototype.render = function render() {
                   {"Daily Horoscope"}
                 </a>
                 <a href={"/panchang"} style={{color: "#EADFF2", textDecoration: "none"}}>
-                  {"Panchang"}
+                  {"Daily Panchang"}
                 </a>
-                <a href={"/panchang"} style={{color: "#EADFF2", textDecoration: "none"}}>
+                <a href={"/choghadiya"} style={{color: "#EADFF2", textDecoration: "none"}}>
                   {"Daily Choghadiya"}
                 </a>
                 <a href={"/kp-kundli"} style={{color: "#EADFF2", textDecoration: "none"}}>

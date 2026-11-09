@@ -3,6 +3,19 @@
 // and Karana out. The calculation runs on the server (/api/panchang); this file draws it and handles the controls.
 import React, { useEffect, useRef, useState } from "react";
 import "./panchang.css";
+import { hiName, hiLunarMonth, hiMonthLong, UI } from "@/lib/panchang/hi";
+
+const LANG_KEY = "ahllya:bloglang";
+const tt = (k, hi) => (UI[k] ? (hi ? UI[k].hi : UI[k].en) : k);
+const HI_EDU = {
+  Udveg: ["सूर्य", "अशुभ", "सूर्य एक उग्र ग्रह है, इसलिए नए कार्य के लिए यह समय सामान्यतः टाला जाता है। सरकार और अधिकारियों से जुड़े काम के लिए यह ठीक है।"],
+  Char: ["शुक्र", "सामान्य", "शुक्र कोमल और सदा गतिशील है, इसीलिए चर को चंचल भी कहते हैं। यात्रा और चलने-फिरने वाले कार्यों के लिए उपयुक्त है।"],
+  Labh: ["बुध", "लाभ", "बुध शुभ ग्रह है। विद्या आरंभ करने, नया हुनर सीखने और व्यापार के लिए लाभ को सबसे अच्छा माना जाता है।"],
+  Amrit: ["चंद्र", "सर्वोत्तम", "चंद्र शुभ ग्रह है और अमृत सबसे श्रेष्ठ चौघड़िया है। इसे हर प्रकार के कार्य के लिए अच्छा माना जाता है।"],
+  Kaal: ["शनि", "हानि", "शनि पाप ग्रह है। काल में शुभ कार्य टाले जाते हैं, हालाँकि धीरे-धीरे धन जोड़ने वाले कार्यों के लिए इसे सुझाया जाता है।"],
+  Shubh: ["गुरु", "अच्छा", "गुरु शुभ ग्रह है। शुभ को मांगलिक कार्यों, खासकर विवाह के लिए अच्छा माना जाता है।"],
+  Rog: ["मंगल", "अशुभ", "मंगल पाप ग्रह है। रोग में शुभ कार्य टाले जाते हैं, हालाँकि इसका उपयोग संघर्ष और शत्रु पर विजय के लिए होता है।"],
+};
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const MONTHS_LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -23,6 +36,8 @@ const EDU = [
   ["Rog", "Mars", "Evil", "Mars is a malefic. Auspicious work is avoided in Rog, though it is used for conflict and for defeating an opponent."],
 ];
 const PLACE_KEY = "ahllya:place";
+const RASHI = ["Mesha", "Vrishabha", "Mithuna", "Karka", "Simha", "Kanya", "Tula", "Vrishchika", "Dhanu", "Makara", "Kumbha", "Meena"];
+const dur = (ms, hi) => { const m = Math.round(ms / 60000); return hi ? `${Math.floor(m / 60)} घंटे ${m % 60} मिनट` : `${Math.floor(m / 60)} h ${m % 60} min`; };
 
 /* ---------------------------------------------------------------- date and time helpers */
 const pad2 = (n) => String(n).padStart(2, "0");
@@ -138,7 +153,7 @@ function Timeline({ d, fmt, now }) {
   );
 }
 
-function Col({ list, title, time, tz, date, fmt }) {
+function Col({ list, title, time, tz, date, fmt, hi }) {
   return (
     <div className="pn-col">
       <div className="pn-head"><b>{title}</b><span>{time}</span></div>
@@ -146,11 +161,73 @@ function Col({ list, title, time, tz, date, fmt }) {
         const n = NATURE[x.name];
         return (
           <div className="pn-row" key={i}>
-            <div className={"pn-cell " + n.k}><span className="pn-dia" aria-hidden="true" />{x.name} <i>{n.t}</i></div>
-            <div className="pn-time"><span>{fmtT(x.start, tz, date, fmt)} <i>to</i> {fmtT(x.end, tz, date, fmt)}</span>{x.rahu ? <em className="pn-rahu">Rahu Kaal</em> : null}</div>
+            <div className={"pn-cell " + n.k}><span className="pn-dia" aria-hidden="true" />{hi ? hiName(x.name) : x.name} <i>{hi ? hiName(n.t) : n.t}</i></div>
+            <div className="pn-time"><span>{fmtT(x.start, tz, date, fmt)} <i>{tt("to", hi)}</i> {fmtT(x.end, tz, date, fmt)}</span>{x.rahu ? <em className="pn-rahu">{tt("rahu", hi)}</em> : null}</div>
           </div>
         );
       })}
+    </div>
+  );
+}
+
+function EduHi() {
+  return (
+    <div className="pn-art" lang="hi">
+      <section><h2>चौघड़िया क्या है?</h2>
+        <p>चौघड़िया यह जाँचने की एक पद्धति है कि दिन का कोई समय किसी कार्य को शुरू करने के लिए शुभ है या नहीं। परंपरा से इसका उपयोग यात्रा का मुहूर्त निकालने के लिए होता था, पर आज लोग खरीदारी, नया काम और शुभ कार्य के लिए भी देखते हैं।</p>
+        <p>चार चौघड़िया शुभ हैं: <b>अमृत</b>, <b>शुभ</b>, <b>लाभ</b> और <b>चर</b>। तीन से बचना चाहिए: <b>रोग</b>, <b>काल</b> और <b>उद्वेग</b>।</p>
+        <p>सूर्योदय से सूर्यास्त तक का समय दिन का चौघड़िया है, और सूर्यास्त से अगले सूर्योदय तक का समय रात का चौघड़िया। पंचांग का दिन सूर्योदय से शुरू होता है, मध्यरात्रि से नहीं।</p></section>
+      <section><h2>इसे चौघड़िया क्यों कहते हैं?</h2>
+        <p>परंपरा में सूर्योदय से सूर्यास्त तक के समय को 30 घटियों में बाँटा जाता है। चौघड़िया के लिए दिन के समय को 8 बराबर भागों में बाँटा जाता है, और रात को भी। हर भाग लगभग 4 घड़ी का होता है, इसीलिए नाम चौघड़िया (चार घड़ी) पड़ा।</p></section>
+      <section><h2>कोई चौघड़िया शुभ या अशुभ कैसे तय होता है?</h2>
+        <p>हर दिन का पहला चौघड़िया उस वार के स्वामी ग्रह का होता है। रविवार को वह सूर्य है, फिर शुक्र, बुध, चंद्र, शनि, गुरु और मंगल का क्रम चलता है। हर चौघड़िया अपने स्वामी ग्रह के स्वभाव के अनुसार फल देता है: शुक्र, बुध, चंद्र और गुरु शुभ चौघड़िया देते हैं, जबकि सूर्य, मंगल और शनि अशुभ।</p></section>
+      <section><h2>अगर शुभ चौघड़िया राहु काल में पड़ जाए तो?</h2>
+        <p>कभी-कभी कोई शुभ चौघड़िया राहु काल के भीतर पड़ जाता है, जिसे अशुभ माना जाता है। दक्षिण भारत में मुहूर्त चुनते समय राहु काल को बहुत महत्व दिया जाता है। इसलिए ऐसे समय में नया शुभ कार्य टालना ही उचित है।</p></section>
+      <h2 className="pn-art-h">सात चौघड़िया</h2>
+      {[["शुभ", "good", ["Amrit", "Shubh", "Labh"]], ["सामान्य", "mid", ["Char"]], ["अशुभ", "bad", ["Udveg", "Kaal", "Rog"]]].map((g) => (
+        <div className={"pn-g " + g[1]} key={g[0]}>
+          <h3>{g[0]} चौघड़िया</h3>
+          <div className="pn-tw">
+            <table className="pn-t">
+              <thead><tr><th>चौघड़िया</th><th>स्वभाव</th><th>स्वामी ग्रह</th><th>अर्थ</th></tr></thead>
+              <tbody>
+                {g[2].map((n) => { const e = HI_EDU[n]; return <tr key={n} className={NATURE[n].k}><td><b>{hiName(n)}</b></td><td>{e[1]}</td><td>{e[0]}</td><td>{e[2]}</td></tr>; })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PanchangEdu({ hi }) {
+  if (hi) return (
+    <div className="pn-art" lang="hi">
+      <section><h2>पंचांग क्या है?</h2>
+        <p>पंचांग का अर्थ है पाँच अंग। ये पाँच अंग हैं तिथि (चंद्र दिन), वार (सप्ताह का दिन), नक्षत्र (चंद्रमा जिस तारे में है), योग और करण। इन्हीं से तय होता है कि कोई दिन किस कार्य के लिए कैसा है। पंचांग का दिन सूर्योदय से शुरू होता है, मध्यरात्रि से नहीं, इसीलिए हर शहर का पंचांग उसके अपने सूर्योदय के अनुसार अलग होता है।</p></section>
+      <section><h2>तिथि, नक्षत्र, योग और करण</h2>
+        <p><b>तिथि</b> चंद्रमा और सूर्य के बीच के कोण से बनती है; हर 12 अंश की दूरी एक तिथि है, और एक चंद्र मास में 30 तिथियाँ होती हैं। <b>नक्षत्र</b> राशिचक्र के 27 बराबर भाग हैं, और चंद्रमा जिस भाग में होता है वही उस समय का नक्षत्र है। <b>योग</b> सूर्य और चंद्रमा के देशांतरों का जोड़ देखकर निकलता है, और 27 योग हैं। <b>करण</b> आधी तिथि होता है, यानी एक तिथि में दो करण।</p></section>
+      <section><h2>शुभ समय</h2>
+        <p><b>ब्रह्म मुहूर्त</b> सूर्योदय से लगभग डेढ़ घंटा पहले शुरू होकर 48 मिनट पहले तक चलता है। इसे पूजा, ध्यान और पढ़ाई के लिए उत्तम माना जाता है। <b>अभिजित मुहूर्त</b> दिन के बीच में आता है और अधिकांश शुभ कार्यों के लिए अच्छा माना जाता है। परंपरा में बुधवार को अभिजित मुहूर्त नहीं गिना जाता।</p></section>
+      <section><h2>अशुभ समय</h2>
+        <p><b>राहु काल</b>, <b>यमगंड</b> और <b>गुलिक काल</b> दिन के आठ बराबर भागों में से एक-एक होते हैं, जो वार के अनुसार बदलते हैं। इनमें नया शुभ कार्य, यात्रा का आरंभ या कोई बड़ा सौदा शुरू करना टाला जाता है। <b>दिशाशूल</b> उस दिशा को बताता है जिस ओर यात्रा शुरू करने से बचना चाहिए।</p></section>
+      <section><h2>चंद्र राशि और संवत</h2>
+        <p>चंद्रमा लगभग सवा दो दिन में एक राशि पार करता है, इसलिए दिन में चंद्र राशि बदल सकती है; ऊपर बदलने का समय दिया गया है। विक्रम संवत् चंद्र-सौर पंचांग का वर्ष है, और अमांत व पूर्णिमांत मास पद्धतियाँ कृष्ण पक्ष में मास का नाम अलग गिनती हैं।</p></section>
+    </div>
+  );
+  return (
+    <div className="pn-art">
+      <section><h2>What is a Panchang?</h2>
+        <p>Panchang means five limbs. The five are Tithi (the lunar day), Vaara (the weekday), Nakshatra (the star the Moon is in), Yoga and Karana. Together they say what kind of day it is for starting something. A Panchang day begins at sunrise, not at midnight, which is why each city has its own Panchang, worked out for its own sunrise.</p></section>
+      <section><h2>Tithi, Nakshatra, Yoga and Karana</h2>
+        <p><b>Tithi</b> comes from the angle between the Moon and the Sun: every 12 degrees is one tithi, and a lunar month has 30. <b>Nakshatra</b> is one of 27 equal parts of the zodiac, and the Moon’s part at any moment is the nakshatra. <b>Yoga</b> is found by adding the longitudes of the Sun and the Moon, and there are 27. <b>Karana</b> is half a tithi, so a tithi holds two karanas.</p></section>
+      <section><h2>Auspicious timings</h2>
+        <p><b>Brahma Muhurta</b> begins about an hour and a half before sunrise and runs until 48 minutes before it. It is considered best for prayer, meditation and study. <b>Abhijit Muhurat</b> falls in the middle of the day and is considered good for most auspicious work. By tradition it is not counted on a Wednesday.</p></section>
+      <section><h2>Inauspicious timings</h2>
+        <p><b>Rahu Kalam</b>, <b>Yamaganda</b> and <b>Gulika Kalam</b> are each one of the eight equal parts of the daylight, and which part it is depends on the weekday. New auspicious work, the start of a journey or a big deal is traditionally not begun in them. <b>Disha Shool</b> names the direction in which starting a journey is best avoided that day.</p></section>
+      <section><h2>Moon sign and the lunar calendar</h2>
+        <p>The Moon takes about two and a quarter days to cross a sign, so the Moon sign can change during the day, and the time of the change is shown above. The Vikrama Samvata is the year of the lunar-solar calendar, and the Amanta and Purnimanta systems differ only in how they name the month during the dark fortnight.</p></section>
     </div>
   );
 }
@@ -188,8 +265,12 @@ function Edu() {
 }
 
 /* ---------------------------------------------------------------- the tool */
-export default function PanchangTool({ initial }) {
+export default function PanchangTool({ initial, city, mode = "panchang" }) {
+  const isCh = mode === "choghadiya";
   const [data, setData] = useState(initial);
+  const [lang, setLang] = useState("en");
+  const hi = lang === "hi";
+  const pickLang = (l) => { setLang(l); try { localStorage.setItem(LANG_KEY, l); } catch (e) { /* ignore */ } };
   const [fmt, setFmt] = useState("12");
   const [pm, setPm] = useState("purni");
   const [busy, setBusy] = useState(false);
@@ -221,8 +302,10 @@ export default function PanchangTool({ initial }) {
   // First visit: restore the saved place, format and Purnimanta/Amanta choice, then refresh for the visitor's own clock.
   useEffect(() => {
     try { setFmt(localStorage.getItem("pn.fmt") || "12"); setPm(localStorage.getItem("pn.pm") || "purni"); } catch (e) { /* ignore */ }
+    try { if (localStorage.getItem(LANG_KEY) === "hi") setLang("hi"); } catch (e) { /* ignore */ }
     let p = initial.place;
-    try { const s = JSON.parse(localStorage.getItem(PLACE_KEY) || "null"); if (s && Number.isFinite(s.la) && Number.isFinite(s.lo) && s.tz) p = s; } catch (e) { /* ignore */ }
+    // A city page always opens on its own city; the general page restores the visitor's saved place.
+    if (!city) { try { const s = JSON.parse(localStorage.getItem(PLACE_KEY) || "null"); if (s && Number.isFinite(s.la) && Number.isFinite(s.lo) && s.tz) p = s; } catch (e) { /* ignore */ } }
     if (placeRef.current) placeRef.current.value = p.n;
     load(todayIn(p.tz), p);
     const away = (e) => { if (box.current && !box.current.contains(e.target)) setOpen(false); };
@@ -319,10 +402,15 @@ export default function PanchangTool({ initial }) {
         <div className="am-stars2" aria-hidden="true" style={{ opacity: 0.6 }} />
         <img loading={"lazy"} decoding={"async"} className="am-spin-zodiac" src="/images/610ce06ea07e7a2d1d36f4d88029f8db.png" alt="" aria-hidden="true" style={{ position: "absolute", right: "-120px", top: "-60px", width: "560px", height: "560px", opacity: 0.18, pointerEvents: "none" }} />
         <div className="pn-hero-in">
-          <p className="pn-crumb"><a href="/">Home</a> / <a href="/horoscope">Horoscope</a> / <b>Panchang</b></p>
-          <p className="pn-eyebrow">Free Panchang tool</p>
-          <h1>Daily Panchang and Choghadiya</h1>
-          <p className="pn-sub">Today’s tithi, nakshatra, yoga and karana, sunrise and sunset, Rahu Kaal and the best hours of the day, calculated for your own city, town or village.</p>
+          <p className="pn-crumb"><a href="/">Home</a> / {city ? <><a href={isCh ? "/choghadiya" : "/panchang"}>{isCh ? (hi ? "चौघड़िया" : "Choghadiya") : (hi ? "पंचांग" : "Panchang")}</a> / <b>{hi ? city.hi : city.name}</b></> : <><a href="/horoscope">{tt("crumbHoroscope", hi)}</a> / <b>{isCh ? (hi ? "चौघड़िया" : "Choghadiya") : (hi ? "पंचांग" : "Panchang")}</b></>}</p>
+          <p className="pn-eyebrow">{isCh ? (hi ? "मुफ़्त चौघड़िया टूल" : "Free Choghadiya tool") : (hi ? "मुफ़्त पंचांग टूल" : "Free Panchang tool")}</p>
+          <h1>{isCh ? (city ? (hi ? `आज का चौघड़िया, ${city.hi}` : `Aaj Ka Choghadiya in ${city.name}`) : (hi ? "आज का चौघड़िया" : "Daily Choghadiya")) : (city ? (hi ? `आज का पंचांग, ${city.hi}` : `Aaj Ka Panchang in ${city.name}`) : (hi ? "आज का पंचांग" : "Daily Panchang"))}</h1>
+          <p className="pn-sub">{isCh ? (city ? (hi ? `${city.hi} के लिए दिन और रात के चौघड़िया, अभी चल रहा चौघड़िया, राहु काल और काम शुरू करने के सबसे अच्छे घंटे।` : `The day and night Choghadiya for ${city.name}, the one running now, Rahu Kaal and the best hours to begin something.`) : (hi ? "आपके अपने शहर, कस्बे या गाँव के लिए दिन और रात के चौघड़िया, अभी चल रहा चौघड़िया, राहु काल और काम शुरू करने के सबसे अच्छे घंटे।" : "The day and night Choghadiya for your own city, town or village, the one running now, Rahu Kaal and the best hours to begin something.")) : (city ? (hi ? `${city.hi} के लिए आज की तिथि, नक्षत्र, योग और करण, सूर्योदय-सूर्यास्त, चंद्रोदय, राहु काल और शुभ-अशुभ समय।` : `Today’s tithi, nakshatra, yoga and karana, sunrise, sunset and moonrise, auspicious and inauspicious timings, worked out for ${city.name}.`) : (hi ? "आपके अपने शहर, कस्बे या गाँव के लिए आज की तिथि, नक्षत्र, योग और करण, सूर्योदय-सूर्यास्त, चंद्रोदय, राहु काल और शुभ-अशुभ समय।" : "Today’s tithi, nakshatra, yoga and karana, sunrise, sunset and moonrise, auspicious and inauspicious timings, worked out for your own city, town or village."))}</p>
+          <div role="group" aria-label="Language" style={{ display: "inline-flex", padding: "4px", borderRadius: "999px", background: "rgba(255,255,255,0.12)", gap: "4px", margin: "0 0 18px" }}>
+            {[["en", "English"], ["hi", "हिंदी"]].map(([k, l]) => (
+              <button key={k} type="button" onClick={() => pickLang(k)} aria-pressed={lang === k} style={{ font: "inherit", fontSize: "13.5px", fontWeight: 700, minHeight: "36px", padding: "0 18px", borderRadius: "999px", border: 0, cursor: "pointer", background: lang === k ? "#FCCE07" : "transparent", color: lang === k ? "#2E003E" : "#FFFFFF" }}>{l}</button>
+            ))}
+          </div>
           <form className="pn-card pn-form pn" onSubmit={submit} noValidate autoComplete="off">
             <div className="pn-fgrid">
               <div className="pn-field">
@@ -369,25 +457,34 @@ export default function PanchangTool({ initial }) {
       </section>
 
       <div className="pn pn-wrap" id="pn-out" style={{ paddingTop: 40 }}>
-        {cur ? (
+        {(isCh ? cur : d.sun) ? (
           <div className="pn-now">
+            {!isCh ? (
+              <div>
+                <p className="pn-now-k">{hi ? "आज का पंचांग" : "Aaj ka Panchang"}</p>
+                <h2 className="pn-now-n">{hi ? hiName(ti.name) : ti.name} <i>{hi ? `${hiName(ti.paksha)} ${tt("paksha", true)}` : `${ti.paksha} Paksha`}</i></h2>
+                <p className="pn-now-t">{hi ? hiName(d.timeline.Nakshatra[0].name) : d.timeline.Nakshatra[0].name} &middot; {hi ? hiName(d.timeline.Yoga[0].name) : d.timeline.Yoga[0].name}</p>
+                <p className="pn-now-c">{fmtT(d.sun.rise, tz, d.date, fmt)} {tt("sunrise", hi)} &middot; {fmtT(d.sun.set, tz, d.date, fmt)} {tt("sunset", hi)}</p>
+              </div>
+            ) : (
             <div>
-              <p className="pn-now-k">Aaj ka Choghadiya</p>
-              <h2 className="pn-now-n">{cur.slot.name} <i>{NATURE[cur.slot.name].t}</i></h2>
-              <p className="pn-now-t">{fmtT(cur.slot.start, tz, todayIn(tz, now), fmt)} to {fmtT(cur.slot.end, tz, todayIn(tz, now), fmt)}</p>
-              <p className="pn-now-c"><span className="pn-left">{hms(cur.slot.end - now)}</span> left{cur.next ? <> &middot; next <b>{cur.next.name}</b> ({NATURE[cur.next.name].t.toLowerCase()})</> : null}</p>
+              <p className="pn-now-k">{tt("nowKicker", hi)}</p>
+              <h2 className="pn-now-n">{hi ? hiName(cur.slot.name) : cur.slot.name} <i>{hi ? hiName(NATURE[cur.slot.name].t) : NATURE[cur.slot.name].t}</i></h2>
+              <p className="pn-now-t">{fmtT(cur.slot.start, tz, todayIn(tz, now), fmt)} {tt("to", hi)} {fmtT(cur.slot.end, tz, todayIn(tz, now), fmt)}</p>
+              <p className="pn-now-c"><span className="pn-left">{hms(cur.slot.end - now)}</span> {tt("left", hi)}{cur.next ? <> &middot; {tt("next", hi)} <b>{hi ? hiName(cur.next.name) : cur.next.name}</b> ({hi ? hiName(NATURE[cur.next.name].t) : NATURE[cur.next.name].t.toLowerCase()})</> : null}</p>
             </div>
+            )}
             <div className="pn-moon">
               <Moon ph={ti.ph} />
               <div>
-                <h3>{dayNo}, {mon}</h3>
-                <p className="pn-tt">{ti.paksha} Paksha, {ti.name}{ti.end ? <span>till {fmtT(ti.end, tz, d.date, fmt)}</span> : null}</p>
-                <p>{li.vy} {li.sam}, Vikrama Samvata</p>
-                <p>{d.place.n}</p>
-                <button type="button" className="pn-pm" onClick={togglePm}>Switch to {am ? "Purnimanta" : "Amanta"}</button>
+                <h3>{dayNo}, {hi ? hiLunarMonth(mon) : mon}</h3>
+                <p className="pn-tt">{hi ? `${hiName(ti.paksha)} ${tt("paksha", true)}, ${hiName(ti.name)}` : `${ti.paksha} Paksha, ${ti.name}`}{ti.end ? <span>{tt("till", hi)} {fmtT(ti.end, tz, d.date, fmt)}</span> : null}</p>
+                <p>{hi ? `${tt("samvat", true)} ${li.vy}` : `${li.vy} ${li.sam}, Vikrama Samvata`}</p>
+                <p>{hi && city && d.place.n === city.name ? city.hi : d.place.n}</p>
+                <button type="button" className="pn-pm" onClick={togglePm}>{hi ? (am ? "पूर्णिमांत देखें" : "अमांत देखें") : `Switch to ${am ? "Purnimanta" : "Amanta"}`}</button>
               </div>
             </div>
-            <div className="pn-bigdate"><b>{q.d}</b><span>{MONTHS_LONG[q.m - 1]} {q.y}</span><small>{WEEKDAYS[dowOf(d.date)]}</small></div>
+            <div className="pn-bigdate"><b>{q.d}</b><span>{(hi ? hiMonthLong : MONTHS_LONG)[q.m - 1]} {q.y}</span><small>{hi ? hiName(WEEKDAYS[dowOf(d.date)]) : WEEKDAYS[dowOf(d.date)]}</small></div>
           </div>
         ) : null}
 
@@ -396,9 +493,9 @@ export default function PanchangTool({ initial }) {
             {[["12", "12 Hour"], ["24", "24 Hour"], ["24plus", "24 Plus"]].map(([k, l]) => <button key={k} type="button" className={fmt === k ? "on" : ""} onClick={() => setF(k)}>{l}</button>)}
           </span>
           <span className="pn-nav">
-            <button type="button" className="pn-b" onClick={() => go(addDays(d.date, -1))}>&lsaquo; Prev day</button>
-            <button type="button" className="pn-b" onClick={() => go(todayIn(tz, Date.now()))}>Today</button>
-            <button type="button" className="pn-b" onClick={() => go(addDays(d.date, 1))}>Next day &rsaquo;</button>
+            <button type="button" className="pn-b" onClick={() => go(addDays(d.date, -1))}>&lsaquo; {tt("prev", hi)}</button>
+            <button type="button" className="pn-b" onClick={() => go(todayIn(tz, Date.now()))}>{tt("today", hi)}</button>
+            <button type="button" className="pn-b" onClick={() => go(addDays(d.date, 1))}>{tt("nextDay", hi)} &rsaquo;</button>
           </span>
         </div>
         <div className="pn-pick">
@@ -417,34 +514,104 @@ export default function PanchangTool({ initial }) {
           <div className="pn-err">The sun does not rise or set on this date at this place, so the Panchang and Choghadiya cannot be calculated. Try another date or place.</div>
         ) : (
           <>
-            <div className="pn-title">{fmtLong(d.date)} <span>{d.place.n} &middot; {offLabel(d.offMs)}</span></div>
+            <div className="pn-title">{hi ? `${hiName(WEEKDAYS[dowOf(d.date)])}, ${q.d} ${hiMonthLong[q.m - 1]} ${q.y}` : fmtLong(d.date)} <span>{hi && city && d.place.n === city.name ? city.hi : d.place.n} &middot; {offLabel(d.offMs)}</span></div>
+            {!isCh ? (
+              <>
+            {(() => {
+              const e = d.extra, T = (ms) => fmtT(ms, tz, d.date, fmt), L = (en, h) => (hi ? h : en);
+              const span = (a) => `${T(a[0])} ${tt("to", hi)} ${T(a[1])}`;
+              const nk0 = d.timeline.Nakshatra[0].name;
+              const Cards = ({ items }) => (
+                <div className="pn-det">
+                  {items.map((c) => (
+                    <div className="pn-dc" key={c[0]}><h3>{c[0]}</h3><ul>{c[1].map((r) => <li key={r[0]}><b>{r[0]}</b>{r[1] ? <span>{r[1]}</span> : null}</li>)}</ul></div>
+                  ))}
+                </div>
+              );
+              return (
+                <>
+                  {e ? (
+                    <>
+                      <h2 className="pn-sh">{L("Sun and Moon", "सूर्य और चंद्र")}</h2>
+                      <Cards items={[
+                        [L("Sunrise", "सूर्योदय"), [[T(d.sun.rise), ""]]],
+                        [L("Sunset", "सूर्यास्त"), [[T(d.sun.set), ""]]],
+                        [L("Moonrise", "चंद्रोदय"), [[e.moon.rise ? T(e.moon.rise) : "—", e.moon.rise ? "" : L("no moonrise on this date", "इस तारीख़ को चंद्रोदय नहीं")]]],
+                        [L("Moonset", "चंद्रास्त"), [[e.moon.set ? T(e.moon.set) : "—", e.moon.set ? "" : L("no moonset on this date", "इस तारीख़ को चंद्रास्त नहीं")]]],
+                      ]} />
+                    </>
+                  ) : null}
+                  <h2 className="pn-sh">{L("The five limbs of the Panchang", "पंचांग के पाँच अंग")}</h2>
             <div className="pn-det">
               {ROWS.map((row) => (
                 <div className="pn-dc" key={row}>
-                  <h3>{row}</h3>
+                  <h3>{tt(row, hi)}</h3>
                   <ul>
                     {d.timeline[row].map((sg, i) => (
-                      <li key={i}><b>{sg.name}</b><span>{sg.last ? "until the next sunrise" : "till " + fmtT(sg.b, tz, d.date, fmt)}</span></li>
+                      <li key={i}><b>{hi ? hiName(sg.name) : sg.name}</b><span>{sg.last ? tt("untilSunrise", hi) : tt("till", hi) === "till" ? "till " + fmtT(sg.b, tz, d.date, fmt) : fmtT(sg.b, tz, d.date, fmt) + " " + tt("till", hi)}</span></li>
                     ))}
                   </ul>
                 </div>
               ))}
             </div>
+                  {e ? (
+                    <>
+                      <h2 className="pn-sh">{L("Moon sign and nakshatra", "चंद्र राशि और नक्षत्र")}</h2>
+                      <Cards items={[
+                        [L("Moon sign (Chandra Rashi)", "चंद्र राशि"), [[hi ? hiName(RASHI[e.rashi.moon]) : RASHI[e.rashi.moon], e.rashi.moonChange ? `${tt("till", hi) === "till" ? "till " + T(e.rashi.moonChange) : T(e.rashi.moonChange) + " " + tt("till", hi)}, ${L("then", "फिर")} ${hi ? hiName(RASHI[e.rashi.moonNext]) : RASHI[e.rashi.moonNext]}` : L("all day", "पूरे दिन")]]],
+                        [L("Nakshatra pada", "नक्षत्र चरण"), [[`${hi ? hiName(nk0) : nk0}, ${L("pada", "चरण")} ${e.rashi.pada}`, L("at sunrise", "सूर्योदय पर")]]],
+                        [L("Sun sign (Surya Rashi)", "सूर्य राशि"), [[hi ? hiName(RASHI[e.rashi.sun]) : RASHI[e.rashi.sun], ""]]],
+                      ]} />
+                      <h2 className="pn-sh">{L("The day at a glance", "एक नज़र में दिन")}</h2>
+                      <Cards items={[
+                        [L("Vaara (weekday)", "वार"), [[hi ? hiName(WEEKDAYS[d.dow]) : `${WEEKDAYS[d.dow]}, ${VAARA[d.dow]}`, ""]]],
+                        [L("Day length", "दिनमान"), [[dur(e.durations.day, hi), ""]]],
+                        [L("Night length", "रात्रिमान"), [[dur(e.durations.night, hi), ""]]],
+                        [L("Midday (Madhyahna)", "मध्याह्न"), [[T(e.durations.midday), ""]]],
+                        [L("Ritu (season)", "ऋतु"), [[hi ? hiName(e.ritu) : e.ritu, ""]]],
+                        [L("Ayana", "अयन"), [[hi ? hiName(e.ayana) : e.ayana, ""]]],
+                        [L("Lunar month", "चंद्र मास"), [[hi ? hiLunarMonth(mon) : mon, `${hi ? hiName(ti.paksha) + " " + tt("paksha", true) : ti.paksha + " Paksha"}`]]],
+                        [L("Samvat", "संवत"), [[hi ? `${tt("samvat", true)} ${li.vy}` : `${li.vy} ${li.sam}`, L("Vikrama Samvata", "")]]],
+                      ]} />
+                      <h2 className="pn-sh">{L("Auspicious timings", "शुभ समय")}</h2>
+                      <Cards items={[
+                        [L("Brahma Muhurta", "ब्रह्म मुहूर्त"), [[span(e.auspicious.brahma), L("prayer, meditation, study", "पूजा, ध्यान, पढ़ाई")]]],
+                        [L("Abhijit Muhurat", "अभिजित मुहूर्त"), [e.auspicious.abhijit ? [span(e.auspicious.abhijit), L("good for most auspicious work", "अधिकांश शुभ कार्यों के लिए अच्छा")] : [L("Not counted today", "आज नहीं गिना जाता"), L("by tradition, none on a Wednesday", "परंपरा से बुधवार को नहीं")]]],
+                      ]} />
+                      <h2 className="pn-sh">{L("Inauspicious timings", "अशुभ समय")}</h2>
+                      <Cards items={[
+                        [L("Rahu Kalam", "राहु काल"), [[span(e.inauspicious.rahu), L("avoid starting new work", "नया काम शुरू न करें")]]],
+                        [L("Yamaganda", "यमगंड"), [[span(e.inauspicious.yamaganda), ""]]],
+                        [L("Gulika Kalam", "गुलिक काल"), [[span(e.inauspicious.gulika), ""]]],
+                        [L("Disha Shool", "दिशाशूल"), [[hi ? hiName(e.disha) : e.disha, L("avoid starting a journey this way", "इस दिशा में यात्रा आरंभ न करें")]]],
+                      ]} />
+                    </>
+                  ) : null}
+                  <p className="pn-notes"><b>{L("Notes:", "ध्यान दें:")}</b> {L("All timings are in the local time of", "सभी समय स्थानीय समय में हैं:")} {hi && city && d.place.n === city.name ? city.hi : d.place.n}. {L("Times after midnight are shown with the next date.", "मध्यरात्रि के बाद के समय अगली तारीख़ के साथ दिखाए गए हैं।")}</p>
+                </>
+              );
+            })()}
+              </>
+            ) : (
+              <>
             <div className="pn-cols">
-              <Col list={d.day} title="Day Choghadiya" time={fmtT(d.sun.rise, tz, d.date, fmt) + " sunrise"} tz={tz} date={d.date} fmt={fmt} />
-              <Col list={d.night} title="Night Choghadiya" time={fmtT(d.sun.set, tz, d.date, fmt) + " sunset"} tz={tz} date={d.date} fmt={fmt} />
+              <Col list={d.day} title={tt("dayCh", hi)} time={fmtT(d.sun.rise, tz, d.date, fmt) + " " + tt("sunrise", hi)} tz={tz} date={d.date} fmt={fmt} hi={hi} />
+              <Col list={d.night} title={tt("nightCh", hi)} time={fmtT(d.sun.set, tz, d.date, fmt) + " " + tt("sunset", hi)} tz={tz} date={d.date} fmt={fmt} hi={hi} />
             </div>
             <p className="pn-notes"><b>Notes:</b> All timings are in the local time of {d.place.n}{fmt === "12" ? " in 12 hour notation" : fmt === "24" ? " in 24 hour notation" : ", with hours after midnight continuing past 24"}. Hours after midnight are shown with the next day’s date, because a Panchang day starts and ends at sunrise.</p>
             <div className="pn-legend">
-              <span><i className="best" /><i className="good" /><i className="gain" /> Auspicious</span>
-              <span><i className="bad" /><i className="evil" /><i className="loss" /> Inauspicious</span>
-              <span><i className="mid" /> Neutral</span>
-              <span><em className="pn-rahu">Rahu Kaal</em> Avoid for auspicious work</span>
+              <span><i className="best" /><i className="good" /><i className="gain" /> {tt("auspicious", hi)}</span>
+              <span><i className="bad" /><i className="evil" /><i className="loss" /> {tt("inauspicious", hi)}</span>
+              <span><i className="mid" /> {tt("neutral", hi)}</span>
+              <span><em className="pn-rahu">{tt("rahu", hi)}</em> {tt("avoidRahu", hi)}</span>
             </div>
-            <Timeline d={d} fmt={fmt} now={now} />
+              </>
+            )}
+            {!isCh ? <Timeline d={d} fmt={fmt} now={now} /> : null}
           </>
         )}
-        <Edu />
+        {isCh ? (hi ? <EduHi /> : <Edu />) : <PanchangEdu hi={hi} />}
+        <p style={{ margin: "18px 0 0", fontSize: 14.5 }}><a href={isCh ? (city ? "/panchang/" + city.slug : "/panchang") : (city ? "/choghadiya/" + city.slug : "/choghadiya")} style={{ color: "#6C1594", fontWeight: 700 }}>{isCh ? (hi ? "आज का पंचांग देखें →" : "See today’s Panchang →") : (hi ? "आज का चौघड़िया देखें →" : "See today’s Choghadiya →")}</a></p>
         <p style={{ fontSize: 12.5, color: "#5C5470", maxWidth: "70ch" }}>For learning and guidance. Timings are calculated for the place you choose and can differ by a minute or two from a printed panchang. It is not a substitute for a reading by an astrologer.</p>
       </div>
     </>

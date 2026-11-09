@@ -24,6 +24,12 @@ const CALC_ITEMS = [
   { key: "mobile", label: "Free Mobile Number Numerology", href: "/mobile-number", icon: "M8 2h8a1 1 0 011 1v18a1 1 0 01-1 1H8a1 1 0 01-1-1V3a1 1 0 011-1zM11 18h2" },
 ];
 
+// Panchang has two pages of its own.
+const PANCHANG_ITEMS = [
+  { key: "panchang", label: "Daily Panchang", href: "/panchang", icon: "M12 7v5l3 2M12 3a9 9 0 100 18 9 9 0 000-18z" },
+  { key: "choghadiya", label: "Daily Choghadiya", href: "/choghadiya", icon: "M4 6h16v14H4zM4 11h16M9 11v9M15 11v9" },
+];
+
 // Each report opens its own page.
 const REPORT_ITEMS = [
   { key: "kundli", label: "Personalised Kundli Report", href: "/report/kundli", icon: "M12 3l9 9-9 9-9-9zM12 8l4 4-4 4-4-4z" },
@@ -145,4 +151,12 @@ export function ReportsMenu() {
 
 export function ReportsMobileMenu({ onNavigate }) {
   return <Accordion label="Reports" items={REPORT_ITEMS} onNavigate={onNavigate} hrefOf={(it) => it.href} />;
+}
+
+export function PanchangMenu() {
+  return <Dropdown label="Panchang" href="/panchang" items={PANCHANG_ITEMS} menuId="panchang-menu" ariaLabel="Panchang menu" hrefOf={(it) => it.href} />;
+}
+
+export function PanchangMobileMenu({ onNavigate }) {
+  return <Accordion label="Panchang" items={PANCHANG_ITEMS} onNavigate={onNavigate} hrefOf={(it) => it.href} />;
 }
