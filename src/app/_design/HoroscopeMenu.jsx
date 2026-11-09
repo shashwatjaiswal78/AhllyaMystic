@@ -2,7 +2,7 @@
 // Header menus with a dropdown on desktop and an accordion in the phone menu:
 //  - Horoscope: Daily, Weekly, Monthly, Yearly, Rashifal 2027 and Panchang. The horoscope items open that view for the
 //    sign the visitor last chose (Aries until they choose one).
-//  - Free Calculators: Free Kundli, KP Kundli, Name Number and Mobile Number, each opening its own calculator.
+//  - Free Calculators: Free Kundli, Free KP Kundli, Free Name Numerology and Free Mobile Number Numerology, each opening its own calculator.
 //  - Reports: each report opens its own page.
 import React, { useEffect, useRef, useState } from "react";
 
@@ -20,9 +20,9 @@ const HOROSCOPE_ITEMS = [
 // Each calculator has its own page, with the form on it.
 const CALC_ITEMS = [
   { key: "kundli", label: "Free Kundli", href: "/kundli", icon: "M12 3l9 9-9 9-9-9zM12 8l4 4-4 4-4-4z" },
-  { key: "kp", label: "KP Kundli", href: "/kp-kundli", icon: "M4 4h16v16H4zM4 12h16M12 4v16" },
-  { key: "name", label: "Name Number", href: "/name-number", icon: "M9 4L7 20M17 4l-2 16M4 9h17M3 15h17" },
-  { key: "mobile", label: "Mobile Number", href: "/mobile-number", icon: "M8 2h8a1 1 0 011 1v18a1 1 0 01-1 1H8a1 1 0 01-1-1V3a1 1 0 011-1zM11 18h2" },
+  { key: "kp", label: "Free KP Kundli", href: "/kp-kundli", icon: "M4 4h16v16H4zM4 12h16M12 4v16" },
+  { key: "name", label: "Free Name Numerology", href: "/name-number", icon: "M9 4L7 20M17 4l-2 16M4 9h17M3 15h17" },
+  { key: "mobile", label: "Free Mobile Number Numerology", href: "/mobile-number", icon: "M8 2h8a1 1 0 011 1v18a1 1 0 01-1 1H8a1 1 0 01-1-1V3a1 1 0 011-1zM11 18h2" },
 ];
 
 // Each report opens its own page.
