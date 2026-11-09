@@ -1,6 +1,7 @@
 // Journal pages: the article list and a single article. Plain server-rendered markup (no state), inside the site shell.
 import React from "react";
 import { ARTICLES } from "@/lib/blog";
+import { ArticleBanner, Figure } from "./BlogArt";
 
 const serif = "'Marcellus', 'Tiro Devanagari Hindi', serif";
 const wrap = { maxWidth: "1200px", margin: "0 auto", padding: "0 24px" };
@@ -37,11 +38,14 @@ export function BlogIndex() {
       <section style={{ ...wrap, padding: "56px 24px 88px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: "20px" }}>
           {ARTICLES.map((a) => (
-            <a key={a.slug} href={`/blog/${a.slug}`} className="am-lift" style={{ background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", padding: "26px", display: "flex", flexDirection: "column", gap: "10px", textDecoration: "none", color: "#1E1830" }}>
+            <a key={a.slug} href={`/blog/${a.slug}`} className="am-lift" style={{ background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830" }}>
+              <div style={{ aspectRatio: "16 / 9" }}><ArticleBanner slug={a.slug} /></div>
+              <div style={{ padding: "22px 24px 26px", display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
               <p style={{ ...eyebrow, margin: 0 }}>{a.category} · {a.minutes} min read</p>
               <h2 style={{ margin: 0, fontFamily: serif, fontWeight: 400, fontSize: "22px", lineHeight: 1.25 }}>{a.title}</h2>
               <p style={{ margin: 0, fontSize: "14.5px", color: "#5C5470" }}>{a.excerpt}</p>
               <span style={{ marginTop: "auto", paddingTop: "8px", fontWeight: 700, color: "#921A11" }}>Read article →</span>
+              </div>
             </a>
           ))}
         </div>
@@ -56,15 +60,19 @@ export function BlogArticle({ article: a }) {
     <>
       <Hero>
         <Crumbs items={[["Home", "/"], ["Journal", "/blog"], [a.category]]} />
-        <div style={{ maxWidth: "820px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "28px 48px" }}>
+        <div style={{ flex: "1 1 460px", minWidth: 0 }}>
           <p style={{ ...eyebrow, color: "#FCCE07" }}>{a.category}</p>
           <h1 style={{ margin: "0 0 14px", fontFamily: serif, fontWeight: 400, fontSize: "clamp(28px, 4vw, 44px)", lineHeight: 1.15 }}>{a.title}</h1>
           <p style={{ margin: 0, fontSize: "13.5px", color: "#CDB8DA" }}>By {a.author} · {dateLabel(a.published)} · {a.minutes} min read</p>
+        </div>
+        <div style={{ flex: "0 1 340px", width: "100%", maxWidth: "380px", aspectRatio: "16 / 9", borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.18)", boxShadow: "0 24px 50px -24px rgba(0,0,0,0.7)" }}><ArticleBanner slug={a.slug} /></div>
         </div>
       </Hero>
       <article style={{ maxWidth: "760px", margin: "0 auto", padding: "52px 24px 40px", fontSize: "16.5px", lineHeight: 1.75, color: "#2A2340" }}>
         {a.body.map((b, i) => {
           if (b.t === "h2") return <h2 key={i} style={{ margin: "38px 0 12px", fontFamily: serif, fontWeight: 400, fontSize: "clamp(22px, 2.5vw, 28px)", lineHeight: 1.25, color: "#1E1830" }}>{b.text}</h2>;
+          if (b.t === "fig") return <Figure key={i} kind={b.kind} />;
           if (b.t === "ul") return <ul key={i} style={{ margin: "0 0 18px", paddingLeft: "22px", display: "grid", gap: "8px" }}>{b.items.map((it) => <li key={it}>{it}</li>)}</ul>;
           if (b.t === "cta") return (
             <div key={i} style={{ margin: "40px 0 0", padding: "26px 28px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px" }}>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import BlogPage from "@/app/_design/BlogPage";
 import { BlogArticle } from "@/app/_design/BlogContent";
 import { ARTICLES, bySlug } from "@/lib/blog";
@@ -20,7 +21,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export default function Page({ params }: { params: Promise<{ slug: string }> }) {
+  return (
+    <Suspense>
+      <Article params={params} />
+    </Suspense>
+  );
+}
+
+async function Article({ params }: { params: Promise<{ slug: string }> }) {
   const a = bySlug((await params).slug);
   if (!a) notFound();
   const url = `${SITE_URL}/blog/${a.slug}`;

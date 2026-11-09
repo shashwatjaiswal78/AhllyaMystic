@@ -4,6 +4,7 @@ export type Block =
   | { t: "h2"; text: string }
   | { t: "p"; text: string }
   | { t: "ul"; items: string[] }
+  | { t: "fig"; kind: "phases" | "loshu" | "directions" }
   | { t: "cta"; text: string; label: string; href: string };
 
 export type Article = {
@@ -48,6 +49,7 @@ export const ARTICLES: Article[] = [
         "Middle phase, Saturn over your Moon sign. This is the most personal stretch. It tends to bring questions about health, relationships and your own direction. The mind feels heavier, so routine matters more than ever.",
         "Last phase, Saturn in the sign after your Moon sign. Saturn’s lessons start turning into results. Finances, family matters and long-term plans are rebuilt on firmer ground.",
       ] },
+      { t: "fig", kind: "phases" },
       { t: "h2", text: "How often does it happen?" },
       { t: "p", text: "Saturn takes about twenty-nine to thirty years to go around the zodiac, so Sade Sati returns roughly every thirty years. Most people go through it two or three times in a lifetime. The first one, often in the late twenties or thirties, is usually remembered as the one that forced the biggest changes." },
       { t: "h2", text: "Why it is not the same for everyone" },
@@ -94,6 +96,7 @@ export const ARTICLES: Article[] = [
       { t: "p", text: "Two numbers come from your date of birth: the birth number (the day you were born, reduced to a single digit) and the destiny number (the full date added up). These cannot be changed. The name number, on the other hand, comes from the spelling you use, and that is the one part of the picture you can choose." },
       { t: "h2", text: "How a name is turned into a number" },
       { t: "p", text: "In the Chaldean system each letter has a value from 1 to 8 (9 is treated as sacred and not given to a letter). The letters of your name are added up and reduced to a single digit, and sometimes the compound number before reduction is read as well. Each digit belongs to a planet, so the result tells you which planet your name leans on." },
+      { t: "fig", kind: "loshu" },
       { t: "h2", text: "What we compare" },
       { t: "ul", items: [
         "The planet of your name number against the planets of your birth and destiny numbers. In Vedic numerology some planets are friends, some neutral, some opposed.",
@@ -133,6 +136,7 @@ export const ARTICLES: Article[] = [
       { t: "p", text: "People often assume Vastu means demolition and expensive renovation. In daily practice, most of what helps is far simpler: clearing, repositioning and letting in light. Here are five changes you can make this week. None of them needs a builder." },
       { t: "h2", text: "1. Clear the entrance" },
       { t: "p", text: "The main door is where a home meets the outside world. Keep it well lit, clean and free of shoes piled up, broken items or dustbins. The door should open fully and easily. A simple nameplate, a lamp or fresh flowers near the entrance makes the first impression warmer." },
+      { t: "fig", kind: "directions" },
       { t: "h2", text: "2. Let the north-east breathe" },
       { t: "p", text: "In Vastu the north-east corner is linked with clarity and calm, and it is meant to stay light and open. If heavy furniture, storage boxes or clutter have collected there, move them out. It is a good place for a prayer space, a plant or simply open floor." },
       { t: "h2", text: "3. Sort out the kitchen" },
