@@ -34,6 +34,7 @@ export default function NameForm() {
     const name = nameRef.current.value.trim();
     const dob = isoDate(dobRef.current.value);
     if (!/[A-Za-z]/.test(name)) return setError("Please enter your name. It needs at least one letter.");
+    if (!genderRef.current.value) return setError("Please select your gender.");
     if (!dob) return setError("Enter your actual date of birth as DD/MM/YYYY.");
 
     setBusy(true);
@@ -60,7 +61,7 @@ export default function NameForm() {
       </label>
       <label style={labelStyle}>
         {"Gender"}
-        <select ref={genderRef} style={selectStyle} defaultValue="Select">
+        <select ref={genderRef} style={selectStyle} defaultValue="">
           <option value="" disabled>{"Select"}</option>
           <option>{"Female"}</option>
           <option>{"Male"}</option>

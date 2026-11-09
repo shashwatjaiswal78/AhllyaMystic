@@ -120,6 +120,7 @@ export default function KundliForm({ kind = "kundli" }) {
     const tob = tobRef.current.value.trim();
     const typed = placeRef.current.value.trim();
     if (!/\p{L}/u.test(name)) return setError("Enter your name.");
+    if (!genderRef.current.value) return setError("Select your gender.");
     if (!dob) return setError("Enter your actual date of birth as DD/MM/YYYY.");
     if (!/^\d{2}:\d{2}(:\d{2})?$/.test(tob)) return setError("Enter your time of birth as HH:MM:SS on the 24-hour clock, for example 14:30:00.");
     if (!typed) return setError("Enter your place of birth.");
@@ -162,7 +163,7 @@ export default function KundliForm({ kind = "kundli" }) {
       </label>
       <label style={labelStyle}>
         {"Gender"}
-        <select ref={genderRef} style={selectStyle} defaultValue="Select">
+        <select ref={genderRef} style={selectStyle} defaultValue="">
           <option value="" disabled>{"Select"}</option>
           <option>{"Female"}</option>
           <option>{"Male"}</option>

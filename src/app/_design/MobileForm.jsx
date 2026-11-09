@@ -36,6 +36,7 @@ export default function MobileForm() {
     const dob = isoDate(dobRef.current.value);
     const mobile = mobRef.current.value.trim();
     if (!/[A-Za-z]/.test(name)) return setError("Please enter your name. It needs at least one letter.");
+    if (!genderRef.current.value) return setError("Please select your gender.");
     if (!mobile) return setError("Please enter your 10 digit mobile number.");
     if (!dob) return setError("Enter your actual date of birth as DD/MM/YYYY.");
 
@@ -63,7 +64,7 @@ export default function MobileForm() {
       </label>
       <label style={labelStyle}>
         {"Gender"}
-        <select ref={genderRef} style={selectStyle} defaultValue="Select">
+        <select ref={genderRef} style={selectStyle} defaultValue="">
           <option value="" disabled>{"Select"}</option>
           <option>{"Female"}</option>
           <option>{"Male"}</option>
