@@ -34,8 +34,7 @@ export default async function Page({ params }: { params: Promise<{ sign: string 
           { name: `${SIGN_INFO[index].en} horoscope`, path: `/horoscope/${sign}` },
         ]}
       />
-      <HoroscopePage data={data} initialState={{ sign: index }} />
-      <HoroscopeExtras current={sign} />
+      <HoroscopePage data={data} initialState={{ sign: index }} extras={<HoroscopeExtras current={sign} />} />
     </>
   );
 }

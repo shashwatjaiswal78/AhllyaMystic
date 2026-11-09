@@ -716,6 +716,7 @@ HoroscopePage.prototype.render = function render() {
             ))}
           </div>
         </div>
+        {this.props.extras || null}
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "0 24px 96px"}}>
           <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(120deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "28px"}}>
             <div className={"am-stars"} aria-hidden={"true"} />

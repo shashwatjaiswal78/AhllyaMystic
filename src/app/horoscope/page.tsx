@@ -15,8 +15,7 @@ export default async function Page() {
   return (
     <>
       <HoroscopeJsonLd crumbs={[{ name: "Home", path: "/" }, { name: "Daily horoscope", path: "/horoscope" }]} />
-      <HoroscopePage data={data} />
-      <HoroscopeExtras />
+      <HoroscopePage data={data} extras={<HoroscopeExtras />} />
     </>
   );
 }

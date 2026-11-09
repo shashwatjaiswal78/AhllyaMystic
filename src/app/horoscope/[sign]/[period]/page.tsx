@@ -56,8 +56,7 @@ export default async function Page({ params }: { params: Promise<{ sign: string;
           { name: period, path: `/horoscope/${sign}/${period}` },
         ]}
       />
-      <HoroscopePage data={data} initialState={{ sign: index, day: period }} period={view} />
-      <HoroscopeExtras current={sign} />
+      <HoroscopePage data={data} initialState={{ sign: index, day: period }} period={view} extras={<HoroscopeExtras current={sign} />} />
     </>
   );
 }
