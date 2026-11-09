@@ -39,7 +39,7 @@ class HomePage extends React.Component {
       Rahu: { en: 'Om Bhraam Bhreem Bhraum Sah Rahave Namah', hi: 'ॐ भ्रां भ्रीं भ्रौं सः राहवे नमः' },
       Ketu: { en: 'Om Sraam Sreem Sraum Sah Ketave Namah', hi: 'ॐ स्रां स्रीं स्रौं सः केतवे नमः' }
     };
-    // Real output of the shared astrology module for 24 October 2026 (New Delhi sunrise):
+    // Fallback only. The live values come from src/lib/horoscope/engine.ts through the `data` prop.
     // [love, career and finance, health, overall, lucky number, lucky colour, strengthen, calm, why]
     var day = [
       [35, 35, 35, 35, 3, 'Yellow', 'Jupiter', 'Saturn', 'Saturn is in the 12th house from Aries, the first phase of Sade Sati.'],
@@ -67,10 +67,12 @@ class HomePage extends React.Component {
     var moodSets = [['Calm', 'Focused', 'Patient'], ['Energetic', 'Bold', 'Optimistic'], ['Reflective', 'Careful', 'Thoughtful'], ['Hopeful', 'Warm', 'Grateful']];
     var si = this.state.sign || 0;
     var s = signs[si];
-    var dv = day[si];
+    var hd = this.props.data && this.props.data.days.today.signs[si];
+    var dv = hd ? [hd.scores.love, Math.round((hd.scores.career + hd.scores.money) / 10) * 5, hd.scores.health, hd.scores.overall, hd.lucky.num, hd.lucky.col, hd.lucky.g, hd.calm ? hd.calm.g : '', hd.calm ? hd.calm.whyEn : ''] : day[si];
     var love = dv[0], career = dv[1], health = dv[2];
     var strong = beej[dv[6]], calm = dv[7] ? beej[dv[7]] : null;
     var k = si % 4;
+    if (hd) { moodSets = [['Hopeful', 'Energetic', 'Optimistic'], ['Calm', 'Focused', 'Patient'], ['Reflective', 'Careful', 'Thoughtful']]; k = hd.band; }
     var cur = {
       en: s.en, hi: s.hi, img: s.img, planet: s.planet,
       num: dv[4], colour: dv[5],
@@ -84,14 +86,14 @@ class HomePage extends React.Component {
         { label: 'Health', pct: health, pctLabel: health + '%' }
       ],
       moods: moodSets[k].map((w) => ({ word: w })),
-      overview: overviews[k], love: loves[(k + 1) % 4], career: careers[(k + 2) % 4], health: healths[(k + 3) % 4]
+      overview: hd ? hd.whyEn[0] : overviews[k], love: hd ? hd.areas[0].textEn : loves[(k + 1) % 4], career: hd ? hd.areas[1].textEn : careers[(k + 2) % 4], health: hd ? hd.areas[3].textEn : healths[(k + 3) % 4]
     };
     var rashis = signs.map((x, i) => ({
       hi: x.hi, en: x.en, img: x.img,
       sel: i === si, notSel: i !== si,
       pick: () => this.setState({ sign: i })
     }));
-    var todayDate = this.state.__now ? new Date(this.state.__now).toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : '';
+    var todayDate = this.props.data ? this.props.data.days.today.dateEn : this.state.__now ? new Date(this.state.__now).toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : '';
     var isMan = this.state.expert !== 'san';
     var CP = isMan ? ['₹2,301', '₹4,101', '₹5,001', '₹7,201', '₹3,101'] : ['₹4,001', '₹6,301', '₹7,601', '₹11,111', '₹5,100'];
     var plans = [
