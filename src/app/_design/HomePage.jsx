@@ -2,7 +2,7 @@
 /* eslint-disable */
 // Generated from the design file Main.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
-import { HoroscopeMenu, HoroscopeMobileMenu } from "./HoroscopeMenu";
+import { HoroscopeMenu, HoroscopeMobileMenu, CalculatorsMenu, CalculatorsMobileMenu } from "./HoroscopeMenu";
 import { sx, hole } from "./sx";
 import KundliForm from "./KundliForm";
 import MobileForm from "./MobileForm";
@@ -170,9 +170,7 @@ HomePage.prototype.render = function render() {
               <a href={"/kundli"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Free Kundli"}
               </a>
-              <a href={"/#free"} style={{color: "#FFFFFF", textDecoration: "none"}}>
-                {"Free Calculators"}
-              </a>
+              <CalculatorsMenu />
               <a href={"/#reports"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Reports"}
               </a>
@@ -238,12 +236,7 @@ HomePage.prototype.render = function render() {
                       <path d={"M9 6l6 6-6 6"} />
                     </svg>
                   </a>
-                  <a href={"/#free"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
-                    {"Free Calculators"}
-                    <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-                      <path d={"M9 6l6 6-6 6"} />
-                    </svg>
-                  </a>
+                  <CalculatorsMobileMenu onNavigate={v.closeMenu} />
                   <a href={"/#reports"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Reports"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
@@ -1984,6 +1977,19 @@ HomePage.prototype.componentDidMount = function componentDidMount() {
   var next = { __now: Date.now() };
   if (['kundli', 'kp', 'name', 'mobile'].indexOf(q.tool) >= 0) next.tool = q.tool;
   this.setState(next);
+  // The browser scrolls to #free before the page has finished loading (and Next resets the scroll while it hydrates),
+  // so scroll again a few times until the section is where it should be.
+  var hash = window.location.hash ? window.location.hash.slice(1) : '';
+  if (hash) {
+    [150, 600, 1400].forEach(function (ms) {
+      setTimeout(function () {
+        var el = document.getElementById(hash);
+        if (!el) return;
+        var want = el.getBoundingClientRect().top + window.pageYOffset - 84;
+        if (Math.abs(window.pageYOffset - want) > 40) window.scrollTo({ top: want, behavior: 'auto' });
+      }, ms);
+    });
+  }
 };
 
 export default HomePage;
