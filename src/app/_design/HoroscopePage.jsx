@@ -86,7 +86,7 @@ class HoroscopePage extends React.Component {
       signSlug: this.state.picked ? sg.en.toLowerCase() : undefined,
       L: L, langCode: this.state.lang, rashis: rashis, cur: sg,
       dayTabs: [['today', L.today], ['tomorrow', L.tomorrow], ['weekly', L.weekly], ['monthly', L.monthly], ['yearly', L.yearly], ['2027', '2027'], ['2028', '2028']].map((o) => ({ label: o[1], sel: this.state.day === o[0], notSel: this.state.day !== o[0], pick: () => this.selectView(o[0]) })),
-      isDaily: daily, periodData: pdata, periodLoading: !daily && this.state.loadingKey === pkey, periodFailed: !daily && this.state.failedKey === pkey, curSign: { en: sg.en, hi: sg.hi }, langTabs: tab('lang', [['en', 'English'], ['hi', 'हिंदी']]),
+      isDaily: daily, periodData: pdata, periodLoading: !daily && this.state.loadingKey === pkey, periodFailed: !daily && this.state.failedKey === pkey, curSign: { en: sg.en, hi: sg.hi, img: sg.img }, langTabs: tab('lang', [['en', 'English'], ['hi', 'हिंदी']]),
       title: !daily ? (hi ? sg.hi + ' राशिफल ' + VIEW_LABEL[this.state.day][0] : sg.en + ' ' + (this.state.day === 'yearly' ? 'Yearly Horoscope' : /^\d+$/.test(this.state.day) ? 'Horoscope ' + this.state.day : VIEW_LABEL[this.state.day][1] + ' Horoscope')) : hi ? sg.hi + ' राशिफल ' + (this.state.day === 'today' ? 'आज' : 'कल') : sg.en + ' Horoscope ' + (this.state.day === 'today' ? 'Today' : 'Tomorrow'),
       titleShort: hi ? sg.hi : sg.en,
       dateLine: !daily ? (pdata ? pdata.range : '') : hi ? dd.dateHi : dd.dateEn,

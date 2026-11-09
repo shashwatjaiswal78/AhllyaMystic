@@ -1,17 +1,21 @@
 // Weekly, monthly and yearly horoscopes. All of it is derived from real planet positions:
 // day scores come from the daily engine, and the longer views from the planets' changes of sign.
 import { computeChart, siderealSunMoon } from "@/lib/kundli/engine";
-import { DELHI, GOOD_HOUSES, MONTHS_EN, ORD_EN, PLANET_HI, SUPPORT, buildDay, istParts, type HoroscopeDay } from "./engine";
+import { DELHI, GOOD_HOUSES, GRAHA, MONTHS_EN, ORD_EN, SIGN_LORD, SUPPORT, buildDay, istParts, type HoroscopeDay } from "./engine";
+import { areaHighlight, monthText, periodSummary, tone, weekText, type AreaId } from "./narrative";
 import { SIGN_INFO } from "./signs";
 
 const DAY_MS = 864e5;
 const WEEKDAY_SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const WEEKDAY_LONG = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 type Area = "love" | "career" | "money" | "health" | "overall";
 export const AREAS: Area[] = ["overall", "love", "career", "money", "health"];
 export const AREA_LABEL: Record<Area, string> = { overall: "Overall", love: "Love", career: "Career", money: "Money", health: "Health" };
 
-export interface DayScore { label: string; weekday: string; scores: Record<Area, number>; moon: string }
+export interface DayScore { label: string; weekday: string; full: string; scores: Record<Area, number>; moon: string; luckyCol: string; luckyNum: number }
+export interface WeekRow { label: string; range: string; score: number; text: string }
+export interface Highlight { area: AreaId; label: string; score: number; text: string }
 export interface Ingress { planet: string; at: number; dateLabel: string; fromHouse: number; toHouse: number; good: boolean; note: string }
 export interface SignPeriod {
   days: DayScore[];
@@ -21,6 +25,12 @@ export interface SignPeriod {
   strongest: Area;
   weakest: Area;
   ingresses: Ingress[];
+  summary: string;
+  luckyDay: string;
+  luckyColour: string;
+  luckyNumbers: string;
+  weeks: WeekRow[];
+  highlights: Highlight[];
 }
 export interface PeriodData { title: string; range: string; days: string[]; events: { planet: string; dateLabel: string; toSign: string }[]; signs: SignPeriod[] }
 
@@ -82,7 +92,9 @@ function periodFromDays(days: { y: number; m: number; d: number; noon: number }[
   const signs: SignPeriod[] = SIGN_INFO.map((_, i) => {
     const dayScores: DayScore[] = built.map((b, k) => {
       const sc = b.signs[i].scores;
-      return { label: dateLabel(days[k].noon), weekday: WEEKDAY_SHORT[new Date(days[k].noon + 5.5 * 36e5).getUTCDay()], moon: b.signs[i].whyEn[0], scores: { overall: sc.overall, love: sc.love, career: sc.career, money: sc.money, health: sc.health } };
+      const wd = new Date(days[k].noon + 5.5 * 36e5).getUTCDay();
+      const t = istParts(days[k].noon);
+      return { label: dateLabel(days[k].noon), weekday: WEEKDAY_SHORT[wd], full: `${WEEKDAY_LONG[wd]}, ${t.d} ${MONTHS_EN[t.m - 1]}`, moon: b.signs[i].whyEn[0], luckyCol: b.signs[i].lucky.col, luckyNum: b.signs[i].lucky.num, scores: { overall: sc.overall, love: sc.love, career: sc.career, money: sc.money, health: sc.health } };
     });
     const avg = Object.fromEntries(AREAS.map((a) => [a, Math.round(dayScores.reduce((s, d) => s + d.scores[a], 0) / dayScores.length)])) as Record<Area, number>;
     const best = dayScores.reduce((a, b) => (b.scores.overall > a.scores.overall ? b : a));
@@ -97,7 +109,28 @@ function periodFromDays(days: { y: number; m: number; d: number; noon: number }[
         note: `${e.planet} moves into your ${ORD_EN[toHouse]} house, ${good ? "supportive" : "not supportive"} for ${topic}.`,
       };
     });
-    return { days: dayScores, avg, best, careful, strongest: ranked[0], weakest: ranked[ranked.length - 1], ingresses };
+    // Lucky colour and numbers are the ones that came up most often over the period.
+    const tally = <T,>(xs: T[]) => { const m = new Map<T, number>(); xs.forEach((x) => m.set(x, (m.get(x) ?? 0) + 1)); return [...m.entries()].sort((a, b) => b[1] - a[1]); };
+    const luckyColour = tally(dayScores.map((d) => d.luckyCol))[0][0];
+    const luckyNumbers = tally(dayScores.map((d) => d.luckyNum)).slice(0, 2).map((e) => e[0]).sort((a, b) => a - b).join(", ");
+    // Week-to-week rows: the period split into blocks of seven days.
+    const weeks: WeekRow[] = [];
+    if (dayScores.length > 7) {
+      const blocks = 4;
+      for (let b = 0; b < blocks; b++) {
+        const chunk = dayScores.slice(Math.round((b * dayScores.length) / blocks), Math.round(((b + 1) * dayScores.length) / blocks));
+        const score = Math.round(chunk.reduce((sum, d) => sum + d.scores.overall, 0) / chunk.length / 5) * 5;
+        const top = chunk.reduce((a, c) => (c.scores.overall > a.scores.overall ? c : a));
+        const area = (["love", "career", "money", "health"] as const).reduce((a, c) => (chunk.reduce((n, d) => n + d.scores[c], 0) > chunk.reduce((n, d) => n + d.scores[a], 0) ? c : a));
+        weeks.push({ label: `Week ${b + 1}`, range: `${chunk[0].label} to ${chunk[chunk.length - 1].label}`, score, text: weekText(score, AREA_LABEL[area], top.full) });
+      }
+    }
+    const highlights = (["career", "love", "money", "health"] as const).map((a) => areaHighlight(a, avg[a]));
+    const summary = periodSummary({
+      noun: dayScores.length <= 7 ? "week" : "month", sign: SIGN_INFO[i].en, avg: avg.overall, strongest: AREA_LABEL[ranked[0]], weakest: AREA_LABEL[ranked[ranked.length - 1]],
+      bestFull: best.full, carefulFull: careful.full, firstChange: ingresses[0] ? `On ${ingresses[0].dateLabel}: ${ingresses[0].note}` : undefined,
+    });
+    return { days: dayScores, avg, best, careful, strongest: ranked[0], weakest: ranked[ranked.length - 1], ingresses, summary, luckyDay: best.full, luckyColour, luckyNumbers, weeks, highlights };
   });
   return {
     title, range, days: built.map((_, k) => dateLabel(days[k].noon)),
@@ -124,7 +157,11 @@ export function monthlyHoroscopes(now: Date = new Date()): PeriodData {
 
 export interface YearStretch { from: string; to: string; house: number; good: boolean; pct: number }
 export interface YearPlanet { planet: string; stretches: YearStretch[]; summary: string }
-export interface SignYear { planets: YearPlanet[]; saturnNote: string; supportive: number; highlights: string[] }
+export interface MonthRow { label: string; score: number; text: string }
+export interface SignYear {
+  planets: YearPlanet[]; saturnNote: string; supportive: number; highlights: string[];
+  score: number; luckyMonth: string; luckyColour: string; luckyNumbers: string; summary: string; months: MonthRow[];
+}
 export interface YearData { year: number; label: string; events: { planet: string; dateLabel: string; toSign: string }[]; signs: SignYear[] }
 
 const SLOW: { planet: string; topic: string; stepDays: number }[] = [
@@ -179,7 +216,27 @@ function yearlyBetween(start: number, end: number, label: string, year: number, 
     const phases = satStretches.map((st) => (st.house === 12 ? "the first phase of Sade Sati" : st.house === 1 ? "the peak of Sade Sati" : st.house === 2 ? "the last phase of Sade Sati" : st.house === 4 ? "Kantaka Shani dhaiya" : st.house === 8 ? "Ashtama Shani dhaiya" : null));
     const active = phases.map((ph, k) => (ph ? `${ph} (${satStretches[k].from} to ${satStretches[k].to})` : null)).filter(Boolean);
     const saturnNote = active.length ? `Saturn is running ${active.join(", then ")}. Keep to routine, be patient with money and health, and avoid shortcuts.` : "You are not in Sade Sati or Shani dhaiya in this year.";
-    return { planets, saturnNote, supportive: Math.round((supportiveDays / (3 * 365)) * 100), highlights };
+    // Month by month: Jupiter, Saturn and Rahu decide the tone; each supportive planet lifts the score.
+    const WEIGHT = [25, 20, 10];
+    const m0 = istParts(start + 3 * 36e5);
+    const months: MonthRow[] = [];
+    for (let m = 0; m < 12; m++) {
+      const yy = m0.y + Math.floor((m0.m - 1 + m) / 12), mm = (m0.m - 1 + m) % 12;
+      const mid = Math.min(Math.max(Date.UTC(yy, mm, 15, 12) - 5.5 * 36e5, start), end - 1);
+      const state = planets.map((pl, pi) => {
+        const marks = [start, ...per[SLOW[pi].planet].map((e) => e.at), end];
+        let k = 0; while (k < pl.stretches.length - 1 && mid >= marks[k + 1]) k++;
+        return { planet: pl.planet, house: ORD_EN[pl.stretches[k].house].replace(" house", ""), good: pl.stretches[k].good };
+      });
+      const score = Math.round((35 + state.reduce((sum, st, pi) => sum + (st.good ? WEIGHT[pi] : 0), 0)) / 5) * 5;
+      months.push({ label: `${MONTHS_EN[mm]} ${yy}`, score, text: monthText(score, state) });
+    }
+    const score = Math.round(months.reduce((n, x) => n + x.score, 0) / 12 / 5) * 5;
+    const bestMonth = months.reduce((a, b) => (b.score > a.score ? b : a));
+    const lord = SIGN_LORD[i];
+    const rollingNote = rolling ? "The next 12 months" : `${year}`;
+    const summary = `${rollingNote} look${rolling ? "" : "s"} ${tone(score)} for ${SIGN_INFO[i].en} natives. ${saturnNote} ${bestMonth.label} is the most supportive month.`;
+    return { planets, saturnNote, supportive: Math.round((supportiveDays / (3 * 365)) * 100), highlights, score, luckyMonth: bestMonth.label, luckyColour: GRAHA[lord].col, luckyNumbers: [GRAHA[lord].num, GRAHA.Jupiter.num].filter((n, k, a) => a.indexOf(n) === k).join(", "), summary, months };
   });
   return { year, label, events, signs };
 }

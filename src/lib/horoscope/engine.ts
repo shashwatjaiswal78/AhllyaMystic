@@ -74,7 +74,7 @@ export const SUPPORT: Record<"Jupiter" | "Venus" | "Sun" | "Mars", { en: string;
 };
 
 /* Lucky number, colour and mantra for each graha. */
-const GRAHA: Record<Planet, { num: number; col: string; colHi: string; hex: string; mEn: string; mHi: string }> = {
+export const GRAHA: Record<Planet, { num: number; col: string; colHi: string; hex: string; mEn: string; mHi: string }> = {
   Sun: { num: 1, col: "Orange", colHi: "नारंगी", hex: "#F28C28", mEn: "Om Hraam Hreem Hraum Sah Suryaya Namah", mHi: "ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः" },
   Moon: { num: 2, col: "White", colHi: "सफ़ेद", hex: "#FFFFFF", mEn: "Om Shraam Shreem Shraum Sah Chandraya Namah", mHi: "ॐ श्रां श्रीं श्रौं सः चन्द्राय नमः" },
   Mars: { num: 9, col: "Red", colHi: "लाल", hex: "#C62828", mEn: "Om Kraam Kreem Kraum Sah Bhaumaya Namah", mHi: "ॐ क्रां क्रीं क्रौं सः भौमाय नमः" },
@@ -87,7 +87,7 @@ const GRAHA: Record<Planet, { num: number; col: string; colHi: string; hex: stri
 };
 
 /* Sign lord, by sign index (0 = Aries). Natural friendships, own signs and exaltation for the lucky-planet pick. */
-const SIGN_LORD: Planet[] = ["Mars", "Venus", "Mercury", "Moon", "Sun", "Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Saturn", "Jupiter"];
+export const SIGN_LORD: Planet[] = ["Mars", "Venus", "Mercury", "Moon", "Sun", "Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Saturn", "Jupiter"];
 const FRIENDS: Record<string, Planet[]> = {
   Sun: ["Moon", "Mars", "Jupiter"], Moon: ["Sun", "Mercury"], Mars: ["Sun", "Moon", "Jupiter"], Mercury: ["Sun", "Venus"],
   Jupiter: ["Sun", "Moon", "Mars"], Venus: ["Mercury", "Saturn"], Saturn: ["Mercury", "Venus"],
