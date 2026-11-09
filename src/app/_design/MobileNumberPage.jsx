@@ -184,7 +184,7 @@ MobileNumberPage.prototype.render = function render() {
               </h1>
               <p style={{margin: "0", fontSize: "15px", color: "#EADFF2"}}>
                 {R ? R.number + " \u00B7 Born " + R.dobLabel + " " : ""}
-                <a href={"/?tool=mobile#free"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
+                <a href={"/?tool=mobile&edit=1#free"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
                   {"Edit details"}
                 </a>
               </p>

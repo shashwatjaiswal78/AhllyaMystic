@@ -211,7 +211,7 @@ KundliPage.prototype.render = function render() {
               </h1>
               <p style={{margin: "0 0 32px", fontSize: "15px", color: "#EADFF2"}}>
                 {R ? R.headline + " " : ""}
-                <a href={"/#free"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
+                <a href={"/?tool=kundli&edit=1#free"} style={{marginLeft: "10px", color: "#FFFFFF", fontWeight: "700"}}>
                   {"Edit details"}
                 </a>
               </p>

@@ -15,9 +15,10 @@ export default function NameForm() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
-  // Coming back through "Edit details": fill the form with what was entered last time.
+  // Coming back through "Edit details" (?edit=1): fill the form with what was entered last time. Otherwise it starts blank.
   useEffect(() => {
     try {
+      if (new URLSearchParams(window.location.search).get("edit") !== "1") return; // opened from the menu or a link: start blank
       const i = (JSON.parse(sessionStorage.getItem(NAME_KEY) || "null") || {}).input;
       if (!i) return;
       if (nameRef.current) nameRef.current.value = i.name || "";
