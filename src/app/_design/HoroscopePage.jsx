@@ -3,6 +3,7 @@
 // Generated from the design file Horoscope.dc.html by scripts/design/dc2jsx.py. Edit the design, then regenerate.
 import React from "react";
 import { sx, hole } from "./sx";
+import { HoroscopeTabs } from "@/lib/horoscope/tabs";
 import { PayButton, FormButton, reportHref, numCheckoutHref, consultProduct, readUrlState, maskDate, maskTime, maskTimeHM, maskPart } from "./wire";
 
 // DATA is computed fresh each day by src/lib/horoscope/engine.ts and passed in as the `data` prop.
@@ -39,16 +40,17 @@ class HoroscopePage extends React.Component {
   constructor(props) {
     super(props);
     // sign comes from the URL, for example /horoscope/taurus
-    this.state = Object.assign({ sign: 1, day: 'today', lang: 'en', menuOpen: false }, props && props.initialState);
+    this.state = Object.assign({ sign: 1, day: 'today', lang: 'en', menuOpen: false, picked: !!(props && props.initialState && props.initialState.sign != null) }, props && props.initialState);
   }
   renderVals() {
     var hi = this.state.lang === 'hi', L = LANG[this.state.lang], si = this.state.sign;
     var dd = this.props.data.days[this.state.day], d = dd.signs[si], sg = this.props.data.signs[si];
-    var rashis = this.props.data.signs.map((s, i) => ({ en: s.en, hi: s.hi, img: s.img, sel: i === si, notSel: i !== si, pick: () => { this.setState({ sign: i }); try { window.history.replaceState(null, '', '/horoscope/' + s.en.toLowerCase()); } catch (e) {} } }));
+    var rashis = this.props.data.signs.map((s, i) => ({ en: s.en, hi: s.hi, img: s.img, sel: i === si, notSel: i !== si, pick: () => { this.setState({ sign: i, picked: true }); try { window.history.replaceState(null, '', '/horoscope/' + s.en.toLowerCase()); } catch (e) {} } }));
     var tab = (key, opts) => opts.map((o) => ({ label: o[1], sel: this.state[key] === o[0], notSel: this.state[key] !== o[0], pick: () => { var x = {}; x[key] = o[0]; this.setState(x); } }));
     var C = 2 * Math.PI * 52;
     return {
       menuOpen: !!this.state.menuOpen, menuExpanded: this.state.menuOpen ? 'true' : 'false', openMenu: () => this.setState({ menuOpen: true }), closeMenu: () => this.setState({ menuOpen: false }),
+      signSlug: this.state.picked ? sg.en.toLowerCase() : undefined,
       L: L, langCode: this.state.lang, rashis: rashis, cur: sg,
       dayTabs: tab('day', [['today', L.today], ['tomorrow', L.tomorrow]]), langTabs: tab('lang', [['en', 'English'], ['hi', 'हिंदी']]),
       title: hi ? sg.hi + ' राशिफल ' + (this.state.day === 'today' ? 'आज' : 'कल') : sg.en + ' Horoscope ' + (this.state.day === 'today' ? 'Today' : 'Tomorrow'),
@@ -240,6 +242,7 @@ HoroscopePage.prototype.render = function render() {
                 {hole(v.titleShort)}
               </span>
             </nav>
+            <HoroscopeTabs active={"today"} sign={v.signSlug} />
             <div style={{display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: "18px", marginBottom: "26px"}}>
               <div style={{minWidth: "0"}}>
                 <p style={{margin: "0 0 10px", fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>

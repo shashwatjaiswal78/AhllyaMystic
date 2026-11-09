@@ -11,7 +11,7 @@ type Area = "love" | "career" | "money" | "health" | "overall";
 export const AREAS: Area[] = ["overall", "love", "career", "money", "health"];
 export const AREA_LABEL: Record<Area, string> = { overall: "Overall", love: "Love", career: "Career", money: "Money", health: "Health" };
 
-export interface DayScore { label: string; weekday: string; scores: Record<Area, number> }
+export interface DayScore { label: string; weekday: string; scores: Record<Area, number>; moon: string }
 export interface Ingress { planet: string; at: number; dateLabel: string; fromHouse: number; toHouse: number; good: boolean; note: string }
 export interface SignPeriod {
   days: DayScore[];
@@ -82,7 +82,7 @@ function periodFromDays(days: { y: number; m: number; d: number; noon: number }[
   const signs: SignPeriod[] = SIGN_INFO.map((_, i) => {
     const dayScores: DayScore[] = built.map((b, k) => {
       const sc = b.signs[i].scores;
-      return { label: dateLabel(days[k].noon), weekday: WEEKDAY_SHORT[new Date(days[k].noon + 5.5 * 36e5).getUTCDay()], scores: { overall: sc.overall, love: sc.love, career: sc.career, money: sc.money, health: sc.health } };
+      return { label: dateLabel(days[k].noon), weekday: WEEKDAY_SHORT[new Date(days[k].noon + 5.5 * 36e5).getUTCDay()], moon: b.signs[i].whyEn[0], scores: { overall: sc.overall, love: sc.love, career: sc.career, money: sc.money, health: sc.health } };
     });
     const avg = Object.fromEntries(AREAS.map((a) => [a, Math.round(dayScores.reduce((s, d) => s + d.scores[a], 0) / dayScores.length)])) as Record<Area, number>;
     const best = dayScores.reduce((a, b) => (b.scores.overall > a.scores.overall ? b : a));

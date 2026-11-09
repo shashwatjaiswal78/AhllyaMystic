@@ -75,7 +75,7 @@ class HomePage extends React.Component {
     var k = si % 4;
     if (hd) { moodSets = [['Hopeful', 'Energetic', 'Optimistic'], ['Calm', 'Focused', 'Patient'], ['Reflective', 'Careful', 'Thoughtful']]; k = hd.band; }
     var cur = {
-      en: s.en, hi: s.hi, img: s.img, planet: s.planet,
+      en: s.en, hi: s.hi, img: s.img, planet: s.planet, slug: s.en.toLowerCase(),
       num: dv[4], colour: dv[5],
       strongPlanet: dv[6], strongEn: strong.en, strongHi: strong.hi,
       hasCalm: !!calm, noCalm: !calm, calmPlanet: dv[7],
@@ -1445,11 +1445,19 @@ HomePage.prototype.render = function render() {
                     </div>
                   </div>
                   <div style={{marginTop: "auto", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "12px 20px", paddingTop: "6px"}}>
-                    <a href={"/horoscope"} style={{fontWeight: "700"}}>
-                      {"Read the full "}
-                      {hole(v.cur?.en)}
-                      {" horoscope →"}
-                    </a>
+                    <div style={{display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px 18px"}}>
+                      <a href={"/horoscope/" + v.cur?.slug} style={{fontWeight: "700"}}>
+                        {"Read the full "}
+                        {hole(v.cur?.en)}
+                        {" horoscope →"}
+                      </a>
+                      <span style={{display: "inline-flex", flexWrap: "wrap", gap: "4px 14px", fontSize: "14px"}}>
+                        <a href={"/horoscope/" + v.cur?.slug + "/weekly"}>{"Weekly"}</a>
+                        <a href={"/horoscope/" + v.cur?.slug + "/monthly"}>{"Monthly"}</a>
+                        <a href={"/horoscope/" + v.cur?.slug + "/2027"}>{"2027"}</a>
+                        <a href={"/horoscope/" + v.cur?.slug + "/2028"}>{"2028"}</a>
+                      </span>
+                    </div>
                     <a href={"/consult"} style={{display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FCCE07", color: "#921A11", fontWeight: "700", fontSize: "15px", textDecoration: "none"}}>
                       {"Get a personal reading"}
                     </a>

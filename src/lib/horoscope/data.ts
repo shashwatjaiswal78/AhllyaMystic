@@ -22,8 +22,8 @@ export async function getMonthly() {
   return monthlyHoroscopes();
 }
 
-export async function getYearly2027() {
+export async function getYearly(year: number) {
   "use cache";
   cacheLife("days");
-  return yearlyHoroscopes(2027);
+  return yearlyHoroscopes(year);
 }

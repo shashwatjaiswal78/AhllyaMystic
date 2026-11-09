@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getMonthly } from "@/lib/horoscope/data";
 import { PageHead, PeriodGrid, PeriodShell } from "@/lib/horoscope/period-ui";
+import { HoroscopeTabs } from "@/lib/horoscope/tabs";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/horoscope/monthly" },
@@ -12,6 +13,7 @@ export default async function Page() {
   const data = await getMonthly();
   return (
     <PeriodShell crumb="Monthly">
+      <HoroscopeTabs active="monthly" />
       <PageHead title={`Monthly horoscope, ${data.range}`} sub="The next 30 days for every Moon sign, with the dates to lean into and the dates to go slowly." />
       <PeriodGrid data={data} kind="month" />
     </PeriodShell>

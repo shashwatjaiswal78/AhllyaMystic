@@ -15,6 +15,7 @@ export const ROUTES: { path: string; priority: number; changeFrequency: "daily" 
   { path: "/horoscope/weekly", priority: 0.8, changeFrequency: "daily" },
   { path: "/horoscope/monthly", priority: 0.8, changeFrequency: "daily" },
   { path: "/horoscope/2027", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/horoscope/2028", priority: 0.7, changeFrequency: "monthly" },
   { path: "/kundli", priority: 0.9, changeFrequency: "monthly" },
   { path: "/kp-kundli", priority: 0.8, changeFrequency: "monthly" },
   { path: "/name-number", priority: 0.8, changeFrequency: "monthly" },
