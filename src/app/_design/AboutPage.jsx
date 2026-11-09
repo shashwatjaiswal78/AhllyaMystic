@@ -201,9 +201,6 @@ AboutPage.prototype.render = function render() {
               <p style={{margin: "0"}}>
                 {"We read every chart ourselves, and many of them together. That is slower than software, and we think it is worth it."}
               </p>
-              <p style={{margin: "14px 0 0", padding: "10px 12px", border: "1.5px dashed #C9B3D6", borderRadius: "12px", fontSize: "12px", color: "#6C1594"}}>
-                {"To add: how and when the practice began, and a moment that shaped it, in Ahalya Sangeeta’s own words."}
-              </p>
             </div>
           </div>
         </div>
@@ -264,9 +261,6 @@ AboutPage.prototype.render = function render() {
                 <p style={{margin: "0", fontSize: "14.5px", lineHeight: "1.7", color: "#3A3350"}}>
                   {"Ahalya Sangeeta reads Kundlis, names, numbers and homes, across Vedic and KP astrology, numerology and Vastu. She has six years of practice, and prepares every report and consultation herself or together with Maneswita."}
                 </p>
-                <p style={{margin: "14px 0 0", padding: "10px 12px", border: "1.5px dashed #C9B3D6", borderRadius: "12px", fontSize: "12px", color: "#6C1594"}}>
-                  {"To add: training, teachers or certifications."}
-                </p>
               </div>
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-9px", padding: "28px"}}>
                 <div style={{display: "flex", alignItems: "center", gap: "16px", marginBottom: "18px"}}>
@@ -293,9 +287,6 @@ AboutPage.prototype.render = function render() {
                 </div>
                 <p style={{margin: "0", fontSize: "14.5px", lineHeight: "1.7", color: "#3A3350"}}>
                   {"Maneswita works alongside her mother across Vedic and KP astrology and numerology, with five years of practice. Many readings are prepared by the two of them together."}
-                </p>
-                <p style={{margin: "14px 0 0", padding: "10px 12px", border: "1.5px dashed #C9B3D6", borderRadius: "12px", fontSize: "12px", color: "#6C1594"}}>
-                  {"To add: training or certifications, and what she specialises in."}
                 </p>
               </div>
             </div>
