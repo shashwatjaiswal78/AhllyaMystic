@@ -263,7 +263,7 @@ ReportKundliPage.prototype.render = function render() {
                     <div className={"am-stars"} aria-hidden={"true"} />
                     <img src={"/images/f0424906cf2ed307d839fd952ac77981.png"} alt={""} style={{position: "relative", height: "46px", width: "auto"}} />
                     <div style={{position: "relative", width: "62%", aspectRatio: "1 / 1", margin: "26px 0 22px"}}>
-                      <img className={"am-spin-zodiac"} src={"/images/9f12ecbbc1351b2a79d2c5c2543824a3.png"} alt={""} style={{width: "100%", height: "100%", display: "block", opacity: "0.95"}} />
+                      <img loading={"lazy"} decoding={"async"} className={"am-spin-zodiac"} src={"/images/9f12ecbbc1351b2a79d2c5c2543824a3.png"} alt={""} style={{width: "100%", height: "100%", display: "block", opacity: "0.95"}} />
                     </div>
                     <p style={{position: "relative", margin: "0", fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "16px", color: "#EADFF2"}}>
                       {hole(v.r?.hindi)}
@@ -537,7 +537,7 @@ ReportKundliPage.prototype.render = function render() {
         <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(120deg, #2E003E 0%, #4A0A66 55%, #6C1594 100%)", color: "#FFFFFF"}}>
           <div className={"am-stars"} aria-hidden={"true"} />
           <div className={"am-stars2"} aria-hidden={"true"} />
-          <img className={"am-orbit"} src={"/images/e9e66e432da62be0b75896cf7ef0608e.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-40px", top: "20px", width: "460px", height: "460px", opacity: "0.3", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-orbit"} src={"/images/e9e66e432da62be0b75896cf7ef0608e.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-40px", top: "20px", width: "460px", height: "460px", opacity: "0.3", pointerEvents: "none"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "104px 24px", position: "relative"}}>
             <div style={{marginBottom: "52px"}}>
               <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
@@ -582,7 +582,7 @@ ReportKundliPage.prototype.render = function render() {
           </div>
         </div>
         <div style={{position: "relative", overflow: "hidden", background: "#FFFDF9", borderTop: "1px solid #E8DFD0"}}>
-          <img className={"am-spin"} src={"/images/139dc9f8771bafe47e83ebdfd8f024a6.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-150px", top: "-150px", width: "420px", height: "420px", opacity: "0.1", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/139dc9f8771bafe47e83ebdfd8f024a6.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-150px", top: "-150px", width: "420px", height: "420px", opacity: "0.1", pointerEvents: "none"}} />
           <div style={{maxWidth: "860px", margin: "0 auto", padding: "88px 24px", position: "relative", textAlign: "center"}}>
             <p style={{margin: "0 0 18px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
               {"From a client"}
@@ -672,7 +672,7 @@ ReportKundliPage.prototype.render = function render() {
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "0 24px 96px"}}>
           <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(120deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "28px"}}>
             <div className={"am-stars"} aria-hidden={"true"} />
-            <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
+            <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(32px, 5vw, 64px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "28px"}}>
               <div style={{flex: "1 1 100%", minWidth: "0"}}>
                 <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.38vw, 32px)", lineHeight: "1.2", color: "#FFFFFF"}}>

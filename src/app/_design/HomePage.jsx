@@ -108,9 +108,9 @@ class HomePage extends React.Component {
     var tool = this.state.tool || 'kundli';
     var defs = [
       { id: 'kundli', label: 'Free Kundli' },
-      { id: 'kp', label: 'KP Kundli' },
-      { id: 'name', label: 'Name number' },
-      { id: 'mobile', label: 'Mobile number' }
+      { id: 'kp', label: 'Free KP Kundli' },
+      { id: 'name', label: 'Name numerology' },
+      { id: 'mobile', label: 'Mobile numerology' }
     ];
     var tools = defs.map((d) => ({
       label: d.label,
@@ -344,7 +344,7 @@ HomePage.prototype.render = function render() {
               <div style={{flex: "1 1 440px", minWidth: "0", display: "flex", justifyContent: "center", paddingBottom: "110px"}}>
                 <div style={{position: "relative", width: "min(600px, 100%)", aspectRatio: "1 / 1"}}>
                   <div className={"am-halo"} aria-hidden={"true"} style={{position: "absolute", inset: "8%", borderRadius: "999px", background: "radial-gradient(circle, rgba(255,255,255,0.30) 0%, rgba(234,223,242,0.12) 45%, rgba(255,255,255,0) 72%)"}} />
-                  <img className={"am-spin-zodiac"} src={"/images/9f12ecbbc1351b2a79d2c5c2543824a3.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", inset: "0", width: "100%", height: "100%", display: "block", opacity: "0.95"}} />
+                  <img loading={"lazy"} decoding={"async"} className={"am-spin-zodiac"} src={"/images/9f12ecbbc1351b2a79d2c5c2543824a3.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", inset: "0", width: "100%", height: "100%", display: "block", opacity: "0.95"}} />
                   <div style={{position: "absolute", top: "17%", left: "17%", width: "66%", height: "66%"}}>
                     <img src={"/images/be669e4f4ef64c09b37d47c940f4daa1.png"} alt={"Maneswita and Ahalya Sangeeta, founders of Ahllya Mystic"} style={{width: "100%", height: "100%", display: "block", filter: "drop-shadow(0 24px 30px rgba(20,0,28,0.45))"}} />
                   </div>
@@ -365,7 +365,7 @@ HomePage.prototype.render = function render() {
           </svg>
         </div>
         <div style={{position: "relative", overflow: "hidden", background: "radial-gradient(ellipse at 0% 100%, rgba(146,26,17,0.06), rgba(146,26,17,0) 50%), #FBF7F0"}}>
-          <img className={"am-spin-rev"} src={"/images/139dc9f8771bafe47e83ebdfd8f024a6.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", top: "-110px", right: "-170px", width: "560px", height: "560px", opacity: "0.14", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin-rev"} src={"/images/139dc9f8771bafe47e83ebdfd8f024a6.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", top: "-110px", right: "-170px", width: "560px", height: "560px", opacity: "0.14", pointerEvents: "none"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px 88px", position: "relative"}}>
             <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "16px 40px", marginBottom: "44px"}}>
               <div className={"am-center-mobile"} style={{width: "100%"}}>
@@ -492,8 +492,8 @@ HomePage.prototype.render = function render() {
         <div id={"consult"} style={{position: "relative", overflow: "hidden", color: "#FFFFFF", background: "radial-gradient(ellipse at 18% 22%, rgba(108,21,148,0.65) 0%, rgba(108,21,148,0) 50%), radial-gradient(ellipse at 88% 78%, rgba(146,26,17,0.30) 0%, rgba(146,26,17,0) 45%), radial-gradient(ellipse at 70% 8%, rgba(74,10,102,0.7) 0%, rgba(74,10,102,0) 55%), linear-gradient(180deg, #16001F 0%, #2E003E 50%, #16001F 100%)"}}>
           <div className={"am-stars"} aria-hidden={"true"} />
           <div className={"am-stars2"} aria-hidden={"true"} />
-          <img className={"am-spin-zodiac"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-220px", bottom: "-240px", width: "640px", height: "640px", opacity: "0.22"}} />
-          <img className={"am-spin-rev"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-170px", top: "-170px", width: "440px", height: "440px", opacity: "0.12"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin-zodiac"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-220px", bottom: "-240px", width: "640px", height: "640px", opacity: "0.22"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin-rev"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-170px", top: "-170px", width: "440px", height: "440px", opacity: "0.12"}} />
           <div aria-hidden={"true"} style={{position: "absolute", top: "12%", left: "40%", width: "520px", height: "520px", borderRadius: "999px", background: "radial-gradient(circle, rgba(234,223,242,0.10) 0%, rgba(234,223,242,0) 65%)", pointerEvents: "none"}} />
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "8%", left: "78%"}} />
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "30%", left: "30%", animationDelay: "4.5s"}} />
@@ -690,7 +690,7 @@ HomePage.prototype.render = function render() {
         <div id={"free"} style={{maxWidth: "1200px", margin: "0 auto", padding: "72px 24px 0"}}>
           <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(135deg, #6C1594 0%, #4A0A66 50%, #2E003E 100%)", color: "#FFFFFF", borderRadius: "28px"}}>
             <div className={"am-stars"} aria-hidden={"true"} />
-            <img className={"am-spin"} src={"/images/9d2168b8cba50907515a4814ec827ca1.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-190px", bottom: "-230px", width: "540px", height: "540px", opacity: "0.18", pointerEvents: "none"}} />
+            <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/9d2168b8cba50907515a4814ec827ca1.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-190px", bottom: "-230px", width: "540px", height: "540px", opacity: "0.18", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(28px, 4vw, 56px)", display: "flex", flexWrap: "wrap", gap: "40px", alignItems: "center"}}>
               <div style={{flex: "1 1 380px", minWidth: "0"}}>
                 <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
@@ -967,7 +967,7 @@ HomePage.prototype.render = function render() {
         <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(120deg, #2E003E 0%, #4A0A66 55%, #6C1594 100%)", color: "#FFFFFF"}}>
           <div className={"am-stars"} aria-hidden={"true"} />
           <div className={"am-stars2"} aria-hidden={"true"} />
-          <img className={"am-orbit"} src={"/images/e9e66e432da62be0b75896cf7ef0608e.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-40px", top: "20px", width: "460px", height: "460px", opacity: "0.3", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-orbit"} src={"/images/e9e66e432da62be0b75896cf7ef0608e.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-40px", top: "20px", width: "460px", height: "460px", opacity: "0.3", pointerEvents: "none"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "104px 24px", position: "relative"}}>
             <div style={{marginBottom: "52px"}}>
               <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#FCCE07", fontWeight: "700"}}>
@@ -1051,7 +1051,7 @@ HomePage.prototype.render = function render() {
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "20px"}}>
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column"}}>
-                <img src={"/images/f096e04a039d9feb59de98d1d02de7f1.jpg"} alt={"Numerology Foundation Course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
+                <img loading={"lazy"} decoding={"async"} src={"/images/f096e04a039d9feb59de98d1d02de7f1.jpg"} alt={"Numerology Foundation Course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
                 <div style={{flex: "1", padding: "22px 26px 26px", display: "flex", flexDirection: "column", gap: "10px"}}>
                   <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", color: "#921A11", lineHeight: "1"}}>
                     {"अंक शास्त्र"}
@@ -1073,7 +1073,7 @@ HomePage.prototype.render = function render() {
                 </div>
               </div>
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column"}}>
-                <img src={"/images/ea15b3e1780bbd6844ecaa33bda0c926.jpg"} alt={"Astrology Foundation Course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
+                <img loading={"lazy"} decoding={"async"} src={"/images/ea15b3e1780bbd6844ecaa33bda0c926.jpg"} alt={"Astrology Foundation Course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
                 <div style={{flex: "1", padding: "22px 26px 26px", display: "flex", flexDirection: "column", gap: "10px"}}>
                   <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", color: "#921A11", lineHeight: "1"}}>
                     {"ज्योतिष"}
@@ -1095,7 +1095,7 @@ HomePage.prototype.render = function render() {
                 </div>
               </div>
               <div className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column"}}>
-                <img src={"/images/6da4179d5dfa9489ed3e3e39f8aa92bd.jpg"} alt={"Decoding Marriage and Compatibility course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
+                <img loading={"lazy"} decoding={"async"} src={"/images/6da4179d5dfa9489ed3e3e39f8aa92bd.jpg"} alt={"Decoding Marriage and Compatibility course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
                 <div style={{flex: "1", padding: "22px 26px 26px", display: "flex", flexDirection: "column", gap: "10px"}}>
                   <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", color: "#921A11", lineHeight: "1"}}>
                     {"विवाह"}
@@ -1119,7 +1119,7 @@ HomePage.prototype.render = function render() {
             </div>
             <div id={"webinar"} style={{display: "flex", flexWrap: "wrap", background: "#FFFDF9", color: "#1E1830", border: "1.5px solid #6C1594", borderRadius: "28px", overflow: "hidden", marginTop: "72px", position: "relative", outline: "1px solid #D9C6E3", outlineOffset: "-10px", boxShadow: "0 30px 60px -40px rgba(46,0,62,0.35)"}}>
               <div style={{flex: "1 1 500px", minWidth: "0", position: "relative", padding: "clamp(20px, 3vw, 36px)", display: "flex", alignItems: "center"}}>
-                <img src={"/images/f51fdba3c3c077276fab777f3ecab46d.jpg"} alt={"Manifestation Masterclass with Maneswita"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", borderRadius: "18px", display: "block", boxShadow: "0 24px 48px -26px rgba(46,0,62,0.55)"}} />
+                <img loading={"lazy"} decoding={"async"} src={"/images/f51fdba3c3c077276fab777f3ecab46d.jpg"} alt={"Manifestation Masterclass with Maneswita"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", borderRadius: "18px", display: "block", boxShadow: "0 24px 48px -26px rgba(46,0,62,0.55)"}} />
               </div>
               <div style={{flex: "1 1 400px", minWidth: "0", padding: "clamp(20px, 3vw, 36px) clamp(24px, 4vw, 48px) clamp(28px, 4vw, 44px) clamp(20px, 2vw, 12px)", display: "flex", flexDirection: "column", justifyContent: "center", gap: "14px", position: "relative"}}>
                 <p style={{margin: "0", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
@@ -1177,8 +1177,8 @@ HomePage.prototype.render = function render() {
         <div style={{position: "relative", overflow: "hidden", color: "#FFFFFF", position: "relative", overflow: "hidden", color: "#FFFFFF", background: "radial-gradient(ellipse at 18% 22%, rgba(108,21,148,0.65) 0%, rgba(108,21,148,0) 50%), radial-gradient(ellipse at 88% 78%, rgba(146,26,17,0.30) 0%, rgba(146,26,17,0) 45%), radial-gradient(ellipse at 70% 8%, rgba(74,10,102,0.7) 0%, rgba(74,10,102,0) 55%), linear-gradient(180deg, #16001F 0%, #2E003E 50%, #16001F 100%)"}}>
           <div className={"am-stars"} aria-hidden={"true"} />
           <div className={"am-stars2"} aria-hidden={"true"} />
-          <img className={"am-spin-zodiac"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-220px", top: "-200px", width: "640px", height: "640px", opacity: "0.18"}} />
-          <img className={"am-spin-rev"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-170px", bottom: "-170px", width: "440px", height: "440px", opacity: "0.12"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin-zodiac"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-220px", top: "-200px", width: "640px", height: "640px", opacity: "0.18"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin-rev"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-170px", bottom: "-170px", width: "440px", height: "440px", opacity: "0.12"}} />
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "6%", left: "72%"}} />
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "26%", left: "22%", animationDelay: "3.5s"}} />
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "3%", left: "46%", animationDelay: "7s"}} />
@@ -1207,7 +1207,7 @@ HomePage.prototype.render = function render() {
                               <path d={"M58 0V8M58 108V116M0 58H8M108 58H116"} strokeOpacity={"0.6"} />
                             </svg>
                             <span style={{display: "block", width: "64px", height: "64px", borderRadius: "999px", background: "#F3E8F7", boxShadow: "0 0 0 3px rgba(108,21,148,0.18), 0 12px 24px -10px rgba(46,0,62,0.55)"}}>
-                              <img className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
+                              <img loading={"lazy"} decoding={"async"} className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
                             </span>
                           </span>
                           <span style={{fontFamily: "'Marcellus', serif", fontSize: "13.5px", lineHeight: "1.15", color: "#FCCE07"}}>
@@ -1228,7 +1228,7 @@ HomePage.prototype.render = function render() {
                               <path d={"M58 0V8M58 108V116M0 58H8M108 58H116"} strokeOpacity={"0.6"} />
                             </svg>
                             <span style={{display: "block", width: "64px", height: "64px", borderRadius: "999px", background: "#FFFFFF", boxShadow: "0 10px 22px -12px rgba(46,0,62,0.45)"}}>
-                              <img className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
+                              <img loading={"lazy"} decoding={"async"} className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
                             </span>
                           </span>
                           <span style={{fontFamily: "'Marcellus', serif", fontSize: "13.5px", lineHeight: "1.15"}}>
@@ -1258,7 +1258,7 @@ HomePage.prototype.render = function render() {
                         {hole(v.cur?.planet)}
                       </p>
                     </div>
-                    <img src={v.cur?.img} alt={""} style={{flex: "none", width: "64px", height: "64px", borderRadius: "999px", background: "#FFFFFF", boxShadow: "0 10px 22px -12px rgba(46,0,62,0.45)"}} />
+                    <img loading={"lazy"} decoding={"async"} src={v.cur?.img} alt={""} style={{flex: "none", width: "64px", height: "64px", borderRadius: "999px", background: "#FFFFFF", boxShadow: "0 10px 22px -12px rgba(46,0,62,0.45)"}} />
                   </div>
                   <div style={{display: "grid", gap: "12px"}}>
                     {(v.cur?.bars || []).map((b, $index) => (
@@ -1466,12 +1466,12 @@ HomePage.prototype.render = function render() {
                   {"Simple articles on astrology, numerology and Vastu, written by Maneswita."}
                 </p>
               </div>
-              <a href={"/#blog"} style={{fontWeight: "700"}}>
-                {"Read all articles →"}
+              <a href={"/consultation"} style={{fontWeight: "700"}}>
+                {"Talk to our astrologers →"}
               </a>
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "20px"}}>
-              <a href={"#"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/kundli"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
                 <svg viewBox={"0 0 320 180"} preserveAspectRatio={"xMidYMid slice"} role={"img"} aria-label={"Saturn illustration"} style={{display: "block", width: "100%", aspectRatio: "16 / 9"}}>
                   <defs>
                     <linearGradient id={"bgA"} x1={"0"} y1={"0"} x2={"1"} y2={"1"}>
@@ -1513,12 +1513,12 @@ HomePage.prototype.render = function render() {
                       {"By Maneswita"}
                     </span>
                     <span style={{fontWeight: "700", color: "#921A11", fontSize: "13px"}}>
-                      {"Read article →"}
+                      {"Explore →"}
                     </span>
                   </div>
                 </div>
               </a>
-              <a href={"#"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/report/name-numerology"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
                 <svg viewBox={"0 0 320 180"} preserveAspectRatio={"xMidYMid slice"} role={"img"} aria-label={"Numbers grid illustration"} style={{display: "block", width: "100%", aspectRatio: "16 / 9"}}>
                   <defs>
                     <linearGradient id={"bgN"} x1={"0"} y1={"0"} x2={"1"} y2={"1"}>
@@ -1582,12 +1582,12 @@ HomePage.prototype.render = function render() {
                       {"By Maneswita"}
                     </span>
                     <span style={{fontWeight: "700", color: "#921A11", fontSize: "13px"}}>
-                      {"Read article →"}
+                      {"Explore →"}
                     </span>
                   </div>
                 </div>
               </a>
-              <a href={"#"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/consultation"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
                 <svg viewBox={"0 0 320 180"} preserveAspectRatio={"xMidYMid slice"} role={"img"} aria-label={"Home floor plan with Vastu grid"} style={{display: "block", width: "100%", aspectRatio: "16 / 9"}}>
                   <defs>
                     <linearGradient id={"bgV"} x1={"0"} y1={"0"} x2={"1"} y2={"1"}>
@@ -1616,7 +1616,7 @@ HomePage.prototype.render = function render() {
                     </span>
                   </div>
                   <p style={{margin: "0", fontFamily: "'Marcellus', serif", fontSize: "19px", lineHeight: "1.25"}}>
-                    {"Five simple Vastu fixes for your home before Diwali"}
+                    {"Five simple Vastu fixes to refresh your home"}
                   </p>
                   <p style={{margin: "0", fontSize: "13.5px", lineHeight: "1.6", color: "#5C5470"}}>
                     {"No walls broken, no big spends. Small changes room by room that bring the energy of your home back into balance."}
@@ -1626,7 +1626,7 @@ HomePage.prototype.render = function render() {
                       {"By Maneswita"}
                     </span>
                     <span style={{fontWeight: "700", color: "#921A11", fontSize: "13px"}}>
-                      {"Read article →"}
+                      {"Explore →"}
                     </span>
                   </div>
                 </div>
@@ -1635,12 +1635,12 @@ HomePage.prototype.render = function render() {
           </div>
         </div>
         <div id={"founders"} style={{position: "relative", overflow: "hidden", background: "radial-gradient(ellipse at 15% 40%, rgba(146,26,17,0.06), rgba(146,26,17,0) 50%), #FBF7F0"}}>
-          <img className={"am-spin-rev"} src={"/images/c6d61635ad545b54bcdda486c37c816a.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-150px", top: "-120px", width: "420px", height: "420px", opacity: "0.4", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin-rev"} src={"/images/c6d61635ad545b54bcdda486c37c816a.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-150px", top: "-120px", width: "420px", height: "420px", opacity: "0.4", pointerEvents: "none"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "104px 24px", position: "relative"}}>
             <div style={{display: "flex", flexWrap: "wrap", gap: "64px", alignItems: "center"}}>
               <div style={{flex: "1 1 420px", minWidth: "0", position: "relative", padding: "18px"}}>
                 <div aria-hidden={"true"} style={{position: "absolute", inset: "0", border: "1px solid #921A11", opacity: "0.4", borderRadius: "260px 260px 28px 28px"}} />
-                <img src={"/images/26c9dadb7f4b6a08ec59999c3d9e9332.jpg"} alt={"Maneswita and Ahalya Sangeeta, founders of Ahllya Mystic"} style={{position: "relative", width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "center 35%", borderRadius: "240px 240px 20px 20px", display: "block"}} />
+                <img loading={"lazy"} decoding={"async"} src={"/images/26c9dadb7f4b6a08ec59999c3d9e9332.jpg"} alt={"Maneswita and Ahalya Sangeeta, founders of Ahllya Mystic"} style={{position: "relative", width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "center 35%", borderRadius: "240px 240px 20px 20px", display: "block"}} />
               </div>
               <div style={{flex: "1.6 1 460px", minWidth: "0"}}>
                 <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
@@ -1693,7 +1693,7 @@ HomePage.prototype.render = function render() {
           </div>
         </div>
         <div id={"stories"} style={{position: "relative", overflow: "hidden", background: "radial-gradient(ellipse at 85% 10%, rgba(108,21,148,0.06), rgba(108,21,148,0) 50%), #FFFDF9", borderTop: "1px solid #E8DFD0"}}>
-          <img className={"am-spin"} src={"/images/139dc9f8771bafe47e83ebdfd8f024a6.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-140px", bottom: "-160px", width: "440px", height: "440px", opacity: "0.12", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/139dc9f8771bafe47e83ebdfd8f024a6.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-140px", bottom: "-160px", width: "440px", height: "440px", opacity: "0.12", pointerEvents: "none"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px 96px", position: "relative"}}>
             <div style={{textAlign: "center", margin: "0 auto 44px"}}>
               <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
@@ -1854,7 +1854,7 @@ HomePage.prototype.render = function render() {
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "0 24px 96px"}}>
           <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(120deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "28px"}}>
             <div className={"am-stars"} aria-hidden={"true"} />
-            <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
+            <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(32px, 5vw, 64px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "28px"}}>
               <div style={{flex: "1 1 100%", minWidth: "0"}}>
                 <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.38vw, 32px)", lineHeight: "1.2", color: "#FFFFFF"}}>

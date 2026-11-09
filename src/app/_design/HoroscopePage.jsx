@@ -249,7 +249,7 @@ HoroscopePage.prototype.render = function render() {
         <section aria-label={"Horoscope"} style={{position: "relative", overflow: "hidden", color: "#FFFFFF", background: "linear-gradient(180deg, #1B0026 0%, #2E003E 40%, #5A0F7C 100%)"}}>
           <div className={"am-stars"} aria-hidden={"true"} />
           <div className={"am-stars2"} aria-hidden={"true"} style={{opacity: "0.6"}} />
-          <img className={"am-spin-zodiac"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "50%", top: "50%", width: "760px", height: "760px", marginLeft: "-380px", marginTop: "-300px", opacity: "0.22", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin-zodiac"} src={"/images/610ce06ea07e7a2d1d36f4d88029f8db.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "50%", top: "50%", width: "760px", height: "760px", marginLeft: "-380px", marginTop: "-300px", opacity: "0.22", pointerEvents: "none"}} />
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "20%", left: "62%", animationDelay: "2s"}} />
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "8%", left: "30%", animationDelay: "7s"}} />
           <div style={{position: "relative", maxWidth: "1200px", margin: "0 auto", padding: "22px 24px 72px"}}>
@@ -308,7 +308,7 @@ HoroscopePage.prototype.render = function render() {
                             <path d={"M58 0V8M58 108V116M0 58H8M108 58H116"} strokeOpacity={"0.6"} />
                           </svg>
                           <span style={{display: "block", width: "64px", height: "64px", borderRadius: "999px", background: "#F3E8F7", boxShadow: "0 0 0 3px rgba(108,21,148,0.18), 0 12px 24px -10px rgba(46,0,62,0.55)"}}>
-                            <img className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
+                            <img loading={"lazy"} decoding={"async"} className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
                           </span>
                         </span>
                         <span style={{fontFamily: "'Marcellus', serif", fontSize: "13.5px", lineHeight: "1.15", color: "#6C1594"}}>
@@ -329,7 +329,7 @@ HoroscopePage.prototype.render = function render() {
                             <path d={"M58 0V8M58 108V116M0 58H8M108 58H116"} strokeOpacity={"0.6"} />
                           </svg>
                           <span style={{display: "block", width: "64px", height: "64px", borderRadius: "999px", background: "#FFFFFF", boxShadow: "0 10px 22px -12px rgba(46,0,62,0.45)"}}>
-                            <img className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
+                            <img loading={"lazy"} decoding={"async"} className={"am-rashi-img"} src={r?.img} alt={""} style={{width: "100%", height: "100%", display: "block", transition: "transform 0.4s ease"}} />
                           </span>
                         </span>
                         <span style={{fontFamily: "'Marcellus', serif", fontSize: "13.5px", lineHeight: "1.15"}}>
@@ -410,7 +410,7 @@ HoroscopePage.prototype.render = function render() {
             <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(160deg, #2E003E 0%, #4A0A66 55%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "22px", padding: "28px"}}>
               <div className={"am-stars"} aria-hidden={"true"} />
               <div style={{position: "relative", display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px"}}>
-                <img src={v.cur?.img} alt={""} style={{flex: "none", width: "72px", height: "72px", borderRadius: "999px", background: "#FFFFFF", boxShadow: "0 0 0 4px rgba(252,206,7,0.35)"}} />
+                <img loading={"lazy"} decoding={"async"} src={v.cur?.img} alt={""} style={{flex: "none", width: "72px", height: "72px", borderRadius: "999px", background: "#FFFFFF", boxShadow: "0 0 0 4px rgba(252,206,7,0.35)"}} />
                 <div>
                   <p style={{margin: "0", fontFamily: "'Marcellus', 'Tiro Devanagari Hindi', serif", fontSize: "25.5px", lineHeight: "1.1"}}>
                     {hole(v.signName)}
@@ -742,7 +742,7 @@ HoroscopePage.prototype.render = function render() {
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "0 24px 96px"}}>
           <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(120deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "28px"}}>
             <div className={"am-stars"} aria-hidden={"true"} />
-            <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
+            <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(32px, 5vw, 64px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "28px"}}>
               <div style={{flex: "1 1 100%", minWidth: "0"}}>
                 <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.38vw, 32px)", lineHeight: "1.2", color: "#FFFFFF"}}>

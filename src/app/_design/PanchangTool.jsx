@@ -317,7 +317,7 @@ export default function PanchangTool({ initial }) {
       <section className="pn-hero" aria-label="Panchang">
         <div className="am-stars" aria-hidden="true" />
         <div className="am-stars2" aria-hidden="true" style={{ opacity: 0.6 }} />
-        <img className="am-spin-zodiac" src="/images/610ce06ea07e7a2d1d36f4d88029f8db.png" alt="" aria-hidden="true" style={{ position: "absolute", right: "-120px", top: "-60px", width: "560px", height: "560px", opacity: 0.18, pointerEvents: "none" }} />
+        <img loading={"lazy"} decoding={"async"} className="am-spin-zodiac" src="/images/610ce06ea07e7a2d1d36f4d88029f8db.png" alt="" aria-hidden="true" style={{ position: "absolute", right: "-120px", top: "-60px", width: "560px", height: "560px", opacity: 0.18, pointerEvents: "none" }} />
         <div className="pn-hero-in">
           <p className="pn-crumb"><a href="/">Home</a> / <a href="/horoscope">Horoscope</a> / <b>Panchang</b></p>
           <p className="pn-eyebrow">Free Panchang tool</p>

@@ -120,7 +120,7 @@ ConsultPage.prototype.render = function render() {
               </h1>
             </div>
             <div style={{display: "flex", alignItems: "center", gap: "14px", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "999px", padding: "6px 18px 6px 6px"}}>
-              <img src={"/images/26c9dadb7f4b6a08ec59999c3d9e9332.jpg"} alt={""} style={{width: "52px", height: "52px", borderRadius: "999px", objectFit: "cover"}} />
+              <img loading={"lazy"} decoding={"async"} src={"/images/26c9dadb7f4b6a08ec59999c3d9e9332.jpg"} alt={""} style={{width: "52px", height: "52px", borderRadius: "999px", objectFit: "cover"}} />
               <div>
                 <p style={{margin: "0", fontWeight: "700", fontSize: "13.5px"}}>
                   {"You will speak with our experts"}
@@ -153,7 +153,7 @@ ConsultPage.prototype.render = function render() {
                       {e?.sel ? (
                         <>
                           <button type={"button"} role={"radio"} aria-checked={"true"} onClick={e?.pick} style={{display: "flex", alignItems: "center", gap: "16px", textAlign: "left", padding: "16px 18px", borderRadius: "18px", border: "2px solid #6C1594", background: "#F3E8F7", font: "inherit", color: "#1E1830", cursor: "pointer"}}>
-                            <img src={e?.photo} alt={""} style={{flex: "none", width: "76px", height: "76px", borderRadius: "999px", objectFit: "cover", border: "3px solid #FFFFFF", boxShadow: "0 0 0 1.5px #CBB154"}} />
+                            <img loading={"lazy"} decoding={"async"} src={e?.photo} alt={""} style={{flex: "none", width: "76px", height: "76px", borderRadius: "999px", objectFit: "cover", border: "3px solid #FFFFFF", boxShadow: "0 0 0 1.5px #CBB154"}} />
                             <span style={{display: "grid", gap: "3px"}}>
                               <span style={{fontSize: "11.5px", fontWeight: "700", letterSpacing: "0.08em", textTransform: "uppercase", color: "#921A11"}}>
                                 {hole(e?.level)}
@@ -174,7 +174,7 @@ ConsultPage.prototype.render = function render() {
                       {e?.notSel ? (
                         <>
                           <button type={"button"} role={"radio"} aria-checked={"false"} onClick={e?.pick} style={{display: "flex", alignItems: "center", gap: "16px", textAlign: "left", padding: "16px 18px", borderRadius: "18px", border: "1px solid #E8DFD0", background: "#FFFFFF", font: "inherit", color: "#1E1830", cursor: "pointer"}}>
-                            <img src={e?.photo} alt={""} style={{flex: "none", width: "76px", height: "76px", borderRadius: "999px", objectFit: "cover", border: "3px solid #FFFFFF", boxShadow: "0 0 0 1.5px #CBB154"}} />
+                            <img loading={"lazy"} decoding={"async"} src={e?.photo} alt={""} style={{flex: "none", width: "76px", height: "76px", borderRadius: "999px", objectFit: "cover", border: "3px solid #FFFFFF", boxShadow: "0 0 0 1.5px #CBB154"}} />
                             <span style={{display: "grid", gap: "3px"}}>
                               <span style={{fontSize: "11.5px", fontWeight: "700", letterSpacing: "0.08em", textTransform: "uppercase", color: "#921A11"}}>
                                 {hole(e?.level)}

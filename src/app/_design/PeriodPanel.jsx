@@ -32,7 +32,7 @@ function Hero({ sign, scoreLabel, score, luckyLabel, luckyValue, colour, numbers
           <h2 style={{ margin: 0, fontFamily: serif, fontWeight: 400, fontSize: "clamp(25.5px, 2.89vw, 33.5px)", lineHeight: 1.1 }}>{sign.en}</h2>
           <p style={{ margin: "2px 0 0", color: "#EADFF2", fontSize: 13 }}>{sign.hi} · {range}</p>
         </div>
-        {sign.img ? <img src={sign.img} alt="" style={{ width: 64, height: 64, borderRadius: 999, background: "#FFFFFF", flex: "none" }} /> : null}
+        {sign.img ? <img loading={"lazy"} decoding={"async"} src={sign.img} alt="" style={{ width: 64, height: 64, borderRadius: 999, background: "#FFFFFF", flex: "none" }} /> : null}
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 10, margin: "20px 0 22px" }}>
         <Tile label={scoreLabel} value={<span style={{ color: "#FCCE07", fontSize: 22.5 }}>{score}%</span>} />

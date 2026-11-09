@@ -384,7 +384,7 @@ CheckoutVarshphalPage.prototype.render = function render() {
                 </p>
                 <div style={{display: "flex", gap: "14px", alignItems: "center", marginBottom: "18px", paddingBottom: "18px", borderBottom: "1px solid #EFE6D8"}}>
                   <div aria-hidden={"true"} style={{flex: "none", position: "relative", overflow: "hidden", width: "64px", height: "80px", borderRadius: "8px", background: "linear-gradient(160deg, #2E003E 0%, #6C1594 100%)", display: "flex", alignItems: "center", justifyContent: "center"}}>
-                    <img src={"/images/9f12ecbbc1351b2a79d2c5c2543824a3.png"} alt={""} style={{width: "48px", height: "48px"}} />
+                    <img loading={"lazy"} decoding={"async"} src={"/images/9f12ecbbc1351b2a79d2c5c2543824a3.png"} alt={""} style={{width: "48px", height: "48px"}} />
                   </div>
                   <div style={{minWidth: "0"}}>
                     <p style={{margin: "0", fontWeight: "700"}}>

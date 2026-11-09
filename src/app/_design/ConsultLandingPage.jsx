@@ -42,7 +42,7 @@ ConsultLandingPage.prototype.render = function render() {
         <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(135deg, #1E0029 0%, #2E003E 40%, #4A0A66 75%, #6C1594 100%)", color: "#FFFFFF"}}>
           <div className={"am-stars"} aria-hidden={"true"} />
           <div className={"am-stars2"} aria-hidden={"true"} />
-          <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-220px", bottom: "-260px", width: "620px", height: "620px", opacity: "0.12", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-220px", bottom: "-260px", width: "620px", height: "620px", opacity: "0.12", pointerEvents: "none"}} />
           <div style={{position: "relative", maxWidth: "1200px", margin: "0 auto", padding: "64px 24px 72px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "48px"}}>
             <div className={"am-center-mobile"} style={{flex: "1.25 1 480px", minWidth: "0"}}>
               <p style={{margin: "0 0 14px", fontSize: "16px", fontWeight: "700", color: "#FCCE07"}}>
@@ -95,7 +95,7 @@ ConsultLandingPage.prototype.render = function render() {
             </div>
             <div style={{flex: "1 1 360px", minWidth: "0", maxWidth: "440px", margin: "0 auto", position: "relative", padding: "16px"}}>
               <div aria-hidden={"true"} style={{position: "absolute", inset: "0", border: "1px solid #FCCE07", opacity: "0.5", borderRadius: "240px 240px 26px 26px"}} />
-              <img src={"/images/26c9dadb7f4b6a08ec59999c3d9e9332.jpg"} alt={"Maneswita aur Ahalya Sangeeta, Ahllya Mystic"} style={{position: "relative", width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "center 35%", borderRadius: "220px 220px 18px 18px", display: "block"}} />
+              <img loading={"lazy"} decoding={"async"} src={"/images/26c9dadb7f4b6a08ec59999c3d9e9332.jpg"} alt={"Maneswita aur Ahalya Sangeeta, Ahllya Mystic"} style={{position: "relative", width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "center 35%", borderRadius: "220px 220px 18px 18px", display: "block"}} />
               <div style={{position: "absolute", left: "-6px", bottom: "34px", background: "#FFFFFF", color: "#1E1830", borderRadius: "14px", padding: "10px 14px", boxShadow: "0 20px 40px -20px rgba(0,0,0,0.6)"}}>
                 <p style={{margin: "0", fontWeight: "700"}}>
                   {"Maneswita aur Ahalya Sangeeta"}
@@ -344,7 +344,7 @@ ConsultLandingPage.prototype.render = function render() {
               <div className={"am-lift"} style={{position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", background: "linear-gradient(160deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "22px", padding: "28px"}}>
                 <div className={"am-stars"} aria-hidden={"true"} />
                 <div style={{position: "relative", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "22px", marginBottom: "22px"}}>
-                  <img src={"/images/4799fee4da0ba25da44abe8ca0aebfec.jpg"} alt={"Ahalya Sangeeta"} style={{flex: "none", width: "168px", height: "168px", borderRadius: "999px", objectFit: "cover", objectPosition: "center 25%", display: "block", boxShadow: "0 0 0 4px #FCCE07, 0 18px 34px -16px rgba(46,0,62,0.6)"}} />
+                  <img loading={"lazy"} decoding={"async"} src={"/images/4799fee4da0ba25da44abe8ca0aebfec.jpg"} alt={"Ahalya Sangeeta"} style={{flex: "none", width: "168px", height: "168px", borderRadius: "999px", objectFit: "cover", objectPosition: "center 25%", display: "block", boxShadow: "0 0 0 4px #FCCE07, 0 18px 34px -16px rgba(46,0,62,0.6)"}} />
                   <div style={{minWidth: "0"}}>
                     <span style={{display: "inline-block", marginBottom: "6px", fontSize: "11px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", color: "#921A11", background: "#FCCE07", padding: "5px 12px", borderRadius: "999px"}}>
                       {"Senior Expert"}
@@ -417,7 +417,7 @@ ConsultLandingPage.prototype.render = function render() {
               </div>
               <div className={"am-lift"} style={{position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", background: "#FFFFFF", color: "#1E1830", border: "1px solid #E8DFD0", outline: "1px solid #EFE6D8", outlineOffset: "-9px", borderRadius: "22px", padding: "28px"}}>
                 <div style={{position: "relative", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "22px", marginBottom: "22px"}}>
-                  <img src={"/images/cd60cc55788c423c9c66a30e5201d374.jpg"} alt={"Maneswita"} style={{flex: "none", width: "168px", height: "168px", borderRadius: "999px", objectFit: "cover", objectPosition: "center 25%", display: "block", boxShadow: "0 0 0 4px #CBB154, 0 18px 34px -16px rgba(46,0,62,0.6)"}} />
+                  <img loading={"lazy"} decoding={"async"} src={"/images/cd60cc55788c423c9c66a30e5201d374.jpg"} alt={"Maneswita"} style={{flex: "none", width: "168px", height: "168px", borderRadius: "999px", objectFit: "cover", objectPosition: "center 25%", display: "block", boxShadow: "0 0 0 4px #CBB154, 0 18px 34px -16px rgba(46,0,62,0.6)"}} />
                   <div style={{minWidth: "0"}}>
                     <span style={{display: "inline-block", marginBottom: "6px", fontSize: "11px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", color: "#6C1594", background: "#F3E8F7", padding: "5px 12px", borderRadius: "999px"}}>
                       {"Expert"}
@@ -721,7 +721,7 @@ ConsultLandingPage.prototype.render = function render() {
           </div>
         </div>
         <div id={"stories"} style={{position: "relative", overflow: "hidden", background: "radial-gradient(ellipse at 85% 10%, rgba(108,21,148,0.06), rgba(108,21,148,0) 50%), #FFFDF9", borderTop: "1px solid #E8DFD0"}}>
-          <img className={"am-spin"} src={"/images/139dc9f8771bafe47e83ebdfd8f024a6.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-140px", bottom: "-160px", width: "440px", height: "440px", opacity: "0.12", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/139dc9f8771bafe47e83ebdfd8f024a6.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", left: "-140px", bottom: "-160px", width: "440px", height: "440px", opacity: "0.12", pointerEvents: "none"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "88px 24px 96px", position: "relative"}}>
             <div style={{textAlign: "center", margin: "0 auto 44px"}}>
               <p style={{margin: "0 0 10px", fontSize: "12px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>

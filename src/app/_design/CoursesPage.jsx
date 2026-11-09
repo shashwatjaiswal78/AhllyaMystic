@@ -170,7 +170,7 @@ CoursesPage.prototype.render = function render() {
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "20px"}}>
               <div className={"am-lift"} style={{display: "flex", flexDirection: "column", overflow: "hidden", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <img src={"/images/f096e04a039d9feb59de98d1d02de7f1.jpg"} alt={"Numerology Foundation course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
+                <img loading={"lazy"} decoding={"async"} src={"/images/f096e04a039d9feb59de98d1d02de7f1.jpg"} alt={"Numerology Foundation course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
                 <div style={{display: "flex", flexDirection: "column", flex: "1", padding: "24px 26px 26px"}}>
                   <div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "10px", marginBottom: "14px"}}>
                     <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", color: "#921A11"}}>
@@ -218,7 +218,7 @@ CoursesPage.prototype.render = function render() {
                 </div>
               </div>
               <div className={"am-lift"} style={{display: "flex", flexDirection: "column", overflow: "hidden", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <img src={"/images/ea15b3e1780bbd6844ecaa33bda0c926.jpg"} alt={"Astrology Foundation course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
+                <img loading={"lazy"} decoding={"async"} src={"/images/ea15b3e1780bbd6844ecaa33bda0c926.jpg"} alt={"Astrology Foundation course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
                 <div style={{display: "flex", flexDirection: "column", flex: "1", padding: "24px 26px 26px"}}>
                   <div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "10px", marginBottom: "14px"}}>
                     <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", color: "#921A11"}}>
@@ -266,7 +266,7 @@ CoursesPage.prototype.render = function render() {
                 </div>
               </div>
               <div className={"am-lift"} style={{display: "flex", flexDirection: "column", overflow: "hidden", background: "#FFFFFF", border: "1px solid #E8DFD0", borderRadius: "22px", outline: "1px solid #EFE6D8", outlineOffset: "-9px"}}>
-                <img src={"/images/6da4179d5dfa9489ed3e3e39f8aa92bd.jpg"} alt={"Decoding Marriage and Compatibility course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
+                <img loading={"lazy"} decoding={"async"} src={"/images/6da4179d5dfa9489ed3e3e39f8aa92bd.jpg"} alt={"Decoding Marriage and Compatibility course with Ahalya Sangeeta"} style={{width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block"}} />
                 <div style={{display: "flex", flexDirection: "column", flex: "1", padding: "24px 26px 26px"}}>
                   <div style={{display: "flex", alignItems: "center", justifyContent: "space-between", gap: "10px", marginBottom: "14px"}}>
                     <span style={{fontFamily: "'Tiro Devanagari Hindi', serif", fontSize: "17.5px", color: "#921A11"}}>
@@ -319,7 +319,7 @@ CoursesPage.prototype.render = function render() {
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "56px 24px 32px"}}>
           <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(120deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "28px", padding: "clamp(24px, 4vw, 44px)", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "28px 44px"}}>
             <div className={"am-stars"} aria-hidden={"true"} />
-            <img src={"/images/f51fdba3c3c077276fab777f3ecab46d.jpg"} alt={"Manifestation Masterclass with Maneswita"} style={{position: "relative", flex: "1 1 340px", minWidth: "0", maxWidth: "480px", aspectRatio: "16 / 9", objectFit: "cover", borderRadius: "18px", display: "block", boxShadow: "0 24px 48px -26px rgba(0,0,0,0.6)"}} />
+            <img loading={"lazy"} decoding={"async"} src={"/images/f51fdba3c3c077276fab777f3ecab46d.jpg"} alt={"Manifestation Masterclass with Maneswita"} style={{position: "relative", flex: "1 1 340px", minWidth: "0", maxWidth: "480px", aspectRatio: "16 / 9", objectFit: "cover", borderRadius: "18px", display: "block", boxShadow: "0 24px 48px -26px rgba(0,0,0,0.6)"}} />
             <div style={{position: "relative", flex: "1 1 360px", minWidth: "0"}}>
               <p style={{margin: "0 0 12px"}}>
                 <span style={{fontSize: "12px", fontWeight: "700", letterSpacing: "0.06em", textTransform: "uppercase", color: "#921A11", background: "#FCCE07", padding: "5px 12px", borderRadius: "999px"}}>
@@ -460,7 +460,7 @@ CoursesPage.prototype.render = function render() {
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "0 24px 96px"}}>
           <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(120deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "28px"}}>
             <div className={"am-stars"} aria-hidden={"true"} />
-            <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
+            <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(32px, 5vw, 64px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "28px"}}>
               <div style={{flex: "1 1 100%", minWidth: "0"}}>
                 <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.38vw, 32px)", lineHeight: "1.2", color: "#FFFFFF"}}>

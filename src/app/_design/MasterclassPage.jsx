@@ -141,7 +141,7 @@ MasterclassPage.prototype.render = function render() {
           <div className={"am-stars"} aria-hidden={"true"} />
           <div className={"am-stars2"} aria-hidden={"true"} />
           <span className={"am-shoot"} aria-hidden={"true"} style={{top: "90px", left: "58%"}} />
-          <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-200px", top: "-160px", width: "620px", height: "620px", opacity: "0.16", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-200px", top: "-160px", width: "620px", height: "620px", opacity: "0.16", pointerEvents: "none"}} />
           <div style={{position: "relative", maxWidth: "1200px", margin: "0 auto", padding: "22px 24px 88px"}}>
             <nav aria-label={"Breadcrumb"} style={{fontSize: "13px", color: "#CDB8DA", marginBottom: "40px"}}>
               <a href={"/"} style={{color: "#CDB8DA", textDecoration: "none"}}>
@@ -207,7 +207,7 @@ MasterclassPage.prototype.render = function render() {
                 </div>
               </div>
               <div style={{flex: "1 1 380px", minWidth: "0", maxWidth: "460px", margin: "0 auto"}}>
-                <img src={"/images/f51fdba3c3c077276fab777f3ecab46d.jpg"} alt={"Manifestation Masterclass with Maneswita"} style={{position: "relative", zIndex: "1", width: "92%", margin: "0 auto -28px", aspectRatio: "16 / 9", objectFit: "cover", borderRadius: "18px", display: "block", boxShadow: "0 30px 60px -30px rgba(0,0,0,0.7)", border: "3px solid rgba(255,255,255,0.9)"}} />
+                <img loading={"lazy"} decoding={"async"} src={"/images/f51fdba3c3c077276fab777f3ecab46d.jpg"} alt={"Manifestation Masterclass with Maneswita"} style={{position: "relative", zIndex: "1", width: "92%", margin: "0 auto -28px", aspectRatio: "16 / 9", objectFit: "cover", borderRadius: "18px", display: "block", boxShadow: "0 30px 60px -30px rgba(0,0,0,0.7)", border: "3px solid rgba(255,255,255,0.9)"}} />
                 <div style={{background: "#FFFFFF", color: "#1E1830", borderRadius: "24px", padding: "28px", boxShadow: "0 40px 80px -40px rgba(0,0,0,0.6)", paddingTop: "44px"}}>
                   <p style={{margin: "0 0 4px", fontSize: "12px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#921A11", fontWeight: "700"}}>
                     {"Commitment fee"}
@@ -512,7 +512,7 @@ MasterclassPage.prototype.render = function render() {
         <div style={{maxWidth: "1200px", margin: "0 auto", padding: "0 24px 96px"}}>
           <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(120deg, #2E003E 0%, #6C1594 100%)", color: "#FFFFFF", borderRadius: "28px"}}>
             <div className={"am-stars"} aria-hidden={"true"} />
-            <img className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
+            <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/c78c760843b4d5a96c8f408f537e3799.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-160px", top: "-150px", width: "460px", height: "460px", opacity: "0.2", pointerEvents: "none"}} />
             <div style={{position: "relative", padding: "clamp(32px, 5vw, 64px)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "28px"}}>
               <div style={{flex: "1 1 100%", minWidth: "0"}}>
                 <h2 style={{margin: "0 0 12px", fontFamily: "'Marcellus', serif", fontWeight: "400", fontSize: "clamp(22.5px, 2.38vw, 32px)", lineHeight: "1.2", color: "#FFFFFF"}}>

@@ -72,13 +72,13 @@ export const CALCULATORS: Record<CalcKind, CalcConfig> = {
       NOT_STORED,
     ],
     report: { href: "/consultation", label: "Book a consultation", blurb: "Want precise timing for a decision? Talk to our experts, who study your KP chart before the call." },
-    title: "Free KP Kundli: Cusps, Significators, Dasha",
+    title: "Free KP Kundli Calculator: Cusps, Significators, Dasha",
     description: "Free KP Kundli calculator: planets and cusps with star, sub and sub-sub lords, Vimshottari dasha, significators, Nakshatra Nadi and ruling planets.",
   },
   name: {
     path: "/name-number",
     eyebrow: "Free Name Numerology",
-    h1: "Is your name helping you?",
+    h1: "Name Numerology Calculator",
     sub: "Your birth date is fixed, your spelling is not. See whether the two agree, with the working shown.",
     method: "Chaldean name values, Vedic planetary friendship, Lo Shu grid.",
     features: [
@@ -96,13 +96,13 @@ export const CALCULATORS: Record<CalcKind, CalcConfig> = {
       NOT_STORED,
     ],
     report: { href: "/report/name-numerology", label: "Name Numerology Report", blurb: "Want the full picture for yourself, a newborn or a business? Our report explains your name in detail and suggests corrections." },
-    title: "Free Name Number Check: Is Your Name Lucky?",
+    title: "Free Name Numerology Calculator: Is Your Name Lucky?",
     description: "Free name numerology check: a name vibration score, your core numbers, Lo Shu grid and spelling options, using Chaldean values and planetary friendship.",
   },
   mobile: {
     path: "/mobile-number",
     eyebrow: "Free Mobile Number Numerology",
-    h1: "Is your mobile number lucky for you?",
+    h1: "Mobile Number Numerology Calculator",
     sub: "Add up your digits and check the total against your birth date and name, with the working shown.",
     method: "Digit total, Vedic planetary friendship, with your birth date and name.",
     features: [
@@ -120,7 +120,7 @@ export const CALCULATORS: Record<CalcKind, CalcConfig> = {
       NOT_STORED,
     ],
     report: { href: "/report/mobile-number", label: "Mobile Number Report", blurb: "Want lucky combinations to choose from? Our report checks your number in detail and suggests better ones." },
-    title: "Free Mobile Number Numerology: Is It Lucky?",
+    title: "Free Mobile Number Numerology Calculator: Is It Lucky?",
     description: "Free mobile number numerology check: your number's total, the combinations inside it, a match with your birth date and name, and a clear keep or change verdict.",
   },
 };

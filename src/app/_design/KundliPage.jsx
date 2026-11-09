@@ -189,7 +189,7 @@ KundliPage.prototype.render = function render() {
         <div style={{position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #2E003E 0%, #3D0752 50%, #6C1594 100%)", color: "#FFFFFF"}}>
           <div className={"am-stars"} aria-hidden={"true"} />
           <div className={"am-stars2"} aria-hidden={"true"} />
-          <img className={"am-spin"} src={"/images/9f12ecbbc1351b2a79d2c5c2543824a3.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-180px", top: "-120px", width: "620px", height: "620px", opacity: "0.12", pointerEvents: "none"}} />
+          <img loading={"lazy"} decoding={"async"} className={"am-spin"} src={"/images/9f12ecbbc1351b2a79d2c5c2543824a3.png"} alt={""} aria-hidden={"true"} style={{position: "absolute", right: "-180px", top: "-120px", width: "620px", height: "620px", opacity: "0.12", pointerEvents: "none"}} />
           <div style={{maxWidth: "1200px", margin: "0 auto", padding: "28px 24px 72px", position: "relative"}}>
             <nav aria-label={"Breadcrumb"} style={{fontSize: "13px", color: "#EADFF2", marginBottom: "36px"}}>
               <a href={"/"} style={{color: "#EADFF2", textDecoration: "none"}}>

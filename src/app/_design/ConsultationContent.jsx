@@ -84,7 +84,7 @@ export default function ConsultationContent({ prices }) {
       <section aria-label="Consultation" style={{ position: "relative", overflow: "hidden", color: "#FFFFFF", background: "linear-gradient(180deg, #1B0026 0%, #2E003E 45%, #5A0F7C 100%)" }}>
         <div className="am-stars" aria-hidden="true" />
         <div className="am-stars2" aria-hidden="true" style={{ opacity: 0.6 }} />
-        <img className="am-spin-zodiac" src="/images/610ce06ea07e7a2d1d36f4d88029f8db.png" alt="" aria-hidden="true" style={{ position: "absolute", right: "-140px", top: "-90px", width: "600px", height: "600px", opacity: 0.2, pointerEvents: "none" }} />
+        <img loading={"lazy"} decoding={"async"} className="am-spin-zodiac" src="/images/610ce06ea07e7a2d1d36f4d88029f8db.png" alt="" aria-hidden="true" style={{ position: "absolute", right: "-140px", top: "-90px", width: "600px", height: "600px", opacity: 0.2, pointerEvents: "none" }} />
         <span className="am-shoot" aria-hidden="true" style={{ top: "18%", left: "62%", animationDelay: "2s" }} />
         <div style={{ ...container, position: "relative", padding: "22px 24px 64px" }}>
           <p style={{ fontSize: "13px", color: "#CDB8DA", margin: "0 0 34px" }}><a href="/" style={{ color: "#CDB8DA", textDecoration: "none" }}>Home</a> / <b style={{ color: "#FFFFFF", fontWeight: 600 }}>Consultation</b></p>
@@ -185,7 +185,7 @@ export default function ConsultationContent({ prices }) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(420px, 100%), 1fr))", gap: "16px" }}>
           {EXPERTS.map((e) => (
             <div key={e.id} style={{ ...card, display: "flex", gap: "20px", alignItems: "flex-start", flexWrap: "wrap" }}>
-              <img src={e.photo} alt={e.name} style={{ flex: "none", width: "112px", height: "112px", borderRadius: "999px", objectFit: "cover", objectPosition: e.pos, boxShadow: "0 0 0 4px #FCCE07" }} />
+              <img loading={"lazy"} decoding={"async"} src={e.photo} alt={e.name} style={{ flex: "none", width: "112px", height: "112px", borderRadius: "999px", objectFit: "cover", objectPosition: e.pos, boxShadow: "0 0 0 4px #FCCE07" }} />
               <div style={{ flex: "1 1 220px", minWidth: 0 }}>
                 <div style={{ fontSize: "11.5px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#921A11", fontWeight: 700 }}>{e.level}</div>
                 <h3 style={{ margin: "2px 0 6px", fontFamily: serif, fontWeight: 400, fontSize: "24px", color: "#2E003E" }}>{e.name}</h3>

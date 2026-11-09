@@ -32,7 +32,7 @@ export default function CalculatorContent({ kind, onDone }) {
       <section aria-label={c.h1} style={{ position: "relative", overflow: "hidden", color: "#FFFFFF", background: "linear-gradient(180deg, #1B0026 0%, #2E003E 45%, #5A0F7C 100%)" }}>
         <div className="am-stars" aria-hidden="true" />
         <div className="am-stars2" aria-hidden="true" style={{ opacity: 0.6 }} />
-        <img className="am-spin-zodiac" src="/images/610ce06ea07e7a2d1d36f4d88029f8db.png" alt="" aria-hidden="true" style={{ position: "absolute", right: "-140px", top: "-90px", width: "560px", height: "560px", opacity: 0.18, pointerEvents: "none" }} />
+        <img loading={"lazy"} decoding={"async"} className="am-spin-zodiac" src="/images/610ce06ea07e7a2d1d36f4d88029f8db.png" alt="" aria-hidden="true" style={{ position: "absolute", right: "-140px", top: "-90px", width: "560px", height: "560px", opacity: 0.18, pointerEvents: "none" }} />
         <div style={{ ...container, position: "relative", padding: "22px 24px 60px" }}>
           <p style={{ fontSize: "13px", color: "#CDB8DA", margin: "0 0 30px" }}>
             <a href="/" style={{ color: "#CDB8DA", textDecoration: "none" }}>Home</a> / <a href="/#free" style={{ color: "#CDB8DA", textDecoration: "none" }}>Free calculators</a> / <b style={{ color: "#FFFFFF", fontWeight: 600 }}>{c.eyebrow.replace("Free ", "")}</b>
