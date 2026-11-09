@@ -2,7 +2,7 @@
 // The "Mobile number" form on the home page. Same markup and styles as the design; this file adds the behaviour:
 // a call to the engine (/api/mobile-number) and the hand-off to the /mobile-number result page, which reads what
 // the engine returned from sessionStorage.
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { maskDate } from "./wire";
 import { labelStyle, inputStyle, selectStyle, isoDate } from "./form-parts";
@@ -14,19 +14,6 @@ export default function MobileForm({ onDone }) {
   const nameRef = useRef(null), genderRef = useRef(null), mobRef = useRef(null), dobRef = useRef(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-
-  // Coming back through "Edit details" (?edit=1): fill the form with what was entered last time. Otherwise it starts blank.
-  useEffect(() => {
-    try {
-      if (new URLSearchParams(window.location.search).get("edit") !== "1") return; // opened from the menu or a link: start blank
-      const i = (JSON.parse(sessionStorage.getItem(MOBILE_KEY) || "null") || {}).input;
-      if (!i) return;
-      if (nameRef.current) nameRef.current.value = i.name || "";
-      if (genderRef.current && i.gender) genderRef.current.value = i.gender.charAt(0).toUpperCase() + i.gender.slice(1);
-      if (mobRef.current) mobRef.current.value = i.mobile || "";
-      if (dobRef.current && i.dob) dobRef.current.value = `${String(i.dob.day).padStart(2, "0")}/${String(i.dob.month).padStart(2, "0")}/${i.dob.year}`;
-    } catch { /* nothing saved, or storage unavailable */ }
-  }, []);
 
   const submit = async (e) => {
     e.preventDefault();
