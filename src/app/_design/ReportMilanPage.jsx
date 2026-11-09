@@ -145,7 +145,7 @@ ReportMilanPage.prototype.render = function render() {
                 {"Courses"}
               </a>
               <HoroscopeMenu />
-              <a href={"/#blog"} style={{color: "#FFFFFF", textDecoration: "none"}}>
+              <a href={"/blog"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Blogs"}
               </a>
               <a href={"/about"} style={{color: "#FFFFFF", textDecoration: "none"}}>
@@ -213,7 +213,7 @@ ReportMilanPage.prototype.render = function render() {
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
+                  <a href={"/blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />

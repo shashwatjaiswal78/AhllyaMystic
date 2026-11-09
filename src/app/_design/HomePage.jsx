@@ -177,7 +177,7 @@ HomePage.prototype.render = function render() {
                 {"Courses"}
               </a>
               <HoroscopeMenu />
-              <a href={"/#blog"} style={{color: "#FFFFFF", textDecoration: "none"}}>
+              <a href={"/blog"} style={{color: "#FFFFFF", textDecoration: "none"}}>
                 {"Blogs"}
               </a>
               <a href={"/about"} style={{color: "#FFFFFF", textDecoration: "none"}}>
@@ -245,7 +245,7 @@ HomePage.prototype.render = function render() {
                     </svg>
                   </a>
                   <HoroscopeMobileMenu onNavigate={v.closeMenu} />
-                  <a href={"/#blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
+                  <a href={"/blog"} onClick={v.closeMenu} style={{display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: "56px", borderBottom: "1px solid rgba(255,255,255,0.14)", color: "#FFFFFF", textDecoration: "none", fontFamily: "'Marcellus', serif", fontSize: "19px"}}>
                     {"Blogs"}
                     <svg aria-hidden={"true"} width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}>
                       <path d={"M9 6l6 6-6 6"} />
@@ -1468,11 +1468,11 @@ HomePage.prototype.render = function render() {
                 </p>
               </div>
               <a href={"/consultation"} style={{fontWeight: "700"}}>
-                {"Talk to our astrologers →"}
+                {"Read all articles →"}
               </a>
             </div>
             <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "20px"}}>
-              <a href={"/kundli"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/blog/sade-sati-what-it-really-means"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
                 <svg viewBox={"0 0 320 180"} preserveAspectRatio={"xMidYMid slice"} role={"img"} aria-label={"Saturn illustration"} style={{display: "block", width: "100%", aspectRatio: "16 / 9"}}>
                   <defs>
                     <linearGradient id={"bgA"} x1={"0"} y1={"0"} x2={"1"} y2={"1"}>
@@ -1511,15 +1511,15 @@ HomePage.prototype.render = function render() {
                   </p>
                   <div style={{marginTop: "auto", paddingTop: "10px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", borderTop: "1px solid #EFE6D8"}}>
                     <span style={{fontSize: "12px", color: "#5C5470"}}>
-                      {"By Maneswita"}
+                      {"By Ahllya Mystic"}
                     </span>
                     <span style={{fontWeight: "700", color: "#921A11", fontSize: "13px"}}>
-                      {"Explore →"}
+                      {"Read article →"}
                     </span>
                   </div>
                 </div>
               </a>
-              <a href={"/report/name-numerology"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/blog/should-you-change-your-name-spelling"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
                 <svg viewBox={"0 0 320 180"} preserveAspectRatio={"xMidYMid slice"} role={"img"} aria-label={"Numbers grid illustration"} style={{display: "block", width: "100%", aspectRatio: "16 / 9"}}>
                   <defs>
                     <linearGradient id={"bgN"} x1={"0"} y1={"0"} x2={"1"} y2={"1"}>
@@ -1580,15 +1580,15 @@ HomePage.prototype.render = function render() {
                   </p>
                   <div style={{marginTop: "auto", paddingTop: "10px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", borderTop: "1px solid #EFE6D8"}}>
                     <span style={{fontSize: "12px", color: "#5C5470"}}>
-                      {"By Maneswita"}
+                      {"By Ahllya Mystic"}
                     </span>
                     <span style={{fontWeight: "700", color: "#921A11", fontSize: "13px"}}>
-                      {"Explore →"}
+                      {"Read article →"}
                     </span>
                   </div>
                 </div>
               </a>
-              <a href={"/consultation"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
+              <a href={"/blog/simple-vastu-fixes-for-your-home"} className={"am-lift"} style={{background: "#FFFFFF", border: "1px solid #E2D7C4", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", textDecoration: "none", color: "#1E1830"}}>
                 <svg viewBox={"0 0 320 180"} preserveAspectRatio={"xMidYMid slice"} role={"img"} aria-label={"Home floor plan with Vastu grid"} style={{display: "block", width: "100%", aspectRatio: "16 / 9"}}>
                   <defs>
                     <linearGradient id={"bgV"} x1={"0"} y1={"0"} x2={"1"} y2={"1"}>
@@ -1624,10 +1624,10 @@ HomePage.prototype.render = function render() {
                   </p>
                   <div style={{marginTop: "auto", paddingTop: "10px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", borderTop: "1px solid #EFE6D8"}}>
                     <span style={{fontSize: "12px", color: "#5C5470"}}>
-                      {"By Maneswita"}
+                      {"By Ahllya Mystic"}
                     </span>
                     <span style={{fontWeight: "700", color: "#921A11", fontSize: "13px"}}>
-                      {"Explore →"}
+                      {"Read article →"}
                     </span>
                   </div>
                 </div>

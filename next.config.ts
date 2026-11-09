@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
+import { ARTICLES } from "./src/lib/blog";
 
 /* Only these /horoscope/<slug> pages exist. Anything else must answer 404, not a soft 200 (streamed
    not-found pages return 200 under Cache Components), so unknown slugs are rewritten to a missing path. */
 const KNOWN_HOROSCOPE = "aries|taurus|gemini|cancer|leo|virgo|libra|scorpio|sagittarius|capricorn|aquarius|pisces|weekly|monthly|yearly|2027";
 const SIGNS = "aries|taurus|gemini|cancer|leo|virgo|libra|scorpio|sagittarius|capricorn|aquarius|pisces";
+const BLOG_SLUGS = ARTICLES.map((a) => a.slug).join("|");
 const PERIODS = "weekly|monthly|yearly|2027";
 
 const nextConfig: NextConfig = {
@@ -36,6 +38,7 @@ const nextConfig: NextConfig = {
       { source: `/horoscope/:slug((?!(?:${KNOWN_HOROSCOPE})(?![^/]))[^/]+)`, destination: "/not-found-404" },
       { source: `/horoscope/:sign((?!(?:${SIGNS})(?![^/]))[^/]+)/:period`, destination: "/not-found-404" },
       { source: `/horoscope/:sign(${SIGNS})/:period((?!(?:${PERIODS})(?![^/]))[^/]+)`, destination: "/not-found-404" },
+      { source: `/blog/:slug((?!(?:${BLOG_SLUGS})(?![^/]))[^/]+)`, destination: "/not-found-404" },
     ];
   },
   /* config options here */
