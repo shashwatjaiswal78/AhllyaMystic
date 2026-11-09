@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
-import { cacheLife } from "next/cache";
 import HoroscopePage from "@/app/_design/HoroscopePage";
-import { dailyHoroscopes } from "@/lib/horoscope/engine";
+import { getHoroscopes } from "@/lib/horoscope/data";
+import { HoroscopeExtras, HoroscopeJsonLd } from "@/lib/horoscope/seo";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/horoscope" },
-  title: "Daily horoscope",
-  description: "Today's horoscope for every sign, in English and Hindi.",
+  title: "Daily Rashifal: Today's Horoscope for All 12 Signs",
+  description:
+    "Free daily Vedic horoscope (rashifal) for all 12 Moon signs in English and Hindi. Love, career, money and health scores, lucky number and colour, Rahu Kaal and Abhijit Muhurat, calculated from today's real planet positions.",
 };
-
-/* Calculated from the real planet positions at sunrise in New Delhi, then cached. A new IST day
-   shows up within half an hour of midnight. */
-async function getHoroscopes() {
-  "use cache";
-  cacheLife({ stale: 300, revalidate: 1800, expire: 86400 });
-  return dailyHoroscopes();
-}
 
 export default async function Page() {
   const data = await getHoroscopes();
-  return <HoroscopePage data={data} />;
+  return (
+    <>
+      <HoroscopeJsonLd crumbs={[{ name: "Home", path: "/" }, { name: "Daily horoscope", path: "/horoscope" }]} />
+      <HoroscopePage data={data} />
+      <HoroscopeExtras />
+    </>
+  );
 }

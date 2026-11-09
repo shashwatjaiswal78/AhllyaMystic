@@ -5,7 +5,7 @@ import { NAK, NAK_LORD, computeChart, siderealSunMoon, sunRiseSet } from "@/lib/
 import { NAK_HI, WEEKDAY_LORD, WEEKDAYS, tithiAt, yogaAt } from "@/lib/kundli/panchang";
 import { SIGN_INFO, type SignInfo } from "./signs";
 
-const DELHI = { lat: 28.6139, lon: 77.209, tz: "Asia/Kolkata" };
+export const DELHI = { lat: 28.6139, lon: 77.209, tz: "Asia/Kolkata" };
 const DAY_MS = 864e5;
 
 /* ---------------------------------------------------------------- Static tables */
@@ -13,12 +13,12 @@ const DAY_MS = 864e5;
 const PLANETS = ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn", "Rahu", "Ketu"] as const;
 type Planet = (typeof PLANETS)[number];
 
-const PLANET_HI: Record<Planet, string> = {
+export const PLANET_HI: Record<Planet, string> = {
   Sun: "सूर्य", Moon: "चंद्रमा", Mars: "मंगल", Mercury: "बुध", Jupiter: "गुरु", Venus: "शुक्र", Saturn: "शनि", Rahu: "राहु", Ketu: "केतु",
 };
 
 /* Classical Gochar: houses from the Moon sign in which each planet gives good results. */
-const GOOD_HOUSES: Record<Planet, number[]> = {
+export const GOOD_HOUSES: Record<Planet, number[]> = {
   Sun: [3, 6, 10, 11],
   Moon: [1, 3, 6, 7, 10, 11],
   Mars: [3, 6, 11],
@@ -46,7 +46,7 @@ const MOON_SCORES: Record<number, { love: number; career: number; money: number;
   12: { love: 35, career: 35, money: 35, health: 35, overall: 35 },
 };
 
-const ORD_EN = ["", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"];
+export const ORD_EN = ["", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"];
 const ORD_HI = ["", "पहले", "दूसरे", "तीसरे", "चौथे", "पांचवें", "छठे", "सातवें", "आठवें", "नौवें", "दसवें", "ग्यारहवें", "बारहवें"];
 
 /* What the Moon brings in each house from your Moon sign. */
@@ -66,7 +66,7 @@ const MOON_HOUSE: Record<number, [string, string]> = {
 };
 
 /* Planet that colours each life area, with its good / bad sentence. */
-const SUPPORT: Record<"Jupiter" | "Venus" | "Sun" | "Mars", { en: string; hi: string }> = {
+export const SUPPORT: Record<"Jupiter" | "Venus" | "Sun" | "Mars", { en: string; hi: string }> = {
   Jupiter: { en: "growth and guidance", hi: "वृद्धि और मार्गदर्शन" },
   Venus: { en: "love and comforts", hi: "प्रेम और सुख-सुविधा" },
   Sun: { en: "authority and vitality", hi: "मान-सम्मान और ऊर्जा" },
@@ -96,7 +96,7 @@ const OWN: Record<string, number[]> = { Sun: [4], Moon: [3], Mars: [0, 7], Mercu
 const EXALT: Record<string, number> = { Sun: 0, Moon: 1, Mars: 9, Mercury: 5, Jupiter: 3, Venus: 11, Saturn: 6 };
 
 const WEEKDAY_HI = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
-const MONTHS_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+export const MONTHS_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MONTHS_HI = ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"];
 const TITHI_HI = ["प्रतिपदा", "द्वितीया", "तृतीया", "चतुर्थी", "पंचमी", "षष्ठी", "सप्तमी", "अष्टमी", "नवमी", "दशमी", "एकादशी", "द्वादशी", "त्रयोदशी", "चतुर्दशी", "पूर्णिमा", "अमावस्या"];
 const YOGA_HI = ["विष्कम्भ", "प्रीति", "आयुष्मान", "सौभाग्य", "शोभन", "अतिगण्ड", "सुकर्मा", "धृति", "शूल", "गण्ड", "वृद्धि", "ध्रुव", "व्याघात", "हर्षण", "वज्र", "सिद्धि", "व्यतीपात", "वरीयान", "परिघ", "शिव", "सिद्ध", "साध्य", "शुभ", "शुक्ल", "ब्रह्म", "ऐन्द्र", "वैधृति"];
@@ -114,7 +114,8 @@ export interface HoroscopeSign {
   lucky: { g: string; gHi: string; num: number; col: string; colHi: string; hex: string; whyEn: string; whyHi: string; mEn: string; mHi: string };
   calm: { g: string; gHi: string; whyEn: string; whyHi: string; mEn: string; mHi: string } | null;
 }
-export interface HoroscopeDay { dateEn: string; dateHi: string; pancEn: string; pancHi: string; signs: HoroscopeSign[] }
+export interface Muhurat { en: string; hi: string; time: string; good: boolean; noteEn: string; noteHi: string }
+export interface HoroscopeDay { dateEn: string; dateHi: string; pancEn: string; pancHi: string; muhurat: Muhurat[]; signs: HoroscopeSign[] }
 export interface HoroscopeData { days: { today: HoroscopeDay; tomorrow: HoroscopeDay }; signs: SignInfo[] }
 
 /* ---------------------------------------------------------------- Helpers */
@@ -123,7 +124,7 @@ export interface HoroscopeData { days: { today: HoroscopeDay; tomorrow: Horoscop
 const nakHi = (i: number) => NAK_HI[i].replace(/^(पूर्व|उत्तर)(?=\S)/, "$1 ");
 const houseFrom = (from: number, to: number) => ((to - from + 12) % 12) + 1;
 
-function istParts(ms: number) {
+export function istParts(ms: number) {
   const f = Object.fromEntries(
     new Intl.DateTimeFormat("en-US", { timeZone: DELHI.tz, hour12: false, year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric", weekday: "short" })
       .formatToParts(new Date(ms)).map((p) => [p.type, p.value]),
@@ -151,12 +152,35 @@ function areaTier(score: number, hi: number, mid: number): 0 | 1 | 2 {
   return score >= hi ? 0 : score >= mid ? 1 : 2;
 }
 
+/* ---------------------------------------------------------------- Muhurat */
+
+/* Rahu Kaal and Yamaganda are one eighth of the daylight, counted from sunrise; which eighth depends on the weekday (0 = Sunday). */
+const RAHU_KAAL_PART = [8, 2, 7, 5, 6, 4, 3];
+const YAMAGANDA_PART = [5, 4, 3, 2, 1, 7, 6];
+
+function muhuratFor(weekday: number, rise: number, set: number): Muhurat[] {
+  const day = set - rise;
+  const eighth = day / 8;
+  const range = (a: number, b: number) => `${clockEn(a)} – ${clockEn(b)}`;
+  const part = (n: number) => range(rise + (n - 1) * eighth, rise + n * eighth);
+  const fifteenth = day / 15;
+  return [
+    { en: "Abhijit Muhurat", hi: "अभिजित मुहूर्त", time: range(rise + 7 * fifteenth, rise + 8 * fifteenth), good: true,
+      noteEn: "The middle of the day, good for starting important work.", noteHi: "दिन का मध्य भाग, ज़रूरी काम शुरू करने के लिए अच्छा।" },
+    { en: "Rahu Kaal", hi: "राहु काल", time: part(RAHU_KAAL_PART[weekday]), good: false,
+      noteEn: "Avoid starting new work or signing papers.", noteHi: "नया काम शुरू करने या कागज़ों पर हस्ताक्षर से बचें।" },
+    { en: "Yamaganda", hi: "यमगण्ड", time: part(YAMAGANDA_PART[weekday]), good: false,
+      noteEn: "Not ideal for new ventures or travel.", noteHi: "नए कामों और यात्रा के लिए उपयुक्त नहीं।" },
+  ];
+}
+
 /* ---------------------------------------------------------------- One day */
 
-function buildDay(istY: number, istM: number, istD: number): HoroscopeDay {
+export function buildDay(istY: number, istM: number, istD: number): HoroscopeDay {
   const dayStart = new Date(Date.UTC(istY, istM - 1, istD) - 5.5 * 36e5); // IST midnight
   const rise = sunRiseSet(dayStart, DELHI.lat, DELHI.lon).rise ?? dayStart.getTime() + 6.5 * 36e5;
   const nextRise = sunRiseSet(new Date(dayStart.getTime() + DAY_MS), DELHI.lat, DELHI.lon).rise ?? rise + DAY_MS;
+  const set = sunRiseSet(dayStart, DELHI.lat, DELHI.lon).set ?? rise + 12 * 36e5;
   const utc = new Date(rise);
   const chart = computeChart(utc, DELHI.lat, DELHI.lon, utc);
 
@@ -327,7 +351,7 @@ function buildDay(istY: number, istM: number, istD: number): HoroscopeDay {
     };
   });
 
-  return { dateEn, dateHi, pancEn, pancHi, signs };
+  return { dateEn, dateHi, pancEn, pancHi, muhurat: muhuratFor(weekday, rise, set), signs };
 }
 
 /* ---------------------------------------------------------------- Public */

@@ -44,7 +44,7 @@ class HoroscopePage extends React.Component {
   renderVals() {
     var hi = this.state.lang === 'hi', L = LANG[this.state.lang], si = this.state.sign;
     var dd = this.props.data.days[this.state.day], d = dd.signs[si], sg = this.props.data.signs[si];
-    var rashis = this.props.data.signs.map((s, i) => ({ en: s.en, hi: s.hi, img: s.img, sel: i === si, notSel: i !== si, pick: () => this.setState({ sign: i }) }));
+    var rashis = this.props.data.signs.map((s, i) => ({ en: s.en, hi: s.hi, img: s.img, sel: i === si, notSel: i !== si, pick: () => { this.setState({ sign: i }); try { window.history.replaceState(null, '', '/horoscope/' + s.en.toLowerCase()); } catch (e) {} } }));
     var tab = (key, opts) => opts.map((o) => ({ label: o[1], sel: this.state[key] === o[0], notSel: this.state[key] !== o[0], pick: () => { var x = {}; x[key] = o[0]; this.setState(x); } }));
     var C = 2 * Math.PI * 52;
     return {
@@ -62,6 +62,8 @@ class HoroscopePage extends React.Component {
       luckyPlanet: hi ? d.lucky.gHi : d.lucky.g, luckyWhy: hi ? d.lucky.gHi + ' ' + d.lucky.whyHi + ' है।' : d.lucky.g + ' is ' + d.lucky.whyEn + '.',
       hasCalm: !!d.calm, noCalm: !d.calm, calmPlanet: d.calm ? (hi ? d.calm.gHi : d.calm.g) : '', calmWhy: d.calm ? (hi ? d.calm.whyHi : d.calm.whyEn) : '',
       why: hi ? d.whyHi : d.whyEn, panchang: hi ? dd.pancHi : dd.pancEn,
+      muhuratTitle: hi ? 'आज के शुभ और अशुभ समय (नई दिल्ली)' : 'Good and avoid times today (New Delhi)',
+      muhurat: (dd.muhurat || []).map((m) => ({ name: hi ? m.hi : m.en, time: m.time, note: hi ? m.noteHi : m.noteEn, good: m.good })),
       planets: d.planets.map((p) => ({ name: hi ? p.hi : p.en, r: p.retro ? ' R' : '', where: hi ? p.ordHi + ' भाव' : p.ordEn + ' house', good: p.good, bad: p.bad })),
       ctaTitle: hi ? 'यह राशिफल सभी ' + sg.hi + ' राशि वालों के लिए है। आपकी कुंडली सिर्फ़ आपकी है।' : 'This reading is for every ' + sg.en + ' Moon sign. Your chart is yours alone.',
       aboutTitle: hi ? sg.hi + ' राशि' : 'About ' + sg.en,
@@ -516,6 +518,20 @@ HoroscopePage.prototype.render = function render() {
             <p style={{margin: "4px 0 0", paddingTop: "12px", borderTop: "1px solid #EFE6D8", fontSize: "14px", color: "#5C5470"}}>
               {hole(v.panchang)}
             </p>
+            <div style={{paddingTop: "12px", borderTop: "1px solid #EFE6D8"}}>
+              <p style={{margin: "0 0 10px", fontSize: "13px", fontWeight: "700", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6C1594"}}>
+                {hole(v.muhuratTitle)}
+              </p>
+              <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(220px, 100%), 1fr))", gap: "10px"}}>
+                {(v.muhurat || []).map((m, $index) => (
+                  <div key={$index} style={{borderRadius: "14px", padding: "12px 14px", background: m.good ? "#F1F8EE" : "#FBF0EE", border: m.good ? "1px solid #CFE3C6" : "1px solid #EBCBC6"}}>
+                    <div style={{fontWeight: "700", fontSize: "15px", color: m.good ? "#2C6B1F" : "#921A11"}}>{m.name}</div>
+                    <div style={{fontSize: "15px", margin: "2px 0"}}>{m.time}</div>
+                    <div style={{fontSize: "13px", color: "#5C5470"}}>{m.note}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
           <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(118px, 100%), 1fr))", gap: "10px"}}>
             {(v.planets || []).map((p, $index) => (
